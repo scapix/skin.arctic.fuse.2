@@ -6,6 +6,11 @@
         <selectedcolor>$VAR[ColorSelected]</selectedcolor>
     </include>
 
+    <include name="Color_SelectedOrDisabledText">
+        <textcolor>$VAR[ColorSelectedOrDisabled]</textcolor>
+        <selectedcolor>$VAR[ColorSelectedOrDisabled]</selectedcolor>
+    </include>
+
     <variable name="Color_ViewScrollBar">
         <value condition="Control.HasFocus(9012)">$VAR[ColorSelected]</value>
         <value>main_logo</value>
@@ -96,6 +101,12 @@
     </variable>
 
     <variable name="ColorSelected">
+        <value condition="!Skin.HasSetting(RevertSelectedText)">ff333333</value>
+        <value>ffffffff</value>
+    </variable>
+
+    <variable name="ColorSelectedOrDisabled">
+        <value condition="String.IsEqual(ListItem.Property(disabled),True)">FFFF0000</value>
         <value condition="!Skin.HasSetting(RevertSelectedText)">ff333333</value>
         <value>ffffffff</value>
     </variable>

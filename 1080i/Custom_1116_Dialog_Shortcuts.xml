@@ -65,44 +65,6 @@
                 <param name="topline">true</param>
                 <param name="subline">true</param>
 
-                <!-- Categories Filter -->
-                <control type="group">
-                    <left>0</left>
-                    <right>640</right>
-                    <height>80</height>
-                    <centertop>100</centertop>
-                    <control type="grouplist" id="26062">
-                        <right>60</right>
-                        <left>60</left>
-                        <onup>SetFocus(22001,9999,absolute)</onup>
-                        <ondown>SetFocus(22001,0,absolute)</ondown>
-                        <orientation>vertical</orientation>
-                        <!-- Filter Categories -->
-                        <control type="grouplist" id="27062">
-                            <align>right</align>
-                            <orientation>horizontal</orientation>
-                            <height>80</height>
-                            <include content="Settings_Button">
-                                <param name="dialog">true</param>
-                                <param name="id">23062</param>
-                                <label>$LOCALIZE[587]: $VAR[Label_SkinVariables_FilterPath]      </label>
-                                <visible>[String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=homemenu) + String.IsEmpty(Window(Home).Property(Shortcuts.EditMode)) + String.IsEmpty(Window(Home).Property(Shortcuts.EditGUID))]</visible>
-                                <onclick>SetProperty(SideOptions.List,Filter)</onclick>
-                                <onclick>SetFocus(25001)</onclick>
-                                <onback>29999</onback>
-                                <width>auto</width>
-                            </include>
-                        </control>
-                        <include content="Settings_Image">
-                            <param name="id">25062</param>
-                            <param name="buttonid">23062</param>
-                            <param name="icon">$VAR[Image_SkinVariables_FilterPath]</param>
-                            <visible>[String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=homemenu) + String.IsEmpty(Window(Home).Property(Shortcuts.EditMode)) + String.IsEmpty(Window(Home).Property(Shortcuts.EditGUID))]</visible>
-                            <height>83</height>
-                        </include>
-                    </control>
-                </control>
-
                 <!-- Header -->
                 <include content="Dialog_Head">
                     <param name="label">$VAR[Label_Shortcut_TopHeader]</param>
@@ -151,7 +113,7 @@
                                 <onup>23062</onup>
                                 <ondown>23062</ondown>
                                 <onleft>9000</onleft>
-                                <onright>29012</onright>
+                                <onright>29002</onright>
                                 <onback>29999</onback>
                                 <onclick>noop</onclick>
                             </include>
@@ -168,7 +130,7 @@
                                 <ondown condition="String.IsEmpty(Container(22001).ListItemNoWrap(1).Label)">23062</ondown>
 
                                 <onleft>9000</onleft>
-                                <onright>29012</onright>
+                                <onright>29002</onright>
                                 <onback>29999</onback>
 
                                 <animation effect="slide" start="0" end="0,100" condition="Container(22001).Position(1)">Conditional</animation>
@@ -185,8 +147,28 @@
                                 <align>right</align>
                                 <right>20</right>
 
-                                <!-- <control type="button" id="22902">
-                                    <texturenofocus colordiffuse="dialog_fg_30">special://skin/extras/icons/circle-plus.png</texturenofocus>
+
+
+                                <control type="button" id="22903">
+                                    <texturenofocus colordiffuse="$VAR[ColorSelected_30]">special://skin/extras/icons/circle-arrow-up.png</texturenofocus>
+                                    <texturefocus colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/circle-arrow-up.png</texturefocus>
+                                    <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_move&amp;&amp;move::-1&amp;&amp;window_prop::url]$INFO[Container(22001).ListItem(-1).Property(item),&amp;&amp;offset::,])</onclick>
+                                    <onback>29999</onback>
+                                    <width>64</width>
+                                    <height>64</height>
+                                </control>
+
+                                <control type="button" id="22904">
+                                    <texturenofocus colordiffuse="$VAR[ColorSelected_30]">special://skin/extras/icons/circle-arrow-down.png</texturenofocus>
+                                    <texturefocus colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/circle-arrow-down.png</texturefocus>
+                                    <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_move&amp;&amp;move::1&amp;&amp;window_prop::url]$INFO[Container(22001).ListItem(1).Property(item),&amp;&amp;offset::,])</onclick>
+                                    <onback>29999</onback>
+                                    <width>64</width>
+                                    <height>64</height>
+                                </control>
+
+                                <control type="button" id="22902">
+                                    <texturenofocus colordiffuse="$VAR[ColorSelected_30]">special://skin/extras/icons/circle-plus.png</texturenofocus>
                                     <texturefocus colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/circle-plus.png</texturefocus>
                                     <onclick condition="!$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
                                     <onclick condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
@@ -194,26 +176,15 @@
                                     <onback>29999</onback>
                                     <width>64</width>
                                     <height>64</height>
-                                </control> -->
-
-                                <control type="button" id="22903">
-                                    <texturenofocus colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/circle-arrow-up.png</texturenofocus>
-                                    <texturefocus colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/circle-arrow-up.png</texturefocus>
-                                    <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_move&amp;&amp;move::-1&amp;&amp;window_prop::url]$INFO[Container(22001).ListItem(-1).Property(item),&amp;&amp;offset::,])</onclick>
-                                    <onback>29999</onback>
-                                    <width>64</width>
-                                    <height>64</height>
-                                    <animation effect="fade" start="100" end="30" condition="!Control.HasFocus(22903)">Conditional</animation>
                                 </control>
 
-                                <control type="button" id="22904">
-                                    <texturenofocus colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/circle-arrow-down.png</texturenofocus>
-                                    <texturefocus colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/circle-arrow-down.png</texturefocus>
-                                    <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_move&amp;&amp;move::1&amp;&amp;window_prop::url]$INFO[Container(22001).ListItem(1).Property(item),&amp;&amp;offset::,])</onclick>
+                                <control type="button" id="22905">
+                                    <texturenofocus colordiffuse="$VAR[ColorSelected_30]">special://skin/extras/icons/trash-can.png</texturenofocus>
+                                    <texturefocus colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/trash-can.png</texturefocus>
+                                    <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_delete])</onclick>
                                     <onback>29999</onback>
                                     <width>64</width>
                                     <height>64</height>
-                                    <animation effect="fade" start="100" end="30" condition="!Control.HasFocus(22904)">Conditional</animation>
                                 </control>
                             </control>
 
@@ -239,8 +210,6 @@
 
                                     <control type="grouplist" id="29000">
                                         <orientation>vertical</orientation>
-                                        <!-- <top>-40</top> -->
-                                        <!-- <height>120</height> -->
                                         <width>120</width>
                                         <align>left</align>
                                         <left>-40</left>
@@ -249,7 +218,7 @@
                                         <onright>23001</onright>
                                         <onleft>22001</onleft>
 
-                                        <include content="Dialog_Side_Button">
+                                        <!-- <include content="Dialog_Side_Button">
                                             <param name="id">12</param>
                                             <param name="baseid">29</param>
                                             <param name="label">$LOCALIZE[35261]</param>
@@ -258,87 +227,68 @@
                                             <onclick condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
                                             <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_new]$VAR[Path_Shortcut_UseRawPath]$VAR[Path_Shortcut_UseCategory])</onclick>
                                             <onback>29999</onback>
-                                        </include>
+                                        </include> -->
 
                                         <!-- Shortcuts -->
                                         <include content="Dialog_Side_Button">
                                             <param name="dialog">true</param>
-                                            <!-- <param name="vertical">false</param> -->
-                                            <!-- <param name="itemgap">0</param> -->
                                             <param name="baseid">29</param>
                                             <param name="id">02</param>
                                             <param name="control">button</param>
                                             <param name="label">$LOCALIZE[31511]</param>
-                                            <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param>
+                                            <!-- <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param> -->
                                             <param name="icon">special://skin/extras/icons/share.png</param>
                                             <onclick condition="!$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
                                             <onclick condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
                                             <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_choose]$VAR[Path_Shortcut_UseRawPath])</onclick>
                                             <onback>29999</onback>
-                                            <!-- <onup>23001</onup> -->
-                                            <!-- <ondown>23002</ondown> -->
                                         </include>
 
                                         <!-- Action -->
                                         <include content="Dialog_Side_Button">
                                             <param name="dialog">true</param>
-                                            <!-- <param name="vertical">false</param> -->
-                                            <!-- <param name="itemgap">0</param> -->
                                             <param name="baseid">29</param>
                                             <param name="id">03</param>
                                             <param name="control">button</param>
                                             <param name="label">$LOCALIZE[15217]</param>
-                                            <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param>
+                                            <!-- <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param> -->
                                             <param name="icon">special://skin/extras/icons/terminal.png</param>
                                             <onclick condition="!$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
                                             <onclick condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
                                             <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_action]$VAR[Path_Shortcut_UseRawPath])</onclick>
                                             <onback>29999</onback>
-                                            <!-- <onup>23001</onup> -->
-                                            <!-- <ondown>23002</ondown> -->
                                         </include>
 
                                         <!-- Rename -->
                                         <include content="Dialog_Side_Button">
                                             <param name="dialog">true</param>
-                                            <!-- <param name="vertical">false</param> -->
-                                            <!-- <param name="itemgap">0</param> -->
                                             <param name="baseid">29</param>
                                             <param name="id">04</param>
                                             <param name="control">button</param>
                                             <param name="label">$LOCALIZE[118]</param>
                                             <param name="icon">special://skin/extras/icons/i-cursor.png</param>
-                                            <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param>
+                                            <!-- <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param> -->
                                             <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_edit])</onclick>
                                             <onback>29999</onback>
-                                            <!-- <onup>23001</onup> -->
-                                            <!-- <ondown>23002</ondown> -->
                                         </include>
 
                                         <!-- Icon -->
                                         <include content="Dialog_Side_Button">
                                             <param name="dialog">true</param>
-                                            <!-- <param name="vertical">false</param> -->
-                                            <!-- <param name="itemgap">0</param> -->
                                             <param name="baseid">29</param>
                                             <param name="id">05</param>
                                             <param name="control">button</param>
                                             <param name="label">$LOCALIZE[31274]</param>
                                             <param name="icon">special://skin/extras/icons/image.png</param>
-                                            <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param>
-                                            <!-- <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_icon])</onclick> -->
+                                            <!-- <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param> -->
                                             <onclick>SetProperty(url,$INFO[Container(22001).ListItem.Property(url)],1117)</onclick>
                                             <onclick>ActivateWindow(1117)</onclick>
                                             <onback>29999</onback>
-                                            <!-- <onup>23001</onup> -->
-                                            <!-- <ondown>23002</ondown> -->
                                         </include>
 
                                         <!-- Delete -->
-                                        <include content="Dialog_Side_Button">
+                                        <!-- <include content="Dialog_Side_Button">
                                             <param name="dialog">true</param>
-                                            <!-- <param name="vertical">false</param> -->
-                                            <!-- <param name="itemgap">0</param> -->
                                             <param name="baseid">29</param>
                                             <param name="id">07</param>
                                             <param name="label">$LOCALIZE[117]</param>
@@ -346,9 +296,20 @@
                                             <param name="visible">!String.IsEqual(Container(22001).ListItem.Property(blank),True)</param>
                                             <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_delete&amp;&amp;False])</onclick>
                                             <onback>29999</onback>
-                                            <!-- <onup>23001</onup> -->
-                                            <!-- <ondown>23002</ondown> -->
-                                        </include>
+                                        </include> -->
+
+                                        <control type="group" id="29008">
+                                            <height>220</height>
+                                            <control type="image">
+                                                <left>60</left>
+                                                <right>20</right>
+                                                <bottom>-20</bottom>
+                                                <height>1</height>
+                                                <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+                                            </control>
+                                        </control>
+
+
 
                                         <include content="Dialog_Side_Button">
                                             <param name="id">04</param>
@@ -375,7 +336,7 @@
 
                                         <left>120</left>
 
-                                        <onleft>29012</onleft>
+                                        <onleft>29002</onleft>
                                         <onup>23003</onup>
                                         <onback>29999</onback>
                                         <pagecontrol>61</pagecontrol>
