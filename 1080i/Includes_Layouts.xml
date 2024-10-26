@@ -557,7 +557,7 @@
                     <control type="textbox">
                         <textcolor>white</textcolor>
                         <selectedcolor>white</selectedcolor>
-                        <right>80</right>
+                        <right>120</right>
                         <font>font_main</font>
                         <aligny>center</aligny>
                         <top>8</top>
@@ -569,7 +569,7 @@
                     <control type="group">
                         <height>60</height>
                         <centertop>50%</centertop>
-                        <right>80</right>
+                        <right>120</right>
                         <visible>![String.IsEmpty(ListItem.Property(path))]</visible>
                         <control type="label">
                             <height>30</height>
