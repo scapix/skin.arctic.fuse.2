@@ -7,7 +7,7 @@
             <param name="id">550</param>
             <param name="viewtype_label">$LOCALIZE[31480]</param>
             <param name="visible">$EXP[Exp_View_550]</param>
-            <param name="right">540</param>
+            <param name="right">560</param>
             <param name="top">288</param>
             <param name="item_height">86.2</param>
             <param name="focusposition">1</param>
@@ -20,7 +20,7 @@
             <param name="id">550</param>
             <param name="viewtype_label">$LOCALIZE[31480]</param>
             <param name="visible">$EXP[Exp_View_550]</param>
-            <param name="right">380</param>
+            <param name="right">400</param>
             <param name="top">288</param>
             <param name="item_height">86.2</param>
             <param name="focusposition">1</param>
@@ -35,7 +35,7 @@
             <param name="id">551</param>
             <param name="viewtype_label">$LOCALIZE[31480]</param>
             <param name="visible">$EXP[Exp_View_551]</param>
-            <param name="right">880</param>
+            <param name="right">900</param>
             <param name="top">400</param>
             <param name="focusposition">1</param>
             <param name="movement">2</param>

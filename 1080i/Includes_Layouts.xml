@@ -901,11 +901,34 @@
                             <top>15</top>
                             <right>10</right>
                             <bottom>15</bottom>
+
                             <control type="image">
                                 <bordersize>-6</bordersize>
                                 <include>Texture_Circle_Highlight_V</include>
                                 <visible>$PARAM[selected]</visible>
                             </control>
+                        </control>
+                    </control>
+                    <control type="image">
+                        <include>Texture_Menu_Highlight_H</include>
+                        <visible>$PARAM[selected]</visible>
+                        <top>40</top>
+                        <bottom>40</bottom>
+                    </control>
+                    <control type="group">
+                        <width>$PARAM[item_h]</width>
+                        <height>$PARAM[item_h]</height>
+                        <control type="group">
+                            <left>20</left>
+                            <top>15</top>
+                            <right>10</right>
+                            <bottom>15</bottom>
+
+                            <!-- <control type="image">
+                                <bordersize>-6</bordersize>
+                                <include>Texture_Circle_Highlight_V</include>
+                                <visible>$PARAM[selected]</visible>
+                            </control> -->
                             <control type="group">
                                 <visible>![$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]]</visible>
                                 <control type="image">
@@ -945,8 +968,8 @@
                                 </control>
                             </control>
                             <control type="group">
-                                <centerbottom>15%</centerbottom>
-                                <centerright>15%</centerright>
+                                <centerbottom>12.5%</centerbottom>
+                                <centerright>18%</centerright>
                                 <height>64</height>
                                 <width>64</width>
                                 <include content="Object_Indicator">
@@ -967,13 +990,14 @@
                         <left>$PARAM[item_h]</left>
 
                         <control type="group">
-                            <left>30</left>
+                            <left>20</left>
                             <right>40</right>
                             <height>82</height>
 
                             <control type="label">
                                 <label>$VAR[Label_MediaList_Title]</label>
-                                <font>font_midi_bold</font>
+                                <font>font_main_bold</font>
+                                <include condition="$PARAM[selected]">Color_SelectedText</include>
                                 <textcolor>main_fg_90</textcolor>
                                 <include>Dimension_Object_InfoCircle_Text_Top</include>
                                 <include content="Object_Right" condition="$PARAM[variation]">
@@ -984,6 +1008,7 @@
                             <control type="label">
                                 <label>$VAR[Label_VideoInfo_DetailsItem]</label>
                                 <font>font_tiny</font>
+                                <include condition="$PARAM[selected]">Color_SelectedText</include>
                                 <textcolor>main_fg_70</textcolor>
                                 <include>Dimension_Object_InfoCircle_Text_Sub</include>
                                 <include content="Object_Right" condition="$PARAM[variation]">
@@ -997,6 +1022,7 @@
                                 <control type="label">
                                     <right>120</right>
                                     <font>font_mini</font>
+                                    <include condition="$PARAM[selected]">Color_SelectedText</include>
                                     <textcolor>main_fg_70</textcolor>
                                     <label>$VAR[Label_MediaList_Year]</label>
                                     <align>right</align>
@@ -1008,6 +1034,7 @@
                                     <left>80</left>
                                     <right>0</right>
                                     <font>font_mini</font>
+                                    <include condition="$PARAM[selected]">Color_SelectedText</include>
                                     <textcolor>main_fg_70</textcolor>
                                     <visible>![$PARAM[variation]]</visible>
                                     <label>$VAR[Label_MediaList_Rating,            ,]</label>
@@ -1017,6 +1044,7 @@
                                 <include content="Object_Indicator_List">
                                     <param name="affix">$PARAM[affix]</param>
                                     <param name="listitem">$PARAM[listitem]</param>
+                                    <param name="selected">$PARAM[selected]</param>
                                     <centertop>50%</centertop>
                                     <centerright>80</centerright>
                                     <visible>![$PARAM[variation]]</visible>
@@ -1025,6 +1053,7 @@
                                 <include content="Object_Indicator_List">
                                     <param name="affix">$PARAM[affix]</param>
                                     <param name="listitem">$PARAM[listitem]</param>
+                                    <param name="selected">$PARAM[selected]</param>
                                     <centertop>50%</centertop>
                                     <centerright>15</centerright>
                                     <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)]</visible>
@@ -1034,11 +1063,13 @@
                         </control>
 
                         <control type="textbox">
+                            <include condition="$PARAM[selected]">Color_SelectedText</include>
                             <label fallback="19055">$VAR[Label_Landscape_Plot]</label>
-                            <font>font_mini_plot</font>
+                            <font>font_tiny_plot</font>
                             <textcolor>main_fg_70</textcolor>
                             <top>80</top>
-                            <left>30</left>
+                            <bottom>10</bottom>
+                            <left>20</left>
                             <right>40</right>
                             <visible>![$PARAM[variation]]</visible>
                         </control>
