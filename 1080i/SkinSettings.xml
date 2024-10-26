@@ -198,9 +198,10 @@
                             <onclick condition="!Skin.HasSetting(SideMenu.DisableSearchAndOptions) + !Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">Skin.Reset(SideMenu.DisableSearchAndOptions)</onclick>
                             <onclick condition="!Skin.HasSetting(SideMenu.DisableSearchAndOptions) + !Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">Skin.SetBool(HubsMenu.EnableSearchAndOptions)</onclick>
 
-                            <!-- Hubs+Home (switch to Disabled) -->
-                            <onclick condition="Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">Skin.SetBool(SideMenu.DisableSearchAndOptions)</onclick>
+                            <!-- Hubs+Home (switch to Disabled on warning otherwise switch back to Home only) -->
+                            <onclick condition="Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">Skin.Reset(SideMenu.DisableSearchAndOptions)</onclick>
                             <onclick condition="Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">Skin.Reset(HubsMenu.EnableSearchAndOptions)</onclick>
+                            <onclick condition="Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">RunScript(script.skinvariables,run_dialog=yesno,heading=$LOCALIZE[31151],message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR][CR]$LOCALIZE[31277],yeslabel=Disable,nolabel=Cancel,"executebuiltin=Skin.SetBool(SideMenu.DisableSearchAndOptions)||Skin.Reset(HubsMenu.EnableSearchAndOptions)")</onclick>
 
                             <selected>!Skin.HasSetting(SideMenu.DisableSearchAndOptions)</selected>
                             <visible>Container(3).HasFocus(1)</visible>

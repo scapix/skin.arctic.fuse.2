@@ -1313,7 +1313,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31277"
-msgid "Ensure that your device has an alternative mode of accessing the menu and settings before enabling this option."
+msgid "Ensure that your device has an alternative mode of accessing the menu and settings before selecting this option."
 msgstr ""
 
 msgctxt "#31279"
