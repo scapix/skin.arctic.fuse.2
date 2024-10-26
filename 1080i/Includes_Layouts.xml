@@ -2184,7 +2184,7 @@
     </include>
 
     <variable name="Layout_Home_Menu_Color_NF">
-        <value condition="$EXP[Exp_HomeMenu_IsExpanded]">main_fg_70</value>
+        <value condition="Skin.HasSetting(Home.ExpandedMenu)">main_fg_70</value>
         <value>main_fg_30</value>
     </variable>
 
