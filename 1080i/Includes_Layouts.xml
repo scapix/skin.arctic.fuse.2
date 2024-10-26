@@ -222,7 +222,7 @@
                         <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
                             <param name="colordiffuse">$VAR[ColorSelected]</param>
                         </include>
-                        <colordiffuse>$PARAM[color]_70</colordiffuse>
+                        <colordiffuse>$PARAM[color_nf]</colordiffuse>
                         <texture diffuse="diffuse/circle_120.png">$INFO[ListItem.Icon]</texture>
                     </control>
                 </control>
