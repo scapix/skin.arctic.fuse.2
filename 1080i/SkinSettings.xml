@@ -176,7 +176,8 @@
                             <param name="control">button</param>
                             <label>$LOCALIZE[10000] > $LOCALIZE[31144]</label>
                             <label2>$VAR[Label_Setting_Home_FirstFocus]</label2>
-                            <onclick>Skin.ToggleSetting(SideMenu.FocusWidgetsFirst)</onclick>
+                            <onclick condition="Skin.HasSetting(SideMenu.FocusWidgetsFirst)">Skin.Reset(SideMenu.FocusWidgetsFirst)</onclick>
+                            <onclick condition="!Skin.HasSetting(SideMenu.FocusWidgetsFirst)">RunScript(script.skinvariables,run_dialog=yesno,heading=$LOCALIZE[31176],message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR][CR]$LOCALIZE[31276] $LOCALIZE[31277],yeslabel=$LOCALIZE[31103],nolabel=$LOCALIZE[31150],"executebuiltin=Skin.SetBool(SideMenu.FocusWidgetsFirst)")</onclick>
                             <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
