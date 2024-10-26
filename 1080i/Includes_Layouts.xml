@@ -834,8 +834,7 @@
                             <param name="selected">$PARAM[selected]</param>
                             <centertop>50%</centertop>
                             <centerright>15</centerright>
-                            <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)]</visible>
-                            <visible>![$PARAM[variation]]</visible>
+                            <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,video) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,musicvideo)] | $PARAM[variation]</visible>
                         </include>
                     </control>
 
@@ -869,7 +868,7 @@
                             <param name="selected">$PARAM[selected]</param>
                             <centertop>50%</centertop>
                             <centerright>15</centerright>
-                            <visible>![$PARAM[variation]]</visible>
+                            <!-- <visible>![$PARAM[variation]]</visible> -->
                         </include>
                     </control>
                 </control>
@@ -1038,7 +1037,7 @@
                             <label fallback="19055">$VAR[Label_Landscape_Plot]</label>
                             <font>font_mini_plot</font>
                             <textcolor>main_fg_70</textcolor>
-                            <top>90</top>
+                            <top>80</top>
                             <left>30</left>
                             <right>40</right>
                             <visible>![$PARAM[variation]]</visible>
