@@ -165,7 +165,7 @@
                             <label>$LOCALIZE[10000] > $LOCALIZE[736]</label>
                             <label2>$VAR[Label_Setting_SideMenuStyle]</label2>
                             <visible>Container(3).HasFocus(1)</visible>
-                            <onclick>Skin.ToggleSetting(Home.ExpandedMenu)</onclick>
+                            <onclick>Skin.ToggleSetting(Home.DisableExpandedMenu)</onclick>
                             <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
                         </include>
 
