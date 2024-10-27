@@ -141,6 +141,7 @@
         <param name="size_light_huge_x2">90</param>
 
         <!-- Linespacing -->
+        <param name="plot_linespacing_head">1.14</param>
         <param name="plot_linespacing_midi">1.46</param>
         <param name="plot_linespacing_main">1.135</param>
         <param name="plot_linespacing_mini">1.24</param>
@@ -170,7 +171,7 @@
                 <name>font_title_main</name>
                 <filename>$PARAM[font_black]</filename>
                 <size>$PARAM[size_heavy_main_x2]</size>
-                <linespacing>1.07</linespacing>
+                <linespacing>$PARAM[plot_linespacing_head]</linespacing>
             </font>
 
             <!-- Black Fonts -->
