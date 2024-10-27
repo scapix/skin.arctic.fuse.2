@@ -449,7 +449,18 @@
                                     <ondown>$PARAM[scrollbar_id]</ondown>
                                     <animation effect="slide" end="-167.5" condition="Integer.IsEqual(Container($PARAM[id]).NumItems,2)">Conditional</animation>
                                     <include>$PARAM[include_content]</include>
+                                    <include content="Animation_ConditionalFade">
+                                        <param name="condition">Container($PARAM[id]).IsUpdating</param>
+                                    </include>
                                 </include>
+                                <control type="group">
+                                    <centertop>45%</centertop>
+                                    <centerleft>50%</centerleft>
+                                    <height>100</height>
+                                    <width>100</width>
+                                    <include>Widget_Busy_Spinner_Images</include>
+                                    <visible>Container($PARAM[id]).IsUpdating</visible>
+                                </control>
                             </control>
                             <control type="grouplist">
                                 <height>80</height>
