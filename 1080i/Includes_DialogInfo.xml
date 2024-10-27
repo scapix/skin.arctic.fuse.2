@@ -399,7 +399,7 @@
             <param name="widget_showoverlay">true</param>
             <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Container(99950).ListItem.Property(base_label))</param>
             <onfocus>SetProperty(CurrentID,$INFO[Container(99950).ListItem.Property(base_label)])</onfocus>
-            <content>$INFO[ListItem.SetID,videodb://movies/sets/,/]</content>
+            <content>$VAR[Path_VideoInfo_LocalSets]</content>
             <include content="DialogInfo_Widgets_Action">
                 <param name="set_path">false</param>
             </include>
