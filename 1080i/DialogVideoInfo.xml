@@ -12,6 +12,8 @@
     <onload condition="Skin.HasSetting(Trailers.EnableAutoPlayback.Info) + !String.IsEmpty(ListItem.Trailer) + !Player.HasMedia">SetProperty(PlayTrailer,$ESCINFO[ListItem.Trailer],Home)</onload>
     <onload condition="Skin.HasSetting(Trailers.EnableAutoPlayback.Info) + !String.IsEmpty(ListItem.Trailer) + !Player.HasMedia">ActivateWindow(1123)</onload>
 
+    <onload>SetProperty(BaseID,$INFO[ListItem.Label]$INFO[ListItem.FolderPath])</onload>
+
     <controls>
 
         <!-- <control type="button" id="8">
@@ -66,8 +68,8 @@
             <control type="grouplist" id="5000">
                 <include>DialogInfo_Widget_Grouplist</include>
 
-                <onup>8</onup>
-                <onback>8</onback>
+                <onup>8000</onup>
+                <onback>8000</onback>
                 <ondown>330</ondown>
 
                 <include condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">DialogInfo_VideoWidgets</include>
@@ -84,8 +86,8 @@
                     <param name="set_widgetcontainer">false</param>
                     <param name="widget_hideartwork">true</param>
                     <param name="widgetheight">widget_gallery_items_h</param>
-                    <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Container(99950).ListItem.Property(base_label))</param>
-                    <onfocus>SetProperty(CurrentID,$INFO[Container(99950).ListItem.Property(base_label)])</onfocus>
+                    <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
+                    <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
 
                     <content>
                         <item>
