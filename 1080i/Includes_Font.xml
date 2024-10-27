@@ -144,7 +144,7 @@
         <param name="plot_linespacing_midi">1.46</param>
         <param name="plot_linespacing_main">1.135</param>
         <param name="plot_linespacing_mini">1.24</param>
-        <param name="plot_linespacing_tiny">1.24</param>
+        <param name="plot_linespacing_tiny">1.1</param>
 
         <definition>
 

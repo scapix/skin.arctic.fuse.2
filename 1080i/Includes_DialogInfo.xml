@@ -15,6 +15,9 @@
     <include name="DialogInfo_Body_Group">
         <param name="icon">$VAR[Image_DialogInfo_Poster]</param>
         <definition>
+            <include content="Object_Top" condition="Skin.HasSetting(View.EnableFullSizeInfo)">
+                <param name="top">view_pad</param>
+            </include>
             <include>Dimension_Info</include>
             <control type="group">
                 <width>infodialog_poster_w</width>
@@ -58,7 +61,7 @@
         <param name="titlelabel">$VAR[Label_Title]</param>
         <param name="plotlabel">$VAR[Label_Plot]</param>
         <definition>
-            <left>560</left>
+            <left>infodialog_left_w</left>
             <include content="Animation_Slide_In">
                 <param name="type">WindowOpen</param>
                 <param name="posx">320</param>
@@ -72,6 +75,7 @@
                 <param name="titlelabel">$PARAM[titlelabel]</param>
                 <param name="plotlabel">$PARAM[plotlabel]</param>
                 <param name="plotheight">160</param>
+                <param name="plotheight_full">240</param>
                 <param name="plotwidth">90%</param>
                 <param name="mainlogo_visible">$PARAM[mainlogo_visible]</param>
                 <param name="mainlogo_texture">$PARAM[mainlogo_texture]</param>
@@ -83,6 +87,7 @@
                 <param name="titlelabel">$PARAM[titlelabel]</param>
                 <param name="plotlabel">$PARAM[plotlabel]</param>
                 <param name="plotheight">480</param>
+                <param name="plotheight_full">560</param>
                 <param name="plotwidth">90%</param>
                 <param name="mainlogo_visible">$PARAM[mainlogo_visible]</param>
                 <param name="mainlogo_texture">$PARAM[mainlogo_texture]</param>
@@ -125,7 +130,7 @@
             </include>
 
             <control type="group">
-                <include content="Animation_Slide_In" condition="$EXP[Exp_ClassicHome_IsVisible] | Window.IsVisible(1185)">
+                <!-- <include content="Animation_Slide_In" condition="$EXP[Exp_ClassicHome_IsVisible] | Window.IsVisible(1185)">
                     <param name="type">WindowOpen</param>
                     <param name="posx">-320</param>
                     <param name="delay">400</param>
@@ -133,8 +138,17 @@
                 <include content="Animation_Slide_Out" condition="$EXP[Exp_ClassicHome_IsVisible] | Window.IsVisible(1185)">
                     <param name="type">WindowClose</param>
                     <param name="posx">-320</param>
+                </include> -->
+                <include content="Animation_Slide_In">
+                    <param name="type">WindowOpen</param>
+                    <param name="posx">-320</param>
+                    <param name="delay">400</param>
                 </include>
-                <include content="Furniture_Top_Left">
+                <include content="Animation_Slide_Out">
+                    <param name="type">WindowClose</param>
+                    <param name="posx">-320</param>
+                </include>
+                <include content="Furniture_Top_Left" condition="!Skin.HasSetting(View.EnableFullSizeInfo)">
                     <param name="label">$LOCALIZE[19033]</param>
                 </include>
             </control>
