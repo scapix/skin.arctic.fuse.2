@@ -28,7 +28,6 @@
                             <param name="id">3</param>
                             <param name="textcolor">dialog_fg</param>
                             <pagecontrol>61</pagecontrol>
-                            <onleft>Close</onleft>
                             <onright condition="Control.IsVisible(9001)">9001</onright>
                             <onright condition="!Control.IsVisible(9001)">9000</onright>
                         </include>
@@ -140,7 +139,6 @@
                             <param name="id">3</param>
                             <param name="textcolor">dialog_fg</param>
                             <pagecontrol>61</pagecontrol>
-                            <onleft>Close</onleft>
                             <onright condition="Control.IsVisible(9001)">9001</onright>
                             <onright condition="!Control.IsVisible(9001)">9000</onright>
                         </include>
@@ -150,7 +148,6 @@
                             <param name="item_height">100</param>
                             <param name="textcolor">dialog_fg</param>
                             <pagecontrol>62</pagecontrol>
-                            <onleft>Close</onleft>
                             <onright condition="Control.IsVisible(9001)">9001</onright>
                             <onright condition="!Control.IsVisible(9001)">9000</onright>
                         </include>
@@ -160,7 +157,6 @@
                             <param name="item_height">100</param>
                             <param name="textcolor">dialog_fg</param>
                             <pagecontrol>63</pagecontrol>
-                            <onleft>Close</onleft>
                             <onright condition="Control.IsVisible(9001)">9001</onright>
                             <onright condition="!Control.IsVisible(9001)">9000</onright>
                         </include>
