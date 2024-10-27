@@ -1603,12 +1603,6 @@
         <value>$LOCALIZE[10106]</value>
     </variable>
 
-    <variable name="Label_WidgetTitle">
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(base_tvshowtitle))">$INFO[Container(99950).ListItem.Property(base_tvshowtitle)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(base_title))">$INFO[Container(99950).ListItem.Property(base_title)]</value>
-        <value condition="!String.IsEmpty(Container(99950).ListItem.Property(base_label))">$INFO[Container(99950).ListItem.Property(base_label)]</value>
-    </variable>
-
     <variable name="Label_Widget_Style">
         <value condition="String.IsEqual(ListItem.Property(widget_style),Corflute)">$LOCALIZE[31423] (T)</value>
         <value condition="String.IsEqual(ListItem.Property(widget_style),Placard)">$LOCALIZE[31424] (T)</value>
