@@ -698,7 +698,7 @@
                 <include>Texture_Scrollbar_V</include>
                 <texturesliderbackground colordiffuse="main_fg_12" border="4">scrollbar/scrollv_line.png</texturesliderbackground>
                 <onleft>50</onleft>
-                <onright>SetFocus(8000)</onright>
+                <onright condition="!Window.IsVisible(MyPlaylist.xml)">SetFocus(8000)</onright>
                 <onback>50</onback>
             </control>
         </control>
