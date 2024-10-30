@@ -469,7 +469,6 @@
     </include>
 
     <include name="Action_View_Movement_OnLeft">
-        <param name="onleft" />
         <param name="onbump">[False]</param>
         <param name="onwrap">$EXP[Exp_Navigation_OnWrap]</param>
         <param name="onside">[!String.IsEmpty(Window.Property(SideMenu.CurrentItem))]</param>
@@ -491,7 +490,6 @@
     </include>
 
     <include name="Action_View_Movement_OnRight">
-        <param name="onleft" />
         <param name="onbump">$EXP[Exp_Navigation_OnBump]</param>
         <param name="onwrap">$EXP[Exp_Navigation_OnWrap]</param>
         <param name="onside">[!String.IsEmpty(Window.Property(SideMenu.CurrentItem))]</param>
@@ -528,16 +526,13 @@
             <include content="Action_View_Movement_OnLeft">
                 <param name="id">$PARAM[id]</param>
                 <param name="menuid">$PARAM[menuid]</param>
-                <param name="onleft">$PARAM[onleft]</param>
             </include>
             <include content="Action_View_Movement_OnRight">
                 <param name="id">$PARAM[id]</param>
                 <param name="menuid">$PARAM[menuid]</param>
-                <param name="onleft">$PARAM[onleft]</param>
             </include>
             <include content="Action_View_Movement_OnBack" condition="$PARAM[include_onback]">
                 <param name="id">$PARAM[id]</param>
-                <param name="onleft">$PARAM[onleft]</param>
                 <param name="onback">$PARAM[onback]</param>
                 <param name="backid">$PARAM[backid]</param>
                 <param name="menuid">$PARAM[menuid]</param>
