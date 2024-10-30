@@ -50,10 +50,8 @@
                         <control type="group">
                             <include>Dimension_Dialog_Body_Group</include>
                             <include content="DialogInfo_PlotBox_Artwork" condition="$PARAM[include_artwork]">
-                                <param name="poster_visible">!String.IsEmpty(Container(450).ListItem.Art(poster))</param>
                                 <param name="poster_icon">$INFO[Container(450).ListItem.Art(poster)]</param>
                                 <param name="square_icon">$INFO[Container(450).ListItem.Art(icon)]</param>
-                                <param name="landscape_visible">!String.IsEmpty(Container(450).ListItem.Art(fanart))</param>
                                 <param name="landscape_icon">$INFO[Container(450).ListItem.Art(fanart)]</param>
                                 <param name="clearlogo_icon">$INFO[Container(450).ListItem.Art(clearlogo)]</param>
                             </include>
