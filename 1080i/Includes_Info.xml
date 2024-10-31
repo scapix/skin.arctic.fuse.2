@@ -115,8 +115,8 @@
             <textcolor>$PARAM[textcolor]</textcolor>
             <focusedcolor>$PARAM[textcolor]</focusedcolor>
             <include>Dimension_Info_Line_Pillbox</include>
-            <textoffsety>info_tag_light_offset_y</textoffsety>
-            <aligny>top</aligny>
+            <!-- <textoffsety>info_tag_light_offset_y</textoffsety>
+            <aligny>top</aligny> -->
             <nested />
             <width>auto</width>
             <textoffsetx>12</textoffsetx>
