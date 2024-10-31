@@ -7,7 +7,7 @@
 
     <fontset id="Inter (Experimental)" unicode="false">
         <include content="Font_Default">
-            <param name="font_black">Inter-Black.ttf</param>
+            <param name="font_black">Inter-Bold.ttf</param>
             <param name="font_bold">Inter-Bold.ttf</param>
             <param name="font_regular">Inter-Regular.ttf</param>
             <param name="font_light">Inter-Light.ttf</param>
@@ -21,7 +21,7 @@
 
     <fontset id="Nunito (Experimental)" unicode="false">
         <include content="Font_Default">
-            <param name="font_black">Nunito-Black.ttf</param>
+            <param name="font_black">Nunito-Bold.ttf</param>
             <param name="font_bold">Nunito-Bold.ttf</param>
             <param name="font_regular">Nunito-Regular.ttf</param>
             <param name="font_light">Nunito-Light.ttf</param>
@@ -35,7 +35,7 @@
 
     <fontset id="NotoRoboto - Arabic / Hebrew" unicode="true">
         <include content="Font_Default">
-            <param name="font_black">RobotoNotoCondensed-Black.ttf</param>
+            <param name="font_black">RobotoNotoCondensed-Bold.ttf</param>
             <param name="font_bold">RobotoNotoCondensed-Bold.ttf</param>
             <param name="font_regular">RobotoNotoCondensed-Regular.ttf</param>
             <param name="font_light">RobotoNotoCondensed-Light.ttf</param>

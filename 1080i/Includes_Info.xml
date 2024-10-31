@@ -6,7 +6,7 @@
         <param name="wrapmultiline">false</param>
         <param name="visible">true</param>
         <param name="width">info_plot_w</param>
-        <param name="height">165</param>
+        <param name="height">162</param>
         <definition>
             <control type="textbox">
                 <top>-20</top>
@@ -14,13 +14,13 @@
                 <textcolor>$PARAM[colordiffuse]_100</textcolor>
                 <font>font_title_main</font>
                 <aligny>center</aligny>
-                <height max="165">$PARAM[height]</height>
+                <height max="162">$PARAM[height]</height>
                 <visible>$PARAM[visible]</visible>
                 <width>$PARAM[width]</width>
             </control>
             <control type="group">
                 <top>info_title_text_buffer_h</top>
-                <height>0</height>
+                <height>3</height>
                 <visible>$PARAM[visible]</visible>
             </control>
         </definition>
