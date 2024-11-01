@@ -5,7 +5,7 @@
         <param name="label">$VAR[Label_Title_Container]</param>
         <param name="wrapmultiline">false</param>
         <param name="visible">true</param>
-        <param name="width">info_plot_w</param>
+        <param name="width">info_title_w</param>
         <param name="height">162</param>
         <definition>
             <control type="textbox">
@@ -33,6 +33,7 @@
                 <param name="label">$PARAM[label]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="visible">![$PARAM[mainlogo_visible]]</param>
+                <param name="width">$PARAM[width]</param>
             </include>
 
             <control type="group">
@@ -52,7 +53,7 @@
     <include name="Info_Title">
         <param name="colordiffuse">main_fg</param>
         <param name="container" />
-        <param name="width">info_plot_w</param>
+        <param name="width">info_title_w</param>
         <!-- <param name="mainlogo_visible">[!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.CropImage))]</param> -->
         <param name="mainlogo_visible">[!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.CropImage)) | !String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(ListItem.Art(artist.clearlogo))]</param>
         <param name="mainlogo_texture">$VAR[Image_CropLogo]</param>
@@ -1667,6 +1668,7 @@
         <param name="ratings">true</param>
         <param name="details">true</param>
         <param name="title">true</param>
+        <param name="titlewidth">info_title_w</param>
         <param name="titlelabel">$VAR[Label_Title]</param>
         <param name="plotlabel">$VAR[Label_Plot]</param>
         <param name="details_include">Items_Null</param>
@@ -1695,7 +1697,7 @@
                     <include content="Info_Title" condition="$PARAM[title]">
                         <param name="label">$PARAM[titlelabel]</param>
                         <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                        <param name="width">$PARAM[plotwidth]</param>
+                        <param name="width">$PARAM[titlewidth]</param>
                         <param name="mainlogo_visible">$PARAM[mainlogo_visible]</param>
                         <param name="mainlogo_texture">$PARAM[mainlogo_texture]</param>
                     </include>
