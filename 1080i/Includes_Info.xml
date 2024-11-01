@@ -1654,8 +1654,8 @@
     <include name="Info_Panel_Dimensions">
         <width>info_panel_w</width>
         <left>view_pad</left>
-        <include condition="Skin.HasSetting(View.EnableFullSizeInfo)">Info_Panel_Dimensions_FullSize</include>
-        <include condition="!Skin.HasSetting(View.EnableFullSizeInfo)">Info_Panel_Dimensions_MainSize</include>
+        <include condition="!Skin.HasSetting(View.DisableFullSizeInfo)">Info_Panel_Dimensions_FullSize</include>
+        <include condition="Skin.HasSetting(View.DisableFullSizeInfo)">Info_Panel_Dimensions_MainSize</include>
     </include>
 
     <include name="Info_Panel">
@@ -1716,7 +1716,7 @@
                     </control>
 
                     <!-- Textbox -->
-                    <include content="Info_Panel_Textbox" condition="!Skin.HasSetting(View.EnableFullSizeInfo)">
+                    <include content="Info_Panel_Textbox" condition="Skin.HasSetting(View.DisableFullSizeInfo)">
                         <param name="plotlabel">$PARAM[plotlabel]</param>
                         <param name="plotwidth">$PARAM[plotwidth]</param>
                         <param name="plotheight">$PARAM[plotheight]</param>
@@ -1724,7 +1724,7 @@
                         <param name="details_include">$PARAM[details_include]</param>
                         <param name="container">$PARAM[container]</param>
                     </include>
-                    <include content="Info_Panel_Textbox" condition="Skin.HasSetting(View.EnableFullSizeInfo)">
+                    <include content="Info_Panel_Textbox" condition="!Skin.HasSetting(View.DisableFullSizeInfo)">
                         <param name="plotlabel">$PARAM[plotlabel]</param>
                         <param name="plotwidth">$PARAM[plotwidth]</param>
                         <param name="plotheight">$PARAM[plotheight_full]</param>

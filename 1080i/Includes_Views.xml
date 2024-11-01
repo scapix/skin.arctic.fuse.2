@@ -7,7 +7,7 @@
     <include name="View_Row_Header">
         <definition>
             <control type="group">
-                <visible>!Skin.HasSetting(View.EnableFullSizeInfo) | !$EXP[Exp_View_IsMedia] | [$EXP[Exp_View_FullSize] + ![Window.IsVisible(DialogBusy.xml) + Integer.IsEqual(Container.NumItems,0)]]</visible>
+                <visible>Skin.HasSetting(View.DisableFullSizeInfo) | !$EXP[Exp_View_IsMedia] | [$EXP[Exp_View_FullSize] + ![Window.IsVisible(DialogBusy.xml) + Integer.IsEqual(Container.NumItems,0)]]</visible>
                 <include content="Furniture_Top_Left">
                     <param name="label">$PARAM[label]</param>
                 </include>
