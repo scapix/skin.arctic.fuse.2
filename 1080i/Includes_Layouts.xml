@@ -983,7 +983,9 @@
 
                             <control type="image">
                                 <bordersize>-6</bordersize>
-                                <include>Texture_Circle_Highlight_V</include>
+                                <texture colordiffuse="$VAR[ColorHighlight]">common/circle.png</texture>
+                                <!-- Needs to be ColorHighlight to match gradient in big box -->
+                                <!-- <include>Texture_Circle_Highlight_V</include> -->
                                 <visible>$PARAM[selected]</visible>
                             </control>
                         </control>
