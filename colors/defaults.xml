@@ -49,7 +49,7 @@
 
     <!-- Overlay -->
     <color name="overlay_soft">12ffffff</color>
-    <color name="overlay_hard">1fffffff</color>
+    <color name="overlay_hard">33ffffff</color>
 
     <!-- Shadow -->
     <color name="shadow_soft">1a000000</color>
