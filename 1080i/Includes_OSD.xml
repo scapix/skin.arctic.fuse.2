@@ -559,7 +559,6 @@
                     </control>
 
                     <include content="Info_Title">
-                        <param name="width">90%</param>
                         <param name="colordiffuse">panel_fg</param>
                         <param name="container" />
                         <param name="label">$VAR[Label_OSD_Title]</param>
