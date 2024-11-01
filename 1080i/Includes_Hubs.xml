@@ -553,91 +553,96 @@
     </include>
 
     <include name="Hub_Categories_Search">
+
         <control type="group">
-            <left>view_pad</left>
+            <height>80</height>
+            <width>80</width>
             <centertop>100</centertop>
-            <height>40</height>
-            <width>40</width>
-            <control type="image">
-                <include>Texture_CircleButtonDialog_Highlight_V</include>
-                <aspectratio>keep</aspectratio>
-                <height>160</height>
-                <width>160</width>
-                <centertop>50%</centertop>
-                <centerleft>50%</centerleft>
-                <visible>Control.HasFocus(309)</visible>
-            </control>
-            <control type="button" id="309">
-                <texturenofocus />
-                <texturefocus />
-                <width>80</width>
+            <centerleft>100</centerleft>
+            <control type="group">
+                <top>view_line_top</top>
                 <height>80</height>
-                <centerleft>50%</centerleft>
-                <centertop>50%</centertop>
-                <include content="Hub_Categories_Definition_Content">
-                    <param name="window_id">$PARAM[window_id]</param>
-                    <param name="property_window_id">$PARAM[property_window_id]</param>
-                </include>
-                <onfocus>SetProperty(Slide.WidgetContainer,300,$PARAM[property_window_id])</onfocus>
-                <onclick>$VAR[Action_ActivateSearchDiscover]</onclick>
-                <onleft>308</onleft>
-                <onright>SetFocus(300,0,absolute)</onright>
-            </control>
-            <control type="image">
-                <texture colordiffuse="main_fg_30">$VAR[Image_SearchDiscover]</texture>
-                <bordersize>icon_home_bordersize</bordersize>
-                <visible>!Control.HasFocus(309)</visible>
-            </control>
-            <control type="image">
-                <texture colordiffuse="$VAR[ColorSelected]">$VAR[Image_SearchDiscover]</texture>
-                <bordersize>icon_home_bordersize</bordersize>
-                <visible>Control.HasFocus(309)</visible>
+                <control type="image">
+                    <include>Texture_Circle_Highlight_V</include>
+                    <aspectratio>keep</aspectratio>
+                    <visible>Control.HasFocus(309)</visible>
+                </control>
+                <control type="button" id="309">
+                    <texturenofocus />
+                    <texturefocus />
+                    <include content="Hub_Categories_Definition_Content">
+                        <param name="window_id">$PARAM[window_id]</param>
+                        <param name="property_window_id">$PARAM[property_window_id]</param>
+                    </include>
+                    <onfocus>SetProperty(Slide.WidgetContainer,300,$PARAM[property_window_id])</onfocus>
+                    <onclick>$VAR[Action_ActivateSearchDiscover]</onclick>
+                    <onleft>308</onleft>
+                    <onright>SetFocus(300,0,absolute)</onright>
+                </control>
+                <control type="group">
+                    <height>40</height>
+                    <width>40</width>
+                    <centertop>50%</centertop>
+                    <centerleft>50%</centerleft>
+                    <control type="image">
+                        <texture colordiffuse="main_fg_30">$VAR[Image_SearchDiscover]</texture>
+                        <bordersize>icon_home_bordersize</bordersize>
+                        <visible>!Control.HasFocus(309)</visible>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorSelected]">$VAR[Image_SearchDiscover]</texture>
+                        <bordersize>icon_home_bordersize</bordersize>
+                        <visible>Control.HasFocus(309)</visible>
+                    </control>
+                </control>
             </control>
         </control>
     </include>
 
     <include name="Hub_Categories_Options">
         <control type="group">
-            <right>view_pad</right>
+            <height>80</height>
+            <width>80</width>
             <centertop>100</centertop>
-            <height>40</height>
-            <width>40</width>
-            <control type="image">
-                <include>Texture_CircleButtonDialog_Highlight_V</include>
-                <aspectratio>keep</aspectratio>
-                <height>160</height>
-                <width>160</width>
-                <centertop>50%</centertop>
-                <centerleft>50%</centerleft>
-                <visible>Control.HasFocus(308)</visible>
-            </control>
-            <control type="button" id="308">
-                <texturenofocus />
-                <texturefocus />
-                <width>80</width>
+            <centerright>100</centerright>
+            <control type="group">
+                <top>view_line_top</top>
                 <height>80</height>
-                <centerleft>50%</centerleft>
-                <centertop>50%</centertop>
-                <include content="Hub_Categories_Definition_Content">
-                    <param name="window_id">$PARAM[window_id]</param>
-                    <param name="property_window_id">$PARAM[property_window_id]</param>
-                </include>
-                <onfocus>SetProperty(Slide.WidgetContainer,300,$PARAM[property_window_id])</onfocus>
-                <onclick>SetProperty(307Refocus,308)</onclick>
-                <onclick>SetFocus(307)</onclick>
-                <onright>309</onright>
-                <onleft>SetFocus(300,9999,absolute)</onleft>
-            </control>
-            <control type="image">
-                <texture colordiffuse="main_fg_30">special://skin/extras/icons/bars.png</texture>
-                <bordersize>icon_home_bordersize</bordersize>
-                <visible>!Control.HasFocus(308)</visible>
-                <visible>!Skin.HasSetting(Furniture.EnableClock)</visible>
-            </control>
-            <control type="image">
-                <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/bars.png</texture>
-                <bordersize>icon_home_bordersize</bordersize>
-                <visible>Control.HasFocus(308)</visible>
+                <control type="image">
+                    <include>Texture_Circle_Highlight_V</include>
+                    <aspectratio>keep</aspectratio>
+                    <visible>Control.HasFocus(308)</visible>
+                </control>
+                <control type="button" id="308">
+                    <texturenofocus />
+                    <texturefocus />
+                    <include content="Hub_Categories_Definition_Content">
+                        <param name="window_id">$PARAM[window_id]</param>
+                        <param name="property_window_id">$PARAM[property_window_id]</param>
+                    </include>
+                    <onfocus>SetProperty(Slide.WidgetContainer,300,$PARAM[property_window_id])</onfocus>
+                    <onclick>SetProperty(307Refocus,308)</onclick>
+                    <onclick>SetFocus(307)</onclick>
+                    <onright>309</onright>
+                    <onleft>SetFocus(300,9999,absolute)</onleft>
+                </control>
+                <control type="group">
+                    <height>40</height>
+                    <width>40</width>
+                    <centertop>50%</centertop>
+                    <centerleft>50%</centerleft>
+                    <control type="image">
+                        <texture colordiffuse="main_fg_30">special://skin/extras/icons/bars.png</texture>
+                        <bordersize>icon_home_bordersize</bordersize>
+                        <visible>!Control.HasFocus(308)</visible>
+                        <visible>!Skin.HasSetting(Furniture.EnableClock)</visible>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/bars.png</texture>
+                        <bordersize>icon_home_bordersize</bordersize>
+                        <visible>Control.HasFocus(308)</visible>
+                    </control>
+                </control>
             </control>
         </control>
     </include>

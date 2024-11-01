@@ -951,7 +951,7 @@
         <textcolor>main_fg_90</textcolor>
         <font>font_main_bold</font>
         <width>auto</width>
-        <top>-3</top>
+        <top>view_line_top</top>
         <height>80</height>
     </include>
 
