@@ -77,7 +77,7 @@
             <visible>Control.HasFocus(5099)</visible>
             <include content="List_DialogSelect">
                 <param name="id">5099</param>
-                <param name="textcolor">main_fg</param>
+                <param name="textcolor">dialog_fg</param>
                 <param name="itemlayout_include">Layout_MenuList</param>
                 <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_ERow</param>
                 <param name="hidden_button_enabled">True</param>
@@ -238,6 +238,7 @@
             <left>40</left>
             <right>40</right>
             <centertop>100</centertop>
+            <textcolor>dialog_fg_70</textcolor>
             <font>font_midi_black</font>
             <textoffsetx>40</textoffsetx>
             <align>left</align>
@@ -264,7 +265,7 @@
                 <control type="label">
                     <font>font_main</font>
                     <label>$INFO[ListItem.Label]</label>
-                    <textcolor>main_fg_70</textcolor>
+                    <textcolor>dialog_fg_70</textcolor>
                     <align>center</align>
                     <height>35</height>
                 </control>
@@ -276,7 +277,7 @@
                     <control type="label">
                         <font>font_main_black</font>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>main_fg_100</textcolor>
+                        <textcolor>dialog_fg_100</textcolor>
                         <align>center</align>
                         <height>35</height>
                     </control>
@@ -477,7 +478,7 @@
                 <control type="label">
                     <font>font_mini_iconic</font>
                     <label>$INFO[ListItem.Label]</label>
-                    <textcolor>main_fg_70</textcolor>
+                    <textcolor>dialog_fg_70</textcolor>
                     <align>center</align>
                 </control>
             </itemlayout>
@@ -488,7 +489,7 @@
                     <control type="label">
                         <font>font_mini_iconic</font>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>main_fg_100</textcolor>
+                        <textcolor>dialog_fg_100</textcolor>
                         <align>center</align>
                     </control>
                     <control type="image">
@@ -571,9 +572,9 @@
                 <include>Texture_Highlight_Underline_H</include>
                 <align>center</align>
                 <font>font_main</font>
-                <textcolor>main_fg_70</textcolor>
-                <selectedcolor>main_fg_70</selectedcolor>
-                <focusedcolor>main_fg_100</focusedcolor>
+                <textcolor>dialog_fg_70</textcolor>
+                <selectedcolor>dialog_fg_70</selectedcolor>
+                <focusedcolor>dialog_fg_100</focusedcolor>
                 <label>$LOCALIZE[31324]: $INFO[Container(5099).ListItem.Label]</label>
                 <onclick>SetFocus(5099)</onclick>
                 <onfocus>SetProperty(Background.ShowOverlay,True,Home)</onfocus>
@@ -607,7 +608,7 @@
                 <control type="label">
                     <font>font_main</font>
                     <label>$INFO[ListItem.Label]</label>
-                    <textcolor>main_fg_70</textcolor>
+                    <textcolor>dialog_fg_70</textcolor>
                     <align>center</align>
                     <height>35</height>
                 </control>
@@ -617,7 +618,7 @@
                 <control type="label">
                     <font>font_main</font>
                     <label>$INFO[ListItem.Label]</label>
-                    <textcolor>main_fg_70</textcolor>
+                    <textcolor>dialog_fg_70</textcolor>
                     <align>center</align>
                     <height>35</height>
                     <visible>!Control.HasFocus(9993)</visible>
@@ -628,7 +629,7 @@
                     <control type="label">
                         <font>font_main_bold</font>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>main_fg_100</textcolor>
+                        <textcolor>dialog_fg_100</textcolor>
                         <height>35</height>
                         <align>center</align>
                     </control>
@@ -669,7 +670,7 @@
                 <control type="label">
                     <font>font_main</font>
                     <label>$INFO[ListItem.Label]</label>
-                    <textcolor>main_fg_70</textcolor>
+                    <textcolor>dialog_fg_70</textcolor>
                     <align>center</align>
                     <height>35</height>
                 </control>
@@ -679,7 +680,7 @@
                 <control type="label">
                     <font>font_main</font>
                     <label>$INFO[ListItem.Label]</label>
-                    <textcolor>main_fg_70</textcolor>
+                    <textcolor>dialog_fg_70</textcolor>
                     <align>center</align>
                     <height>35</height>
                     <visible>!Control.HasFocus(9993)</visible>
@@ -690,7 +691,7 @@
                     <control type="label">
                         <font>font_main_bold</font>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>main_fg_100</textcolor>
+                        <textcolor>dialog_fg_100</textcolor>
                         <height>35</height>
                         <align>center</align>
                     </control>
