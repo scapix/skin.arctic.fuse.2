@@ -551,7 +551,7 @@
 
     <include name="Search_Panel_Autocomplete">
         <control type="grouplist" id="5092">
-            <height>80</height>
+            <height>120</height>
             <align>center</align>
             <ondown>SetFocus(9993,0,absolute)</ondown>
             <onup>9994</onup>
@@ -562,7 +562,7 @@
                 <ondown>SetFocus(9993,0,absolute)</ondown>
                 <onup>9994</onup>
                 <onright>5000</onright>
-                <top>20</top>
+                <top>37</top>
                 <height>60</height>
                 <textoffsety>-5</textoffsety>
                 <textoffsetx>-20</textoffsetx>
