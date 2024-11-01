@@ -28,6 +28,11 @@
                 <include condition="VideoPlayer.IsFullscreen">OSD_VideoSeekBar</include>
                 <include condition="!VideoPlayer.IsFullscreen">OSD_MusicSeekBar</include>
             </control>
+
+            <include content="OSD_CastInfo_HintText">
+                <param name="label">$VAR[Label_OSD_HintText]</param>
+                <param name="visible">[Window.IsActive(videoosd) | Window.IsVisible(1140) | Window.IsVisible(1141) | Window.IsVisible(videobookmarks)] + [!Window.IsVisible(1141) | Skin.String(VideoOSD.PersonCredits.CastCrew,cast)]</param>
+            </include>
         </control>
 
     </controls>
