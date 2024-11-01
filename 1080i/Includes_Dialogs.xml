@@ -13,7 +13,7 @@
                 <texture colordiffuse="dialog_overlay" border="20">common/dialog.png</texture>
             </control>
             <control type="image">
-                <animation effect="fade" start="100" end="70" condition="!Skin.HasSetting(Glass.EnableBorders)">Conditional</animation>
+                <animation effect="fade" start="100" end="50" condition="!Skin.HasSetting(Glass.EnableBorders)">Conditional</animation>
                 <texture colordiffuse="dialog_fg_12" border="20">common/box-outline.png</texture>
             </control>
         </definition>
@@ -38,7 +38,7 @@
                 <texture diffuse="$PARAM[diffuse]" colordiffuse="overlay_hard">$VAR[Dialog_Background_Blur_Adaptive_Artwork]</texture>
             </control>
             <control type="image">
-                <animation effect="fade" start="100" end="70" condition="!Skin.HasSetting(Glass.EnableBorders)">Conditional</animation>
+                <animation effect="fade" start="100" end="50" condition="!Skin.HasSetting(Glass.EnableBorders)">Conditional</animation>
                 <texture colordiffuse="dialog_fg_12" border="20">common/box-outline.png</texture>
             </control>
         </definition>
