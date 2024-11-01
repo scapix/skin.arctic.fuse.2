@@ -529,6 +529,14 @@
             <control type="group">
                 <left>$PARAM[left]</left>
                 <width>$PARAM[width]</width>
+                <!-- <control type="group">
+                    <left>-20</left>
+                    <right>-20</right>
+                    <include content="Dialog_Background_Group">
+                        <param name="include_glass">true</param>
+                        <param name="dialog_size">$PARAM[dialog_size]</param>
+                    </include>
+                </control> -->
                 <control type="group">
                     <top>40</top>
                     <bottom>40</bottom>
