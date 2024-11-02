@@ -103,7 +103,7 @@
                 <param name="include_programs">$PARAM[include_programs]</param>
                 <onup>$PARAM[id]</onup>
                 <ondown>$PARAM[id]</ondown>
-                <onback>9001</onback>
+                <!-- <onback>9001</onback> -->
                 <viewtype label="$PARAM[viewtype_label]">list</viewtype>
                 <progresstexture border="0,0,20,0" colordiffuse="main_bg_30">$PARAM[progresstexture]</progresstexture>
                 <pagecontrol>8060</pagecontrol>
