@@ -361,6 +361,7 @@
                                             <onback>29999</onback>
 
                                             <visible>$EXP[Shortcuts_Dialog_Exp_HasShortcutPath] + !$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]</visible>
+                                            <visible>String.IsEqual(Container(22001).ListItem.Property(path_opendialog),True)</visible>
                                             <visible>[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</visible>
                                         </include>
                                         <include content="Settings_Button">
@@ -375,6 +376,7 @@
                                             <onback>29999</onback>
 
                                             <visible>$EXP[Shortcuts_Dialog_Exp_HasShortcutPath] + !$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]</visible>
+                                            <visible>String.IsEqual(Container(22001).ListItem.Property(path_opendialog),True)</visible>
                                             <visible>String.IsEqual(Container(22001).ListItem.Property(path_opendialog_expanded),True)</visible>
                                             <visible>[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</visible>
                                         </include>
