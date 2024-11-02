@@ -217,14 +217,14 @@
         <control type="group">
             <description>On-screen videowindow for background video</description>
             <control type="group">
-                <top>0</top>
-                <height>flixart_size_h</height>
+                <!-- <top>0</top>
+                <height>flixart_size_h</height> -->
                 <visible>![$EXP[Exp_Video_IsNotPlaying]]</visible>
                 <control type="videowindow">
-                    <right>0</right>
-                    <width>flixart_size_w</width>
+                    <!-- <right>0</right>
+                    <width>flixart_size_w</width> -->
                 </control>
-                <control type="image">
+                <!-- <control type="image">
                     <right>0</right>
                     <width>flixart_size_w</width>
                     <texture colordiffuse="black">diffuse/flixart_invert.png</texture>
@@ -233,12 +233,12 @@
                     <left>0</left>
                     <right>flixart_size_w</right>
                     <texture colordiffuse="black">common/white.png</texture>
-                </control>
+                </control> -->
             </control>
-            <control type="image">
+            <!-- <control type="image">
                 <top>flixart_size_h</top>
                 <texture colordiffuse="black">common/white.png</texture>
-            </control>
+            </control> -->
         </control>
     </include>
 
@@ -285,10 +285,11 @@
         <include condition="System.HasAddon(resource.images.arctic.waves)">Background_BusyLoader</include>
         <control type="image">
             <texture colordiffuse="$VAR[ColorBackground]">background/combined_flixart.png</texture>
+            <visible>!$EXP[Exp_BackgroundArtwork_IsOverlay]</visible>
         </control>
         <include>Background_Notification_Overlay</include>
         <control type="image">
-            <texture colordiffuse="$VAR[ColorBackground]">background/combined_overlay.png</texture>
+            <texture colordiffuse=cc000000>common/white.png</texture>
 
             <visible>$EXP[Exp_BackgroundArtwork_IsOverlay]</visible>
 
