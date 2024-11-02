@@ -85,7 +85,7 @@
     </include>
 
     <include name="List_EPGGrid">
-        <param name="channelheight">80</param>
+        <param name="channelheight">60</param>
         <param name="channelwidth">520</param>
         <param name="include_channels">Layout_PVRGuide_Channels</param>
         <param name="include_programs">Layout_PVRGuide_Programs</param>
@@ -93,7 +93,7 @@
             <control type="epggrid" id="$PARAM[id]">
                 <nested />
                 <scrolltime tween="quadratic">300</scrolltime>
-                <timeblocks>24</timeblocks>
+                <timeblocks>32</timeblocks>
                 <rulerunit>6</rulerunit>
                 <rulerdatelayout height="105" />
                 <rulerlayout height="55">

@@ -306,14 +306,16 @@
     <include name="Layout_PVRGuide_Channels">
         <param name="detailed">false</param>
         <param name="selected">false</param>
-        <param name="include_detailed_labels">!Skin.HasSetting(View.DisableDetailedListLabels)</param>
+        <param name="include_detailed_labels">false</param>
         <definition>
             <control type="group">
                 <right>20</right>
                 <left>20</left>
                 <include content="Object_Control" condition="$PARAM[selected]">
                     <param name="control">image</param>
-                    <include>Texture_Menu_Highlight_H</include>
+                    <include content="Texture_Menu_Highlight_H">
+                        <param name="border">40,0,40,0</param>
+                    </include>
                 </include>
                 <control type="group">
                     <height>80</height>
@@ -325,6 +327,7 @@
                             <param name="name">$INFO[ListItem.ChannelNumberLabel,Ch. ,]</param>
                             <param name="role">$INFO[ListItem.ChannelName]</param>
                             <param name="include_labels">$PARAM[include_detailed_labels]</param>
+                            <param name="backing_visible">false</param>
                             <control type="label">
                                 <font>font_mini</font>
                                 <label>$INFO[ListItem.Label]</label>
@@ -341,7 +344,7 @@
                                 <param name="colordiffuse">white</param>
                                 <param name="icon">$VAR[Image_Poster]</param>
                                 <param name="aspectratio">keep</param>
-                                <param name="bordersize">5</param>
+                                <!-- <param name="bordersize">5</param> -->
                             </include>
                         </include>
                         <include content="Object_InfoCircle" condition="$PARAM[selected]">
@@ -366,7 +369,7 @@
                                 <param name="colordiffuse">white</param>
                                 <param name="icon">$VAR[Image_Poster]</param>
                                 <param name="aspectratio">keep</param>
-                                <param name="bordersize">5</param>
+                                <!-- <param name="bordersize">5</param> -->
                             </include>
                         </include>
                     </control>
@@ -488,7 +491,7 @@
     <include name="Layout_PVRGuide_Programs">
         <param name="detailed">false</param>
         <param name="selected">false</param>
-        <param name="include_detailed_labels">!Skin.HasSetting(View.DisableDetailedListLabels)</param>
+        <param name="include_detailed_labels">false</param>
         <definition>
             <include content="Object_Control" condition="$PARAM[selected]">
                 <param name="control">image</param>
@@ -505,7 +508,7 @@
             <include content="Object_Control" condition="!$PARAM[selected]">
                 <param name="control">image</param>
                 <param name="id">1</param>
-                <texture colordiffuse="main_fg_30" border="40">pvr/progressline-back7.png</texture>
+                <texture colordiffuse="main_fg_30" border="40,0,40,0">pvr/progressline-bacK7.png</texture>
                 <left>20</left>
             </include>
 
