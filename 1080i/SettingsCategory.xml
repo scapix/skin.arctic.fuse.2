@@ -165,5 +165,5 @@
             <param name="control">button</param>
         </include> -->
     </controls>
-
+    <onload>SetProperty(Background.ShowOverlay,True,Home)</onload>
 </window>

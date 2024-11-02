@@ -1284,5 +1284,5 @@
         </include>
 
     </controls>
-
+    <onload>SetProperty(Background.ShowOverlay,True,Home)</onload>
 </window>

@@ -273,5 +273,5 @@
             <param name="id">53</param>
         </include>
     </controls>
-
+    <onload>SetProperty(Background.ShowOverlay,True,Home)</onload>
 </window>
