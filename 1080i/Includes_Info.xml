@@ -1195,36 +1195,41 @@
 
     <include name="Info_Line_VideoQuality_Resolution">
         <definition>
-            <include content="Info_Line_VideoQuality_Icon">
+            <include content="Info_Line_VideoQuality_Object">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
-                <param name="icon">flags/sets-inverted.png</param>
-                <param name="visible">$PARAM[visible] + $PARAM[is_collection]</param>
+                <param name="label">8K</param>
+                <param name="visible">$PARAM[visible] + $PARAM[is_8k]</param>
             </include>
             <include content="Info_Line_VideoQuality_Object">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">4K</param>
-                <param name="visible">$PARAM[visible] + $PARAM[is_4k]</param>
+                <param name="visible">$PARAM[visible] + !$PARAM[is_8k] + $PARAM[is_4k]</param>
+            </include>
+            <include content="Info_Line_VideoQuality_Object">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">FHD</param>
+                <param name="visible">$PARAM[visible] + !$PARAM[is_8k] + !$PARAM[is_4k] + $PARAM[is_fhd]</param>
             </include>
             <include content="Info_Line_VideoQuality_Object">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">HD</param>
-                <param name="visible">$PARAM[visible] + !$PARAM[is_4k] + [$PARAM[is_fhd] | $PARAM[is_hd]]</param>
+                <param name="visible">$PARAM[visible] + !$PARAM[is_8k] + !$PARAM[is_4k] + !$PARAM[is_fhd] + $PARAM[is_hd]</param>
             </include>
             <include content="Info_Line_VideoQuality_Object">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">SD</param>
-                <param name="visible">$PARAM[visible] + !$PARAM[is_4k] + !$PARAM[is_fhd] + !$PARAM[is_hd] + $PARAM[is_sd]</param>
+                <param name="visible">$PARAM[visible] + !$PARAM[is_8k] + !$PARAM[is_4k] + !$PARAM[is_fhd] + !$PARAM[is_hd] + $PARAM[is_sd]</param>
             </include>
             <include content="Info_Line_VideoQuality_Object">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">WEB</param>
-                <param name="visible">$PARAM[visible] + !$PARAM[is_4k] + !$PARAM[is_fhd] + !$PARAM[is_hd] + !$PARAM[is_sd] + $PARAM[is_web]</param>
+                <param name="visible">$PARAM[visible] + !$PARAM[is_8k] + !$PARAM[is_4k] + !$PARAM[is_fhd] + !$PARAM[is_hd] + !$PARAM[is_sd] + $PARAM[is_web]</param>
             </include>
             <include content="Info_Line_VideoQuality_Icon">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="icon">flags/info-inverted.png</param>
                 <param name="width">40</param>
-                <param name="visible">$PARAM[visible] + !$PARAM[is_collection] + !$PARAM[is_4k] + !$PARAM[is_fhd] + !$PARAM[is_hd] + !$PARAM[is_sd] + !$PARAM[is_web]</param>
+                <param name="visible">$PARAM[visible] + !$PARAM[is_8k] + !$PARAM[is_4k] + !$PARAM[is_fhd] + !$PARAM[is_hd] + !$PARAM[is_sd] + !$PARAM[is_web]</param>
             </include>
         </definition>
     </include>
@@ -1314,6 +1319,7 @@
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="is_collection">[$PARAM[is_collection]]</param>
                 <param name="is_web">[$PARAM[is_web]]</param>
+                <param name="is_8k">[Integer.IsGreater($PARAM[listitem_videoresolution],2160) | String.IsEqual($PARAM[listitem_videoresolution],8K)]</param>
                 <param name="is_4k">[Integer.IsGreater($PARAM[listitem_videoresolution],1080) | String.IsEqual($PARAM[listitem_videoresolution],4K)]</param>
                 <param name="is_fhd">[Integer.IsGreater($PARAM[listitem_videoresolution],720)]</param>
                 <param name="is_hd">[Integer.IsEqual($PARAM[listitem_videoresolution],720)]</param>
@@ -1331,6 +1337,11 @@
                 <param name="listitem_audiochannels">$PARAM[listitem_audiochannels]</param>
                 <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[listitem_audiochannels])</param>
             </include>
+            <include content="Info_Line_VideoQuality_Icon">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="icon">flags/sets-inverted.png</param>
+                <param name="visible">$PARAM[visible] + $PARAM[is_collection]</param>
+            </include>
         </definition>
     </include>
 
@@ -1346,6 +1357,8 @@
                 <height>80</height>
                 <orientation>horizontal</orientation>
                 <itemgap>10</itemgap>
+                <centertop>40</centertop>
+                <visible>$PARAM[visible]</visible>
 
                 <include content="Info_Line_VideoQuality">
                     <param name="colordiffuse">$PARAM[colordiffuse]_90</param>
@@ -1355,7 +1368,17 @@
                     <param name="listitem_dbtype">$PARAM[container]ListItem.DBType</param>
                     <param name="listitem_hdrtype">$PARAM[container]ListItem.HdrType</param>
                     <param name="listitem_audiochannels">$PARAM[container]ListItem.AudioChannels</param>
-                    <param name="visible">!Integer.IsEqual(Container($PARAM[grouplistid]).NumItems,0)</param>
+                    <param name="visible">!Integer.IsEqual(Container($PARAM[grouplistid]).NumItems,0) + !String.IsEmpty($PARAM[container]ListItem.DBType)</param>
+                </include>
+                <include content="Info_Line_VideoQuality">
+                    <param name="colordiffuse">$PARAM[colordiffuse]_90</param>
+                    <param name="is_collection">[$PARAM[container]ListItem.IsCollection | $PARAM[container]ListItem.HasVideoVersions]</param>
+                    <param name="is_web">[[String.IsEqual(Container(99950).ListItem.Property(base_dbtype),movie) | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),episode) | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),video)] + !String.IsEqual($PARAM[container]ListItem.Property(item.type),person)]</param>
+                    <param name="listitem_videoresolution">Container(99950).ListItem.Property(base_videoresolution)</param>
+                    <param name="listitem_dbtype">Container(99950).ListItem.Property(base_dbtype)</param>
+                    <param name="listitem_hdrtype">Container(99950).ListItem.Property(base_hdrtype)</param>
+                    <param name="listitem_audiochannels">Container(99950).ListItem.Property(base_audiochannels)</param>
+                    <param name="visible">!Integer.IsEqual(Container($PARAM[grouplistid]).NumItems,0) + String.IsEmpty($PARAM[container]ListItem.DBType)</param>
                 </include>
 
                 <!-- Star Rating -->
@@ -1389,13 +1412,17 @@
                     </include>
                     <param name="items_04">true</param>
                     <param name="label_01">$INFO[$PARAM[container]ListItem.Premiered]</param>
-                    <param name="label_02">$INFO[Container(99950).ListItem.Premiered]</param>
-                    <param name="label_03">$INFO[$PARAM[container]ListItem.Year]</param>
-                    <param name="label_04">$INFO[Container(99950).ListItem.Year]</param>
+                    <param name="label_02">$INFO[Container(99950).ListItem.Property(base_premiered)]</param>
+                    <param name="label_03">$INFO[Container(99950).ListItem.Premiered]</param>
+                    <param name="label_04">$INFO[$PARAM[container]ListItem.Year]</param>
+                    <param name="label_05">$INFO[Container(99950).ListItem.Property(base_year)]</param>
+                    <param name="label_06">$INFO[Container(99950).ListItem.Year]</param>
                     <param name="visible_01">!String.IsEmpty($PARAM[container]ListItem.Premiered)</param>
-                    <param name="visible_02">!String.IsEmpty(Container(99950).ListItem.Premiered)</param>
-                    <param name="visible_03">!String.IsEmpty($PARAM[container]ListItem.Year)</param>
-                    <param name="visible_04">!String.IsEmpty(Container(99950).ListItem.Year)</param>
+                    <param name="visible_02">!String.IsEmpty(Container(99950).ListItem.Property(base_premiered))</param>
+                    <param name="visible_03">!String.IsEmpty(Container(99950).ListItem.Premiered)</param>
+                    <param name="visible_04">!String.IsEmpty($PARAM[container]ListItem.Year)</param>
+                    <param name="visible_05">!String.IsEmpty(Container(99950).ListItem.Property(base_year))</param>
+                    <param name="visible_06">!String.IsEmpty(Container(99950).ListItem.Year)</param>
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
                 </include>
                 <include content="Info_Line_Items">
@@ -1409,10 +1436,12 @@
                     <param name="items_03">true</param>
                     <param name="label_01">$INFO[Container(99950).ListItem.Property(Set.Years)]</param>
                     <param name="label_02">$INFO[$PARAM[container]ListItem.Year]</param>
-                    <param name="label_03">$INFO[Container(99950).ListItem.Year]</param>
+                    <param name="label_03">$INFO[Container(99950).ListItem.Property(base_year)]</param>
+                    <param name="label_04">$INFO[Container(99950).ListItem.Year]</param>
                     <param name="visible_01">!String.IsEmpty(Container(99950).ListItem.Property(Set.Years))</param>
                     <param name="visible_02">!String.IsEmpty($PARAM[container]ListItem.Year)</param>
-                    <param name="visible_03">!String.IsEmpty(Container(99950).ListItem.Year)</param>
+                    <param name="visible_03">!String.IsEmpty(Container(99950).ListItem.Property(base_year))</param>
+                    <param name="visible_04">!String.IsEmpty(Container(99950).ListItem.Year)</param>
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
                 </include>
 
@@ -1426,9 +1455,11 @@
                     </include>
                     <param name="items_02">true</param>
                     <param name="label_01">$INFO[$PARAM[container]ListItem.MPAA]</param>
-                    <param name="label_02">$INFO[Container(99950).ListItem.MPAA]</param>
+                    <param name="label_02">$INFO[Container(99950).ListItem.Property(base_mpaa)]</param>
+                    <param name="label_03">$INFO[Container(99950).ListItem.MPAA]</param>
                     <param name="visible_01">!String.IsEmpty($PARAM[container]ListItem.MPAA)</param>
-                    <param name="visible_02">!String.IsEmpty(Container(99950).ListItem.MPAA)</param>
+                    <param name="visible_02">!String.IsEmpty(Container(99950).ListItem.Property(base_mpaa))</param>
+                    <param name="visible_03">!String.IsEmpty(Container(99950).ListItem.MPAA)</param>
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
                 </include>
 
@@ -1476,16 +1507,35 @@
                     <param name="label_01">$INFO[$PARAM[container]ListItem.Duration(h),, $LOCALIZE[31074] ]$INFO[$PARAM[container]ListItem.Duration(m),, $LOCALIZE[31073]]</param>
                     <param name="label_02">$INFO[$PARAM[container]ListItem.Duration(m),, $LOCALIZE[31073]]</param>
                     <param name="label_03">$INFO[$PARAM[container]ListItem.Duration(h),, $LOCALIZE[31074]]</param>
-                    <param name="label_04">$INFO[Container(99950).ListItem.Property(Duration_H),, $LOCALIZE[31074] ]$INFO[Container(99950).ListItem.Property(Duration_M),, $LOCALIZE[31073]]</param>
-                    <param name="label_05">$INFO[Container(99950).ListItem.Property(Duration_M),, $LOCALIZE[31073]]</param>
-                    <param name="label_06">$INFO[Container(99950).ListItem.Property(Duration_H),, $LOCALIZE[31074]]</param>
+                    <param name="label_04">$INFO[Container(99950).ListItem.Property(base_duration_h),, $LOCALIZE[31074] ]$INFO[Container(99950).ListItem.Property(base_duration_m),, $LOCALIZE[31073]]</param>
+                    <param name="label_05">$INFO[Container(99950).ListItem.Property(base_duration_m),, $LOCALIZE[31073]]</param>
+                    <param name="label_06">$INFO[Container(99950).ListItem.Property(base_duration_h),, $LOCALIZE[31074]]</param>
 
                     <param name="visible_01">!String.IsEmpty($PARAM[container]ListItem.Duration) + !Integer.IsEqual($PARAM[container]ListItem.Duration(h),0) + !Integer.IsEqual($PARAM[container]ListItem.Duration(m),0)</param>
                     <param name="visible_02">!String.IsEmpty($PARAM[container]ListItem.Duration) + !Integer.IsEqual($PARAM[container]ListItem.Duration(m),0)</param>
                     <param name="visible_03">!String.IsEmpty($PARAM[container]ListItem.Duration) + !Integer.IsEqual($PARAM[container]ListItem.Duration(h),0)</param>
-                    <param name="visible_04">!String.IsEmpty(Container(99950).ListItem.Duration) + !String.IsEqual(Container(99950).ListItem.Property(Duration),0) + !Integer.IsEqual(Container(99950).ListItem.Property(Duration_H),0) + !Integer.IsEqual(Container(99950).ListItem.Property(Duration_M),0)</param>
-                    <param name="visible_05">!String.IsEmpty(Container(99950).ListItem.Duration) + !String.IsEqual(Container(99950).ListItem.Property(Duration),0) + !Integer.IsEqual(Container(99950).ListItem.Property(Duration_M),0)</param>
-                    <param name="visible_06">!String.IsEmpty(Container(99950).ListItem.Duration) + !String.IsEqual(Container(99950).ListItem.Property(Duration),0) + !Integer.IsEqual(Container(99950).ListItem.Property(Duration_H),0)</param>
+                    <param name="visible_04">!String.IsEmpty(Container(99950).ListItem.Property(base_duration)) + !String.IsEqual(Container(99950).ListItem.Property(Duration),0) + !Integer.IsEqual(Container(99950).ListItem.Property(base_duration_h),0) + !Integer.IsEqual(Container(99950).ListItem.Property(base_duration_m),0)</param>
+                    <param name="visible_05">!String.IsEmpty(Container(99950).ListItem.Property(base_duration)) + !String.IsEqual(Container(99950).ListItem.Property(Duration),0) + !Integer.IsEqual(Container(99950).ListItem.Property(base_duration_m),0)</param>
+                    <param name="visible_06">!String.IsEmpty(Container(99950).ListItem.Property(base_duration)) + !String.IsEqual(Container(99950).ListItem.Property(Duration),0) + !Integer.IsEqual(Container(99950).ListItem.Property(base_duration_h),0)</param>
+                    <param name="textcolor">$PARAM[colordiffuse]_70</param>
+                </include>
+                <include content="Info_Line_Items">
+                    <include content="Info_Line_Visible_05">
+                        <param name="altvisible">!String.IsEmpty($PARAM[container]ListItem.ChannelNumberLabel)</param>
+                        <param name="container">$PARAM[container]</param>
+                        <param name="dbtype_01">movie</param>
+                        <param name="dbtype_02">tvshow</param>
+                        <param name="dbtype_03">video</param>
+                        <param name="dbtype_04">episode</param>
+                        <param name="dbtype_05">season</param>
+                    </include>
+                    <param name="items_06">true</param>
+                    <param name="label_01">$INFO[Container(99950).ListItem.Property(Duration_H),, $LOCALIZE[31074] ]$INFO[Container(99950).ListItem.Property(Duration_M),, $LOCALIZE[31073]]</param>
+                    <param name="label_02">$INFO[Container(99950).ListItem.Property(Duration_M),, $LOCALIZE[31073]]</param>
+                    <param name="label_03">$INFO[Container(99950).ListItem.Property(Duration_H),, $LOCALIZE[31074]]</param>
+                    <param name="visible_01">String.IsEmpty($PARAM[container]ListItem.Duration) + String.IsEmpty(Container(99950).ListItem.Property(base_duration)) + !String.IsEmpty(Container(99950).ListItem.Duration) + !Integer.IsEqual(Container(99950).ListItem.Property(Duration_H),0) + !Integer.IsEqual(Container(99950).ListItem.Property(Duration_M),0)</param>
+                    <param name="visible_02">String.IsEmpty($PARAM[container]ListItem.Duration) + String.IsEmpty(Container(99950).ListItem.Property(base_duration)) + !String.IsEmpty(Container(99950).ListItem.Duration) + !Integer.IsEqual(Container(99950).ListItem.Property(Duration_M),0)</param>
+                    <param name="visible_03">String.IsEmpty($PARAM[container]ListItem.Duration) + String.IsEmpty(Container(99950).ListItem.Property(base_duration)) + !String.IsEmpty(Container(99950).ListItem.Duration) + !Integer.IsEqual(Container(99950).ListItem.Property(Duration_H),0)</param>
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
                 </include>
 
@@ -1501,9 +1551,11 @@
                     </include>
                     <param name="items_02">true</param>
                     <param name="label_01">$INFO[$PARAM[container]ListItem.EndTime,$LOCALIZE[31184] ,]</param>
-                    <param name="label_02">$INFO[Container(99950).ListItem.EndTime,$LOCALIZE[31184] ,]</param>
+                    <param name="label_02">$INFO[Container(99950).ListItem.Property(base_endtime),$LOCALIZE[31184] ,]</param>
+                    <param name="label_03">$INFO[Container(99950).ListItem.EndTime,$LOCALIZE[31184] ,]</param>
                     <param name="visible_01">!String.IsEmpty($PARAM[container]ListItem.EndTime) + !String.IsEqual($PARAM[container]ListItem.EndTime,System.Time)</param>
-                    <param name="visible_02">!String.IsEmpty(Container(99950).ListItem.EndTime) + !String.IsEqual(Container(99950).ListItem.EndTime,System.Time)</param>
+                    <param name="visible_02">!String.IsEmpty(Container(99950).ListItem.Property(base_endtime)) + !String.IsEqual(Container(99950).ListItem.Property(base_endtime),System.Time)</param>
+                    <param name="visible_03">!String.IsEmpty(Container(99950).ListItem.EndTime) + !String.IsEqual(Container(99950).ListItem.EndTime,System.Time)</param>
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
                 </include>
 
@@ -1578,8 +1630,6 @@
                     <param name="visible">!String.IsEmpty($PARAM[container]ListItem.PicturePath) + !String.IsEmpty($PARAM[container]ListItem.Size)</param>
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
                 </include>
-
-                <nested />
             </control>
         </definition>
     </include>
@@ -1688,7 +1738,6 @@
         <param name="plotlabel">$VAR[Label_Plot]</param>
         <param name="details_include">Items_Null</param>
         <param name="visible">true</param>
-        <param name="infoline_include">Info_Line</param>
         <param name="extended_include">Items_Null</param>
         <param name="is_player">false</param>
         <param name="align">top</param>
@@ -1721,14 +1770,12 @@
                     <control type="group">
                         <height>50</height>
                         <!-- <include>$PARAM[details_include]</include> -->
-                        <include content="$PARAM[infoline_include]">
+                        <include content="Info_Line">
                             <param name="colordiffuse">$PARAM[colordiffuse]</param>
                             <param name="container">$PARAM[container]</param>
                             <param name="starrating">$PARAM[starrating]</param>
                             <param name="grouplistid">$PARAM[grouplistid]</param>
-                            <centertop>40</centertop>
-                            <visible>$PARAM[visible]</visible>
-                            <!-- <visible>$PARAM[details]</visible> -->
+                            <param name="visible">$PARAM[visible]</param>
                         </include>
                     </control>
 
