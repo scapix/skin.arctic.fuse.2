@@ -1316,19 +1316,9 @@ msgctxt "#31277"
 msgid "Ensure that your device has an alternative mode of accessing the menu and settings before selecting this option."
 msgstr "Assurez-vous que votre appareil dispose d’un mode alternatif d’accès au menu et aux paramètres avant de sélectionner cette option."
 
-#: /1080i/SkinSettings.xml
-msgctxt "#31278"
-msgid "Expand info panel"
-msgstr "Développer le panneau d'informations"
-
 msgctxt "#31279"
 msgid "Studio icons"
 msgstr "Icônes du studio"
-
-#: /1080i/SkinSettings.xml
-msgctxt "#31280"
-msgid "hides left header"
-msgstr "masque l'en-tête gauche"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31281"
