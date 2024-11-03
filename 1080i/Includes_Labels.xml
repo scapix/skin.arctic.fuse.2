@@ -42,6 +42,11 @@
         <value>$LOCALIZE[31150]</value>
     </variable>
 
+    <variable name="Label_Setting_Home_OnBack">
+        <value condition="Skin.HasSetting(Home.DisableMenuOnBack)">$LOCALIZE[16018]</value>
+        <value>$LOCALIZE[33063]</value>
+    </variable>
+
     <variable name="Label_Setting_PremiereStatus">
         <value condition="Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) + !Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)" />
         <value condition="!Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus) + !Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus) + !Skin.HasSetting(CustomRating.EnablePremiereStatusDates)">$LOCALIZE[20343]: $LOCALIZE[10036]</value>
