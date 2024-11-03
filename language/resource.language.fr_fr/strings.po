@@ -962,11 +962,6 @@ msgctxt "#31200"
 msgid "Added on"
 msgstr "Ajouté le"
 
-#: /1080i/SkinSettings.xml
-msgctxt "#31201"
-msgid "Seekbar displays title details while seeking"
-msgstr "La barre de recherche affiche les détails du titre lors de la recherche"
-
 msgctxt "#31202"
 msgid "Ratings"
 msgstr "Évaluations"
