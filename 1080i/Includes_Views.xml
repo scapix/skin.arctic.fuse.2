@@ -79,7 +79,6 @@
                     <visible>![Control.IsVisible(550) | Control.IsVisible(552)]</visible>
                     <include>Furniture_Top_Left</include>
                     <control type="group">
-                        <!-- <visible>!Control.IsVisible(553)</visible> -->
                         <include content="Info_Viewline">
                             <param name="top">170</param>
                         </include>
