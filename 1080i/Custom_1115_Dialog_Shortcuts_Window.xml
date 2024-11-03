@@ -49,9 +49,10 @@
                             <content>
                                 <item id="0">
                                     <label>$LOCALIZE[10000]</label>
-                                    <property name="value">Hub.Home</property>
-                                    <property name="categories_menu">menu=sidemenu</property>
-                                    <property name="hub_prefix">Home</property>
+                                    <property name="value">$VAR[Shortcuts_Window_Var_HomeItem_Property_Value]</property>
+                                    <property name="categories_menu">$VAR[Shortcuts_Window_Var_HomeItem_Property_Categories_Menu]</property>
+                                    <property name="hub_prefix">$VAR[Shortcuts_Window_Var_HomeItem_Property_Categories_Hub_Prefix]</property>
+                                    <property name="is_homemenu">true</property>
                                 </item>
                                 <item id="1">
                                     <label>$NUMBER[1101] > $VAR[Label_Header_Main_1101]</label>
@@ -138,6 +139,8 @@
 
                                     <onclick condition="String.IsEqual(Container(30000).ListItem.Property(categories_menu),menu=sidemenu)">Skin.Reset(Hub.Home.ReplaceWindow)</onclick>
 
+                                    <visible>String.IsEmpty(Container(30000).ListItem.Property(is_homemenu))</visible>
+
                                     <include content="Shortcuts_Window_UseAsHome_Toggle_OnClick"><param name="id">1101</param></include>
                                     <include content="Shortcuts_Window_UseAsHome_Toggle_OnClick"><param name="id">1102</param></include>
                                     <include content="Shortcuts_Window_UseAsHome_Toggle_OnClick"><param name="id">1103</param></include>
@@ -153,6 +156,22 @@
                                     <onunfocus>ClearProperty(HelpText,1115)</onunfocus>
                                     <onunfocus>ClearProperty(HelpHead,1115)</onunfocus>
                                 </include>
+                                <include content="Settings_Button">
+                                    <param name="id">3302</param>
+                                    <param name="control">button</param>
+                                    <label>$LOCALIZE[31551]</label>
+                                    <label2>$VAR[Shortcuts_Window_Var_HomeItem_Property_Current_Home_Hub]</label2>
+
+                                    <onclick>RunScript(script.skinvariables,run_dialog=select,preselect=$VAR[Shortcuts_Window_Var_HomeItem_Property_Current_Home_Hub],heading=$LOCALIZE[31551],separator=||,list=$LOCALIZE[31143] $LOCALIZE[10000] ($LOCALIZE[31059])||$LOCALIZE[31026] $NUMBER[1101] ($LOCALIZE[31060])||$LOCALIZE[31026] $NUMBER[1102] ($LOCALIZE[31060])||$LOCALIZE[31026] $NUMBER[1103] ($LOCALIZE[31060])||$LOCALIZE[31026] $NUMBER[1104] ($LOCALIZE[31060])||$LOCALIZE[31026] $NUMBER[1106] ($LOCALIZE[31060])||$LOCALIZE[31026] $NUMBER[1107] ($LOCALIZE[31060])||$LOCALIZE[31026] $NUMBER[1108] ($LOCALIZE[31060])||$LOCALIZE[31026] $NUMBER[1109] ($LOCALIZE[31060]),"executebuiltin_0=Skin.Reset(Hub.Home.ReplaceWindow)","executebuiltin_1=Skin.SetString(Hub.Home.ReplaceWindow,$NUMBER[1101])","executebuiltin_2=Skin.SetString(Hub.Home.ReplaceWindow,$NUMBER[1102])","executebuiltin_3=Skin.SetString(Hub.Home.ReplaceWindow,$NUMBER[1103])","executebuiltin_4=Skin.SetString(Hub.Home.ReplaceWindow,$NUMBER[1104])","executebuiltin_5=Skin.SetString(Hub.Home.ReplaceWindow,$NUMBER[1106])","executebuiltin_6=Skin.SetString(Hub.Home.ReplaceWindow,$NUMBER[1107])","executebuiltin_7=Skin.SetString(Hub.Home.ReplaceWindow,$NUMBER[1108])","executebuiltin_8=Skin.SetString(Hub.Home.ReplaceWindow,$NUMBER[1109])")</onclick>
+
+                                    <visible>!String.IsEmpty(Container(30000).ListItem.Property(is_homemenu))</visible>
+
+                                    <onfocus>SetProperty(HelpHead,$LOCALIZE[31551],1115)</onfocus>
+                                    <onfocus>SetProperty(HelpText,$LOCALIZE[31004],1115)</onfocus>
+                                    <onunfocus>ClearProperty(HelpText,1115)</onunfocus>
+                                    <onunfocus>ClearProperty(HelpHead,1115)</onunfocus>
+                                </include>
+
                                 <!-- Classic or Complex -->
                                 <include content="Settings_Button">
                                     <param name="id">390</param>
