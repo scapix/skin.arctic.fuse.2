@@ -214,7 +214,7 @@
                 <param name="altvisible">$PARAM[altvisible]</param>
                 <param name="container">$PARAM[container]</param>
                 <param name="L01">String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_01])</param>
-                <param name="C01">String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_01])</param>
+                <param name="C01">String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_01])</param>
             </include>
         </definition>
     </include>
@@ -227,8 +227,8 @@
                 <param name="container">$PARAM[container]</param>
                 <param name="L01">String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_01])</param>
                 <param name="L02"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_02])</param>
-                <param name="C01">String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_01])</param>
-                <param name="C02"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_02])</param>
+                <param name="C01">String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_01])</param>
+                <param name="C02"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_02])</param>
             </include>
         </definition>
     </include>
@@ -242,9 +242,9 @@
                 <param name="L01">String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_01])</param>
                 <param name="L02"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_02])</param>
                 <param name="L03"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_03])</param>
-                <param name="C01">String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_01])</param>
-                <param name="C02"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_02])</param>
-                <param name="C03"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_03])</param>
+                <param name="C01">String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_01])</param>
+                <param name="C02"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_02])</param>
+                <param name="C03"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_03])</param>
             </include>
         </definition>
     </include>
@@ -259,10 +259,10 @@
                 <param name="L02"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_02])</param>
                 <param name="L03"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_03])</param>
                 <param name="L04"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_04])</param>
-                <param name="C01">String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_01])</param>
-                <param name="C02"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_02])</param>
-                <param name="C03"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_03])</param>
-                <param name="C04"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_04])</param>
+                <param name="C01">String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_01])</param>
+                <param name="C02"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_02])</param>
+                <param name="C03"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_03])</param>
+                <param name="C04"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_04])</param>
             </include>
         </definition>
     </include>
@@ -278,11 +278,11 @@
                 <param name="L03"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_03])</param>
                 <param name="L04"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_04])</param>
                 <param name="L05"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_05])</param>
-                <param name="C01">String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_01])</param>
-                <param name="C02"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_02])</param>
-                <param name="C03"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_03])</param>
-                <param name="C04"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_04])</param>
-                <param name="C05"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_05])</param>
+                <param name="C01">String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_01])</param>
+                <param name="C02"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_02])</param>
+                <param name="C03"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_03])</param>
+                <param name="C04"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_04])</param>
+                <param name="C05"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_05])</param>
             </include>
         </definition>
     </include>
@@ -299,12 +299,12 @@
                 <param name="L04"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_04])</param>
                 <param name="L05"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_05])</param>
                 <param name="L06"> | String.IsEqual($PARAM[container]ListItem.DBType,$PARAM[dbtype_06])</param>
-                <param name="C01">String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_01])</param>
-                <param name="C02"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_02])</param>
-                <param name="C03"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_03])</param>
-                <param name="C04"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_04])</param>
-                <param name="C05"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_05])</param>
-                <param name="C06"> | String.IsEqual(Container(99950).ListItem.DBType,$PARAM[dbtype_06])</param>
+                <param name="C01">String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_01])</param>
+                <param name="C02"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_02])</param>
+                <param name="C03"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_03])</param>
+                <param name="C04"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_04])</param>
+                <param name="C05"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_05])</param>
+                <param name="C06"> | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),$PARAM[dbtype_06])</param>
             </include>
         </definition>
     </include>
@@ -626,7 +626,7 @@
             <include content="Info_RatingsLine_Object" condition="![$PARAM[is_player]]">
                 <param name="label">$VAR[Label_ListItem_Status]$VAR[Label_ListItem_StatusDate, ,]</param>
                 <param name="icon">$VAR[Image_ListItem_Status]</param>
-                <param name="visible">[[[$PARAM[visible_movies] + [String.IsEqual(Container(99950).ListItem.DBType,movie) | String.IsEqual(Container(99950).ListItem.DBType,set)]] | [$PARAM[visible_tvshows] + [String.IsEqual(Container(99950).ListItem.DBType,tvshow) | String.IsEqual(Container(99950).ListItem.DBType,season) | String.IsEqual(Container(99950).ListItem.DBType,episode)]]] + !String.IsEmpty(Container(99950).ListItem.Status)]</param>
+                <param name="visible">[[[$PARAM[visible_movies] + [String.IsEqual(Container(99950).ListItem.Property(base_dbtype),movie) | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),set)]] | [$PARAM[visible_tvshows] + [String.IsEqual(Container(99950).ListItem.Property(base_dbtype),tvshow) | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),season) | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),episode)]]] + !String.IsEmpty(Container(99950).ListItem.Status)]</param>
             </include>
             <include content="Info_RatingsLine_Object" condition="$PARAM[is_player]">
                 <param name="label">$VAR[Label_Player_Status]</param>
@@ -700,14 +700,14 @@
         <param name="visible_tvshows">true</param>
         <definition>
             <include content="Info_RatingsLine_Items" condition="![$PARAM[is_player]]">
-                <param name="visible">[$PARAM[visible_movies] + [String.IsEqual(Container(99950).ListItem.DBType,movie) | String.IsEqual(Container(99950).ListItem.DBType,set)]]</param>
+                <param name="visible">[$PARAM[visible_movies] + [String.IsEqual(Container(99950).ListItem.Property(base_dbtype),movie) | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),set)]]</param>
                 <param name="content">Movies</param>
                 <param name="item">$PARAM[item]</param>
                 <param name="container">$PARAM[container]</param>
                 <param name="is_player">$PARAM[is_player]</param>
             </include>
             <include content="Info_RatingsLine_Items" condition="![$PARAM[is_player]]">
-                <param name="visible">[$PARAM[visible_tvshows] + [String.IsEqual(Container(99950).ListItem.DBType,tvshow) | String.IsEqual(Container(99950).ListItem.DBType,season) | String.IsEqual(Container(99950).ListItem.DBType,episode)]]</param>
+                <param name="visible">[$PARAM[visible_tvshows] + [String.IsEqual(Container(99950).ListItem.Property(base_dbtype),tvshow) | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),season) | String.IsEqual(Container(99950).ListItem.Property(base_dbtype),episode)]]</param>
                 <param name="content">TVShows</param>
                 <param name="item">$PARAM[item]</param>
                 <param name="container">$PARAM[container]</param>
