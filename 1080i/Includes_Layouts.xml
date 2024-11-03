@@ -545,6 +545,10 @@
                 <centertop>50%</centertop>
                 <aspectratio align="right">keep</aspectratio>
                 <height>32</height>
+                <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
+                    <param name="colordiffuse">$VAR[ColorSelected]</param>
+                </include>
+                <colordiffuse>main_fg_70</colordiffuse>
                 <texture>$VAR[Image_PVRGuide_Indicator]</texture>
             </control>
 
