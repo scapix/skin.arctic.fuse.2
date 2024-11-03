@@ -497,9 +497,23 @@
                     <param name="border">40,0,40,0</param>
                 </include>
                 <visible>$PARAM[visible]</visible>
-                <left>24</left>
-                <!-- <top>4</top>
-                <bottom>4</bottom> -->
+                <left>20</left>
+            </include>
+
+            <include content="Object_Control" condition="$PARAM[selected]">
+                <param name="control">image</param>
+                <param name="id">1</param>
+                <bordersize>3</bordersize>
+                <left>20</left>
+                <texture colordiffuse="ff808080" border="40,0,40,0" fallback="pvr/genre/0.png">$INFO[ListItem.Property(GenreType),pvr/genre/,.png]</texture>
+            </include>
+
+            <include content="Object_Control" condition="!$PARAM[selected]">
+                <param name="control">image</param>
+                <param name="id">1</param>
+                <bordersize>3</bordersize>
+                <left>20</left>
+                <texture colordiffuse="40808080" border="40,0,40,0" fallback="pvr/genre/0.png">$INFO[ListItem.Property(GenreType),pvr/genre/,.png]</texture>
             </include>
 
             <include content="Object_Control" condition="!$PARAM[selected]">
@@ -509,9 +523,11 @@
                 <left>20</left>
             </include>
 
+
+
             <include content="Object_InfoCircle_Text_Top" condition="$PARAM[include_detailed_labels]">
                 <param name="id">1</param>
-                <include condition="$PARAM[selected]">Color_SelectedText</include>
+                <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <label>$VAR[Label_PVRPrograms]</label>
                 <textcolor>main_fg_90</textcolor>
                 <selectedcolor>main_fg_90</selectedcolor>
@@ -521,7 +537,7 @@
 
             <include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
                 <param name="id">1</param>
-                <include condition="$PARAM[selected]">Color_SelectedText</include>
+                <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <label>$INFO[ListItem.Genre]</label>
                 <textcolor>main_fg_70</textcolor>
                 <selectedcolor>main_fg_70</selectedcolor>
@@ -535,7 +551,7 @@
                 <align>left</align>
                 <left>60</left>
                 <right>40</right>
-                <include condition="$PARAM[selected]">Color_SelectedText</include>
+                <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <textcolor>main_fg_70</textcolor>
                 <visible>![$PARAM[include_detailed_labels]]</visible>
             </control>
@@ -545,7 +561,7 @@
                 <centertop>50%</centertop>
                 <aspectratio align="right">keep</aspectratio>
                 <height>32</height>
-                <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
+                <include content="Object_ColorDiffuse" condition="$PARAM[selected] + false">
                     <param name="colordiffuse">$VAR[ColorSelected]</param>
                 </include>
                 <colordiffuse>main_fg_70</colordiffuse>
