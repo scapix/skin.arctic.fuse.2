@@ -1032,12 +1032,8 @@
 
             <!-- Progress Bar Group -->
             <control type="group">
-                <!-- <animation effect="fade" start="0" end="100" delay="300" time="300" condition="[!Window.IsActive(1143)]">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="300" condition="![!Window.IsActive(1143)]">Conditional</animation> -->
 
                 <control type="group">
-                    <!-- <visible>Window.IsActive(musicosd) | Window.IsActive(script-cu-lrclyrics-main.xml) | Skin.HasSetting(OSD.DisplayTitleDetailsOnSeek) | $EXP[Exp_OSD_QuickInfo]</visible> -->
-
 
                     <animation effect="fade" start="0" end="100" delay="300" time="300" condition="[!Window.IsActive(1143) + !Integer.IsEqual(Window(Home).Property(OSD_Focus),6003)]">Conditional</animation>
                     <animation effect="fade" start="100" end="0" time="300" condition="![!Window.IsActive(1143) + !Integer.IsEqual(Window(Home).Property(OSD_Focus),6003)]">Conditional</animation>
@@ -1076,12 +1072,10 @@
                 </control>
 
                 <include>Animation_OSD_Seekbar_Slide</include>
-                <!--  -->
             </control>
 
             <!-- Top Left Label -->
             <control type="group">
-                <!-- <include>OSD_HideControls</include> -->
                 <include content="Furniture_Top_Left">
                     <param name="id">3099</param>
                     <param name="label">$VAR[Label_OSD_HeaderEpisodeChapter]</param>
