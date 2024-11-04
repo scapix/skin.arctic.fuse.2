@@ -60,7 +60,7 @@
             <param name="right">20</param>
             <param name="top">-40</param>
             <param name="focusposition">1</param>
-            <param name="movement">5</param>
+            <param name="movement">6</param>
             <param name="scrollbar_id">66</param>
             <param name="overlay">true</param>
         </include>
