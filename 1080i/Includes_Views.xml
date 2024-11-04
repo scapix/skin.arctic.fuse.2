@@ -101,14 +101,15 @@
                         <control type="group">
                             <visible>Control.IsVisible(550)</visible>
                             <include content="Info_Viewline">
-                                <param name="top">360</param>
+                                <param name="top">440</param>
                             </include>
                             <control type="group">
                                 <include>Info_Panel_Dimensions</include>
                                 <include content="Info_Panel">
                                     <param name="visible">String.IsEmpty(Window.Property(TMDBHelper.WidgetContainer))</param>
-                                    <param name="details">false</param>
                                     <param name="grouplistid">99953</param>
+                                    <param name="plotwidth">90%</param>
+                                    <param name="plotheight">80</param>
                                 </include>
                             </control>
                         </control>
