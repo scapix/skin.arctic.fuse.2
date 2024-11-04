@@ -21,16 +21,16 @@
             <param name="id">551</param>
             <param name="viewtype_label">$LOCALIZE[31480]</param>
             <param name="visible">$EXP[Exp_View_551]</param>
-            <param name="right">900</param>
-            <!-- <param name="left">880</param> -->
-            <!-- <param name="right">20</param> -->
+            <!-- <param name="right">900</param> -->
+            <param name="left">880</param>
+            <param name="right">20</param>
             <param name="top">400</param>
             <param name="focusposition">1</param>
             <param name="movement">2</param>
             <param name="scrollbar_id">64</param>
             <param name="overlay">false</param>
             <include content="View_MediaList_PosterLandscape">
-                <param name="flipx">false</param>
+                <param name="flipx">true</param>
             </include>
         </include>
     </include>
@@ -69,12 +69,12 @@
             <param name="right">1340</param>
             <param name="top">48</param>
             <param name="item_height">84</param>
-            <param name="focusposition">2</param>
-            <param name="movement">5</param>
+            <param name="focusposition">1</param>
+            <param name="movement">6</param>
             <param name="scrollbar_id">66</param>
             <param name="overlay">true</param>
             <param name="variation">true</param>
-            <param name="include_detailed_labels">false</param>
+            <!-- <param name="include_detailed_labels">false</param> -->
 
             <control type="fadelabel" id="99998">
                 <description>Randomizer for plugin-free multiple fanart</description>
@@ -276,6 +276,7 @@
         <param name="include_reposition">Items_Null</param>
         <param name="scrollbar_id">64</param>
         <param name="overlay">false</param>
+        <param name="control">fixedlist</param>
         <definition>
 
             <control type="group">
@@ -292,7 +293,7 @@
                     <include content="List_DialogSelect">
                         <param name="id">$PARAM[id]</param>
                         <param name="textcolor">main_fg</param>
-                        <param name="control">fixedlist</param>
+                        <param name="control">$PARAM[control]</param>
                         <param name="itemlayout_include">Layout_MediaList</param>
                         <param name="item_height">$PARAM[item_height]</param>
                         <param name="variation">$PARAM[variation]</param>
