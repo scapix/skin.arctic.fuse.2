@@ -361,6 +361,7 @@
     </variable>
 
     <variable name="Label_Setting_BorderStyle">
+        <value condition="Skin.HasSetting(Glass.DarkPanels)">$LOCALIZE[31316]</value>
         <value condition="Skin.HasSetting(Glass.EnableBorders)">$LOCALIZE[31309]</value>
         <value>$LOCALIZE[231]</value>
     </variable>
