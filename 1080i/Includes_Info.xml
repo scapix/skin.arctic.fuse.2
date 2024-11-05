@@ -1746,7 +1746,8 @@
                     <!-- InfoLine -->
                     <control type="group">
                         <height>50</height>
-                        <!-- <include>$PARAM[details_include]</include> -->
+                        <visible>$PARAM[details]</visible>
+                        <include>$PARAM[details_include]</include>
                         <include content="Info_Line">
                             <param name="colordiffuse">$PARAM[colordiffuse]</param>
                             <param name="container">$PARAM[container]</param>
