@@ -307,6 +307,7 @@
 
             <include content="Object_Hidden_Button">
                 <param name="id">306</param>
+                <onfocus condition="!$EXP[Exp_ClassicHome_IsVisible]">ClearProperty(TMDbHelper.WidgetContainer.UpdateLock,1198)</onfocus>
                 <onfocus condition="Integer.IsEqual(Window.Property(Focus.ControlID),300) + Control.IsVisible(311)">SetFocus(311)</onfocus>
                 <onfocus condition="Integer.IsEqual(Window.Property(Focus.ControlID),300) + !Control.IsVisible(311)">SetFocus(400)</onfocus>
                 <onfocus condition="String.IsEmpty(Window.Property(SideMenu.CurrentItem)) + !Integer.IsEqual(Window.Property(Focus.ControlID),300)">SetFocus(300)</onfocus>
@@ -598,6 +599,7 @@
                 <control type="button" id="309">
                     <texturenofocus />
                     <texturefocus />
+                    <onfocus>ClearProperty(TMDbHelper.WidgetContainer.UpdateLock,1198)</onfocus>
                     <include content="Hub_Categories_Definition_Content">
                         <param name="window_id">$PARAM[window_id]</param>
                         <param name="property_window_id">$PARAM[property_window_id]</param>
@@ -644,6 +646,7 @@
                 <control type="button" id="308">
                     <texturenofocus />
                     <texturefocus />
+                    <onfocus>ClearProperty(TMDbHelper.WidgetContainer.UpdateLock,1198)</onfocus>
                     <include content="Hub_Categories_Definition_Content">
                         <param name="window_id">$PARAM[window_id]</param>
                         <param name="property_window_id">$PARAM[property_window_id]</param>
