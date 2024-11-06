@@ -259,8 +259,8 @@
 
     <include name="Hub_Left_Bezier_Object">
         <param name="left">-960</param>
-        <param name="width">1720</param>
-        <param name="visible">$EXP[Exp_HomeMenu_HasFocus]</param>
+        <param name="width">1680</param>
+        <param name="visible">[$EXP[Exp_HomeMenu_HasFocus] | Window.IsActive(1163)]</param>
         <definition>
             <control type="image">
                 <left>$PARAM[left]</left>
@@ -281,11 +281,14 @@
     </include>
 
     <include name="Hub_Left_Bezier">
-        <include content="Hub_Left_Bezier_Object" condition="!$EXP[Exp_HomeMenu_IsExpanded]">
+        <include content="Hub_Left_Bezier_Object" condition="!$EXP[Exp_HomeMenu_IsExpanded] + $PARAM[is_homemenu]">
             <param name="left">-640</param>
-            <param name="width">1400</param>
+            <param name="width">1360</param>
         </include>
-        <include condition="$EXP[Exp_HomeMenu_IsExpanded]">Hub_Left_Bezier_Object</include>
+        <include condition="$EXP[Exp_HomeMenu_IsExpanded] + $PARAM[is_homemenu]">Hub_Left_Bezier_Object</include>
+        <include content="Hub_Left_Bezier_Object" condition="![$PARAM[is_homemenu]]">
+            <param name="visible">[Window.IsActive(1163)]</param>
+        </include>
     </include>
 
     <include name="Hub_Controls">
@@ -331,7 +334,9 @@
             <include condition="![$PARAM[widgets_only]]">Hub_Top_Bezier</include>
 
             <control type="group">
-                <include condition="$PARAM[is_homemenu]">Hub_Left_Bezier</include>
+                <include content="Hub_Left_Bezier">
+                    <param name="is_homemenu">$PARAM[is_homemenu]</param>
+                </include>
                 <include condition="$PARAM[is_homemenu]">Hub_Menu_Slide</include>
                 <include>Hub_Menu_Dialog_Slide</include>
                 <control type="group">
