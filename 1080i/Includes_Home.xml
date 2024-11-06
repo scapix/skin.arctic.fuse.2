@@ -595,9 +595,11 @@
             <visible allowhiddenfocus="true">$EXP[Exp_HomeMenu_HasFocus]</visible>
             <include content="Animation_Fade_In">
                 <param name="type">Visible</param>
+                <param name="time">200</param>
             </include>
             <include content="Animation_Fade_Out">
                 <param name="type">Hidden</param>
+                <param name="time">200</param>
             </include>
 
 

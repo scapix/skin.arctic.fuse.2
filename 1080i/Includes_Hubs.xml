@@ -257,6 +257,37 @@
         </control>
     </include>
 
+    <include name="Hub_Left_Bezier_Object">
+        <param name="left">-960</param>
+        <param name="width">1720</param>
+        <param name="visible">$EXP[Exp_HomeMenu_HasFocus]</param>
+        <definition>
+            <control type="image">
+                <left>$PARAM[left]</left>
+                <width>$PARAM[width]</width>
+                <height>1080</height>
+                <visible>$PARAM[visible]</visible>
+                <texture colordiffuse="$VAR[ColorBackground]" border="0,0,1079,0">background/combined_sidemenu.png</texture>
+                <include content="Animation_Fade_In">
+                    <param name="type">Visible</param>
+                    <param name="time">200</param>
+                </include>
+                <include content="Animation_Fade_Out">
+                    <param name="type">Hidden</param>
+                    <param name="time">600</param>
+                </include>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Hub_Left_Bezier">
+        <include content="Hub_Left_Bezier_Object" condition="!$EXP[Exp_HomeMenu_IsExpanded]">
+            <param name="left">-640</param>
+            <param name="width">1400</param>
+        </include>
+        <include condition="$EXP[Exp_HomeMenu_IsExpanded]">Hub_Left_Bezier_Object</include>
+    </include>
+
     <include name="Hub_Controls">
         <param name="fullscreen_content">$VAR[Path_Spotlight_Fallback_Content]</param>
         <param name="fullscreen_target">$VAR[Path_Spotlight_Fallback_Target]</param>
@@ -293,13 +324,16 @@
                 <param name="include_layer">Hub_SpotlightFanart</param>
             </include>
             <include condition="![![$PARAM[widgets_only]] + !Skin.HasSetting(Hub.$PARAM[window_id].DisableSpotlight)]">Background_Main</include>
+
+
+
             <include>Background_Transition</include>
             <include condition="![$PARAM[widgets_only]]">Hub_Top_Bezier</include>
 
             <control type="group">
+                <include condition="$PARAM[is_homemenu]">Hub_Left_Bezier</include>
                 <include condition="$PARAM[is_homemenu]">Hub_Menu_Slide</include>
                 <include>Hub_Menu_Dialog_Slide</include>
-
                 <control type="group">
                     <include>Animation_Group_Bumper</include>
                     <include>Animation_View_WindowChange</include>
