@@ -141,6 +141,7 @@
         <control type="image">
             <animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
             <texture colordiffuse="dialog_fg_12" border="20">common/dialog.png</texture>
+            <visible>!Skin.HasSetting(Glass.DarkPanels)</visible>
         </control>
     </include>
 
@@ -160,7 +161,7 @@
                         <param name="shadow">$PARAM[shadow]</param>
                     </include>
                 </control>
-                <!-- <include condition="$PARAM[include_glass]">Dialog_Background_Glass</include> -->
+                <include condition="$PARAM[include_glass]">Dialog_Background_Glass</include>
             </control>
         </definition>
     </include>
