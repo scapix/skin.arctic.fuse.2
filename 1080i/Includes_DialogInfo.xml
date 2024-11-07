@@ -1457,7 +1457,7 @@
                         <control type="image">
                             <top>160</top>
                             <height>1</height>
-                            <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+                            <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
                             <include content="Object_Right" condition="$PARAM[include_artwork]">
                                 <param name="right">476</param>
                             </include>
@@ -1465,7 +1465,7 @@
                         <control type="image">
                             <bottom>80</bottom>
                             <height>1</height>
-                            <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+                            <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
                             <include content="Object_Right" condition="$PARAM[include_artwork]">
                                 <param name="right">476</param>
                             </include>
