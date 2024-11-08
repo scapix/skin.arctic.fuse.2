@@ -288,7 +288,7 @@
             <param name="id">06</param>
             <param name="label">$LOCALIZE[1000]</param>
             <param name="icon">special://skin/extras/icons/image.png</param>
-            <param name="visible">[String.IsEqual(Control.GetLabel(1),$LOCALIZE[13511]) | String.IsEqual(Control.GetLabel(1),$LOCALIZE[20437]) | String.IsEqual(Control.GetLabel(1),$LOCALIZE[13521])]</param>
+            <param name="visible">[String.IsEqual(Control.GetLabel(1),$LOCALIZE[13511]) | String.IsEqual(Control.GetLabel(1),$LOCALIZE[20437]) | String.IsEqual(Control.GetLabel(1),$LOCALIZE[13521]) | String.IsEqual(Control.GetLabel(1),$LOCALIZE[736])]</param>
             <param name="control">radiobutton</param>
             <param name="radiocross">true</param>
             <selected>!Skin.HasSetting(Dialog.DisableArtworkPreview)</selected>

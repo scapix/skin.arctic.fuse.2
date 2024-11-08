@@ -373,7 +373,7 @@
             <onclick>Action(Select)</onclick>
         </include>
 
-        <include condition="[Window.IsActive(DialogVideoInfo.xml) | Window.IsActive(DialogMusicInfo.xml)]">DialogSelect_SideButtons_Artwork</include>
+        <include>DialogSelect_SideButtons_Artwork</include>
     </include>
 
     <include name="Items_DialogVideoManager">
