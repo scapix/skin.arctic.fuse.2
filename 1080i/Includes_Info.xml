@@ -887,12 +887,22 @@
                 <param name="label">$INFO[Window(Home).Property(TMDbHelper.ListItem.Birthday)]</param>
                 <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Birthday))</param>
             </include>
+            <include content="Info_IconLine_Object" condition="![$PARAM[is_player]]">
+                <param name="icon">&#xf1fd;</param>
+                <param name="label">$INFO[Window(Home).Property(TMDbHelper.ListItem.base_birthday)]</param>
+                <param name="visible">String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Birthday)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_birthday))</param>
+            </include>
 
             <!-- Deathday -->
             <include content="Info_IconLine_Object" condition="![$PARAM[is_player]]">
                 <param name="icon">&#x271d;</param>
                 <param name="label">$INFO[Window(Home).Property(TMDbHelper.ListItem.Deathday)]</param>
                 <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Deathday))</param>
+            </include>
+            <include content="Info_IconLine_Object" condition="![$PARAM[is_player]]">
+                <param name="icon">&#x271d;</param>
+                <param name="label">$INFO[Window(Home).Property(TMDbHelper.ListItem.base_deathday)]</param>
+                <param name="visible">String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Deathday)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_deathday))</param>
             </include>
         </definition>
     </include>
@@ -901,20 +911,6 @@
     <include name="Info_IconLine_Music">
         <param name="is_player">false</param>
         <definition>
-
-            <!-- Birthday -->
-            <include content="Info_IconLine_Object" condition="![$PARAM[is_player]]">
-                <param name="icon">&#xf1fd;</param>
-                <param name="label">$INFO[Window(Home).Property(TMDbHelper.ListItem.base_birthday)]</param>
-                <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_birthday))</param>
-            </include>
-
-            <!-- Deathday -->
-            <include content="Info_IconLine_Object" condition="![$PARAM[is_player]]">
-                <param name="icon">&#x271d;</param>
-                <param name="label">$INFO[Window(Home).Property(TMDbHelper.ListItem.base_deathday)]</param>
-                <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_deathday))</param>
-            </include>
 
             <!-- Total Discs -->
             <include content="Info_IconLine_Object" condition="![$PARAM[is_player]]">
