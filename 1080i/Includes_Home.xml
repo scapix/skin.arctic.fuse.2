@@ -612,7 +612,7 @@
             <include condition="![Window.IsVisible(Home) + !$EXP[Exp_HomeMenu_IsExpanded]]">Home_Menu_Vert_Large</include>
 
             <visible allowhiddenfocus="true">$EXP[Exp_HomeMenu_HasFocus]</visible>
-            <include>Animation_Home_Fade</include>
+            <include>Animation_Home_Menu_Fade</include>
 
             <control type="group">
                 <include>Hub_Menu_Fade</include>

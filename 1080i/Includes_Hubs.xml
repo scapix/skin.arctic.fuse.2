@@ -264,13 +264,14 @@
                 <left>40</left>
                 <!-- <right>240</right> -->
                 <!-- <right>480</right> -->
-                <!-- <width>1080</width> -->
+                <!-- <width>720</width> -->
+                <width>1080</width>
                 <!-- <width>1280</width> -->
                 <!-- <width>1600</width> -->
-                <width>1440</width>
+                <!-- <width>1440</width> -->
                 <height>1080</height>
                 <visible>$PARAM[visible]</visible>
-                <include>Animation_Home_Fade</include>
+                <include>Animation_Home_Menu_Fade</include>
                 <texture colordiffuse="$VAR[ColorBackground]">background/combined_sidemenu.png</texture>
             </control>
         </definition>
