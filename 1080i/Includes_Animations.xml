@@ -463,4 +463,16 @@
         </include>
     </include>
 
+    <include name="Animation_Home_Fade">
+        <include content="Animation_Fade_In">
+            <param name="type">Visible</param>
+            <param name="time">200</param>
+        </include>
+        <include content="Animation_Fade_Out">
+            <param name="type">Hidden</param>
+            <param name="time">400</param>
+            <param name="delay">0</param>
+        </include>
+    </include>
+
 </includes>
