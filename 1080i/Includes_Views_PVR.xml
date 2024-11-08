@@ -200,7 +200,6 @@
                     <left>360</left>
                     <right>60</right>
                     <onup>50</onup>
-                    <onback>PreviousMenu</onback>
                     <ondown>SetProperty(List.ViewContainer,8000)</ondown>
                     <ondown>SetFocus(330)</ondown>
 
