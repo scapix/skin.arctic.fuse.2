@@ -175,14 +175,16 @@
         <param name="is_homemenu">false</param>
         <definition>
 
+            <onload condition="$EXP[Exp_Window_IsHub_Prev]">ClearProperty(TMDbHelper.WidgetContainer.UpdateLock,1198)</onload>
+
             <include>Action_Blur_Onload</include>
 
-            <onload>Skin.SetString(TMDbHelper.MonitorContainer,99950)</onload>
+            <onload>Skin.Reset(TMDbHelper.MonitorContainer)</onload>
 
             <include>Generator_BuildTextures_Onload</include>
 
             <include content="Object_MenuControl">
-                <param name="menucontrol">300</param>
+                <param name="menucontrol">306</param>
             </include>
 
             <!-- Default Controls Home -->
@@ -210,8 +212,8 @@
             </include>
 
             <!-- Set Default IDs (TODO: Check this is correct!) -->
-            <onload condition="![[$PARAM[is_homemenu]] | Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu)] + String.IsEmpty(Window($PARAM[window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[property_window_id])</onload>
-            <onload condition="[[$PARAM[is_homemenu]] | Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu)] + String.IsEmpty(Window($PARAM[window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,100601,$PARAM[property_window_id])</onload>
+            <onload condition="![[$PARAM[is_homemenu]] | Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu)] + String.IsEmpty(Window($PARAM[property_window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,301,$PARAM[property_window_id])</onload>
+            <onload condition="[[$PARAM[is_homemenu]] | Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu)] + String.IsEmpty(Window($PARAM[property_window_id]).Property(TMDbHelper.WidgetContainer))">SetProperty(TMDbHelper.WidgetContainer,100601,$PARAM[property_window_id])</onload>
 
             <!-- Set Default Positions -->
             <onload>SetProperty(Slide.WidgetContainer,True,Home)</onload>
@@ -231,13 +233,9 @@
             <include>Action_BuildShortcuts_OnLoad</include>
 
             <!-- Hubs Refocus -->
-            <onload condition="![$PARAM[is_homemenu]] + Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + !String.IsEmpty(Window($PARAM[window_id]).Property(Hub.ResetDefaultControl))">SetFocus(400)</onload>
-            <onload condition="![$PARAM[is_homemenu]] + !Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + !String.IsEmpty(Window($PARAM[window_id]).Property(Hub.ResetDefaultControl))">SetFocus(300)</onload>
+            <onload condition="![$PARAM[is_homemenu]] + Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + !String.IsEmpty(Window($PARAM[property_window_id]).Property(Hub.ResetDefaultControl))">SetFocus(400)</onload>
+            <onload condition="![$PARAM[is_homemenu]] + !Skin.HasSetting(Hub.$PARAM[window_id].DisableSubmenu) + !String.IsEmpty(Window($PARAM[property_window_id]).Property(Hub.ResetDefaultControl))">SetFocus(300)</onload>
             <onload>ClearProperty(Hub.ResetDefaultControl,$PARAM[property_window_id])</onload>
-
-            <!-- Home Refocus -->
-            <!-- <onload condition="[$PARAM[is_homemenu]] + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnStartUp))">AlarmClock(refocuslaunch,SetFocus(300,0,absolute),00:00,silent)</onload>
-            <onload condition="[$PARAM[is_homemenu]] + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnStartUp))">SetProperty(TMDbHelper.WidgetContainer.UpdateLock.OnStartUp,True,1198)</onload> -->
         </definition>
     </include>
 
@@ -472,15 +470,13 @@
     <include name="Action_View_Movement_OnLeft">
         <param name="onbump">[False]</param>
         <param name="onwrap">$EXP[Exp_Navigation_OnWrap]</param>
-        <param name="onside">[!String.IsEmpty(Window.Property(SideMenu.CurrentItem))]</param>
-        <param name="menuid">300</param>
+        <param name="menuid">306</param>
         <definition>
             <!-- Menu -->
             <onleft condition="![$PARAM[onbump]] + ![$PARAM[onwrap]]">$PARAM[menuid]</onleft>
             <onleft condition="![$PARAM[onbump]] + ![$PARAM[onwrap]]">SetProperty(List.ViewContainer,$PARAM[id])</onleft>
             <onleft condition="![$PARAM[onbump]] + ![$PARAM[onwrap]]">SetFocus($PARAM[id],0,absolute)</onleft>
-            <onleft condition="![$PARAM[onbump]] + ![$PARAM[onwrap]] + ![$PARAM[onside]]">SetFocus($PARAM[menuid])</onleft>
-            <onleft condition="![$PARAM[onbump]] + ![$PARAM[onwrap]] + $PARAM[onside]">SetFocus($PARAM[menuid],$INFO[Window.Property(SideMenu.CurrentItem)],absolute)</onleft>
+            <onleft condition="![$PARAM[onbump]] + ![$PARAM[onwrap]]">SetFocus($PARAM[menuid])</onleft>
 
             <!-- Bump -->
             <onleft condition="$PARAM[onbump]">SetProperty(List.ViewContainer,$PARAM[id])</onleft>
@@ -493,21 +489,20 @@
     <include name="Action_View_Movement_OnRight">
         <param name="onbump">$EXP[Exp_Navigation_OnBump]</param>
         <param name="onwrap">$EXP[Exp_Navigation_OnWrap]</param>
-        <param name="onside">[!String.IsEmpty(Window.Property(SideMenu.CurrentItem))]</param>
-        <param name="menuid">300</param>
+        <param name="menuid">306</param>
         <definition>
 
             <!-- Menu -->
             <onright condition="![$PARAM[onbump]] + ![$PARAM[onwrap]]">$PARAM[menuid]</onright>
             <onright condition="![$PARAM[onbump]] + ![$PARAM[onwrap]]">SetProperty(List.ViewContainer,$PARAM[id])</onright>
             <onright condition="![$PARAM[onbump]] + ![$PARAM[onwrap]]">SetFocus($PARAM[id],0,absolute)</onright>
-            <onright condition="![$PARAM[onbump]] + ![$PARAM[onwrap]] + ![$PARAM[onside]]">SetFocus($PARAM[menuid])</onright>
-            <onright condition="![$PARAM[onbump]] + ![$PARAM[onwrap]] + $PARAM[onside]">SetFocus(300,$INFO[Window.Property(SideMenu.CurrentItem)],absolute)</onright>
+            <onright condition="![$PARAM[onbump]] + ![$PARAM[onwrap]]">SetFocus($PARAM[menuid])</onright>
 
             <!-- Bump -->
             <onright condition="$PARAM[onbump]">SetProperty(List.ViewContainer,$PARAM[id])</onright>
             <onright condition="$PARAM[onbump]">332</onright>
 
+            <!-- Wrap -->
             <onright condition="$PARAM[onwrap]">$PARAM[id]</onright>
 
         </definition>

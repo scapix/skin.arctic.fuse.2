@@ -257,7 +257,7 @@
             <right>40</right>
             <height>1</height>
             <centerbottom>40</centerbottom>
-            <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+            <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
         </control>
     </include>
 
@@ -499,10 +499,17 @@
                     <param name="textcolor">panel_fg_70</param>
                 </include>
 
-                <!-- Ends -->
+                <!-- Ends (Video) -->
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[Player.FinishTime,$LOCALIZE[31184] ,]</param>
-                    <param name="visible">!String.IsEmpty(Player.FinishTime)</param>
+                    <param name="visible">!String.IsEmpty(Player.FinishTime) + !Pvr.IsPlayingTv</param>
+                    <param name="textcolor">panel_fg_70</param>
+                </include>
+
+                <!-- Ends (PVR) -->
+                <include content="Info_Line_Item">
+                    <param name="label">$INFO[PVR.EpgEventFinishTime,$LOCALIZE[31184] ,]</param>
+                    <param name="visible">!String.IsEmpty(PVR.EpgEventFinishTime) + Pvr.IsPlayingTv</param>
                     <param name="textcolor">panel_fg_70</param>
                 </include>
 
@@ -564,6 +571,7 @@
                         <param name="label">$VAR[Label_OSD_Title]</param>
                         <param name="mainlogo_visible">[!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.CropImage))]</param>
                         <param name="mainlogo_texture">$INFO[Window(Home).Property(TMDbHelper.Player.CropImage)]</param>
+                        <param name="autoheight">true</param>
                     </include>
 
                     <control type="group">
@@ -1035,8 +1043,8 @@
 
                 <control type="group">
 
-                    <animation effect="fade" start="0" end="100" delay="300" time="300" condition="[!Window.IsActive(1143) + !Integer.IsEqual(Window(Home).Property(OSD_Focus),6003)]">Conditional</animation>
-                    <animation effect="fade" start="100" end="0" time="300" condition="![!Window.IsActive(1143) + !Integer.IsEqual(Window(Home).Property(OSD_Focus),6003)]">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" delay="300" time="300" condition="[!Window.IsActive(1143) + [!Integer.IsEqual(Window(Home).Property(OSD_Focus),6003) | VideoPlayer.Content(livetv)]]">Conditional</animation>
+                    <animation effect="fade" start="100" end="0" time="300" condition="![!Window.IsActive(1143) + [!Integer.IsEqual(Window(Home).Property(OSD_Focus),6003) | VideoPlayer.Content(livetv)]]">Conditional</animation>
 
                     <animation effect="fade" start="0" end="100" time="300" delay="200" reversible="false" condition="Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(script-cu-lrclyrics-main.xml) | $EXP[Exp_OSD_QuickInfo]">Conditional</animation>
                     <animation effect="fade" start="100" end="0" time="300" delay="0" reversible="false" condition="![Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(script-cu-lrclyrics-main.xml) | $EXP[Exp_OSD_QuickInfo]]">Conditional</animation>
