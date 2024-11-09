@@ -134,7 +134,7 @@
                 <bottom>20</bottom>
 
                 <control type="group">
-                    <height>260</height>
+                    <height>242.5</height>
                     <control type="group">
                         <include content="Dimension_Padding">
                             <param name="pad">20</param>
@@ -142,7 +142,7 @@
                         <include content="Dialog_Outline_InnerBox">
                             <control type="image">
                                 <aspectratio scalediffuse="false">keep</aspectratio>
-                                <texture background="true" diffuse="diffuse/landscape_w320_h180.png">$VAR[Image_Landscape]</texture>
+                                <texture background="true" diffuse="diffuse/landscape_w356_h200.png">$VAR[Image_Landscape]</texture>
                             </control>
                         </include>
                     </control>
@@ -151,7 +151,7 @@
                 <control type="textbox">
                     <font>font_mini_plot</font>
                     <height>120</height>
-                    <top>10</top>
+                    <top>15</top>
                     <aligny>top</aligny>
                     <textcolor>main_fg_70</textcolor>
                     <label>[B][COLOR=main_fg_90]$INFO[ListItem.Title,,[CR]][/COLOR][/B]$INFO[ListItem.StartDate,,[CR]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
@@ -161,8 +161,8 @@
 
                 <control type="textbox">
                     <font>font_mini_plot</font>
-                    <height>auto</height>
-                    <top>10</top>
+                    <height>340</height>
+                    <top>15</top>
                     <textcolor>main_fg_70</textcolor>
                     <label>$INFO[ListItem.Plot]</label>
                     <left>30</left>
