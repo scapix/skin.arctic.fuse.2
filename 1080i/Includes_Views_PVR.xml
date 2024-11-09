@@ -148,13 +148,27 @@
                     </control>
                 </control>
 
+                <control type="group">
+                    <height>15</height>
+                </control>
+
+                <control type="label">
+                    <font>font_main_bold</font>
+                    <height>40</height>
+                    <aligny>top</aligny>
+                    <textcolor>main_fg_90</textcolor>
+                    <label>$INFO[ListItem.Title]</label>
+                    <left>30</left>
+                    <right>30</right>
+                    <visible>!String.IsEmpty(ListItem.Title)</visible>
+                </control>
+
                 <control type="textbox">
                     <font>font_mini_plot</font>
-                    <height>120</height>
-                    <top>15</top>
+                    <height>80</height>
                     <aligny>top</aligny>
                     <textcolor>main_fg_70</textcolor>
-                    <label>[B][COLOR=main_fg_90]$INFO[ListItem.Title,,[CR]][/COLOR][/B]$INFO[ListItem.StartDate,,[CR]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
+                    <label>$INFO[ListItem.StartDate,,[CR]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,]</label>
                     <left>30</left>
                     <right>30</right>
                 </control>
