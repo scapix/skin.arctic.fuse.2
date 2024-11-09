@@ -65,56 +65,56 @@
                                     <property name="is_homemenu">true</property>
                                 </item>
                                 <item id="1">
-                                    <label>$NUMBER[1101] > $VAR[Label_Header_Main_1101]</label>
+                                    <label>$NUMBER[1101]$VAR[Label_Header_Main_1101, (,)]</label>
                                     <property name="value">Hub.1101</property>
                                     <property name="categories_menu">menu=1101menu</property>
                                     <property name="hub_prefix">$NUMBER[1101]</property>
                                     <visible>!Integer.IsEqual(Skin.String(Hub.Home.ReplaceWindow),1101)</visible>
                                 </item>
                                 <item id="2">
-                                    <label>$NUMBER[1102] > $VAR[Label_Header_Main_1102]</label>
+                                    <label>$NUMBER[1102]$VAR[Label_Header_Main_1102, (,)]</label>
                                     <property name="value">Hub.1102</property>
                                     <property name="categories_menu">menu=1102menu</property>
                                     <property name="hub_prefix">$NUMBER[1102]</property>
                                     <visible>!Integer.IsEqual(Skin.String(Hub.Home.ReplaceWindow),1102)</visible>
                                 </item>
                                 <item id="3">
-                                    <label>$NUMBER[1103] > $VAR[Label_Header_Main_1103]</label>
+                                    <label>$NUMBER[1103]$VAR[Label_Header_Main_1103, (,)]</label>
                                     <property name="value">Hub.1103</property>
                                     <property name="categories_menu">menu=1103menu</property>
                                     <property name="hub_prefix">$NUMBER[1103]</property>
                                     <visible>!Integer.IsEqual(Skin.String(Hub.Home.ReplaceWindow),1103)</visible>
                                 </item>
                                 <item id="4">
-                                    <label>$NUMBER[1104] > $VAR[Label_Header_Main_1104]</label>
+                                    <label>$NUMBER[1104]$VAR[Label_Header_Main_1104, (,)]</label>
                                     <property name="value">Hub.1104</property>
                                     <property name="categories_menu">menu=1104menu</property>
                                     <property name="hub_prefix">$NUMBER[1104]</property>
                                     <visible>!Integer.IsEqual(Skin.String(Hub.Home.ReplaceWindow),1104)</visible>
                                 </item>
                                 <item id="6">
-                                    <label>$NUMBER[1106] > $VAR[Label_Header_Main_1106]</label>
+                                    <label>$NUMBER[1106]$VAR[Label_Header_Main_1106, (,)]</label>
                                     <property name="value">Hub.1106</property>
                                     <property name="categories_menu">menu=1106menu</property>
                                     <property name="hub_prefix">$NUMBER[1106]</property>
                                     <visible>!Integer.IsEqual(Skin.String(Hub.Home.ReplaceWindow),1106)</visible>
                                 </item>
                                 <item id="7">
-                                    <label>$NUMBER[1107] > $VAR[Label_Header_Main_1107]</label>
+                                    <label>$NUMBER[1107]$VAR[Label_Header_Main_1107, (,)]</label>
                                     <property name="value">Hub.1107</property>
                                     <property name="categories_menu">menu=1107menu</property>
                                     <property name="hub_prefix">$NUMBER[1107]</property>
                                     <visible>!Integer.IsEqual(Skin.String(Hub.Home.ReplaceWindow),1107)</visible>
                                 </item>
                                 <item id="8">
-                                    <label>$NUMBER[1108] > $VAR[Label_Header_Main_1108]</label>
+                                    <label>$NUMBER[1108]$VAR[Label_Header_Main_1108, (,)]</label>
                                     <property name="value">Hub.1108</property>
                                     <property name="categories_menu">menu=1108menu</property>
                                     <property name="hub_prefix">$NUMBER[1108]</property>
                                     <visible>!Integer.IsEqual(Skin.String(Hub.Home.ReplaceWindow),1108)</visible>
                                 </item>
                                 <item id="9">
-                                    <label>$NUMBER[1109] > $VAR[Label_Header_Main_1109]</label>
+                                    <label>$NUMBER[1109]$VAR[Label_Header_Main_1109, (,)]</label>
                                     <property name="value">Hub.1109</property>
                                     <property name="categories_menu">menu=1109menu</property>
                                     <property name="hub_prefix">$NUMBER[1109]</property>
@@ -237,6 +237,7 @@
                                     <onclick condition="String.IsEqual(Container(30000).ListItem.Property(categories_menu),menu=1109menu)">Skin.SetString(Hub.1109.Label)</onclick>
 
                                     <visible>!String.IsEqual(Container(30000).ListItem.Property(categories_menu),menu=sidemenu)</visible>
+                                    <visible>String.IsEmpty(Container(30000).ListItem.Property(is_homemenu))</visible>
 
                                     <onfocus>SetProperty(HelpHead,$LOCALIZE[21899],1115)</onfocus>
                                     <onfocus>SetProperty(HelpText,$LOCALIZE[31201],1115)</onfocus>
