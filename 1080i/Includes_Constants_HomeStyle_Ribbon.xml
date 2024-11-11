@@ -3,8 +3,8 @@
 
     <constant name="view_menu_mini">200</constant>
     <constant name="-view_menu_mini">-200</constant>
-    <constant name="view_menu_comp">320</constant>
-    <constant name="-view_menu_comp">-320</constant>
+    <constant name="view_menu_comp">280</constant>
+    <constant name="-view_menu_comp">-280</constant>
     <constant name="view_menu_mini_pad_x">0</constant>
     <constant name="view_menu_mini_offset_x">-20</constant>
     <constant name="view_menu_main_pad_x">0</constant>

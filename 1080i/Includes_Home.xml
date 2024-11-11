@@ -612,7 +612,7 @@
                 <param name="width">view_menu_mini</param>
                 <param name="dialog_size">Dimension_DialogMiniHome</param>
                 <param name="include_ribbon">Skin.String(Home.MenuStyle,Ribbon)</param>
-                <param name="include_dialog">Skin.String(Home.MenuStyle,Panel)</param>
+                <param name="include_dialog">Skin.String(Home.MenuStyle,Dialog)</param>
                 <param name="include_mask">!Skin.String(Home.MenuStyle,Ribbon)</param>
             </include>
         </control>
