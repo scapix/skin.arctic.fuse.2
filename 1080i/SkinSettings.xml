@@ -422,7 +422,7 @@
                             <param name="dialog">false</param>
                             <param name="id">3012</param>
                             <param name="control">button</param>
-                            <label>$LOCALIZE[31082]</label>
+                            <label>$LOCALIZE[31106] ([CAPITALIZE]$LOCALIZE[31082][/CAPITALIZE])</label>
                             <label2>$VAR[Label_Settings_WallOrientation]</label2>
                             <visible>Container(3).HasFocus(3)</visible>
                             <visible>String.IsEqual(Skin.AspectRatio,16:9)</visible>
@@ -447,6 +447,16 @@
                             <label2>$VAR[Label_Settings_BoardViewMode]</label2>
                             <visible>Container(3).HasFocus(3)</visible>
                             <onclick>Skin.ToggleSetting(View.UseTextBasedBoard)</onclick>
+                        </include>
+
+                        <include content="Settings_Button" description="Use Landscape only for FlixArt List Library">
+                            <param name="dialog">false</param>
+                            <param name="id">3016</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31106] ($LOCALIZE[31480])</label>
+                            <label2>$VAR[Label_Settings_ListFlixArtViewMode]</label2>
+                            <visible>Container(3).HasFocus(3)</visible>
+                            <onclick>Skin.ToggleSetting(View.DisableFlixArtListPoster)</onclick>
                         </include>
 
                         <include content="Settings_Button" description="Use Simple Text">
