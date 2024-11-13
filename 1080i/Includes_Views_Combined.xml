@@ -103,12 +103,6 @@
 
         <ondown>SetFocus(8000)</ondown>
 
-        <!-- <pagecontrol>65</pagecontrol>
-        <include content="Action_View_Movement_OnDown">
-            <param name="to_scrollbar">false</param>
-            <param name="id">$PARAM[id]2</param>
-        </include> -->
-
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id]3)</onfocus>
         <onfocus>ClearProperty(SpecialFolderPath)</onfocus>
         <onfocus>ClearProperty(Background.ShowOverlay,Home)</onfocus>
@@ -121,7 +115,6 @@
             <visible allowhiddenfocus="true">!$EXP[Exp_View_ScrollFilter_HasFocus]</visible>
             <control type="group">
                 <visible>$PARAM[visible]</visible>
-                <!-- <left>view_poster_itemlayout_w</left> -->
                 <include content="Categories_Selector">
                     <param name="id">$PARAM[id]2</param>
                     <param name="font">font_mini</param>
@@ -135,8 +128,6 @@
                         <param name="visible">$PARAM[visible]</param>
                         <param name="viewtype_label">$PARAM[viewtype_label]</param>
                     </include>
-                    <!-- <focusposition>2</focusposition>
-                    <movement>2</movement> -->
                 </include>
             </control>
         </control>
