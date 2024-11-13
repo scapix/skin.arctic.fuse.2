@@ -892,19 +892,25 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
 
-                <control type="image">
-                    <texture colordiffuse="$PARAM[textcolor]_$PARAM[nf_opacity]">$PARAM[icon]</texture>
-                    <aspectratio>keep</aspectratio>
-                    <bordersize>icon_menu_bordersize</bordersize>
-                    <bordersize>$PARAM[bordersize]</bordersize>
-                    <visible>!Control.HasFocus($PARAM[id])</visible>
-                </control>
-                <control type="image">
-                    <texture colordiffuse="$VAR[ColorSelected]">$PARAM[icon]</texture>
-                    <aspectratio>keep</aspectratio>
-                    <bordersize>icon_menu_bordersize</bordersize>
-                    <bordersize>$PARAM[bordersize]</bordersize>
-                    <visible>Control.HasFocus($PARAM[id])</visible>
+                <control type="group">
+                    <include content="Object_Top" condition="![$PARAM[include_hintlabel]]">
+                        <param name="top">10</param>
+                    </include>
+                    <height>$PARAM[icon_size]</height>
+                    <control type="image">
+                        <texture colordiffuse="$PARAM[textcolor]_$PARAM[nf_opacity]">$PARAM[icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <bordersize>icon_menu_bordersize</bordersize>
+                        <bordersize>$PARAM[bordersize]</bordersize>
+                        <visible>!Control.HasFocus($PARAM[id])</visible>
+                    </control>
+                    <control type="image">
+                        <texture colordiffuse="$VAR[ColorSelected]">$PARAM[icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                        <bordersize>icon_menu_bordersize</bordersize>
+                        <bordersize>$PARAM[bordersize]</bordersize>
+                        <visible>Control.HasFocus($PARAM[id])</visible>
+                    </control>
                 </control>
             </control>
         </definition>
@@ -1355,9 +1361,7 @@
                                 <onclick>Dialog.Close(1141,true)</onclick>
                                 <onclick>Dialog.Close(videobookmarks,true)</onclick>
                                 <onclick>RunScript(plugin.video.themoviedb.helper,add_path=$INFO[Window.Property(path)],call_auto=1190,return)</onclick>
-                                <include content="DialogInfo_Button_HintLabel">
-                                    <param name="label">$LOCALIZE[29915]</param>
-                                </include>
+                                <param name="include_hintlabel">true</param>
                             </include>
                             <!-- Wiki -->
                             <include content="DialogInfo_Button">
@@ -1369,9 +1373,7 @@
 
                                 <onclick>runscript(script.wikipedia,wikipedia=$INFO[Window.Property(header)])</onclick>
 
-                                <include content="DialogInfo_Button_HintLabel">
-                                    <param name="label">Wiki</param>
-                                </include>
+                                <param name="include_hintlabel">true</param>
                             </include>
                             <!-- Trailer -->
                             <include content="DialogInfo_Button">
@@ -1385,9 +1387,7 @@
                                     <param name="trailer">Window.Property(trailer)</param>
                                     <param name="trailer_fallback">Window(Home).Property(TMDbHelper.ListItem.Trailer)</param>
                                 </include>
-                                <include content="DialogInfo_Button_HintLabel">
-                                    <param name="label">$LOCALIZE[20410]</param>
-                                </include>
+                                <param name="include_hintlabel">true</param>
                             </include>
 
                         </control>

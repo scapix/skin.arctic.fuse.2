@@ -2352,28 +2352,4 @@
         </definition>
     </include>
 
-    <include name="Object_Side_InfoIcon">
-        <control type="group">
-            <nested />
-            <left>view_pad</left>
-            <width>40</width>
-            <height>40</height>
-            <control type="image">
-                <aspectratio>keep</aspectratio>
-                <bordersize>icon_menu_bordersize</bordersize>
-                <texture colordiffuse="main_fg_70">$PARAM[icon]</texture>
-            </control>
-            <control type="label">
-                <include content="DialogInfo_Button_HintLabel">
-                    <param name="label">$PARAM[label]</param>
-                    <param name="textcolor">main_fg</param>
-                </include>
-                <width>160</width>
-                <height>160</height>
-                <centertop>30</centertop>
-                <centerleft>50%</centerleft>
-            </control>
-        </control>
-    </include>
-
 </includes>
