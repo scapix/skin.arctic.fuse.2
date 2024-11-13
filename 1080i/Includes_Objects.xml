@@ -1521,6 +1521,7 @@
 
     <include name="Object_MenuHeader">
         <param name="icon">special://skin/extras/icons/kodi.png</param>
+        <param name="bordersize">10</param>
         <param name="label">$LOCALIZE[33063]</param>
         <param name="has_icon">true</param>
         <param name="colordiffuse">$VAR[ColorHighlight]</param>
@@ -1545,7 +1546,7 @@
                     <width>80</width>
                     <control type="image">
                         <bordersize>$PARAM[bordersize]</bordersize>
-                        <texture colordiffuse="$PARAM[colordiffuse]">$PARAM[icon]</texture>
+                        <texture colordiffuse="$PARAM[textcolor]_90">$PARAM[icon]</texture>
                     </control>
                 </include>
                 <control type="image">
