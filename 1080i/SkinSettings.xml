@@ -252,7 +252,7 @@
                             <label>$LOCALIZE[10000] > $LOCALIZE[31146]</label>
                             <onclick>Skin.ToggleSetting(SideMenu.DisableProfileLogo)</onclick>
                             <selected>!Skin.HasSetting(SideMenu.DisableProfileLogo)</selected>
-                            <visible>!Skin.HasSetting(SideMenu.DisableSearchAndOptions)</visible>
+                            <visible>![Skin.HasSetting(SideMenu.DisableSearchAndOptions) + $EXP[Exp_HomeMenu_IsExpanded]]</visible>
                             <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
