@@ -285,7 +285,7 @@
     </include>
 
     <include name="Dialog_Side_Grouplist_Def">
-        <top>-30</top>
+        <top>-20</top>
         <itemgap>0</itemgap>
         <orientation>vertical</orientation>
         <width>160</width>

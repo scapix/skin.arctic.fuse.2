@@ -619,9 +619,9 @@
         <include content="Dialog_Side_Button">
             <param name="id">04</param>
             <param name="label">$INFO[Control.GetLabel(20)]</param>
-            <param name="icon">special://skin/extras/icons/settings.png</param>
+            <param name="icon">$VAR[Image_Settings_Level]</param>
             <param name="visible">Control.IsEnabled(20)</param>
-            <onclick>SendClick(20)</onclick>
+            <onclick>settingslevelchange</onclick>
         </include>
     </include>
 
@@ -800,7 +800,7 @@
 
     <include name="Items_MusicPlaylistEditor_MenuBar">
         <param name="vertical">true</param>
-        <param name="itemgap">10</param>
+        <param name="itemgap">0</param>
         <definition>
             <include content="Dialog_Side_Button">
                 <param name="id">01</param>
@@ -845,7 +845,7 @@
 
     <include name="Items_PersonCredits_MenuBar">
         <param name="vertical">true</param>
-        <param name="itemgap">10</param>
+        <param name="itemgap">0</param>
         <definition>
             <include content="Dialog_Side_Button">
                 <param name="id">01</param>
@@ -932,7 +932,7 @@
     <include name="Items_DialogVideoInfo_MenuBar">
         <param name="zoom_in_include">false</param>
         <param name="vertical">true</param>
-        <param name="itemgap">10</param>
+        <param name="itemgap">0</param>
         <definition>
             <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
                 <param name="vertical">$PARAM[vertical]</param>
@@ -1110,7 +1110,7 @@
     <include name="Items_DialogMusicInfo_MenuBar">
         <param name="zoom_in_include">true</param>
         <param name="vertical">true</param>
-        <param name="itemgap">10</param>
+        <param name="itemgap">0</param>
         <definition>
             <include content="DialogInfo_Button">
                 <param name="vertical">$PARAM[vertical]</param>
