@@ -181,26 +181,13 @@
                                         <onright>23001</onright>
                                         <onleft>22001</onleft>
 
-                                        <!-- <include content="Dialog_Side_Button">
-                                            <param name="id">12</param>
-                                            <param name="baseid">29</param>
-                                            <param name="label">$LOCALIZE[35261]</param>
-                                            <param name="icon">special://skin/extras/icons/circle-plus.png</param>
-                                            <onclick condition="!$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
-                                            <onclick condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
-                                            <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_new]$VAR[Path_Shortcut_UseRawPath])</onclick>
-                                            <onback>29999</onback>
-                                        </include> -->
-
                                         <!-- Shortcuts -->
-                                        <include content="Dialog_Side_Button">
-                                            <param name="dialog">true</param>
-                                            <param name="baseid">29</param>
-                                            <param name="id">02</param>
-                                            <param name="control">button</param>
+                                        <include content="DialogInfo_Button">
+                                            <param name="id">29002</param>
+                                            <param name="groupid">29102</param>
                                             <param name="label">$LOCALIZE[31511]</param>
-                                            <!-- <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param> -->
                                             <param name="icon">special://skin/extras/icons/share.png</param>
+                                            <param name="include_hintlabel">true</param>
                                             <onclick condition="!$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
                                             <onclick condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
                                             <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_choose]$VAR[Path_Shortcut_UseRawPath])</onclick>
@@ -208,14 +195,12 @@
                                         </include>
 
                                         <!-- Action -->
-                                        <include content="Dialog_Side_Button">
-                                            <param name="dialog">true</param>
-                                            <param name="baseid">29</param>
-                                            <param name="id">03</param>
-                                            <param name="control">button</param>
+                                        <include content="DialogInfo_Button">
+                                            <param name="id">29003</param>
+                                            <param name="groupid">29103</param>
                                             <param name="label">$LOCALIZE[15217]</param>
-                                            <!-- <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param> -->
                                             <param name="icon">special://skin/extras/icons/terminal.png</param>
+                                            <param name="include_hintlabel">true</param>
                                             <onclick condition="!$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
                                             <onclick condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
                                             <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_action]$VAR[Path_Shortcut_UseRawPath])</onclick>
@@ -223,45 +208,30 @@
                                         </include>
 
                                         <!-- Rename -->
-                                        <include content="Dialog_Side_Button">
-                                            <param name="dialog">true</param>
-                                            <param name="baseid">29</param>
-                                            <param name="id">04</param>
-                                            <param name="control">button</param>
+                                        <include content="DialogInfo_Button">
+                                            <param name="id">29004</param>
+                                            <param name="groupid">29104</param>
                                             <param name="label">$LOCALIZE[118]</param>
                                             <param name="icon">special://skin/extras/icons/i-cursor.png</param>
-                                            <!-- <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param> -->
+                                            <param name="include_hintlabel">true</param>
                                             <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_edit])</onclick>
                                             <onback>29999</onback>
                                         </include>
 
                                         <!-- Icon -->
-                                        <include content="Dialog_Side_Button">
-                                            <param name="dialog">true</param>
-                                            <param name="baseid">29</param>
-                                            <param name="id">05</param>
-                                            <param name="control">button</param>
+                                        <include content="DialogInfo_Button">
+                                            <param name="id">29005</param>
+                                            <param name="groupid">29105</param>
                                             <param name="label">$LOCALIZE[31274]</param>
                                             <param name="icon">special://skin/extras/icons/image.png</param>
-                                            <!-- <param name="visible">[!String.IsEqual(Container(22001).ListItem.Property(disabled),True) + !String.IsEqual(Container(22001).ListItem.Property(blank),True)]</param> -->
+                                            <param name="include_hintlabel">true</param>
                                             <onclick>SetProperty(url,$INFO[Container(22001).ListItem.Property(url)],1117)</onclick>
                                             <onclick>ActivateWindow(1117)</onclick>
                                             <onback>29999</onback>
                                         </include>
 
-                                        <!-- Delete -->
-                                        <!-- <include content="Dialog_Side_Button">
-                                            <param name="dialog">true</param>
-                                            <param name="baseid">29</param>
-                                            <param name="id">07</param>
-                                            <param name="label">$LOCALIZE[117]</param>
-                                            <param name="icon">special://skin/extras/icons/trash-can.png</param>
-                                            <param name="visible">!String.IsEqual(Container(22001).ListItem.Property(blank),True)</param>
-                                            <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_delete&amp;&amp;False])</onclick>
-                                            <onback>29999</onback>
-                                        </include> -->
-
-                                        <control type="group" id="29008">
+                                        <!-- Spacer -->
+                                        <control type="group" id="29090">
                                             <height>270</height>
                                             <control type="image">
                                                 <left>60</left>
@@ -272,22 +242,26 @@
                                             </control>
                                         </control>
 
-
-
-                                        <include content="Dialog_Side_Button">
-                                            <param name="id">04</param>
+                                        <!-- Add list -->
+                                        <include content="DialogInfo_Button">
+                                            <param name="id">29006</param>
+                                            <param name="groupid">29106</param>
                                             <param name="label">$LOCALIZE[31533]</param>
                                             <param name="icon">special://skin/extras/icons/list-ol.png</param>
+                                            <param name="include_hintlabel">true</param>
                                             <param name="visible">[String.IsEqual(Window(Home).Property(Shortcuts.EditMode),mode=widgets) | String.IsEqual(Window(Home).Property(Shortcuts.EditMode),mode=submenu) | String.EndsWith(Window(Home).Property(Shortcuts.EditMenu),-widgetsonly) | String.EndsWith(Window(Home).Property(Shortcuts.EditMenu),-globalwidgets) | String.IsEmpty(Window(Home).Property(Shortcuts.EditMode))]</param>
                                             <onclick>ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
                                             <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_list_add&amp;&amp;item_limit::80]$VAR[Path_Shortcut_UseRawPath])</onclick>
                                             <onback>29999</onback>
                                         </include>
 
-                                        <include content="Dialog_Side_Button">
-                                            <param name="id">05</param>
+                                        <!-- Delete list -->
+                                        <include content="DialogInfo_Button">
+                                            <param name="id">29007</param>
+                                            <param name="groupid">29107</param>
                                             <param name="label">$LOCALIZE[31534]</param>
                                             <param name="icon">special://skin/extras/icons/trash-can.png</param>
+                                            <param name="include_hintlabel">true</param>
                                             <param name="visible">[String.IsEqual(Window(Home).Property(Shortcuts.EditMode),mode=widgets) | String.IsEqual(Window(Home).Property(Shortcuts.EditMode),mode=submenu) | String.EndsWith(Window(Home).Property(Shortcuts.EditMenu),-widgetsonly) | String.EndsWith(Window(Home).Property(Shortcuts.EditMenu),-globalwidgets) | String.IsEmpty(Window(Home).Property(Shortcuts.EditMode))]</param>
                                             <onclick>ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
                                             <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_list_del]$VAR[Path_Shortcut_UseRawPath])</onclick>

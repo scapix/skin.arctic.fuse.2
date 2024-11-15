@@ -770,34 +770,13 @@
         </include>
     </include>
 
-    <include name="Items_Wikipedia_MenuBar">
-        <include content="Dialog_Side_Button">
-            <param name="id">01</param>
-            <param name="baseid">4</param>
-            <param name="label">$LOCALIZE[31166]</param>
-            <param name="icon">special://skin/extras/icons/arrow-left.png</param>
-            <param name="visible">true</param>
-            <onclick>Action(Close)</onclick>
-        </include>
-    </include>
-
-    <include name="Items_Recommendations_MenuBar">
-        <include content="Dialog_Side_Button">
-            <param name="id">01</param>
-            <param name="baseid">4</param>
-            <param name="label">$LOCALIZE[15067]</param>
-            <param name="icon">special://skin/extras/icons/circle-xmark.png</param>
-            <param name="visible">true</param>
-            <onclick>Action(Close)</onclick>
-        </include>
-    </include>
-
     <include name="Items_MusicPlaylistEditor_MenuBar">
         <param name="vertical">true</param>
         <param name="itemgap">0</param>
         <definition>
-            <include content="Dialog_Side_Button">
-                <param name="id">01</param>
+            <include content="DialogInfo_Button">
+                <param name="id">9001</param>
+                <param name="groupid">9101</param>
                 <param name="label">$LOCALIZE[15067]</param>
                 <param name="icon">special://skin/extras/icons/circle-xmark.png</param>
                 <param name="vertical">$PARAM[vertical]</param>
@@ -807,7 +786,6 @@
             <include content="DialogInfo_Button">
                 <param name="id">6</param>
                 <param name="groupid">9106</param>
-                <param name="sliceid">9206</param>
                 <param name="label">$LOCALIZE[502]</param>
                 <param name="icon">special://skin/extras/icons/folder.png</param>
                 <param name="vertical">$PARAM[vertical]</param>
@@ -817,7 +795,6 @@
             <include content="DialogInfo_Button">
                 <param name="id">7</param>
                 <param name="groupid">9107</param>
-                <param name="sliceid">9207</param>
                 <param name="label">$LOCALIZE[190]</param>
                 <param name="icon">special://skin/extras/icons/floppy-disk.png</param>
                 <param name="vertical">$PARAM[vertical]</param>
@@ -827,7 +804,6 @@
             <include content="DialogInfo_Button">
                 <param name="id">8</param>
                 <param name="groupid">9108</param>
-                <param name="sliceid">9208</param>
                 <param name="label">$LOCALIZE[192]</param>
                 <param name="icon">special://skin/extras/icons/triangle-exclamation.png</param>
                 <param name="vertical">$PARAM[vertical]</param>
@@ -835,92 +811,6 @@
                 <param name="include_hintlabel">true</param>
             </include>
         </definition>
-    </include>
-
-    <include name="Items_PersonCredits_MenuBar">
-        <param name="vertical">true</param>
-        <param name="itemgap">0</param>
-        <definition>
-            <include content="Dialog_Side_Button">
-                <param name="id">01</param>
-                <param name="baseid">4</param>
-                <param name="label">$LOCALIZE[15067]</param>
-                <param name="icon">special://skin/extras/icons/circle-xmark.png</param>
-                <param name="visible">true</param>
-                <param name="include_slide">true</param>
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <onclick>Action(Close)</onclick>
-            </include>
-            <include content="Dialog_Side_Button">
-                <param name="id">02</param>
-                <param name="baseid">4</param>
-                <param name="label">$LOCALIZE[29915]</param>
-                <param name="icon">special://skin/extras/icons/quote.png</param>
-                <param name="visible">true</param>
-                <param name="include_slide">true</param>
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <onclick>SetFocus(61)</onclick>
-            </include>
-            <include content="Dialog_Side_Button">
-                <param name="id">03</param>
-                <param name="baseid">4</param>
-                <param name="label">[CAPITALIZE]$INFO[Skin.String(VideoInfo.PersonCredits.SortKey)][/CAPITALIZE]</param>
-                <param name="icon">special://skin/extras/icons/arrow-updown-short-wide.png</param>
-                <param name="visible">true</param>
-                <param name="include_slide">true</param>
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <onclick condition="Skin.String(VideoInfo.PersonCredits.SortKey,popular)">Skin.SetString(VideoInfo.PersonCredits.SortKey,date)</onclick>
-                <onclick condition="Skin.String(VideoInfo.PersonCredits.SortKey,date)">Skin.SetString(VideoInfo.PersonCredits.SortKey,rating)</onclick>
-                <onclick condition="Skin.String(VideoInfo.PersonCredits.SortKey,rating)">Skin.SetString(VideoInfo.PersonCredits.SortKey,votes)</onclick>
-                <onclick condition="Skin.String(VideoInfo.PersonCredits.SortKey,votes)">Skin.SetString(VideoInfo.PersonCredits.SortKey,popular)</onclick>
-            </include>
-            <include content="Dialog_Side_Button">
-                <param name="id">04</param>
-                <param name="baseid">4</param>
-                <param name="label">Wiki</param>
-                <param name="icon">special://skin/extras/icons/globe.png</param>
-                <param name="visible">true</param>
-                <param name="include_slide">true</param>
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <onclick>runscript(script.wikipedia,wikipedia=$INFO[Window.Property(Item_Title)],tmdb_type=$INFO[Window.Property(Item_Type)])</onclick>
-            </include>
-            <include content="Dialog_Side_Button">
-                <param name="id">05</param>
-                <param name="baseid">4</param>
-                <param name="label">$LOCALIZE[108]</param>
-                <param name="icon">special://skin/extras/icons/images.png</param>
-                <param name="visible">true</param>
-                <param name="include_slide">true</param>
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <onclick condition="String.IsEmpty(Window.Property(Item_Type))">SlideShow(plugin://plugin.video.themoviedb.helper/?info=images&amp;type=person$INFO[Window.Property(Item_Query)]$VAR[Path_Param_Widget])</onclick>
-                <onclick condition="!String.IsEmpty(Window.Property(Item_Type))">SlideShow(plugin://plugin.video.themoviedb.helper/?info=fanart$INFO[Window.Property(Item_Type),&amp;,]$INFO[Window.Property(Item_Query)]$VAR[Path_Param_Widget])</onclick>
-            </include>
-        </definition>
-    </include>
-
-    <include name="Items_SearchWindow_MenuBar">
-        <include content="Dialog_Side_Button">
-            <param name="id">01</param>
-            <param name="baseid">4</param>
-            <param name="visible">true</param>
-            <param name="label">$LOCALIZE[15067]</param>
-            <param name="icon">special://skin/extras/icons/circle-xmark.png</param>
-            <onclick>PreviousMenu</onclick>
-        </include>
-        <include content="Dialog_Side_Button">
-            <param name="id">02</param>
-            <param name="baseid">4</param>
-            <param name="visible">true</param>
-            <param name="label">$LOCALIZE[31066]</param>
-            <param name="icon">special://skin/extras/icons/binoculars.png</param>
-            <onclick>SetProperty(CustomSearchTerm,$ESCINFO[Control.GetLabel(9099).index(1)],Home)</onclick>
-            <onclick>ReplaceWindow(1105)</onclick>
-        </include>
     </include>
 
     <include name="Items_DialogVideoInfo_MenuBar">

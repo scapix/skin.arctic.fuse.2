@@ -357,63 +357,6 @@
         </definition>
     </include>
 
-
-    <include name="Dialog_Side_Button">
-        <param name="vertical">true</param>
-        <param name="textcolor">dialog_fg</param>
-        <param name="id_prefix">0</param>
-        <param name="groupid_prefix">1</param>
-        <param name="baseid">9</param>
-        <param name="include_slide">false</param>
-        <definition>
-            <include content="DialogInfo_Button">
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="id">$PARAM[baseid]$PARAM[id_prefix]$PARAM[id]</param>
-                <param name="groupid">$PARAM[baseid]$PARAM[groupid_prefix]$PARAM[id]</param>
-                <param name="label">$PARAM[label]</param>
-                <param name="icon">$PARAM[icon]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <param name="db_opacity">$PARAM[db_opacity]</param>
-                <param name="visible">$PARAM[visible]</param>
-                <param name="control">$PARAM[control]</param>
-                <param name="radioround">$PARAM[radioround]</param>
-                <param name="radiocross">$PARAM[radiocross]</param>
-                <param name="radiocheck">$PARAM[radiocheck]</param>
-                <param name="include_slide">$PARAM[include_slide]</param>
-                <param name="include_hintlabel">true</param>
-                <nested />
-            </include>
-        </definition>
-    </include>
-
-    <include name="Dialog_Side_Button_BuiltIn">
-        <param name="vertical">true</param>
-        <param name="textcolor">dialog_fg</param>
-        <definition>
-            <include content="DialogInfo_Button">
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="id">$PARAM[id]</param>
-                <param name="groupid">$PARAM[groupid]</param>
-                <param name="label">$PARAM[label]</param>
-                <param name="icon">$PARAM[icon]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <param name="db_opacity">$PARAM[db_opacity]</param>
-                <param name="visible">$PARAM[visible]</param>
-                <param name="control">$PARAM[control]</param>
-                <param name="builtin">true</param>
-                <param name="radioround">$PARAM[radioround]</param>
-                <param name="radiocross">$PARAM[radiocross]</param>
-                <param name="radiocheck">$PARAM[radiocheck]</param>
-                <param name="include_hintlabel">true</param>
-                <nested />
-            </include>
-        </definition>
-    </include>
-
     <include name="_Dialog_Special_Button">
         <definition>
             <control type="group">
