@@ -176,7 +176,7 @@
                                         <width>120</width>
                                         <align>left</align>
                                         <left>-40</left>
-                                        <top>-50</top>
+                                        <top>-40</top>
                                         <onback>29999</onback>
                                         <onright>23001</onright>
                                         <onleft>22001</onleft>
@@ -262,7 +262,7 @@
                                         </include> -->
 
                                         <control type="group" id="29008">
-                                            <height>220</height>
+                                            <height>270</height>
                                             <control type="image">
                                                 <left>60</left>
                                                 <right>20</right>
