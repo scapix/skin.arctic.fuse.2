@@ -68,6 +68,7 @@
 
             <include content="Dialog_Foreground_Side">
                 <param name="dialog_size">Dimension_DialogFullMenu</param>
+                <param name="slide_condition">true</param>
 
                 <!-- Header -->
                 <include content="Dialog_Head">

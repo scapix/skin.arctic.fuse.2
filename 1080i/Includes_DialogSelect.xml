@@ -135,6 +135,7 @@
 
             <include content="Dialog_Foreground_Side">
                 <param name="dialog_size">Dimension_DialogWideMenu</param>
+                <param name="slide_condition">false</param>
 
                 <!-- Header -->
                 <include content="Dialog_Head">
@@ -233,7 +234,8 @@
         <control type="grouplist" id="9000">
             <include>Dialog_Side_Grouplist_Def</include>
             <onleft>10811</onleft>
-            <include content="DialogInfo_ExpandedButton">
+            <include content="DialogInfo_Button">
+                <param name="include_hintlabel">true</param>
                 <param name="id">9001</param>
                 <param name="groupid">9101</param>
                 <param name="label">$LOCALIZE[15067]</param>
@@ -268,7 +270,7 @@
 
     <include name="DialogSelect_SideButtons_Standard">
         <control type="grouplist" id="9000">
-            <include>Dialog_Side_Expanded_Grouplist_Def</include>
+            <include>Dialog_Side_Grouplist_Def</include>
             <onright condition="Control.IsVisible(61)">61</onright>
             <onright condition="Control.IsVisible(62)">62</onright>
             <onright condition="Control.IsVisible(63)">63</onright>
@@ -279,7 +281,8 @@
     </include>
 
     <include name="DialogSelect_SideButtons_Artwork">
-        <include content="DialogInfo_ExpandedButton">
+        <include content="DialogInfo_Button">
+            <param name="include_hintlabel">true</param>
             <param name="id">9006</param>
             <param name="groupid">9106</param>
             <param name="label">$LOCALIZE[1000]</param>

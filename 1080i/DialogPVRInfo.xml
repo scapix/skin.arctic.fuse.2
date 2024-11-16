@@ -22,9 +22,7 @@
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
                     <control type="grouplist" id="9000">
-                        <include content="Dialog_Side_Expanded_Grouplist_Def">
-                            <param name="condition">[true]</param>
-                        </include>
+                        <include>Dialog_Side_Expanded_Grouplist_Def</include>
                         <onleft>Close</onleft>
                         <onright>61</onright>
                         <include>Items_DialogPVRInfo_MenuBar</include>

@@ -14,15 +14,17 @@
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
                     <control type="grouplist" id="9000">
-                        <include>Dialog_Side_Expanded_Grouplist_Def</include>
+                        <include>Dialog_Side_Grouplist_Def</include>
                         <onleft>7000</onleft>
-                        <include content="DialogInfo_ExpandedButton">
+                        <include content="DialogInfo_Button">
+                            <param name="include_hintlabel">true</param>
                             <param name="id">18</param>
                             <param name="groupid">9101</param>
                             <param name="label">$LOCALIZE[186]</param>
                             <param name="icon">special://skin/extras/icons/circle-check.png</param>
                         </include>
-                        <include content="DialogInfo_ExpandedButton">
+                        <include content="DialogInfo_Button">
+                            <param name="include_hintlabel">true</param>
                             <param name="id">19</param>
                             <param name="groupid">9103</param>
                             <param name="label">$LOCALIZE[222]</param>

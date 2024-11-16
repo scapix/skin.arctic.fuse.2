@@ -29,10 +29,7 @@
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
                     <control type="grouplist" id="9000">
-                        <include content="Dialog_Side_Expanded_Grouplist_Def">
-                            <param name="condition">[true]</param>
-                        </include>
-                        <!-- <onright>13</onright> -->
+                        <include>Dialog_Side_Expanded_Grouplist_Def</include>
                         <onleft>63</onleft>
                         <include content="DialogInfo_ExpandedButton">
                             <param name="builtin">true</param>
@@ -98,7 +95,7 @@
             </include>
 
             <include content="Dialog_Foreground_Side">
-                <param name="slide_condition">True</param>
+                <param name="slide_condition">true</param>
                 <param name="dialog_size">Dimension_DialogFullMenu</param>
                 <param name="lines_right">0</param>
                 <param name="topline">false</param>

@@ -690,74 +690,6 @@
         <onload>ClearProperty(TMDbHelper.WidgetContainer)</onload>
     </include>
 
-    <include name="DialogInfo_ButtonGroup_Basic">
-        <param name="id">4000</param>
-        <param name="dim_visible">true</param>
-        <param name="vertical">true</param>
-        <param name="visible">true</param>
-        <definition>
-            <control type="grouplist" id="$PARAM[id]">
-                <include content="Object_Orientation" condition="$PARAM[vertical]">
-                    <param name="orientation">vertical</param>
-                </include>
-                <include content="Object_Orientation" condition="![$PARAM[vertical]]">
-                    <param name="orientation">horizontal</param>
-                </include>
-
-                <include condition="$PARAM[vertical]">DialogInfo_ButtonGroup_Vert</include>
-                <include condition="![$PARAM[vertical]]">DialogInfo_ButtonGroup_Horz</include>
-
-                <itemgap>0</itemgap>
-                <orientation>vertical</orientation>
-
-                <include content="$PARAM[include]">
-                    <param name="vertical">$PARAM[vertical]</param>
-                    <param name="itemgap">$PARAM[itemgap]</param>
-                </include>
-
-                <include>$PARAM[include_def]</include>
-                <visible>$PARAM[visible]</visible>
-            </control>
-        </definition>
-    </include>
-
-    <!-- Button Group for DialogInfo -->
-    <include name="DialogInfo_ButtonGroup_Vert">
-        <top>250</top>
-        <width>160</width>
-        <left>view_list</left>
-    </include>
-    <include name="DialogInfo_ButtonGroup_Horz">
-        <top>20</top>
-        <height>160</height>
-        <left>20</left>
-    </include>
-
-    <include name="DialogInfo_ButtonGroup">
-        <param name="search_visible">true</param>
-        <param name="settings_visible">true</param>
-        <param name="vertical">true</param>
-        <definition>
-            <control type="group">
-                <control type="grouplist" id="4000">
-                    <itemgap>0</itemgap>
-                    <include>Dialog_Side_Grouplist_Def</include>
-
-                    <onback>Dialog.Close(movieinformation)</onback>
-
-                    <onright>61</onright>
-                    <onleft>Close</onleft>
-
-                    <include content="$PARAM[include]">
-                        <param name="vertical">true</param>
-                        <param name="itemgap">$PARAM[itemgap]</param>
-                    </include>
-                </control>
-                <nested />
-            </control>
-        </definition>
-    </include>
-
     <include name="DialogInfo_VideoVersions_Content">
         <onback>8000</onback>
         <onclick>Dialog.Close(movieinformation,true)</onclick>
@@ -808,18 +740,23 @@
             <control type="$PARAM[control]" id="$PARAM[id]">
                 <height>80</height>
                 <visible>$PARAM[visible]</visible>
-                <textcolor>$PARAM[textcolor]_$PARAM[nf_opacity]</textcolor>
+
+                <font />
+                <label />
+
+                <radiowidth>64</radiowidth>
+
+                <!-- <textcolor>$PARAM[textcolor]_$PARAM[nf_opacity]</textcolor>
                 <selectedcolor>$PARAM[textcolor]_$PARAM[nf_opacity]</selectedcolor>
                 <label>$PARAM[label]</label>
                 <align>left</align>
-                <font>font_mini</font>
+                <font>font_mini</font> -->
 
-                <radiowidth>36</radiowidth>
+                <!-- <radiowidth>36</radiowidth>
                 <radioheight>16</radioheight>
-                <radioposy>50</radioposy>
-                <!-- <radiowidth>64</radiowidth> -->
+                <radioposy>50</radioposy> -->
 
-                <include content="DialogInfo_Button_RadioCheck" condition="$PARAM[radiocheck]">
+                <!-- <include content="DialogInfo_Button_RadioCheck" condition="$PARAM[radiocheck]">
                     <param name="color_nofocus">$PARAM[textcolor]_$PARAM[nf_opacity]</param>
                     <param name="color_disabled">$PARAM[textcolor]_$PARAM[db_opacity]</param>
                 </include>
@@ -832,7 +769,7 @@
                 <include content="DialogInfo_Button_RadioRound" condition="$PARAM[radioround]">
                     <param name="color_nofocus">$PARAM[textcolor]_$PARAM[nf_opacity]</param>
                     <param name="color_disabled">$PARAM[textcolor]_$PARAM[db_opacity]</param>
-                </include>
+                </include> -->
 
                 <texturenofocus />
                 <nested />
@@ -844,7 +781,7 @@
                 <visible>Control.IsVisible($PARAM[id])</visible>
                 <control type="group">
                     <centertop>50%</centertop>
-                    <centerright>40</centerright>
+                    <centerleft>40</centerleft>
                     <width>$PARAM[icon_size]</width>
                     <height>$PARAM[icon_size]</height>
                     <control type="image">
@@ -868,6 +805,33 @@
                         <aspectratio>keep</aspectratio>
                         <bordersize>icon_menu_bordersize</bordersize>
                         <bordersize>$PARAM[bordersize]</bordersize>
+                        <visible>Control.HasFocus($PARAM[id])</visible>
+                    </control>
+                </control>
+                <control type="group">
+                    <centertop>50%</centertop>
+                    <left>80</left>
+                    <control type="label">
+                        <label>$PARAM[label]</label>
+                        <textcolor>$PARAM[textcolor]_$PARAM[db_opacity]</textcolor>
+                        <font>font_mini</font>
+                        <align>left</align>
+                        <visible>!Control.HasFocus($PARAM[id])</visible>
+                        <visible>!Control.IsEnabled($PARAM[id])</visible>
+                    </control>
+                    <control type="label">
+                        <label>$PARAM[label]</label>
+                        <textcolor>$PARAM[textcolor]_$PARAM[nf_opacity]</textcolor>
+                        <font>font_mini</font>
+                        <align>left</align>
+                        <visible>!Control.HasFocus($PARAM[id])</visible>
+                        <visible>Control.IsEnabled($PARAM[id])</visible>
+                    </control>
+                    <control type="label">
+                        <label>$PARAM[label]</label>
+                        <textcolor>$VAR[ColorSelected]</textcolor>
+                        <font>font_mini</font>
+                        <align>left</align>
                         <visible>Control.HasFocus($PARAM[id])</visible>
                     </control>
                 </control>
@@ -1551,9 +1515,7 @@
             <control type="group">
                 <include>Dimension_Dialog_Body</include>
                 <control type="grouplist" id="9000">
-                    <include content="Dialog_Side_Expanded_Grouplist_Def">
-                        <param name="condition">[true]</param>
-                    </include>
+                    <include>Dialog_Side_Expanded_Grouplist_Def</include>
                     <onback>8000</onback>
                     <onright>61</onright>
                     <onleft>8000</onleft>

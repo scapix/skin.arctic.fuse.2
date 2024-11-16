@@ -346,7 +346,8 @@
     </include>
 
     <include name="Items_DialogSelect_Standard">
-        <include content="DialogInfo_ExpandedButton">
+        <include content="DialogInfo_Button">
+            <param name="include_hintlabel">true</param>
             <param name="id">9001</param>
             <param name="groupid">9101</param>
             <param name="label">$VAR[DialogSelect_SideButtons_Label_5]</param>
@@ -356,7 +357,8 @@
             <onclick>Action(Select)</onclick>
         </include>
 
-        <include content="DialogInfo_ExpandedButton">
+        <include content="DialogInfo_Button">
+            <param name="include_hintlabel">true</param>
             <param name="id">9002</param>
             <param name="groupid">9102</param>
             <param name="label">$VAR[DialogSelect_SideButtons_Label_8]</param>
@@ -366,7 +368,8 @@
             <onclick>Action(Select)</onclick>
         </include>
 
-        <include content="DialogInfo_ExpandedButton">
+        <include content="DialogInfo_Button">
+            <param name="include_hintlabel">true</param>
             <param name="id">9003</param>
             <param name="groupid">9103</param>
             <param name="label">$INFO[Control.GetLabel(7)]</param>
@@ -639,6 +642,7 @@
             <param name="groupid">9012</param>
             <param name="icon">special://skin/extras/icons/play3.png</param>
             <param name="visible">Control.IsEnabled(12)</param>
+            <param name="label">$INFO[Control.GetLabel(12)]</param>
         </include>
         <include content="DialogInfo_ExpandedButton" description="Enable">
             <param name="builtin">true</param>
@@ -646,6 +650,7 @@
             <param name="groupid">9007</param>
             <param name="icon">$VAR[Image_AddonInfo_Enable]</param>
             <param name="visible">Control.IsEnabled(7)</param>
+            <param name="label">$INFO[Control.GetLabel(7)]</param>
         </include>
         <include content="DialogInfo_ExpandedButton" description="Install">
             <param name="builtin">true</param>
@@ -653,6 +658,7 @@
             <param name="groupid">9006</param>
             <param name="icon">$VAR[Image_AddonInfo_Install]</param>
             <param name="visible">Control.IsEnabled(6)</param>
+            <param name="label">$INFO[Control.GetLabel(6)]</param>
         </include>
         <include content="DialogInfo_ExpandedButton" description="Update">
             <param name="builtin">true</param>

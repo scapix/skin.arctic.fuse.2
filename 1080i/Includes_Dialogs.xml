@@ -185,7 +185,7 @@
         <param name="subline">true</param>
         <param name="lines_right">0</param>
         <param name="slide_visible">!Integer.IsEqual(Container(9000).NumItems,0)</param>
-        <param name="slide_condition">ControlGroup(9000).HasFocus()</param>
+        <param name="slide_condition">false</param>
         <param name="slide_posx">-240</param>
         <definition>
             <control type="group">
@@ -289,16 +289,37 @@
     </include>
 
     <include name="Dialog_Side_Grouplist_Def">
-        <top>-20</top>
-        <itemgap>0</itemgap>
-        <orientation>vertical</orientation>
-        <width>160</width>
-        <right>-20</right>
+        <definition>
+            <top>-120</top>
+            <itemgap>0</itemgap>
+            <orientation>vertical</orientation>
+            <width>160</width>
+            <right>-20</right>
+            <control type="group" id="9098">
+                <height>100</height>
+                <left>60</left>
+                <right>60</right>
+                <control type="group">
+                    <control type="image">
+                        <height>40</height>
+                        <width>40</width>
+                        <centertop>60</centertop>
+                        <right>0</right>
+                        <bordersize>-8</bordersize>
+                        <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/sliders.png</texture>
+                    </control>
+                    <control type="image">
+                        <height>1</height>
+                        <centerbottom>-20</centerbottom>
+                        <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
+                    </control>
+                </control>
+            </control>
+        </definition>
     </include>
 
     <include name="Dialog_Side_Expanded_Grouplist_Def">
         <param name="header">$LOCALIZE[33063]</param>
-        <param name="condition">[ControlGroup(9000).HasFocus()]</param>
         <definition>
             <top>-120</top>
             <itemgap>0</itemgap>
@@ -306,53 +327,29 @@
             <width>320</width>
             <right>20</right>
             <control type="group" id="9098">
-                <height>120</height>
+                <height>140</height>
                 <left>20</left>
                 <right>20</right>
                 <control type="label">
                     <height>40</height>
-                    <centertop>50%</centertop>
+                    <centertop>60</centertop>
                     <textcolor>dialog_fg_90</textcolor>
                     <font>font_main_black</font>
                     <label>$PARAM[header]</label>
                 </control>
-                <control type="group">
-                    <visible>!$PARAM[condition]</visible>
-                    <control type="image">
-                        <height>40</height>
-                        <width>40</width>
-                        <centertop>50%</centertop>
-                        <right>0</right>
-                        <bordersize>-8</bordersize>
-                        <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/sliders.png</texture>
-                    </control>
-                    <control type="image">
-                        <height>1</height>
-                        <centerbottom>0</centerbottom>
-                        <width>40</width>
-                        <right>0</right>
-                        <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
-                    </control>
+                <control type="image">
+                    <height>40</height>
+                    <width>40</width>
+                    <centertop>60</centertop>
+                    <right>0</right>
+                    <bordersize>-8</bordersize>
+                    <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/sliders.png</texture>
                 </control>
-                <control type="group">
-                    <visible>$PARAM[condition]</visible>
-                    <control type="image">
-                        <height>40</height>
-                        <width>40</width>
-                        <centertop>50%</centertop>
-                        <right>0</right>
-                        <bordersize>-8</bordersize>
-                        <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/sliders.png</texture>
-                    </control>
-                    <control type="image">
-                        <height>1</height>
-                        <centerbottom>0</centerbottom>
-                        <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
-                    </control>
+                <control type="image">
+                    <height>1</height>
+                    <centerbottom>20</centerbottom>
+                    <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
                 </control>
-            </control>
-            <control type="group" id="9097">
-                <height>20</height>
             </control>
         </definition>
     </include>

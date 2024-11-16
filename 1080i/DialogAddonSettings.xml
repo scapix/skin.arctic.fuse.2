@@ -105,7 +105,7 @@
 
             <include content="Dialog_Foreground_Side">
                 <param name="dialog_size">Dimension_DialogFullMenu</param>
-                <param name="slide_condition">!Integer.IsEqual(Container(9000).NumItems,0)</param>
+                <param name="slide_condition">true</param>
                 <param name="topline">false</param>
                 <param name="subline">false</param>
 

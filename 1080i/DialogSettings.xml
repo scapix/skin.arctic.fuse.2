@@ -100,10 +100,11 @@
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
                     <control type="grouplist" id="9000">
-                        <include>Dialog_Side_Expanded_Grouplist_Def</include>
+                        <include>Dialog_Side_Grouplist_Def</include>
                         <onleft>5</onleft>
                         <onright>61</onright>
-                        <include content="DialogInfo_ExpandedButton">
+                        <include content="DialogInfo_Button">
+                            <param name="include_hintlabel">true</param>
                             <param name="id">9001</param>
                             <param name="groupid">9101</param>
                             <param name="label">$INFO[Control.GetLabel(28)]</param>
@@ -111,7 +112,8 @@
                             <param name="visible">Control.IsEnabled(28) + Control.IsVisible(28)</param>
                             <onclick>SendClick(28)</onclick>
                         </include>
-                        <include content="DialogInfo_ExpandedButton">
+                        <include content="DialogInfo_Button">
+                            <param name="include_hintlabel">true</param>
                             <param name="id">9002</param>
                             <param name="groupid">9102</param>
                             <param name="label">$LOCALIZE[15067]</param>
@@ -119,7 +121,8 @@
                             <param name="visible">Control.IsEnabled(29) + Control.IsVisible(29)</param>
                             <onclick>SendClick(29)</onclick>
                         </include>
-                        <include content="DialogInfo_ExpandedButton">
+                        <include content="DialogInfo_Button">
+                            <param name="include_hintlabel">true</param>
                             <param name="id">9003</param>
                             <param name="groupid">9103</param>
                             <param name="label">$INFO[Control.GetLabel(30)]</param>
