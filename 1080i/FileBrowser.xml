@@ -35,10 +35,66 @@
         <control type="group">
             <include>Dimension_DialogWideMenu</include>
             <include>Animation_Right_Delay</include>
-            <!-- Bottom Layer -->
-            <include content="Dialog_Background_Side">
+
+            <include content="Dialog_Foreground_Side">
                 <param name="dialog_size">Dimension_DialogWideMenu</param>
-                <!-- Side Buttons -->
+                <param name="lines_right">dialog_buttongroup_w</param>
+            </include>
+
+            <control type="group">
+                <right>dialog_buttongroup_w</right>
+
+                <!-- Header -->
+                <include content="Dialog_Head">
+                    <param name="id">411</param>
+                </include>
+                <include content="Dialog_Head">
+                    <param name="id">9901</param>
+                    <param name="visible">String.IsEmpty(Control.GetLabel(411))</param>
+                    <param name="label">$LOCALIZE[424]</param>
+                </include>
+                <include>Dialog_Head_CloseButton</include>
+
+                <!-- Content -->
+                <control type="group">
+                    <include>Dimension_Dialog_Body</include>
+                    <control type="group">
+                        <include>Dimension_Dialog_Body_Group</include>
+                        <include content="List_DialogSelect">
+                            <param name="id">450</param>
+                            <param name="detailed">True</param>
+                            <param name="item_height">100</param>
+                            <param name="textcolor">dialog_fg</param>
+                            <pagecontrol>61</pagecontrol>
+                            <onright>9000</onright>
+                        </include>
+
+                        <include content="List_IconBrowser">
+                            <param name="id">451</param>
+                            <param name="item_h">160</param>
+                            <param name="itemlayout_h">200</param>
+                            <param name="item_w">150</param>
+                            <param name="itemlayout_w">190</param>
+                            <param name="detailed">true</param>
+                            <param name="textcolor">dialog_fg</param>
+                            <top>-20</top>
+                            <bottom>-20</bottom>
+                            <left>-20</left>
+                            <right>-20</right>
+                            <onright>9000</onright>
+                            <pagecontrol>62</pagecontrol>
+                        </include>
+                    </control>
+
+
+                </control>
+            </control>
+
+            <!-- Side Buttons -->
+            <control type="group">
+                <include content="Dialog_Side_Panel_Group_Def">
+                    <param name="width">dialog_buttongroup_w</param>
+                </include>
                 <control type="group">
                     <include>Dimension_Dialog_Body</include>
                     <control type="grouplist" id="9000">
@@ -88,58 +144,7 @@
                         </include>
                     </control>
                 </control>
-            </include>
-
-            <include content="Dialog_Foreground_Side">
-                <param name="dialog_size">Dimension_DialogWideMenu</param>
-                <param name="topline">true</param>
-                <param name="subline">true</param>
-
-                <!-- Header -->
-                <include content="Dialog_Head">
-                    <param name="id">411</param>
-                </include>
-                <include content="Dialog_Head">
-                    <param name="id">9901</param>
-                    <param name="visible">String.IsEmpty(Control.GetLabel(411))</param>
-                    <param name="label">$LOCALIZE[424]</param>
-                </include>
-                <include>Dialog_Head_CloseButton</include>
-
-                <!-- Content -->
-                <control type="group">
-                    <include>Dimension_Dialog_Body</include>
-                    <control type="group">
-                        <include>Dimension_Dialog_Body_Group</include>
-                        <include content="List_DialogSelect">
-                            <param name="id">450</param>
-                            <param name="detailed">True</param>
-                            <param name="item_height">100</param>
-                            <param name="textcolor">dialog_fg</param>
-                            <pagecontrol>61</pagecontrol>
-                            <onright>9000</onright>
-                        </include>
-
-                        <include content="List_IconBrowser">
-                            <param name="id">451</param>
-                            <param name="item_h">160</param>
-                            <param name="itemlayout_h">200</param>
-                            <param name="item_w">150</param>
-                            <param name="itemlayout_w">190</param>
-                            <param name="detailed">true</param>
-                            <param name="textcolor">dialog_fg</param>
-                            <top>-20</top>
-                            <bottom>-20</bottom>
-                            <left>-20</left>
-                            <right>-20</right>
-                            <onright>9000</onright>
-                            <pagecontrol>62</pagecontrol>
-                        </include>
-                    </control>
-
-
-                </control>
-            </include>
+            </control>
 
             <control type="group">
                 <include>Dimension_Dialog_Body</include>

@@ -1328,14 +1328,20 @@
         <param name="header">$VAR[Label_Title]</param>
         <param name="textbox">$VAR[Label_Overlay_PlotBox]</param>
         <param name="include_movement">DialogInfo_PlotBox_OnMove</param>
+        <param name="include_buttons_condition">true</param>
         <param name="scrollbar_fakefocus">false</param>
         <definition>
             <include content="Dialog_Foreground_Side">
                 <param name="slide_condition">true</param>
-                <param name="dialog_size">Dimension_DialogFullMenu</param>
+                <param name="dialog_size">$PARAM[dialog_size]</param>
                 <param name="topline">false</param>
                 <param name="subline">false</param>
+            </include>
 
+            <control type="group">
+                <include content="Object_Right" condition="$PARAM[include_buttons_condition]">
+                    <param name="right">dialog_panelgroup_w</param>
+                </include>
                 <!-- Header -->
                 <include content="Dialog_Head">
                     <param name="label">$PARAM[header]</param>
@@ -1372,7 +1378,8 @@
                         </control>
                     </control>
                 </control>
-            </include>
+            </control>
+            <include condition="$PARAM[include_buttons_condition]">$PARAM[include_buttons]</include>
             <control type="group">
                 <include>Dimension_Dialog_Body</include>
                 <include content="Dialog_Scrollbar">
@@ -1385,7 +1392,7 @@
     </include>
 
     <include name="DialogInfo_CustomPlot">
-        <param name="size">Dimension_DialogHugeMenu</param>
+        <param name="size">Dimension_DialogMainMenu</param>
         <param name="include_artwork">false</param>
         <definition>
             <include>Dialog_Dim_Overlay</include>
@@ -1393,10 +1400,62 @@
                 <include>$PARAM[size]</include>
                 <include>Animation_Right_Delay</include>
 
-                <include content="Dialog_Background_Side" condition="!String.IsEmpty(Window.Property(path))">
+                <include content="Dialog_Foreground_Side">
+                    <param name="slide_condition">true</param>
                     <param name="dialog_size">$PARAM[size]</param>
+                    <param name="topline">false</param>
+                    <param name="subline">false</param>
+                </include>
 
-                    <!-- Side Buttons -->
+                <control type="group">
+                    <include content="Object_Right" condition="!String.IsEmpty(Window.Property(path))">
+                        <param name="right">dialog_panelgroup_w</param>
+                    </include>
+                    <!-- Header -->
+                    <include content="Dialog_Head">
+                        <param name="label">$INFO[Window.Property(header)]</param>
+                    </include>
+                    <include>Dialog_Head_CloseButton</include>
+
+                    <!-- Content -->
+                    <control type="group">
+                        <include>Dimension_Dialog_Body</include>
+                        <control type="group">
+                            <include>Dimension_Dialog_Body_Group</include>
+                            <include content="DialogInfo_PlotBox_Artwork" condition="$PARAM[include_artwork]">
+                                <param name="poster_icon">$INFO[Window.Property(poster)]</param>
+                                <param name="square_icon">$INFO[Window.Property(icon)]</param>
+                                <param name="landscape_icon">$INFO[Window.Property(landscape)]</param>
+                                <param name="clearlogo_icon">$INFO[Window.Property(clearlogo)]</param>
+                            </include>
+                            <include content="Dialog_Outline_InnerBox">
+                                <include content="Object_Left" condition="![$PARAM[include_artwork]]">
+                                    <param name="left">20</param>
+                                </include>
+                                <left>420</left>
+                                <top>-20</top>
+                                <bottom>-20</bottom>
+                                <right>20</right>
+                                <control type="textbox">
+                                    <font>font_midi_plot</font>
+                                    <textcolor>dialog_fg_70</textcolor>
+                                    <pagecontrol>61</pagecontrol>
+                                    <label>$VAR[Label_Overlay_1114_PlotBox]</label>
+                                    <autoscroll>false</autoscroll>
+                                    <include content="Dimension_Padding">
+                                        <param name="pad">40</param>
+                                    </include>
+                                </control>
+                            </include>
+                        </control>
+
+                    </control>
+                </control>
+
+                <!-- Side Buttons -->
+                <include content="Object_Control" condition="!String.IsEmpty(Window.Property(path))">
+                    <param name="control">group</param>
+                    <include>Dialog_Side_Panel_Group_Def</include>
                     <control type="group">
                         <include>Dimension_Dialog_Body</include>
                         <control type="grouplist" id="9000">
@@ -1444,54 +1503,6 @@
 
                         </control>
                     </control>
-
-                </include>
-
-                <include content="Dialog_Foreground_Side">
-                    <param name="slide_condition">true</param>
-                    <param name="dialog_size">$PARAM[size]</param>
-                    <param name="topline">false</param>
-                    <param name="subline">false</param>
-
-                    <!-- Header -->
-                    <include content="Dialog_Head">
-                        <param name="label">$INFO[Window.Property(header)]</param>
-                    </include>
-                    <include>Dialog_Head_CloseButton</include>
-
-                    <!-- Content -->
-                    <control type="group">
-                        <include>Dimension_Dialog_Body</include>
-                        <control type="group">
-                            <include>Dimension_Dialog_Body_Group</include>
-                            <include content="DialogInfo_PlotBox_Artwork" condition="$PARAM[include_artwork]">
-                                <param name="poster_icon">$INFO[Window.Property(poster)]</param>
-                                <param name="square_icon">$INFO[Window.Property(icon)]</param>
-                                <param name="landscape_icon">$INFO[Window.Property(landscape)]</param>
-                                <param name="clearlogo_icon">$INFO[Window.Property(clearlogo)]</param>
-                            </include>
-                            <include content="Dialog_Outline_InnerBox">
-                                <include content="Object_Left" condition="![$PARAM[include_artwork]]">
-                                    <param name="left">20</param>
-                                </include>
-                                <left>420</left>
-                                <top>-20</top>
-                                <bottom>-20</bottom>
-                                <right>20</right>
-                                <control type="textbox">
-                                    <font>font_midi_plot</font>
-                                    <textcolor>dialog_fg_70</textcolor>
-                                    <pagecontrol>61</pagecontrol>
-                                    <label>$VAR[Label_Overlay_1114_PlotBox]</label>
-                                    <autoscroll>false</autoscroll>
-                                    <include content="Dimension_Padding">
-                                        <param name="pad">40</param>
-                                    </include>
-                                </control>
-                            </include>
-                        </control>
-
-                    </control>
                 </include>
 
                 <control type="group">
@@ -1507,9 +1518,8 @@
     </include>
 
     <include name="DialogInfo_PlotBox_Buttons">
-        <include content="Dialog_Background_Side">
-            <param name="slide_condition">!Integer.IsEqual(Container(9000).NumItems,0)</param>
-            <param name="dialog_size">Dimension_DialogFullMenu</param>
+        <control type="group">
+            <include>Dialog_Side_Panel_Group_Def</include>
 
             <!-- Side Buttons -->
             <control type="group">
@@ -1522,7 +1532,7 @@
                     <include>Items_DialogVideoInfo_MenuBar</include>
                 </control>
             </control>
-        </include>
+        </control>
     </include>
 
     <include name="DialogInfo_PlotBox">
@@ -1531,13 +1541,14 @@
         <param name="textbox">$VAR[Label_Overlay_PlotBox]</param>
         <param name="include_movement">DialogInfo_PlotBox_OnMove</param>
         <param name="include_buttons">DialogInfo_PlotBox_Buttons</param>
+        <param name="dialog_size">Dimension_DialogMainMenu</param>
         <definition>
             <include content="Dialog_Dim_Overlay">
                 <param name="visible">$PARAM[visible]</param>
             </include>
 
             <control type="group">
-                <include>Dimension_DialogFullMenu</include>
+                <include>$PARAM[dialog_size]</include>
                 <visible allowhiddenfocus="true">$PARAM[visible]</visible>
                 <include content="Animation_Slide_Out">
                     <param name="type">Hidden</param>
@@ -1562,8 +1573,6 @@
                     <param name="reversible">true</param>
                 </include>
 
-                <include>$PARAM[include_buttons]</include>
-
                 <include content="DialogInfo_PlotBox_Foreground">
                     <param name="header">$PARAM[header]</param>
                     <param name="textbox">$PARAM[textbox]</param>
@@ -1573,6 +1582,9 @@
                     <param name="landscape_icon">$PARAM[landscape_icon]</param>
                     <param name="clearlogo_icon">$PARAM[clearlogo_icon]</param>
                     <param name="scrollbar_fakefocus">$PARAM[scrollbar_fakefocus]</param>
+                    <param name="dialog_size">$PARAM[dialog_size]</param>
+                    <param name="include_buttons">$PARAM[include_buttons]</param>
+                    <param name="include_buttons_condition">$PARAM[include_buttons_condition]</param>
                 </include>
             </control>
         </definition>

@@ -32,7 +32,6 @@
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_BackgroundDialogImage)">Items_Settings_BackgroundDialogImage</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_BackgroundStyle)">Items_Settings_BackgroundStyle</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_BackgroundImage)">Items_Settings_BackgroundImage</include>
-        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_ColourThemes)">Items_Settings_ColourThemes</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_Indicators)">Items_Settings_Indicators</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_CustomStartup)">Items_Settings_CustomStartup</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_Autoscroll)">Items_Settings_Autoscroll</include>
@@ -1300,41 +1299,6 @@
             <onclick>Skin.SetString(mpaa_country,Vietnam)</onclick>
             <onclick>Close</onclick>
             <label>Vietnam</label>
-        </include>
-    </include>
-
-    <include name="Items_Settings_ColourThemes">
-        <include content="Settings_Button">
-            <param name="dialog">true</param>
-            <param name="id">8001</param>
-            <param name="control">radiobutton</param>
-            <label>$LOCALIZE[465] (AF)</label>
-            <selected>$EXP[Exp_ColourTheme_IsBlack] + !$EXP[Exp_DialogTheme_IsLight]</selected>
-            <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=SKINDEFAULT)</onclick>
-        </include>
-        <include content="Settings_Button">
-            <param name="dialog">true</param>
-            <param name="id">8004</param>
-            <param name="control">radiobutton</param>
-            <label>$LOCALIZE[465] $LOCALIZE[31426] (AF)</label>
-            <selected>$EXP[Exp_ColourTheme_IsBlack] + $EXP[Exp_DialogTheme_IsLight]</selected>
-            <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=Skin default - Light dialogs)</onclick>
-        </include>
-        <include content="Settings_Button">
-            <param name="dialog">true</param>
-            <param name="id">8002</param>
-            <param name="control">radiobutton</param>
-            <label>$LOCALIZE[768] (AH)</label>
-            <selected>$EXP[Exp_ColourTheme_IsGrey] + !$EXP[Exp_DialogTheme_IsLight]</selected>
-            <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=Dark Grey)</onclick>
-        </include>
-        <include content="Settings_Button">
-            <param name="dialog">true</param>
-            <param name="id">8005</param>
-            <param name="control">radiobutton</param>
-            <label>$LOCALIZE[768] $LOCALIZE[31426] (AH)</label>
-            <selected>$EXP[Exp_ColourTheme_IsGrey] + $EXP[Exp_DialogTheme_IsLight]</selected>
-            <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=Dark Grey - Light dialogs)</onclick>
         </include>
     </include>
 
