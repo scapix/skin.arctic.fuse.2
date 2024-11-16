@@ -202,52 +202,19 @@
         </control>
     </include>
 
-    <include name="_DialogInfo_Widget_EndLine">
+    <include name="DialogInfo_Widget_EndLine">
         <param name="id">5097</param>
-        <param name="label">$INFO[System.Date]</param>
-        <param name="top">-880</param>
-        <param name="label_top">320</param>
+        <param name="widgets_only">true</param>
         <param name="visible">true</param>
         <definition>
             <control type="group" id="$PARAM[id]">
-                <top>$PARAM[top]</top>
+                <include content="Object_Top" condition="$PARAM[widgets_only] + !Skin.HasSetting(MouseTouchMode)">
+                    <param name="top">-880</param>
+                </include>
+                <top>-440</top>
                 <height>440</height>
                 <visible>$PARAM[visible]</visible>
-                <animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
-                <include content="Info_Viewline">
-                    <param name="label">$PARAM[label]</param>
-                    <param name="top">$PARAM[label_top]</param>
-                </include>
             </control>
-        </definition>
-    </include>
-
-    <include name="DialogInfo_Widget_EndLine">
-        <param name="id">5097</param>
-        <param name="label">$INFO[System.Date]</param>
-        <param name="widgets_only">true</param>
-        <definition>
-            <include content="_DialogInfo_Widget_EndLine" condition="$PARAM[widgets_only] + !Skin.HasSetting(MouseTouchMode)">
-                <param name="id">$PARAM[id]</param>
-                <param name="label">$PARAM[label]</param>
-                <param name="top">-880</param>
-                <param name="label_top">320</param>
-                <param name="visible">$PARAM[visible]</param>
-            </include>
-            <include content="_DialogInfo_Widget_EndLine" condition="![$PARAM[widgets_only]] + !Skin.HasSetting(MouseTouchMode)">
-                <param name="id">$PARAM[id]</param>
-                <param name="label">$PARAM[label]</param>
-                <param name="top">-440</param>
-                <param name="label_top">-120</param>
-                <param name="visible">$PARAM[visible]</param>
-            </include>
-            <include content="_DialogInfo_Widget_EndLine" condition="Skin.HasSetting(MouseTouchMode)">
-                <param name="id">$PARAM[id]</param>
-                <param name="label">$PARAM[label]</param>
-                <param name="top">-440</param>
-                <param name="label_top">320</param>
-                <param name="visible">$PARAM[visible]</param>
-            </include>
         </definition>
     </include>
 
