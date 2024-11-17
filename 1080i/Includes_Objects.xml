@@ -606,7 +606,7 @@
                     <param name="colordiffuse">$VAR[ColorSelected]</param>
                 </include>
                 <colordiffuse>main_fg_100</colordiffuse>
-                <texture background="true" diffuse="$PARAM[icon_diffuse]" fallback="DefaultGenres.png">$PARAM[icon]</texture>
+                <texture background="true" diffuse="$PARAM[icon_diffuse]" fallback="DefaultGenres.png">$VAR[Image_Icon]</texture>
                 <aspectratio scalediffuse="false">keep</aspectratio>
                 <bordersize>$PARAM[genre_bordersize]</bordersize>
                 <visible>[String.IsEqual($PARAM[listitem].DBType,genre) | String.IsEqual($PARAM[listitem].Property(DBType),genre)]</visible>
@@ -616,7 +616,7 @@
                     <param name="colordiffuse">$VAR[ColorSelected]</param>
                 </include>
                 <colordiffuse>main_fg_100</colordiffuse>
-                <texture background="true" diffuse="$PARAM[icon_diffuse]" fallback="DefaultStudios.png">$PARAM[icon]</texture>
+                <texture background="true" diffuse="$PARAM[icon_diffuse]" fallback="DefaultStudios.png">$VAR[Image_Icon]</texture>
                 <aspectratio scalediffuse="false">keep</aspectratio>
                 <bordersize>$PARAM[other_bordersize]</bordersize>
                 <visible>[String.IsEqual($PARAM[listitem].DBType,studio) | String.IsEqual($PARAM[listitem].Property(DBType),studio)]</visible>
@@ -626,7 +626,7 @@
                     <param name="colordiffuse">$VAR[ColorSelected]</param>
                 </include>
                 <colordiffuse>main_fg_100</colordiffuse>
-                <texture background="true" diffuse="$PARAM[icon_diffuse]" fallback="DefaultCountry.png">$PARAM[icon]</texture>
+                <texture background="true" diffuse="$PARAM[icon_diffuse]" fallback="DefaultCountry.png">$VAR[Image_Icon]</texture>
                 <aspectratio scalediffuse="false">keep</aspectratio>
                 <bordersize>$PARAM[other_bordersize]</bordersize>
                 <visible>[String.IsEqual($PARAM[listitem].DBType,country) | String.IsEqual($PARAM[listitem].Property(DBType),country)]</visible>
