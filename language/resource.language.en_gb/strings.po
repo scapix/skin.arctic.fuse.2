@@ -1624,6 +1624,16 @@ msgctxt "#31341"
 msgid "Combined Quad"
 msgstr ""
 
+#: /1080i/Includes_Views_Row.xml
+msgctxt "#31342"
+msgid "Disc Row"
+msgstr ""
+
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31343"
+msgid "Wall Disc"
+msgstr ""
+
 msgctxt "#31346"
 msgid "Press down for more by this artist"
 msgstr ""
