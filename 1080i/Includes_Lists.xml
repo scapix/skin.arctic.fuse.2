@@ -696,7 +696,6 @@
             </include>
         </definition>
     </include>
-
     
     <include name="List_Square_Row">
         <param name="item_w">view_poster_item_w</param>
