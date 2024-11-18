@@ -87,7 +87,8 @@
         <param name="top_title">$INFO[Window.Property(title)]</param>
         <param name="sub_title">$VAR[Label_OSD_UpNext_SubTitle]</param>
         <definition>
-            <include content="OSD_CastInfo_ExpandGroup">
+            <control type="group">
+                <include>OSD_Info_Dimensions</include>
 
                 <include>Animation_OSD_Seekbar_Slide</include>
 
@@ -134,7 +135,7 @@
 
                 <include condition="$PARAM[is_addon]">OSD_UpNext_Buttons</include>
 
-            </include>
+            </control>
 
             <include content="Object_Hidden_Button" condition="$PARAM[is_addon]">
                 <param name="id">3013</param>
