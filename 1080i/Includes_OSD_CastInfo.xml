@@ -3,10 +3,14 @@
 
     <include name="OSD_CastInfo_ExpandGroup">
         <control type="group">
-            <height>400</height>
-            <bottom>view_pad</bottom>
+            <include>OSD_Info_Dimensions</include>
             <nested />
         </control>
+    </include>
+
+    <include name="OSD_Info_Dimensions">
+        <height>400</height>
+        <bottom>view_pad</bottom>
     </include>
 
     <include name="OSD_List_Dimensions">
