@@ -71,10 +71,6 @@
         </definition>
     </include>
 
-    <variable name="Spotlight_FO_Color_BG">
-        <value condition="!Skin.HasSetting(RevertSelectedText)">ff333333</value>
-        <value>main_fg_100</value>
-    </variable>
     <variable name="Spotlight_NF_Color_BG">
         <value condition="!Skin.HasSetting(RevertSelectedText)">main_fg_12</value>
         <value>main_fg_100</value>

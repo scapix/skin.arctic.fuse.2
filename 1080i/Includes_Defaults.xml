@@ -352,10 +352,6 @@
         </include>
     </include>
 
-    <variable name="Defs_ScreensaverWidget_Target">
-        <value condition="!String.IsEmpty(Skin.String(screensaver.arctic.mirage.target))">$INFO[Skin.String(screensaver.arctic.mirage.target)]</value>
-        <value>videos</value>
-    </variable>
     <variable name="Defs_ScreensaverWidget">
         <value condition="!String.IsEmpty(Skin.String(screensaver.arctic.mirage.path))">$INFO[Skin.String(screensaver.arctic.mirage.path)]</value>
         <value>special://skin/extras/playlists/RandomMovies.xsp</value>
@@ -462,9 +458,6 @@
             </include>
         </definition>
     </include>
-
-    <variable name="Def_PlotDetails_Fallback">
-    </variable>
 
     <variable name="Defs_BrowseLimitedLists">
         <value condition="Skin.HasSetting(Widgets.DisableShowMore)">never</value>

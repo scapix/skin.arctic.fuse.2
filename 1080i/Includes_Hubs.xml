@@ -428,11 +428,6 @@
         </include>
     </include>
 
-    <variable name="Hub_Submenu_Content">
-        <value condition="!String.IsEmpty(Container(300).ListItem.Property(submenulist_path))">$INFO[Container(300).ListItem.Property(submenulist_path)]</value>
-        <value>plugin://script.skinvariables/?info=get_shortcuts_node$INFO[Container(300).ListItem.Property(menu),&amp;menu=,]$INFO[Container(300).ListItem.Property(list),&amp;node=,]$INFO[Container(300).ListItem.Property(skin),&amp;skin=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</value>
-    </variable>
-
     <include name="Hub_Standard">
         <include content="Hub_Menu_Group">
             <param name="window_id">$PARAM[window_id]</param>
