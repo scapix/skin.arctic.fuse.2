@@ -280,7 +280,7 @@
                                     <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
                                     <onclick>AlarmClock(openwindow,ActivateWindow(1116),00:00,silent)</onclick>
 
-                                    <visible>!$EXP[Shortcuts_Window_Exp_WidgetsOnly] | String.IsEqual(Container(30000).ListItem.Property(categories_menu),menu=sidemenu)]</visible>
+                                    <visible>![!$EXP[Shortcuts_Window_Exp_WidgetsOnly] | String.IsEqual(Container(30000).ListItem.Property(categories_menu),menu=sidemenu)]</visible>
                                 </include>
 
                                 <!-- Spotlight -->
