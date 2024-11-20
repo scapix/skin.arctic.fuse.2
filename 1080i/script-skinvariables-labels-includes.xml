@@ -1091,7 +1091,6 @@
         <value condition="!String.IsEmpty(Container(50).ListItem.TvShowTitle) + !String.IsEqual(Container(50).ListItem.Title,Container(50).ListItem.TVShowTitle) + !String.IsEqual(Container(50).ListItem.DBType,tvshow)">$INFO[Container(50).ListItem.TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(50).ListItem.AlbumArtist) + !String.IsEqual(Container(50).ListItem.Title,Container(50).ListItem.AlbumArtist) + !String.IsEqual(Container(50).ListItem.DBType,artist)">$INFO[Container(50).ListItem.AlbumArtist]</value>
         <value condition="!String.IsEmpty(Container(50).ListItem.Artist) + !String.IsEqual(Container(50).ListItem.Title,Container(50).ListItem.Artist) + !String.IsEqual(Container(50).ListItem.DBType,artist)">$INFO[Container(50).ListItem.Artist]</value>
-        <value condition="String.StartsWith(Container(50).ListItem.FolderPath,videodb://movies/videoversions/)">$INFO[Container(50).ListItem.VideoVersionName]</value>
         <value condition="!String.IsEmpty(Container(50).ListItem.Genre)">$INFO[Container(50).ListItem.Genre]</value>
         <value condition="!String.IsEmpty(Container(50).ListItem.Premiered)">$INFO[Container(50).ListItem.Premiered]</value>
         <value condition="!String.IsEmpty(Container(50).ListItem.PictureResolution)">$INFO[Container(50).ListItem.PictureResolution]</value>
@@ -1114,7 +1113,6 @@
         <value condition="!String.IsEmpty(Container(503).ListItem.TvShowTitle) + !String.IsEqual(Container(503).ListItem.Title,Container(503).ListItem.TVShowTitle) + !String.IsEqual(Container(503).ListItem.DBType,tvshow)">$INFO[Container(503).ListItem.TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(503).ListItem.AlbumArtist) + !String.IsEqual(Container(503).ListItem.Title,Container(503).ListItem.AlbumArtist) + !String.IsEqual(Container(503).ListItem.DBType,artist)">$INFO[Container(503).ListItem.AlbumArtist]</value>
         <value condition="!String.IsEmpty(Container(503).ListItem.Artist) + !String.IsEqual(Container(503).ListItem.Title,Container(503).ListItem.Artist) + !String.IsEqual(Container(503).ListItem.DBType,artist)">$INFO[Container(503).ListItem.Artist]</value>
-        <value condition="String.StartsWith(Container(503).ListItem.FolderPath,videodb://movies/videoversions/)">$INFO[Container(503).ListItem.VideoVersionName]</value>
         <value condition="!String.IsEmpty(Container(503).ListItem.Genre)">$INFO[Container(503).ListItem.Genre]</value>
         <value condition="!String.IsEmpty(Container(503).ListItem.Premiered)">$INFO[Container(503).ListItem.Premiered]</value>
         <value condition="!String.IsEmpty(Container(503).ListItem.PictureResolution)">$INFO[Container(503).ListItem.PictureResolution]</value>
@@ -1137,7 +1135,6 @@
         <value condition="!String.IsEmpty(Container(51).ListItem.TvShowTitle) + !String.IsEqual(Container(51).ListItem.Title,Container(51).ListItem.TVShowTitle) + !String.IsEqual(Container(51).ListItem.DBType,tvshow)">$INFO[Container(51).ListItem.TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(51).ListItem.AlbumArtist) + !String.IsEqual(Container(51).ListItem.Title,Container(51).ListItem.AlbumArtist) + !String.IsEqual(Container(51).ListItem.DBType,artist)">$INFO[Container(51).ListItem.AlbumArtist]</value>
         <value condition="!String.IsEmpty(Container(51).ListItem.Artist) + !String.IsEqual(Container(51).ListItem.Title,Container(51).ListItem.Artist) + !String.IsEqual(Container(51).ListItem.DBType,artist)">$INFO[Container(51).ListItem.Artist]</value>
-        <value condition="String.StartsWith(Container(51).ListItem.FolderPath,videodb://movies/videoversions/)">$INFO[Container(51).ListItem.VideoVersionName]</value>
         <value condition="!String.IsEmpty(Container(51).ListItem.Genre)">$INFO[Container(51).ListItem.Genre]</value>
         <value condition="!String.IsEmpty(Container(51).ListItem.Premiered)">$INFO[Container(51).ListItem.Premiered]</value>
         <value condition="!String.IsEmpty(Container(51).ListItem.PictureResolution)">$INFO[Container(51).ListItem.PictureResolution]</value>
@@ -1160,7 +1157,6 @@
         <value condition="!String.IsEmpty(Container(513).ListItem.TvShowTitle) + !String.IsEqual(Container(513).ListItem.Title,Container(513).ListItem.TVShowTitle) + !String.IsEqual(Container(513).ListItem.DBType,tvshow)">$INFO[Container(513).ListItem.TvShowTitle]</value>
         <value condition="!String.IsEmpty(Container(513).ListItem.AlbumArtist) + !String.IsEqual(Container(513).ListItem.Title,Container(513).ListItem.AlbumArtist) + !String.IsEqual(Container(513).ListItem.DBType,artist)">$INFO[Container(513).ListItem.AlbumArtist]</value>
         <value condition="!String.IsEmpty(Container(513).ListItem.Artist) + !String.IsEqual(Container(513).ListItem.Title,Container(513).ListItem.Artist) + !String.IsEqual(Container(513).ListItem.DBType,artist)">$INFO[Container(513).ListItem.Artist]</value>
-        <value condition="String.StartsWith(Container(513).ListItem.FolderPath,videodb://movies/videoversions/)">$INFO[Container(513).ListItem.VideoVersionName]</value>
         <value condition="!String.IsEmpty(Container(513).ListItem.Genre)">$INFO[Container(513).ListItem.Genre]</value>
         <value condition="!String.IsEmpty(Container(513).ListItem.Premiered)">$INFO[Container(513).ListItem.Premiered]</value>
         <value condition="!String.IsEmpty(Container(513).ListItem.PictureResolution)">$INFO[Container(513).ListItem.PictureResolution]</value>
@@ -1183,7 +1179,6 @@
         <value condition="!String.IsEmpty(ListItem.TvShowTitle) + !String.IsEqual(ListItem.Title,ListItem.TVShowTitle) + !String.IsEqual(ListItem.DBType,tvshow)">$INFO[ListItem.TvShowTitle]</value>
         <value condition="!String.IsEmpty(ListItem.AlbumArtist) + !String.IsEqual(ListItem.Title,ListItem.AlbumArtist) + !String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.AlbumArtist]</value>
         <value condition="!String.IsEmpty(ListItem.Artist) + !String.IsEqual(ListItem.Title,ListItem.Artist) + !String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.Artist]</value>
-        <value condition="String.StartsWith(ListItem.FolderPath,videodb://movies/videoversions/)">$INFO[ListItem.VideoVersionName]</value>
         <value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
         <value condition="!String.IsEmpty(ListItem.Premiered)">$INFO[ListItem.Premiered]</value>
         <value condition="!String.IsEmpty(ListItem.PictureResolution)">$INFO[ListItem.PictureResolution]</value>

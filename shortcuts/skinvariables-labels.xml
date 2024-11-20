@@ -64,7 +64,6 @@
         <value condition="!String.IsEmpty({listitem}.TvShowTitle) + !String.IsEqual({listitem}.Title,{listitem}.TVShowTitle) + !String.IsEqual({listitem}.DBType,tvshow)">$INFO[{listitem}.TvShowTitle]</value>
         <value condition="!String.IsEmpty({listitem}.AlbumArtist) + !String.IsEqual({listitem}.Title,{listitem}.AlbumArtist) + !String.IsEqual({listitem}.DBType,artist)">$INFO[{listitem}.AlbumArtist]</value>
         <value condition="!String.IsEmpty({listitem}.Artist) + !String.IsEqual({listitem}.Title,{listitem}.Artist) + !String.IsEqual({listitem}.DBType,artist)">$INFO[{listitem}.Artist]</value>
-        <value condition="String.StartsWith({listitem}.FolderPath,videodb://movies/videoversions/)">$INFO[{listitem}.VideoVersionName]</value>
         <value condition="!String.IsEmpty({listitem}.Genre)">$INFO[{listitem}.Genre]</value>
         <value condition="!String.IsEmpty({listitem}.Premiered)">$INFO[{listitem}.Premiered]</value>
         <value condition="!String.IsEmpty({listitem}.PictureResolution)">$INFO[{listitem}.PictureResolution]</value>
