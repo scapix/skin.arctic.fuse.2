@@ -218,7 +218,7 @@
                             <param name="id">9003</param>
                             <param name="groupid">9103</param>
                             <param name="label">$LOCALIZE[190]</param>
-                            <param name="icon">special://skin/extras/icons/files.png</param>
+                            <param name="icon">special://skin/extras/icons/floppy-disk.png</param>
                             <onclick>SendClick(29)</onclick>
                         </include>
                         <include content="DialogInfo_ExpandedButton">
