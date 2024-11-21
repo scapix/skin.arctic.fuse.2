@@ -162,7 +162,9 @@
 
                                     </content>
 
-                                    <content>$INFO[Window.Property(Path)]</content>
+                                    <include content="Object_ContentDynamic" condition="!String.IsEmpty(Window.Property(path))">
+                                        <param name="content">$INFO[Window.Property(Path)]</param>
+                                    </include>
 
                                 </include>
                             </control>
