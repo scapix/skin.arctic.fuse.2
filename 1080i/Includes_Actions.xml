@@ -348,16 +348,22 @@
         <value>5000</value>
     </variable>
 
+    <variable name="Action_HomeMenu_OnLeft_GUID">
+        <value condition="[Control.HasFocus(308) + String.IsEmpty(Skin.String(Home.LeftMenu.Action))] | Skin.String(Home.LeftMenu.Action,Options)" />
+        <value condition="[Control.HasFocus(309) + String.IsEmpty(Skin.String(Home.LeftMenu.Action))] | Skin.String(Home.LeftMenu.Action,Favourites)" />
+        <value>$INFO[Container(300).ListItem.Property(guid)]</value>
+    </variable>
+
     <variable name="Action_HomeMenu_OnLeft_Path">
         <value condition="[Control.HasFocus(308) + String.IsEmpty(Skin.String(Home.LeftMenu.Action))] | Skin.String(Home.LeftMenu.Action,Options)">plugin://script.skinvariables/?info=get_shortcuts_node&amp;menu=powermainmenu$VAR[Path_SkinVariables_SkinFolder,&amp;skin=,]</value>
         <value condition="[Control.HasFocus(309) + String.IsEmpty(Skin.String(Home.LeftMenu.Action))] | Skin.String(Home.LeftMenu.Action,Favourites)">favourites://</value>
-        <value>$INFO[Container(300).ListItem.Property(sidemenu_path)]</value>
+        <!-- <value>$INFO[Container(300).ListItem.Property(sidemenu_path)]</value> -->
     </variable>
 
     <variable name="Action_HomeMenu_OnLeft_Target">
         <value condition="[Control.HasFocus(308) + String.IsEmpty(Skin.String(Home.LeftMenu.Action))] | Skin.String(Home.LeftMenu.Action,Options)" />
         <value condition="[Control.HasFocus(309) + String.IsEmpty(Skin.String(Home.LeftMenu.Action))] | Skin.String(Home.LeftMenu.Action,Favourites)" />
-        <value>$INFO[Container(300).ListItem.Property(sidemenu_target)]</value>
+        <!-- <value>$INFO[Container(300).ListItem.Property(sidemenu_target)]</value> -->
     </variable>
 
     <variable name="Action_HomeMenu_OnLeft_Header">
@@ -511,6 +517,7 @@
             <onleft condition="!Skin.String(Home.LeftMenu.Action,Bump)">SetProperty(Icon,$VAR[Action_HomeMenu_OnLeft_Icon],1163)</onleft>
             <onleft condition="!Skin.String(Home.LeftMenu.Action,Bump)">SetProperty(Indicator,$VAR[Action_HomeMenu_OnLeft_Indicator],1163)</onleft>
             <onleft condition="!Skin.String(Home.LeftMenu.Action,Bump)">SetProperty(Offset,$VAR[Action_HomeMenu_OnLeft_Offset],1163)</onleft>
+            <onleft condition="!Skin.String(Home.LeftMenu.Action,Bump)">SetProperty(GUID,$VAR[Action_HomeMenu_OnLeft_GUID],1163)</onleft>
             <onleft condition="!Skin.String(Home.LeftMenu.Action,Bump)">ActivateWindow(1163)</onleft>
 
             <onleft condition="Skin.String(Home.LeftMenu.Action,Bump)">SetProperty(List.ViewContainer,300)</onleft>
