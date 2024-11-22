@@ -171,6 +171,7 @@
                         </control>
                     </control>
 
+                    <include condition="Integer.IsEqual(Window(1163).Property(Offset),9)">DialogCustom1163_Offset_Dialog_07</include>
                     <include condition="Integer.IsEqual(Window(1163).Property(Offset),10)">DialogCustom1163_Offset_Dialog_07</include>
                     <include condition="Integer.IsEqual(Window(1163).Property(Offset),11)">DialogCustom1163_Offset_Dialog_06</include>
                     <include condition="Integer.IsEqual(Window(1163).Property(Offset),12)">DialogCustom1163_Offset_Dialog_06</include>
