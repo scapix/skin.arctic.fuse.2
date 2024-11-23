@@ -50,6 +50,18 @@
                     <visible>String.IsEmpty(Control.GetLabel(9099).index(1)) | Integer.IsEqual(Container(5000).NumItems,0)</visible>
                     <include>Furniture_Top_Left</include>
                 </control>
+
+                <control type="group">
+                    <include>Dimension_Bottombar</include>
+                    <control type="group">
+                        <include>Dimension_Furniture_Gutters</include>
+                        <include content="View_Furniture_Bottom_ViewLine">
+                            <param name="visible">true</param>
+                            <param name="label">$INFO[Container(5099).ListItem.Property(widget_numitems),, $LOCALIZE[31022]]</param>
+                        </include>
+                    </control>
+                </control>
+
             </include>
 
             <include>Search_Panel</include>
@@ -69,28 +81,30 @@
 
     <include name="Search_View_Selector">
         <control type="group">
-            <visible>Control.HasFocus(5099)</visible>
             <control type="group">
-                <include>Dimension_Bottombar</include>
+                <visible>Control.HasFocus(5099)</visible>
                 <control type="group">
-                    <left>-20</left>
-                    <animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
-                    <include>Dimension_Furniture_Gutters</include>
+                    <include>Dimension_Bottombar</include>
                     <control type="group">
-                        <include content="View_Furniture_Bottom_ViewLine">
-                            <param name="label">$INFO[Container(5099).NumItems,, $LOCALIZE[31304]]</param>
-                            <param name="fade_condition">false</param>
-                            <param name="textcolor">dialog_fg_90</param>
-                        </include>
+                        <left>-20</left>
+                        <animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
+                        <include>Dimension_Furniture_Gutters</include>
+                        <control type="group">
+                            <include content="View_Furniture_Bottom_ViewLine">
+                                <param name="label">$INFO[Container(5099).NumItems,, $LOCALIZE[31304]]</param>
+                                <param name="fade_condition">false</param>
+                                <param name="textcolor">dialog_fg_90</param>
+                            </include>
+                        </control>
                     </control>
                 </control>
-            </control>
-            <control type="image">
-                <bottom>160</bottom>
-                <height>1</height>
-                <left>60</left>
-                <right>60</right>
-                <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
+                <control type="image">
+                    <bottom>160</bottom>
+                    <height>1</height>
+                    <left>60</left>
+                    <right>60</right>
+                    <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
+                </control>
             </control>
             <include content="List_DialogSelect">
                 <param name="id">5099</param>
@@ -108,8 +122,9 @@
                 <onright condition="!Integer.IsEqual(Container(5000).NumItems,0)">SetFocus(5000)</onright>
                 <onclick>SetProperty(TMDbHelper.WidgetContainer,$INFO[ListItem.Property(widget_id)])</onclick>
                 <onclick>SetFocus(5098)</onclick>
-                <!-- <onclick condition="Integer.IsEqual(Container(5000).NumItems,0)">SetFocus(5098)</onclick>
-                <onclick condition="!Integer.IsEqual(Container(5000).NumItems,0)">SetFocus(5000)</onclick> -->
+                <include content="Animation_ConditionalFade">
+                    <param name="condition">!Control.HasFocus(5099)</param>
+                </include>
 
                 <onup>SetProperty(TMDbHelper.WidgetContainer,$INFO[ListItem.Property(widget_id)])</onup>
                 <onup>5098</onup>
@@ -203,9 +218,7 @@
 
                         </include>
 
-                        <include content="DialogInfo_Widget_EndLine">
-                            <param name="label">$LOCALIZE[31135]$INFO[Container(5001).CurrentPage, , $LOCALIZE[20163] ]$INFO[Container(5001).NumPages]</param>
-                        </include>
+                        <include>DialogInfo_Widget_EndLine</include>
                     </include>
                     <include content="Animation_ConditionalFade">
                         <param name="condition">[Integer.IsEqual(Container(5000).NumItems,0)]</param>
@@ -216,6 +229,16 @@
                 <control type="group">
                     <visible>Integer.IsEqual(Container(5000).NumItems,0)</visible>
                     <include>Furniture_Top_Left</include>
+                </control>
+                <control type="group">
+                    <include>Dimension_Bottombar</include>
+                    <control type="group">
+                        <include>Dimension_Furniture_Gutters</include>
+                        <include content="View_Furniture_Bottom_ViewLine">
+                            <param name="visible">true</param>
+                            <param name="label">$INFO[Container(5001).NumItems,, $LOCALIZE[31022]]</param>
+                        </include>
+                    </control>
                 </control>
             </include>
 
