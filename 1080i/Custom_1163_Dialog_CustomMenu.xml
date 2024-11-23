@@ -171,6 +171,8 @@
                         </control>
                     </control>
 
+                    <animation effect="slide" start="0" end="-10" condition="![Window.IsVisible(Home) + String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow)) + Skin.HasSetting(Hub.Home.DisableSubmenu)]">Conditional</animation>
+
                     <include condition="Integer.IsEqual(Window(1163).Property(Offset),1)">DialogCustom1163_Offset_D7</include>
                     <include condition="Integer.IsEqual(Window(1163).Property(Offset),2)">DialogCustom1163_Offset_D6</include>
                     <include condition="Integer.IsEqual(Window(1163).Property(Offset),3)">DialogCustom1163_Offset_D5</include>
