@@ -545,7 +545,7 @@
                         <include>Object_ItemBack</include>
                         <visible>$PARAM[extended]</visible>
                         <control type="image">
-                            <texture background="true" diffuse="diffuse/landscape_w380_h214.png">$VAR[Image_OSD_Landscape]</texture>
+                            <texture background="true" diffuse="diffuse/landscape_w410_h231.png">$VAR[Image_OSD_Landscape]</texture>
                             <aspectratio scalediffuse="false">keep</aspectratio>
                         </control>
                         <control type="group">

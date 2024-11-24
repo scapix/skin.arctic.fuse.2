@@ -320,33 +320,6 @@
         </definition>
     </include>
 
-    <include name="List_PVRRecordings">
-        <param name="orientation">vertical</param>
-        <param name="control">list</param>
-        <param name="item_h">120</param>
-        <param name="itemlayout_h">120</param>
-        <param name="itemlayout_include">Layout_PVRRecordings</param>
-        <param name="detailed">true</param>
-        <definition>
-            <include content="List_Core">
-                <param name="orientation">$PARAM[orientation]</param>
-                <param name="control">$PARAM[control]</param>
-                <param name="id">$PARAM[id]</param>
-                <param name="item_h">$PARAM[item_h]</param>
-                <param name="itemlayout_h">$PARAM[itemlayout_h]</param>
-                <param name="itemlayout_include">$PARAM[itemlayout_include]</param>
-                <param name="misc">$PARAM[misc]</param>
-                <param name="detailed">$PARAM[detailed]</param>
-                <param name="offset_y">0</param>
-                <param name="offset_x">0</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <nested />
-                <movement>3</movement>
-                <focusposition>2</focusposition>
-            </include>
-        </definition>
-    </include>
-
     <include name="_List_Card_Row">
         <param name="control">fixedlist</param>
         <param name="altfocus">false</param>

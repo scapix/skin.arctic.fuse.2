@@ -232,10 +232,10 @@
                     <top>20</top>
                     <include content="Dialog_Outline_Box">
                         <control type="image">
-                            <texture colordiffuse="7f7f7f7f" border="12">common/dialog.png</texture>
+                            <texture colordiffuse="7f7f7f7f" border="20">common/dialog.png</texture>
                         </control>
                         <control type="image">
-                            <texture colordiffuse="panel_fg_12" border="12">common/dialog.png</texture>
+                            <texture colordiffuse="panel_fg_12" border="20">common/dialog.png</texture>
                         </control>
                         <control type="label">
                             <height>60</height>
@@ -864,7 +864,7 @@
             <imagepath diffuse="$PARAM[diffuse]" colordiffuse="ff555555">$PARAM[imagepath]</imagepath>
         </control>
         <control type="image">
-            <texture colordiffuse="panel_fg_12" border="12">common/box.png</texture>
+            <texture colordiffuse="panel_fg_12" border="20">common/box.png</texture>
         </control>
     </include>
 
