@@ -189,7 +189,7 @@
     </include>
 
     <include name="Object_ItemBack_Outline">
-        <param name="border">20</param>
+        <param name="border">21</param>
         <definition>
             <include content="Object_Control" condition="Skin.HasSetting(Glass.EnableBorders)">
                 <param name="control">image</param>
