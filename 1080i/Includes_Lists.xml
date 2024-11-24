@@ -620,7 +620,7 @@
                 <param name="itemlayout_w">$PARAM[itemlayout_w]</param>
                 <param name="itemlayout_h">$PARAM[itemlayout_h]</param>
                 <param name="itemlayout_include">Layout_Landscape</param>
-                <param name="diffuse">diffuse/landscape_w520_h294.png</param>
+                <param name="diffuse">diffuse/landscape_w560_h310.png</param>
                 <param name="detailed">true</param>
                 <param name="variation">false</param>
                 <param name="icon">$PARAM[icon]</param>
@@ -654,7 +654,7 @@
                 <param name="itemlayout_h">$PARAM[itemlayout_h]</param>
                 <param name="itemlayout_include">Layout_Landscape</param>
                 <param name="icon">$VAR[Image_Placard_Fanart]</param>
-                <param name="diffuse">diffuse/landscape_w520_h294.png</param>
+                <param name="diffuse">diffuse/landscape_w560_h310.png</param>
                 <param name="detailed">true</param>
                 <param name="variation">true</param>
                 <param name="icon">$PARAM[icon]</param>

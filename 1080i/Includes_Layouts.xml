@@ -1762,7 +1762,7 @@
     <include name="Layout_Card">
         <param name="variation">false</param>
         <param name="selected">false</param>
-        <param name="diffuse">diffuse/card_w800_h294.png</param>
+        <param name="diffuse">diffuse/card_w731_h310.png</param>
         <param name="textcolor">main_fg</param>
         <param name="listitem">ListItem</param>
         <param name="affix" />
@@ -1827,7 +1827,7 @@
 
     <include name="Layout_Banner">
         <param name="selected">false</param>
-        <param name="diffuse">diffuse/banner_w1640_h294.png</param>
+        <param name="diffuse">diffuse/banner_w1640_h310.png</param>
         <param name="listitem">ListItem</param>
         <definition>
             <control type="group">
@@ -2324,7 +2324,7 @@
     </include>
 
     <include name="Layout_Square">
-        <param name="diffuse">diffuse/square_w294_h294.png</param>
+        <param name="diffuse">diffuse/square_w217_h217.png</param>
         <param name="selected">false</param>
         <param name="detailed">false</param>
         <param name="variation">false</param>
