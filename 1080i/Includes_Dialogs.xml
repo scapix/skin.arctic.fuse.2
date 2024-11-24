@@ -65,7 +65,7 @@
     <include name="Dialog_Background_BlurDimension_DialogMiniMenu">
         <include content="Dialog_Background_Blur">
             <param name="shadow">$PARAM[shadow]</param>
-            <param name="diffuse">diffuse/dialog_w680_h1000.png</param>
+            <param name="diffuse">diffuse/dialog_w560_h1000.png</param>
         </include>
     </include>
 
@@ -79,7 +79,7 @@
     <include name="Dialog_Background_BlurDimension_DialogMainMenu">
         <include content="Dialog_Background_Blur">
             <param name="shadow">$PARAM[shadow]</param>
-            <param name="diffuse">diffuse/dialog_w1480_h1000.png</param>
+            <param name="diffuse">diffuse/dialog_w1840_h1000.png</param>
         </include>
     </include>
 
@@ -93,7 +93,7 @@
     <include name="Dialog_Background_BlurDimension_DialogHugeMenu">
         <include content="Dialog_Background_Blur">
             <param name="shadow">$PARAM[shadow]</param>
-            <param name="diffuse">diffuse/dialog_w1480_h1000.png</param>
+            <param name="diffuse">diffuse/dialog_w1400_h1000.png</param>
         </include>
     </include>
 
