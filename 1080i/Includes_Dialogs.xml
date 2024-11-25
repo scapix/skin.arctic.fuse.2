@@ -253,6 +253,7 @@
                 <include content="Dialog_Background_Group">
                     <param name="include_glass">true</param>
                     <param name="dialog_size">$PARAM[dialog_size]</param>
+                    <param name="transparency">$PARAM[transparency]</param>
                 </include>
                 <control type="group">
                     <right>80</right>
