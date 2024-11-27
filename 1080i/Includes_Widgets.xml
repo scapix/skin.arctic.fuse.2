@@ -214,8 +214,8 @@
                                     <param name="pad">-20</param>
                                 </include>
                                 <bordersize>20</bordersize>
-                                <bordertexture colordiffuse="shadow_soft" border="30">common/widget_text.png</bordertexture>
-                                <texture colordiffuse="$PARAM[colordiffuse]" border="10">common/widget_text.png</texture>
+                                <bordertexture colordiffuse="shadow_soft" border="32">common/widget_text.png</bordertexture>
+                                <texture colordiffuse="$PARAM[colordiffuse]" border="12">common/widget_text.png</texture>
                             </include>
                         </control>
                         <control type="group">
@@ -228,8 +228,8 @@
                                     <param name="pad">-20</param>
                                 </include>
                                 <bordersize>20</bordersize>
-                                <bordertexture colordiffuse="shadow_soft" border="30">common/widget_text.png</bordertexture>
-                                <texture colordiffuse="$PARAM[colordiffuse]" border="10">common/widget_text.png</texture>
+                                <bordertexture colordiffuse="shadow_soft" border="32">common/widget_text.png</bordertexture>
+                                <texture colordiffuse="$PARAM[colordiffuse]" border="12">common/widget_text.png</texture>
                             </include>
                         </control>
                     </control>
