@@ -22,7 +22,8 @@
                 <include>Dimension_Dialog_Body</include>
                 <control type="grouplist" id="9000">
                     <include>Dialog_Side_Grouplist_Def</include>
-                    <onleft>61</onleft>
+                    <!-- <onleft>61</onleft> -->
+                    <onleft>996</onleft>
                     <include content="DialogInfo_Button" condition="!$EXP[Exp_InfoDialogs]">
                         <param name="include_hintlabel">true</param>
                         <param name="id">9002</param>
@@ -98,9 +99,16 @@
                 <control type="grouplist" id="996">
                     <include>Dimension_Dialog_Body_Group</include>
                     <right>$PARAM[lines_right]</right>
-                    <onright>61</onright>
-                    <pagecontrol>61</pagecontrol>
+                    <onright>9000</onright>
+                    <!-- <onright>61</onright>
+                    <pagecontrol>61</pagecontrol> -->
                 </control>
+
+                <!-- <include content="Dialog_Scrollbar">
+                    <param name="id">61</param>
+                    <onright>9000</onright>
+                    <onleft>996</onleft>
+                </include> -->
             </control>
         </definition>
     </include>
@@ -146,11 +154,6 @@
                     <!-- Content -->
                     <include>Dialog_ContextMenu_BodyContent</include>
 
-                    <include content="Dialog_Scrollbar">
-                        <param name="id">61</param>
-                        <onright>9000</onright>
-                        <onleft>996</onleft>
-                    </include>
                 </control>
 
                 <include content="Dialog_ContextMenu_SideButtons">
