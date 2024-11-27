@@ -29,8 +29,7 @@
                         <param name="id">3</param>
                         <param name="textcolor">dialog_fg</param>
                         <pagecontrol>61</pagecontrol>
-                        <onright condition="Control.IsVisible(9001)">9001</onright>
-                        <onright condition="!Control.IsVisible(9001)">9000</onright>
+                        <onright>61</onright>
                     </include>
                     <control type="group">
                         <height>40</height>
@@ -48,8 +47,7 @@
 
                 <include content="Dialog_Scrollbar">
                     <param name="id">61</param>
-                    <onleft condition="Control.IsVisible(9001)">9001</onleft>
-                    <onleft condition="!Control.IsVisible(9001)">9000</onleft>
+                    <onleft>3</onleft>
                 </include>
 
             </control>
