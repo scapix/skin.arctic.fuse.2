@@ -33,18 +33,6 @@
         <visible>Container($PARAM[id]).IsUpdating | !Integer.IsEqual(Container($PARAM[id]).NumItems,0)</visible>
     </include>
 
-    <include name="Hub_Categories_Spotlight_Slide_Animation">
-        <top>$PARAM[top]</top>
-        <animation effect="slide" start="0" end="0,$PARAM[y]" reversible="false" time="400" tween="quadratic" condition="$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
-        <animation effect="slide" start="0,$PARAM[y]" end="0" reversible="false" time="400" tween="quadratic" condition="!$EXP[Exp_Hubs_Categories_SlideDown]">Conditional</animation>
-    </include>
-    <include name="Hub_Categories_Spotlight_Slide">
-        <top>$PARAM[top]</top>
-        <include content="Hub_Categories_Spotlight_Slide_Animation">
-            <param name="y">$PARAM[y]</param>
-        </include>
-    </include>
-
     <include name="Hub_Submenu_List">
         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_View</param>
         <definition>
@@ -129,25 +117,6 @@
                     <textcolor>main_logo</textcolor>
                     <label>$PARAM[label]...</label>
                 </control>
-                <!-- <control type="group">
-                    <centertop>750</centertop>
-                    <centerleft>50%</centerleft>
-                    <height>120</height>
-                    <width>120</width>
-                    <control type="image">
-                        <include content="Dimension_Padding">
-                            <param name="pad">-40</param>
-                        </include>
-                        <bordersize>40</bordersize>
-                        <bordertexture colordiffuse="shadow_hard">shadows/circle_120-shadow-40.png</bordertexture>
-                        <texture colordiffuse="main_fg_100">diffuse/circle_120.png</texture>
-                    </control>
-                    <control type="image">
-                        <bordersize>4</bordersize>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="diffuse/circle_120.png">$VAR[Image_ProfileThumb]</texture>
-                    </control>
-                </control> -->
                 <include content="Furniture_Busy" condition="$PARAM[busyspinner]">
                     <param name="hasspinner">true</param>
                     <param name="spinspinner">true</param>
@@ -196,22 +165,6 @@
             <!-- Open/Close to/from Full Panel Window -->
             <animation effect="slide" tween="cubic" easing="out" time="400" start="view_menu_comp" end="0" reversible="false" condition="[$PARAM[condition]] + $EXP[Exp_FullPanelWindows_Prev] + $EXP[Exp_MiniPanelWindows]">WindowOpen</animation>
             <animation effect="slide" tween="cubic" easing="out" time="400" start="0" end="view_menu_comp" reversible="false" condition="[$PARAM[condition]] + $EXP[Exp_FullPanelWindows_Next] + $EXP[Exp_MiniPanelWindows]">WindowClose</animation>
-
-        </definition>
-    </include>
-
-    <include name="Hub_Menu_Dialog_Slide">
-        <param name="condition">Window.IsActive(1163)</param>
-        <param name="size">view_menu_main</param>
-        <definition>
-
-            <!-- Full Panels -->
-            <!-- In/Out Animation -->
-            <animation effect="slide" tween="cubic" easing="out" time="400" start="0" end="$PARAM[size]" reversible="false" condition="[$PARAM[condition]]">Conditional</animation>
-            <animation effect="slide" tween="cubic" easing="out" time="400" start="$PARAM[size]" end="0" reversible="false" condition="![$PARAM[condition]]">Conditional</animation>
-
-            <animation effect="fade" time="400" start="100" end="100" reversible="false" condition="Window.IsVisible(1163)">WindowClose</animation>
-
 
         </definition>
     </include>
@@ -305,7 +258,7 @@
 
             <include content="Object_Hidden_Button">
                 <param name="id">306</param>
-                <onfocus condition="!$EXP[Exp_ClassicHome_IsVisible]">ClearProperty(TMDbHelper.WidgetContainer.UpdateLock,1198)</onfocus>
+                <onfocus condition="!$EXP[Exp_HomeHub_IsVisible]">ClearProperty(TMDbHelper.WidgetContainer.UpdateLock,1198)</onfocus>
                 <onfocus condition="Integer.IsEqual(Window.Property(Focus.ControlID),300) + Control.IsVisible(311)">SetFocus(311)</onfocus>
                 <onfocus condition="Integer.IsEqual(Window.Property(Focus.ControlID),300) + !Control.IsVisible(311)">SetFocus(400)</onfocus>
                 <onfocus condition="String.IsEmpty(Window.Property(SideMenu.CurrentItem)) + !Integer.IsEqual(Window.Property(Focus.ControlID),300)">SetFocus(300)</onfocus>
@@ -334,7 +287,6 @@
 
             <control type="group">
                 <include condition="$PARAM[is_homemenu]">Hub_Menu_Slide</include>
-                <include condition="!String.IsEmpty(Skin.String(Home.MenuStyle))">Hub_Menu_Dialog_Slide</include>
                 <include content="Hub_Left_Bezier" condition="!Skin.String(Home.MenuStyle,Ribbon)">
                     <param name="is_homemenu">$PARAM[is_homemenu]</param>
                 </include>
@@ -376,7 +328,7 @@
                         <include content="Hub_Widgets_Only" condition="$PARAM[widgets_only]">
                             <param name="window_id">$PARAM[window_id]</param>
                             <param name="property_window_id">$PARAM[property_window_id]</param>
-                            <param name="widgets_include">skinvariables-$PARAM[categories]-widgets</param>
+                            <param name="widgets_include">$PARAM[widgets_include]</param>
                         </include>
                         <include condition="![$PARAM[widgets_only]] + !Skin.HasSetting(Hub.$PARAM[window_id].DisableSpotlight)">Spotlight_Info</include>
 
@@ -459,11 +411,6 @@
         </include>
     </include>
 
-    <variable name="Hub_Submenu_Content">
-        <value condition="!String.IsEmpty(Container(300).ListItem.Property(submenulist_path))">$INFO[Container(300).ListItem.Property(submenulist_path)]</value>
-        <value>plugin://script.skinvariables/?info=get_shortcuts_node$INFO[Container(300).ListItem.Property(menu),&amp;menu=,]$INFO[Container(300).ListItem.Property(list),&amp;node=,]$INFO[Container(300).ListItem.Property(skin),&amp;skin=,]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;reload=,]</value>
-    </variable>
-
     <include name="Hub_Standard">
         <include content="Hub_Menu_Group">
             <param name="window_id">$PARAM[window_id]</param>
@@ -504,9 +451,28 @@
     </include>
 
     <include name="Hub_Categories_Definition_Content">
-        <include content="Action_Widget_Top">
-            <param name="id">300</param>
-        </include>
+
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Position,$INFO[Container(300).Position],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Position.0.Label,$INFO[Container(300).ListItemPosition(0).Label],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Position.1.Label,$INFO[Container(300).ListItemPosition(1).Label],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Position.2.Label,$INFO[Container(300).ListItemPosition(2).Label],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Position.3.Label,$INFO[Container(300).ListItemPosition(3).Label],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Position.4.Label,$INFO[Container(300).ListItemPosition(4).Label],1163)</onup>
+
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Target,$VAR[Action_HomeMenu_OnLeft_Target],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Path,$VAR[Action_HomeMenu_OnLeft_Path],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Header,$VAR[Action_HomeMenu_OnLeft_Header],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Icon,$VAR[Action_HomeMenu_OnLeft_Icon],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Indicator,$VAR[Action_HomeMenu_OnLeft_Indicator],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(Offset,$VAR[Action_HomeMenu_OnLeft_Offset],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">SetProperty(GUID,$VAR[Action_HomeMenu_OnLeft_GUID],1163)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Menu) | String.IsEmpty(Skin.String(Home.LeftMenu.Action))] + !Control.HasFocus(308) + !Control.HasFocus(309) + Window.IsVisible(Home)">ActivateWindow(1163)</onup>
+
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Options) | [Control.HasFocus(308) + !Skin.String(Home.LeftMenu.Action,Bump)]] + Window.IsVisible(Home)">ActivateWindow(1170)</onup>
+        <onup condition="[Skin.String(Home.LeftMenu.Action,Favourites) | [Control.HasFocus(309) + !Skin.String(Home.LeftMenu.Action,Bump)]] + Window.IsVisible(Home)">ActivateWindow(1160)</onup>
+
+        <onup condition="Skin.String(Home.LeftMenu.Action,Bump) | !Window.IsVisible(Home)">SetProperty(List.ViewContainer,300)</onup>
+        <onup condition="Skin.String(Home.LeftMenu.Action,Bump) | !Window.IsVisible(Home)">SetFocus(333)</onup>
 
         <ondown condition="Control.IsVisible(311)">311</ondown>
         <ondown condition="!Control.IsVisible(311)">400</ondown>
@@ -692,7 +658,7 @@
                 <height>100</height>
 
                 <control type="group">
-                    <width>75</width>
+                    <width>80</width>
                     <visible>!Skin.HasSetting(SideMenu.DisableSearchAndOptions) + [Skin.HasSetting(HubsMenu.EnableSearchAndOptions) | [Window.IsVisible(Home) + Integer.IsEqual(Skin.String(Hub.Home.ReplaceWindow),$PARAM[window_id])]]</visible>
                 </control>
 

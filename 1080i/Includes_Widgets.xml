@@ -168,7 +168,7 @@
             <include content="Dimension_Padding"><param name="pad">-40</param></include>
             <bordersize>40</bordersize>
             <bordertexture colordiffuse="$PARAM[shadow_colordiffuse]">shadows/circle_200-shadow-40.png</bordertexture>
-            <texture colordiffuse="$PARAM[colordiffuse]">diffuse/circle_200.png</texture>
+            <texture colordiffuse="$PARAM[colordiffuse]">diffuse/circle/circle_200.png</texture>
         </control>
         <include>Object_Circle_200_Outline</include>
     </include>
@@ -205,21 +205,31 @@
                         <bottom>0</bottom>
                         <height>80</height>
                         <control type="group">
-                            <top>15</top>
-                            <height>25</height>
+                            <top>20</top>
+                            <height>24</height>
                             <width>85%</width>
-                            <include content="Object_ItemBack" condition="$PARAM[first_row]">
-                                <param name="shadow_colordiffuse">shadow_soft</param>
-                                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                            <include content="Object_Control" condition="$PARAM[first_row]">
+                                <param name="control">image</param>
+                                <include content="Dimension_Padding">
+                                    <param name="pad">-20</param>
+                                </include>
+                                <bordersize>20</bordersize>
+                                <bordertexture colordiffuse="shadow_soft" border="32">common/widget_text.png</bordertexture>
+                                <texture colordiffuse="$PARAM[colordiffuse]" border="12">common/widget_text.png</texture>
                             </include>
                         </control>
                         <control type="group">
                             <bottom>0</bottom>
-                            <height>25</height>
+                            <height>24</height>
                             <width>70%</width>
-                            <include content="Object_ItemBack" condition="$PARAM[second_row]">
-                                <param name="shadow_colordiffuse">shadow_soft</param>
-                                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                            <include content="Object_Control" condition="$PARAM[second_row]">
+                                <param name="control">image</param>
+                                <include content="Dimension_Padding">
+                                    <param name="pad">-20</param>
+                                </include>
+                                <bordersize>20</bordersize>
+                                <bordertexture colordiffuse="shadow_soft" border="32">common/widget_text.png</bordertexture>
+                                <texture colordiffuse="$PARAM[colordiffuse]" border="12">common/widget_text.png</texture>
                             </include>
                         </control>
                     </control>
@@ -303,6 +313,31 @@
             <param name="second_row">false</param>
             <param name="first_row">false</param>
             <param name="colordiffuse">$PARAM[colordiffuse]</param>
+        </include>
+    </include>
+
+    <include name="Widget_Busy_BlankItem_Quad">
+        <include content="Widget_Busy_BlankItem">
+            <param name="item_w">view_quad_item_w</param>
+            <param name="item_h">view_poster_item_h</param>
+            <param name="itemlayout_w">view_quad_itemlayout_w</param>
+            <param name="itemlayout_h">view_poster_itemlayout_h</param>
+            <param name="second_row">false</param>
+            <param name="first_row">false</param>
+            <param name="colordiffuse">$PARAM[colordiffuse]</param>
+        </include>
+    </include>
+
+    <include name="Widget_Busy_BlankItem_Disc">
+        <include content="Widget_Busy_BlankItem">
+            <param name="item_w">view_quad_item_w</param>
+            <param name="item_h">view_poster_item_h</param>
+            <param name="itemlayout_w">view_quad_itemlayout_w</param>
+            <param name="itemlayout_h">view_poster_itemlayout_h</param>
+            <param name="second_row">false</param>
+            <param name="first_row">false</param>
+            <param name="colordiffuse">$PARAM[colordiffuse]</param>
+            <param name="circle">true</param>
         </include>
     </include>
 
@@ -413,6 +448,20 @@
         <include>Widget_Busy_BlankItem_Poster</include>
         <include>Widget_Busy_BlankItem_Poster</include>
     </include>
+    <include name="Widget_Busy_BlankItems__List_Quad_Row">
+        <include>Widget_Busy_BlankItem_Quad</include>
+        <include>Widget_Busy_BlankItem_Quad</include>
+        <include>Widget_Busy_BlankItem_Quad</include>
+        <include>Widget_Busy_BlankItem_Quad</include>
+        <include>Widget_Busy_BlankItem_Quad</include>
+    </include>
+    <include name="Widget_Busy_BlankItems__List_Disc_Row">
+        <include>Widget_Busy_BlankItem_Disc</include>
+        <include>Widget_Busy_BlankItem_Disc</include>
+        <include>Widget_Busy_BlankItem_Disc</include>
+        <include>Widget_Busy_BlankItem_Disc</include>
+        <include>Widget_Busy_BlankItem_Disc</include>
+    </include>
     <include name="Widget_Busy_BlankItems__List_Corflute_Row">
         <include>Widget_Busy_BlankItems__List_Card_Row</include>
     </include>
@@ -443,6 +492,12 @@
         <height>view_poster_item_h</height>
     </include>
     <include name="Widget_Busy_Spinner_Height__List_Card_Row">
+        <height>view_poster_item_h</height>
+    </include>
+    <include name="Widget_Busy_Spinner_Height__List_Quad_Row">
+        <height>view_poster_item_h</height>
+    </include>
+    <include name="Widget_Busy_Spinner_Height__List_Disc_Row">
         <height>view_poster_item_h</height>
     </include>
     <include name="Widget_Busy_Spinner_Height__List_Corflute_Row">

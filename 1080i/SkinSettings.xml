@@ -162,26 +162,28 @@
                             <param name="dialog">false</param>
                             <param name="id">1010</param>
                             <param name="control">button</param>
-                            <label>$LOCALIZE[10000] > $LOCALIZE[736] ($LOCALIZE[39162])</label>
+                            <label>$LOCALIZE[10000] > $LOCALIZE[736]</label>
                             <label2>$VAR[Label_Setting_SideMenuStyle]</label2>
                             <visible>Container(3).HasFocus(1)</visible>
 
                             <!-- <onclick>RunScript(script.skinvariables,run_dialog=select,preselect=$VAR[Label_Setting_SideMenuStyle],heading=$LOCALIZE[10000] > $LOCALIZE[736],separator=||,list=$LOCALIZE[31274] ($LOCALIZE[571])||$LOCALIZE[31274] ($LOCALIZE[31486])||$LOCALIZE[31274] ($LOCALIZE[31317])||$LOCALIZE[31118] ($LOCALIZE[31486])||$LOCALIZE[31118] ($LOCALIZE[31317]),"executebuiltin_0=Skin.Reset(Home.ExpandedMenu)||Skin.Reset(Home.MenuStyle)||ReloadSkin()||SetFocus(1010)","executebuiltin_1=Skin.Reset(Home.ExpandedMenu)||Skin.SetString(Home.MenuStyle,Dialog)||ReloadSkin()||SetFocus(1010)","executebuiltin_2=Skin.Reset(Home.ExpandedMenu)||Skin.SetString(Home.MenuStyle,Ribbon)||ReloadSkin()||SetFocus(1010)","executebuiltin_3=Skin.SetBool(Home.ExpandedMenu)||Skin.SetString(Home.MenuStyle,Dialog)||ReloadSkin()||SetFocus(1010)","executebuiltin_4=Skin.SetBool(Home.ExpandedMenu)||Skin.SetString(Home.MenuStyle,Ribbon)||ReloadSkin()||SetFocus(1010)")</onclick> -->
 
                             <onclick>Skin.ToggleSetting(Home.ExpandedMenu)</onclick>
-                            <!-- <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible> -->
+                            <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
+                            <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
                         </include>
 
                         <include content="Settings_Button" description="Left menu">
                             <param name="dialog">false</param>
                             <param name="id">1011</param>
                             <param name="control">button</param>
-                            <label>$LOCALIZE[10000] > $LOCALIZE[15217] ($LOCALIZE[39162])</label>
+                            <label>$LOCALIZE[10000] > $LOCALIZE[15217] ($LOCALIZE[39162] / $LOCALIZE[31349])</label>
                             <label2>$VAR[Label_Setting_LeftMenuStyle]</label2>
                             <onclick>RunScript(script.skinvariables,run_dialog=select,preselect=$VAR[Label_Setting_LeftMenuStyle],heading=$LOCALIZE[10000] > $LOCALIZE[39162],separator=||,list=$LOCALIZE[31446]||$LOCALIZE[33061]||$LOCALIZE[1036]||$LOCALIZE[33063],"executebuiltin_0=Skin.SetString(Home.LeftMenu.Action,Bump)","executebuiltin_1=Skin.Reset(Home.LeftMenu.Action)","executebuiltin_2=Skin.SetString(Home.LeftMenu.Action,Favourites)","executebuiltin_3=Skin.SetString(Home.LeftMenu.Action,Options)")</onclick>
 
                             <visible>Container(3).HasFocus(1)</visible>
-                            <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
+                            <!-- <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
+                            <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible> -->
                         </include>
 
                         <include content="Settings_Button" description="Back menu">
@@ -206,6 +208,7 @@
                             <onclick condition="Skin.HasSetting(SideMenu.FocusWidgetsFirst)">Skin.Reset(SideMenu.FocusWidgetsFirst)</onclick>
                             <onclick condition="!Skin.HasSetting(SideMenu.FocusWidgetsFirst)">RunScript(script.skinvariables,run_dialog=yesno,heading=$LOCALIZE[31176],message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR][CR]$LOCALIZE[31276] $LOCALIZE[31277],yeslabel=$LOCALIZE[31103],nolabel=$LOCALIZE[31150],"executebuiltin=Skin.SetBool(SideMenu.FocusWidgetsFirst)")</onclick>
                             <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
+                            <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
 
@@ -244,7 +247,7 @@
                             <visible>!Skin.HasSetting(SideMenu.DisableSearchAndOptions)</visible>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
-                        <include content="Settings_Button" description="Search And Options">
+                        <include content="Settings_Button" description="Profile">
                             <param name="dialog">false</param>
                             <param name="id">1008</param>
                             <param name="dialog">false</param>
@@ -254,6 +257,7 @@
                             <selected>!Skin.HasSetting(SideMenu.DisableProfileLogo)</selected>
                             <visible>![Skin.HasSetting(SideMenu.DisableSearchAndOptions) + $EXP[Exp_HomeMenu_IsExpanded]]</visible>
                             <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
+                            <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
 
@@ -266,6 +270,7 @@
                             <onclick>Skin.ToggleSetting(Hub.Home.DisableMoveBetweenGroups)</onclick>
                             <selected>!Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)</selected>
                             <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
+                            <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
                         </include>
 
                         <include content="Settings_Label" description="Label: Hubs Categories">
@@ -1282,7 +1287,7 @@
                             <top>20</top>
                             <height>600</height>
                             <autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll>
-                            <label>$LOCALIZE[31095][CR](AR) taiseer999, (DE) peat80, (PT) Havokdan, (IT) seppiola, (UA) dmt1z, (FR) Bindou, (ES) gtkingbuild, (RU) StellaLupus, (FI) Lam4hound[CR][CR]To all my amazing supporters on Ko-fi, thank-you![CR][CR]A special thanks to this month's supporters[CR]Adamosborne83 AsparagusTrevor juanmazake Aemstel rf1967</label>
+                            <label>$LOCALIZE[31095][CR](AR) taiseer999, (DE) peat80, (PT) Havokdan, (IT) seppiola, (UA) dmt1z, (FR) Bindou, (ES) gtkingbuild, (RU) StellaLupus, (FI) Lam4hound, (ZH) kalifun[CR][CR]To all my amazing supporters on Ko-fi, thank-you![CR][CR]A special thanks to this month's supporters[CR]not_ booyakafoo EZ44 Pikszeles Rinicko Dml2023 Bindou Adamosborne83 AsparagusTrevor juanmazake Aemstel rf1967</label>
                             <visible>Container(3).HasFocus(9)</visible>
                             <left>40</left>
                             <right>40</right>

@@ -122,21 +122,25 @@
 
     <include name="Info_Line_Pillbox_Object">
         <control type="button">
-            <include content="Info_Line_Pillbox_Object_Bordered" condition="Skin.HasSetting(Glass.EnableBorders)">
+            <!-- <include content="Info_Line_Pillbox_Object_Bordered" condition="Skin.HasSetting(Glass.EnableBorders)">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
             </include>
             <include content="Info_Line_Pillbox_Object_Plain" condition="!Skin.HasSetting(Glass.EnableBorders)">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
+            </include> -->
+            <include content="Info_Line_Pillbox_Object_Bordered">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
             </include>
-            <font>font_infotag</font>
+            <width>auto</width>
+            <textoffsetx>10</textoffsetx>
+            <textoffsety>info_tag_offset_y</textoffsety>
+            <aligny>top</aligny>
+            <font>font_infotag_bold</font>
             <textcolor>$PARAM[textcolor]</textcolor>
             <focusedcolor>$PARAM[textcolor]</focusedcolor>
             <include>Dimension_Info_Line_Pillbox</include>
-            <!-- <textoffsety>info_tag_light_offset_y</textoffsety>
-            <aligny>top</aligny> -->
+            <shadowcolor>$PARAM[shadowcolor]</shadowcolor>
             <nested />
-            <width>auto</width>
-            <textoffsetx>12</textoffsetx>
         </control>
     </include>
 
@@ -144,6 +148,7 @@
         <include content="Info_Line_Pillbox_Object" condition="![Window.IsActive(VideoFullScreen.xml) | Window.IsActive(MusicVisualisation.xml)]">
             <param name="colordiffuse">main_fg_30</param>
             <param name="textcolor">main_fg_90</param>
+            <param name="shadowcolor">main_bg_12</param>
             <nested />
         </include>
         <include content="Info_Line_Pillbox_Object" condition="Window.IsActive(VideoFullScreen.xml) | Window.IsActive(MusicVisualisation.xml)">
@@ -1373,8 +1378,8 @@
                 </include>
                 <include content="Info_Line_VideoQuality">
                     <param name="colordiffuse">$PARAM[colordiffuse]_90</param>
-                    <param name="is_version">[$PARAM[container]ListItem.HasVideoVersions]</param>
-                    <param name="is_collection">[$PARAM[container]ListItem.IsCollection | !String.IsEmpty($PARAM[container]ListItem.Set)]</param>
+                    <param name="is_version">[!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_hasvideoversions))]</param>
+                    <param name="is_collection">[!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_iscollection)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_set))]</param>
                     <param name="is_web">[[String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.base_dbtype),movie) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.base_dbtype),episode) | String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.base_dbtype),video)] + !String.IsEqual($PARAM[container]ListItem.Property(item.type),person)]</param>
                     <param name="listitem_videoresolution">Window(Home).Property(TMDbHelper.ListItem.base_videoresolution)</param>
                     <param name="listitem_dbtype">Window(Home).Property(TMDbHelper.ListItem.base_dbtype)</param>
@@ -1408,6 +1413,7 @@
                 <!-- Year / Premiered -->
                 <include content="Info_Line_Items">
                     <include content="Info_Line_Visible_05">
+                        <param name="altvisible">[!String.IsEmpty($PARAM[container]ListItem.ChannelNumberLabel) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_channelnumberlabel))]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="dbtype_01">episode</param>
                         <param name="dbtype_02">video</param>
@@ -1454,6 +1460,7 @@
                 <!-- MPAA -->
                 <include content="Info_Line_Items">
                     <include content="Info_Line_Visible_03">
+                        <param name="altvisible">[!String.IsEmpty($PARAM[container]ListItem.ChannelNumberLabel) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_channelnumberlabel))]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="dbtype_01">movie</param>
                         <param name="dbtype_02">tvshow</param>
@@ -1472,6 +1479,7 @@
                 <!-- Genres -->
                 <include content="Info_Line_Items" condition="!Skin.HasSetting(InfoLine.EndTime)">
                     <include content="Info_Line_Visible_03">
+                        <param name="altvisible">[!String.IsEmpty($PARAM[container]ListItem.ChannelNumberLabel) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_channelnumberlabel))]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="dbtype_01">movie</param>
                         <param name="dbtype_02">tvshow</param>
@@ -1548,6 +1556,7 @@
                 <!-- End Time -->
                 <include content="Info_Line_Items" condition="Skin.HasSetting(InfoLine.EndTime)">
                     <include content="Info_Line_Visible_05">
+                        <param name="altvisible">[!String.IsEmpty($PARAM[container]ListItem.ChannelNumberLabel) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_channelnumberlabel))]</param>
                         <param name="container">$PARAM[container]</param>
                         <param name="dbtype_01">movie</param>
                         <param name="dbtype_02">tvshow</param>
@@ -1624,7 +1633,7 @@
     <include name="Info_FooterItemIcon">
         <param name="bordersize">0</param>
         <param name="icon_colordiffuse">main_bg_90</param>
-        <param name="icon_diffuse">diffuse/provider_circle.png</param>
+        <param name="icon_diffuse">diffuse/circle/provider_circle.png</param>
         <param name="centerleft">50%</param>
         <param name="centered">false</param>
         <param name="flipped">false</param>

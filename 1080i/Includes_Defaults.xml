@@ -37,7 +37,7 @@
         <textcolor>dialog_fg_70</textcolor>
         <selectedcolor>dialog_fg_70</selectedcolor>
         <disabledcolor>dialog_fg_30</disabledcolor>
-        <texturenofocus colordiffuse="panel_fg_12" border="40">common/menu.png</texturenofocus>
+        <texturenofocus colordiffuse="dialog_fg_12" border="40">common/menu.png</texturenofocus>
     </include>
 
     <default type="colorbutton">
@@ -75,10 +75,10 @@
     </include>
 
     <default type="progress">
-        <texturebg colordiffuse="2f5f5f5f" border="6">progress/progress-bg.png</texturebg>
-        <lefttexture colordiffuse="$VAR[ColorHighlight]" border="6">progress/progress-left.png</lefttexture>
-        <midtexture colordiffuse="$VAR[ColorHighlight]" border="6">progress/progress-end.png</midtexture>
-        <righttexture colordiffuse="$VAR[ColorHighlight]" border="6">progress/progress-right.png</righttexture>
+        <texturebg colordiffuse="2f5f5f5f" border="12,0,12,0">progress/progress-nib.png</texturebg>
+        <lefttexture />
+        <midtexture colordiffuse="$VAR[ColorHighlight]" border="12,0,12,0">progress/progress-nib.png</midtexture>
+        <righttexture />
         <overlaytexture/>
     </default>
 
@@ -121,14 +121,12 @@
         <disabledcolor>main_fg_30</disabledcolor>
         <include>Texture_Button</include>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="main_fg_12">common/white.png</texturefocus>
-        <texturenofocus/>
-        <textureup flipy="true" colordiffuse="main_fg_30">buttons/triangle-down.png</textureup>
-        <texturedown colordiffuse="main_fg_30">buttons/triangle-down.png</texturedown>
+        <textureup flipy="true" colordiffuse="main_soft">buttons/triangle-down.png</textureup>
+        <texturedown colordiffuse="main_soft">buttons/triangle-down.png</texturedown>
         <textureupfocus flipy="true" colordiffuse="$VAR[ColorSelected]">buttons/triangle-down.png</textureupfocus>
         <texturedownfocus colordiffuse="$VAR[ColorSelected]">buttons/triangle-down.png</texturedownfocus>
-        <textureupdisabled flipy="true" colordiffuse="main_fg_12">buttons/triangle-down.png</textureupdisabled>
-        <texturedowndisabled colordiffuse="main_fg_12">buttons/triangle-down.png</texturedowndisabled>
+        <textureupdisabled flipy="true" colordiffuse="main_soft">buttons/triangle-down.png</textureupdisabled>
+        <texturedowndisabled colordiffuse="main_soft">buttons/triangle-down.png</texturedowndisabled>
         <spinwidth>30</spinwidth>
         <spinheight>30</spinheight>
         <reverse>yes</reverse>
@@ -143,24 +141,22 @@
         <disabledcolor>main_fg_30</disabledcolor>
         <include>Texture_Button</include>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="main_fg_12">common/white.png</texturefocus>
-        <texturenofocus/>
-        <textureup flipy="true" colordiffuse="main_fg_30">buttons/triangle-down.png</textureup>
-        <texturedown colordiffuse="main_fg_30">buttons/triangle-down.png</texturedown>
+        <textureup flipy="true" colordiffuse="main_soft">buttons/triangle-down.png</textureup>
+        <texturedown colordiffuse="main_soft">buttons/triangle-down.png</texturedown>
         <textureupfocus flipy="true" colordiffuse="$VAR[ColorSelected]">buttons/triangle-down.png</textureupfocus>
         <texturedownfocus colordiffuse="$VAR[ColorSelected]">buttons/triangle-down.png</texturedownfocus>
-        <textureupdisabled flipy="true" colordiffuse="main_fg_12">buttons/triangle-down.png</textureupdisabled>
-        <texturedowndisabled colordiffuse="main_fg_12">buttons/triangle-down.png</texturedowndisabled>
+        <textureupdisabled flipy="true" colordiffuse="main_soft">buttons/triangle-down.png</textureupdisabled>
+        <texturedowndisabled colordiffuse="main_soft">buttons/triangle-down.png</texturedowndisabled>
         <reverse>yes</reverse>
         <spinwidth>30</spinwidth>
         <spinheight>30</spinheight>
     </default>
     <include name="defs_dialog_spincontrolex">
         <include>defs_dialog_button</include>
-        <textureup flipy="true" colordiffuse="dialog_fg_30">buttons/triangle-down.png</textureup>
-        <texturedown colordiffuse="dialog_fg_30">buttons/triangle-down.png</texturedown>
-        <textureupdisabled flipy="true" colordiffuse="dialog_fg_12">buttons/triangle-down.png</textureupdisabled>
-        <texturedowndisabled colordiffuse="dialog_fg_12">buttons/triangle-down.png</texturedowndisabled>
+        <textureup flipy="true" colordiffuse="main_soft">buttons/triangle-down.png</textureup>
+        <texturedown colordiffuse="main_soft">buttons/triangle-down.png</texturedown>
+        <textureupdisabled flipy="true" colordiffuse="main_soft">buttons/triangle-down.png</textureupdisabled>
+        <texturedowndisabled colordiffuse="main_soft">buttons/triangle-down.png</texturedowndisabled>
     </include>
 
     <default type="slider">
@@ -173,14 +169,12 @@
         <disabledcolor>main_fg_30</disabledcolor>
         <include>Texture_Button</include>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="main_fg_12">common/white.png</texturefocus>
-        <texturenofocus/>
         <sliderwidth>192</sliderwidth>
         <sliderheight>12</sliderheight>
         <pulseonselect>false</pulseonselect>
-        <texturesliderbar colordiffuse="main_fg_12" border="6">slider/slider_bg.png</texturesliderbar>
-        <textureslidernib colordiffuse="main_fg_30" border="6">slider/slider_nib.png</textureslidernib>
-        <textureslidernibfocus colordiffuse="$VAR[ColorSelected]" border="6">slider/slider_nib.png</textureslidernibfocus>
+        <texturesliderbar colordiffuse="main_soft" border="6">slider/slider_bg.png</texturesliderbar>
+        <textureslidernib colordiffuse="main_logo" border="6">slider/slider_nib.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="$VAR[ColorHighlight]" border="6">slider/slider_nib.png</textureslidernibfocus>
         <orientation>horizontal</orientation>
     </default>
     <default type="sliderex">
@@ -193,20 +187,18 @@
         <disabledcolor>main_fg_30</disabledcolor>
         <include>Texture_Button</include>
         <pulseonselect>false</pulseonselect>
-        <texturefocus colordiffuse="main_fg_12">common/white.png</texturefocus>
-        <texturenofocus/>
         <sliderwidth>120</sliderwidth>
         <sliderheight>12</sliderheight>
         <pulseonselect>false</pulseonselect>
-        <texturesliderbar colordiffuse="main_fg_12" border="6">slider/slider_bg.png</texturesliderbar>
-        <textureslidernib colordiffuse="main_fg_30" border="6">slider/slider_nib.png</textureslidernib>
+        <texturesliderbar colordiffuse="main_soft" border="6">slider/slider_bg.png</texturesliderbar>
+        <textureslidernib colordiffuse="main_logo" border="6">slider/slider_nib.png</textureslidernib>
         <textureslidernibfocus colordiffuse="$VAR[ColorSelected]" border="6">slider/slider_nib.png</textureslidernibfocus>
         <orientation>horizontal</orientation>
     </default>
     <include name="defs_dialog_sliderex">
         <include>defs_dialog_button</include>
-        <texturesliderbar colordiffuse="dialog_fg_12" border="6">slider/slider_bg.png</texturesliderbar>
-        <textureslidernib colordiffuse="dialog_fg_30" border="6">slider/slider_nib.png</textureslidernib>
+        <texturesliderbar colordiffuse="main_soft" border="6">slider/slider_bg.png</texturesliderbar>
+        <textureslidernib colordiffuse="main_logo" border="6">slider/slider_nib.png</textureslidernib>
     </include>
 
     <default type="togglebutton">
@@ -352,10 +344,6 @@
         </include>
     </include>
 
-    <variable name="Defs_ScreensaverWidget_Target">
-        <value condition="!String.IsEmpty(Skin.String(screensaver.arctic.mirage.target))">$INFO[Skin.String(screensaver.arctic.mirage.target)]</value>
-        <value>videos</value>
-    </variable>
     <variable name="Defs_ScreensaverWidget">
         <value condition="!String.IsEmpty(Skin.String(screensaver.arctic.mirage.path))">$INFO[Skin.String(screensaver.arctic.mirage.path)]</value>
         <value>special://skin/extras/playlists/RandomMovies.xsp</value>
@@ -363,7 +351,7 @@
 
     <include name="Defs_Search_Button">
         <include>Texture_Box_Highlight_Focus_H</include>
-        <texturenofocus border="12" colordiffuse="main_fg_12">common/box.png</texturenofocus>
+        <texturenofocus border="20" colordiffuse="main_fg_12">common/box.png</texturenofocus>
         <height>80</height>
         <textoffsetx>30</textoffsetx>
         <align>left</align>
@@ -462,9 +450,6 @@
             </include>
         </definition>
     </include>
-
-    <variable name="Def_PlotDetails_Fallback">
-    </variable>
 
     <variable name="Defs_BrowseLimitedLists">
         <value condition="Skin.HasSetting(Widgets.DisableShowMore)">never</value>

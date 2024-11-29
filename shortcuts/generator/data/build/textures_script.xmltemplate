@@ -10,6 +10,10 @@
     <texturefocus border="40">special://profile/addon_data/script.texturemaker/{skindir}/menu_v.png</texturefocus>
     <texturenofocus border="40">special://profile/addon_data/script.texturemaker/{skindir}/menu_v.png</texturenofocus>
 </include>
+<include name="Texture_Highlight_Button_FakeFocus_H">
+    <texturefocus border="40">special://profile/addon_data/script.texturemaker/{skindir}/menu_h.png</texturefocus>
+    <texturenofocus border="40">special://profile/addon_data/script.texturemaker/{skindir}/menu_h.png</texturenofocus>
+</include>
 <include name="Texture_Highlight_ToggleButton_FakeFocus_H">
     <texturenofocus />
     <texturefocus border="40">special://profile/addon_data/script.texturemaker/{skindir}/menu_h.png</texturefocus>
@@ -73,13 +77,13 @@
     <texture border="0,0,80,0">special://profile/addon_data/script.texturemaker/{skindir}/menumain_h_z.png</texture>
 </include>
 <include name="Texture_Box_Highlight_H">
-    <texture border="12">special://profile/addon_data/script.texturemaker/{skindir}/box_h.png</texture>
+    <texture border="20">special://profile/addon_data/script.texturemaker/{skindir}/box_h.png</texture>
 </include>
 <include name="Texture_Box_Highlight_V">
-    <texture border="12">special://profile/addon_data/script.texturemaker/{skindir}/box_v.png</texture>
+    <texture border="20">special://profile/addon_data/script.texturemaker/{skindir}/box_v.png</texture>
 </include>
 <include name="Texture_Box_Highlight_Focus_H">
-    <texturefocus border="12">special://profile/addon_data/script.texturemaker/{skindir}/box_h.png</texturefocus>
+    <texturefocus border="20">special://profile/addon_data/script.texturemaker/{skindir}/box_h.png</texturefocus>
 </include>
 <include name="Texture_Menu_Highlight_H">
     <param name="border">40</param>

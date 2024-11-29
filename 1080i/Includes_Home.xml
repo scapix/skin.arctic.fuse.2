@@ -3,9 +3,9 @@
 
     <include name="Home_Menu_Content">
         <definition>
-            <include content="Object_ContentNested">
+            <content>
                 <include>skinvariables-sidemenu-staticitems</include>
-            </include>
+            </content>
         </definition>
     </include>
 
@@ -80,8 +80,8 @@
                     <onfocus>ClearProperty(SideMenu.CurrentItem)</onfocus>
                     <onfocus>SetProperty(Focus.ControlID,$NUMBER[300],Home)</onfocus>
 
-                    <onfocus condition="$EXP[Exp_ClassicHome_IsVisible] + !String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnFocus))">SetProperty(TMDbHelper.WidgetContainer.UpdateLock,$INFO[ListItem.CurrentItem],1198)</onfocus>
-                    <onfocus condition="$EXP[Exp_ClassicHome_IsVisible] + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnFocus))">SetProperty(TMDbHelper.WidgetContainer.UpdateLock.OnFocus,True,1198)</onfocus>
+                    <onfocus condition="$EXP[Exp_HomeHub_IsVisible] + !String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnFocus))">SetProperty(TMDbHelper.WidgetContainer.UpdateLock,$INFO[ListItem.CurrentItem],1198)</onfocus>
+                    <onfocus condition="$EXP[Exp_HomeHub_IsVisible] + String.IsEmpty(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock.OnFocus))">SetProperty(TMDbHelper.WidgetContainer.UpdateLock.OnFocus,True,1198)</onfocus>
 
                     <onfocus condition="!String.IsEmpty(Window.Property(List.ViewContainer.Prev))">SetProperty(List.ViewContainer,$INFO[Window.Property(List.ViewContainer.Prev)])</onfocus>
                     <onfocus condition="!String.IsEmpty(Window.Property(List.ViewContainer.Prev))">ClearProperty(List.ViewContainer.Prev)</onfocus>
@@ -99,7 +99,7 @@
                     <include content="Home_Menu_List_ItemLayout">
                         <param name="id">$PARAM[id]</param>
                         <param name="hidden_button">Home_Menu_List_HiddenButton</param>
-                        <param name="hidden_button_enabled">$EXP[Exp_ClassicHome_IsVisible]</param>
+                        <param name="hidden_button_enabled">$EXP[Exp_HomeHub_IsVisible]</param>
                         <param name="vertical">true</param>
                         <param name="expanded">$EXP[Exp_HomeMenu_IsExpanded]</param>
                     </include>
@@ -114,23 +114,23 @@
             <visible allowhiddenfocus="true">false</visible>
             <animation effect="fade" start="0" end="0" time="50" reversible="false">Focus</animation>
 
-            <onfocus condition="$EXP[Exp_ClassicHome_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetProperty(TMDbHelper.WidgetContainer.UpdateLock,$INFO[ListItem.CurrentItem],1198)</onfocus>
+            <onfocus condition="$EXP[Exp_HomeHub_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetProperty(TMDbHelper.WidgetContainer.UpdateLock,$INFO[ListItem.CurrentItem],1198)</onfocus>
 
-            <onfocus condition="$EXP[Exp_ClassicHome_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetFocus($INFO[ListItem.Property(widgets_first_id)])</onfocus>
-            <onfocus condition="$EXP[Exp_ClassicHome_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetFocus(300)</onfocus>
+            <onfocus condition="$EXP[Exp_HomeHub_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetFocus($INFO[ListItem.Property(widgets_first_id)])</onfocus>
+            <onfocus condition="$EXP[Exp_HomeHub_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetFocus(300)</onfocus>
 
-            <onfocus condition="$EXP[Exp_ClassicHome_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetProperty(TMDbHelper.WidgetContainer,$INFO[ListItem.Property(widgets_first_id)],Home)</onfocus>
-            <onfocus condition="$EXP[Exp_ClassicHome_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetProperty(Slide.WidgetContainer,$INFO[ListItem.Property(widgets_first_id)],Home)</onfocus>
-            <onfocus condition="$EXP[Exp_ClassicHome_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">ClearProperty(List.ViewContainer,Home)</onfocus>
-            <onfocus condition="$EXP[Exp_ClassicHome_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">ClearProperty(List.ViewContainer.Prev,Home)</onfocus>
-            <onfocus condition="$EXP[Exp_ClassicHome_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetProperty(SideMenu.CurrentName,$INFO[ListItem.Label],Home)</onfocus>
+            <onfocus condition="$EXP[Exp_HomeHub_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetProperty(TMDbHelper.WidgetContainer,$INFO[ListItem.Property(widgets_first_id)],Home)</onfocus>
+            <onfocus condition="$EXP[Exp_HomeHub_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetProperty(Slide.WidgetContainer,$INFO[ListItem.Property(widgets_first_id)],Home)</onfocus>
+            <onfocus condition="$EXP[Exp_HomeHub_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">ClearProperty(List.ViewContainer,Home)</onfocus>
+            <onfocus condition="$EXP[Exp_HomeHub_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">ClearProperty(List.ViewContainer.Prev,Home)</onfocus>
+            <onfocus condition="$EXP[Exp_HomeHub_IsVisible] + !Integer.IsEqual(Window(1198).Property(TMDbHelper.WidgetContainer.UpdateLock),ListItem.CurrentItem)">SetProperty(SideMenu.CurrentName,$INFO[ListItem.Label],Home)</onfocus>
 
         </control>
     </include>
 
     <include name="Home_Menu_List_ItemLayout">
         <param name="layoutnf">[false]</param>
-        <param name="layoutfo">[$EXP[Exp_ClassicHome_IsVisible]]</param>
+        <param name="layoutfo">[$EXP[Exp_HomeHub_IsVisible]]</param>
         <param name="altfocus">false</param>
         <param name="expanded">true</param>
         <param name="width">view_menu_main</param>
@@ -228,41 +228,6 @@
         </definition>
     </include>
 
-    <include name="Home_Menu_Button_Back">
-        <control type="button" id="$PARAM[id]">
-            <texturenofocus />
-            <include>Texture_KeyboardButton</include>
-            <include content="Dimension_Padding">
-                <param name="pad">-20</param>
-            </include>
-            <nested />
-        </control>
-    </include>
-
-    <include name="Home_Menu_Button_Icon">
-        <param name="focused">$EXP[Exp_HomeMenu_HasFocus]</param>
-        <param name="color_nf">dialog_fg_30</param>
-        <definition>
-            <control type="group">
-                <nested />
-                <width>40</width>
-                <height>40</height>
-                <control type="image">
-                    <aspectratio>keep</aspectratio>
-                    <bordersize>icon_home_bordersize</bordersize>
-                    <texture colordiffuse="$PARAM[color_nf]">$PARAM[icon]</texture>
-                    <visible>!Control.HasFocus($PARAM[id])</visible>
-                </control>
-                <control type="image">
-                    <aspectratio>keep</aspectratio>
-                    <bordersize>icon_home_bordersize</bordersize>
-                    <texture colordiffuse="$VAR[ColorSelected]">$PARAM[icon]</texture>
-                    <visible>Control.HasFocus($PARAM[id])</visible>
-                </control>
-            </control>
-        </definition>
-    </include>
-
     <include name="Home_Menu_SearchButton">
         <param name="onlist">320</param>
         <param name="id">309</param>
@@ -296,12 +261,12 @@
             <control type="image">
                 <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">$VAR[Image_SearchDiscover]</texture>
                 <bordersize>icon_home_bordersize</bordersize>
-                <visible>!Control.HasFocus($PARAM[id])</visible>
+                <visible>![Control.HasFocus($PARAM[id]) + !Window.IsVisible(1163)]</visible>
             </control>
             <control type="image">
                 <texture colordiffuse="$VAR[ColorSelected]">$VAR[Image_SearchDiscover]</texture>
                 <bordersize>icon_home_bordersize</bordersize>
-                <visible>Control.HasFocus($PARAM[id])</visible>
+                <visible>Control.HasFocus($PARAM[id]) + !Window.IsVisible(1163)</visible>
             </control>
         </definition>
     </include>
@@ -334,16 +299,17 @@
 
                 <ondown>309</ondown>
                 <onup>SetFocus(300,9999,absolute)</onup>
+
             </control>
             <control type="image">
                 <texture colordiffuse="$VAR[Layout_Home_Menu_Color_NF]">special://skin/extras/icons/bars.png</texture>
                 <bordersize>icon_home_bordersize</bordersize>
-                <visible>!Control.HasFocus($PARAM[id])</visible>
+                <visible>![Control.HasFocus($PARAM[id]) + !Window.IsVisible(1163)]</visible>
             </control>
             <control type="image">
                 <texture colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/bars.png</texture>
                 <bordersize>icon_home_bordersize</bordersize>
-                <visible>Control.HasFocus($PARAM[id])</visible>
+                <visible>Control.HasFocus($PARAM[id]) + !Window.IsVisible(1163)</visible>
             </control>
         </definition>
     </include>
@@ -357,9 +323,8 @@
             <height>40</height>
             <control type="group">
                 <visible>Control.HasFocus(309)</visible>
+                <visible>!Window.IsVisible(1163)</visible>
                 <control type="image">
-                    <!-- <include>Texture_MainMenu_Highlight_V</include>
-                    <height>256</height> -->
                     <include>Texture_Menu_Highlight_H</include>
                     <height>80</height>
                     <left>40</left>
@@ -385,7 +350,7 @@
             <control type="group">
                 <include content="Layout_Home_Menu_Label" condition="$EXP[Exp_HomeMenu_IsExpanded]">
                     <param name="detailed">true</param>
-                    <param name="selected">[Control.HasFocus(309)]</param>
+                    <param name="selected">[Control.HasFocus(309) + !Window.IsVisible(1163)]</param>
                     <param name="label">$LOCALIZE[137]</param>
                 </include>
             </control>
@@ -401,6 +366,7 @@
             <height>40</height>
             <control type="group">
                 <visible>Control.HasFocus(308)</visible>
+                <visible>!Window.IsVisible(1163)</visible>
                 <control type="image">
                     <include>Texture_Menu_Highlight_H</include>
                     <height>80</height>
@@ -427,7 +393,7 @@
             <control type="group">
                 <include content="Layout_Home_Menu_Label" condition="$EXP[Exp_HomeMenu_IsExpanded]">
                     <param name="detailed">true</param>
-                    <param name="selected">[Control.HasFocus(308)]</param>
+                    <param name="selected">[Control.HasFocus(308) + !Window.IsVisible(1163)]</param>
                     <param name="label">$LOCALIZE[33063]</param>
                 </include>
             </control>
@@ -462,7 +428,7 @@
                             </include>
                             <bordersize>40</bordersize>
                             <bordertexture colordiffuse="shadow_soft">shadows/circle_50-shadow-40.png</bordertexture>
-                            <texture colordiffuse="dialog_fg_100">diffuse/circle_50.png</texture>
+                            <texture colordiffuse="dialog_fg_100">diffuse/circle/circle_50.png</texture>
                         </control>
                         <include content="Object_InfoCircle_Image">
                             <param name="bordersize">2</param>
