@@ -953,6 +953,11 @@
         <value>$LOCALIZE[208]</value>
     </variable>
 
+    <variable name="Label_DialogInfo_Title">
+        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value>$INFO[ListItem.Label]</value>
+    </variable>
+
     <variable name="Label_PVRChannelMgrHeader">
         <value condition="!String.IsEmpty(Window.Property(IsRadio))">$LOCALIZE[19024]</value>
         <value>$LOCALIZE[19023]</value>
