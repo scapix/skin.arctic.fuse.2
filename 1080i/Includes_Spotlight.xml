@@ -120,7 +120,7 @@
 
                     <centertop>160</centertop>
                     <left>20</left>
-                    <height>256</height>
+                    <height>160</height>
                     <onfocus>ClearProperty(Slide.WidgetContainer,$PARAM[property_window_id])</onfocus>
 
                     <control type="image" id="314">
@@ -160,15 +160,15 @@
                         </include>
                     </include>
 
-                    <control type="group" id="319">
-                        <left>40</left>
-                        <width>0</width>
-                    </control>
-
-
-                    <control type="button" id="312">
-                        <include>Defs_OSD_Button</include>
-                        <centertop>50%</centertop>
+                    <include content="DialogInfo_Button">
+                        <param name="id">312</param>
+                        <param name="groupid">322</param>
+                        <param name="vertical">false</param>
+                        <param name="label">$LOCALIZE[29915]</param>
+                        <param name="icon">special://skin/extras/icons/info2.png</param>
+                        <param name="include_hintlabel">false</param>
+                        <param name="nf_opacity">90</param>
+                        <param name="itemgap">0</param>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(301)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Action(Info)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(312)</onclick>
@@ -179,21 +179,17 @@
                             <param name="window_id">$PARAM[window_id]</param>
                             <param name="property_window_id">$PARAM[property_window_id]</param>
                         </include>
-                    </control>
-                    <include content="OSD_Button_Icon_Overlay">
-                        <param name="icon">special://skin/extras/icons/info2.png</param>
-                        <param name="id">312</param>
-                        <param name="groupid">322</param>
-                        <param name="vertical">false</param>
-                        <param name="itemgap">0</param>
-                        <param name="center">true</param>
-                        <param name="icon_colordiffuse">main_fg_90</param>
                     </include>
 
-                    <control type="button" id="313">
-                        <left>20</left>
-                        <include>Defs_OSD_Button</include>
-                        <centertop>50%</centertop>
+                    <include content="DialogInfo_Button">
+                        <param name="id">313</param>
+                        <param name="groupid">323</param>
+                        <param name="vertical">false</param>
+                        <param name="label">$LOCALIZE[10822]</param>
+                        <param name="icon">special://skin/extras/icons/indent.png</param>
+                        <param name="include_hintlabel">false</param>
+                        <param name="nf_opacity">90</param>
+                        <param name="itemgap">0</param>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(301)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Action(ContextMenu)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(313)</onclick>
@@ -203,15 +199,6 @@
                             <param name="window_id">$PARAM[window_id]</param>
                             <param name="property_window_id">$PARAM[property_window_id]</param>
                         </include>
-                    </control>
-                    <include content="OSD_Button_Icon_Overlay">
-                        <param name="icon">special://skin/extras/icons/indent.png</param>
-                        <param name="id">313</param>
-                        <param name="groupid">323</param>
-                        <param name="vertical">false</param>
-                        <param name="itemgap">0</param>
-                        <param name="center">true</param>
-                        <param name="icon_colordiffuse">main_fg_90</param>
                     </include>
 
                     <control type="image" id="315">
