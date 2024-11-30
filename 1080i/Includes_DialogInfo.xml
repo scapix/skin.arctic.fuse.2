@@ -1218,7 +1218,8 @@
                         <include content="Object_InfoCircle">
                             <param name="name">$PARAM[name]</param>
                             <param name="role">$PARAM[role]</param>
-                            <param name="icon">diffuse/circle/circle_50.png</param>
+                            <param name="icon">$PARAM[icon]</param>
+                            <!-- <param name="icon">diffuse/circle/circle_50.png</param>
                             <param name="bordersize">2</param>
                             <include content="Object_InfoCircle_Image">
                                 <param name="colordiffuse">panel_fg_70</param>
@@ -1230,7 +1231,7 @@
                                 <width>50</width>
                                 <texture>$PARAM[icon]</texture>
                                 <bordersize>1</bordersize>
-                            </control>
+                            </control> -->
                         </include>
                     </control>
                     <control type="group">
@@ -1239,9 +1240,10 @@
                         <include content="Object_InfoCircle">
                             <param name="name">$PARAM[name]</param>
                             <param name="role">$PARAM[role]</param>
-                            <param name="icon">diffuse/circle/circle_50.png</param>
+                            <param name="icon">$PARAM[icon]</param>
                             <param name="textcolor_top">$VAR[ColorSelected]</param>
                             <param name="textcolor_sub">$VAR[ColorSelected]</param>
+                            <!-- <param name="icon">diffuse/circle/circle_50.png</param>
                             <param name="bordersize">2</param>
                             <include content="Object_InfoCircle_Image">
                                 <param name="colordiffuse">panel_fg_70</param>
@@ -1253,7 +1255,7 @@
                                 <width>50</width>
                                 <texture>$PARAM[icon]</texture>
                                 <bordersize>1</bordersize>
-                            </control>
+                            </control> -->
                         </include>
                     </control>
                 </control>
