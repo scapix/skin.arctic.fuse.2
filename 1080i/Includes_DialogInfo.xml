@@ -1782,7 +1782,7 @@
     </include>
 
     <include name="DialogInfo_CustomPlot">
-        <param name="size">Dimension_DialogMainMenu</param>
+        <param name="size">Dimension_DialogFullMenu</param>
         <param name="include_artwork">false</param>
         <definition>
             <include>Dialog_Dim_Overlay</include>
@@ -1799,7 +1799,7 @@
 
                 <control type="group">
                     <include content="Object_Right" condition="!String.IsEmpty(Window.Property(path))">
-                        <param name="right">dialog_panelgroup_w</param>
+                        <param name="right">dialog_buttongroup_w</param>
                     </include>
                     <!-- Header -->
                     <include content="Dialog_Head">
@@ -1851,14 +1851,17 @@
                 <!-- Side Buttons -->
                 <include content="Object_Control" condition="!String.IsEmpty(Window.Property(path))">
                     <param name="control">group</param>
-                    <include>Dialog_Side_Panel_Group_Def</include>
+                    <include content="Dialog_Side_Panel_Group_Def">
+                        <param name="width">dialog_buttongroup_w</param>
+                    </include>
                     <control type="group">
                         <include>Dimension_Dialog_Body</include>
                         <control type="grouplist" id="9000">
-                            <include>Dialog_Side_Expanded_Grouplist_Def</include>
+                            <include>Dialog_Side_Grouplist_Def</include>
                             <onleft>61</onleft>
                             <!-- Info -->
-                            <include content="DialogInfo_ExpandedButton">
+                            <include content="DialogInfo_Button">
+                                <param name="include_hintlabel">true</param>
                                 <param name="vertical">true</param>
                                 <param name="id">8001</param>
                                 <param name="groupid">8101</param>
@@ -1875,7 +1878,8 @@
                                 <onclick>RunScript(plugin.video.themoviedb.helper,add_path=$INFO[Window.Property(path)],call_auto=1190,return)</onclick>
                             </include>
                             <!-- Wiki -->
-                            <include content="DialogInfo_ExpandedButton">
+                            <include content="DialogInfo_Button">
+                                <param name="include_hintlabel">true</param>
                                 <param name="id">9005</param>
                                 <param name="groupid">9105</param>
                                 <param name="label">Wiki</param>
@@ -1885,7 +1889,8 @@
 
                             </include>
                             <!-- Trailer -->
-                            <include content="DialogInfo_ExpandedButton">
+                            <include content="DialogInfo_Button">
+                                <param name="include_hintlabel">true</param>
                                 <param name="id">9002</param>
                                 <param name="groupid">9102</param>
                                 <param name="label">$LOCALIZE[20410]</param>
