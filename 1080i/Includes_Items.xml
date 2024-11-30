@@ -837,7 +837,6 @@
             <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
                 <param name="id">4002</param>
                 <param name="groupid">4102</param>
-                <param name="sliceid">4202</param>
                 <param name="vertical">false</param>
                 <param name="label">$LOCALIZE[20410]</param>
                 <param name="icon">special://skin/extras/icons/videoplay.png</param>
@@ -860,7 +859,6 @@
             <include content="DialogInfo_Button" condition="String.IsEqual(ListItem.DBType,movie) + ListItem.HasVideoVersions">
                 <param name="id">4021</param>
                 <param name="groupid">4121</param>
-                <param name="sliceid">4221</param>
                 <param name="vertical">false</param>
                 <param name="label">$LOCALIZE[40000]</param>
                 <param name="icon">special://skin/extras/icons/bookmarks.png</param>
@@ -880,7 +878,6 @@
             <include content="DialogInfo_Button" condition="String.IsEqual(ListItem.DBType,movie) + ListItem.HasVideoExtras">
                 <param name="id">4022</param>
                 <param name="groupid">4122</param>
-                <param name="sliceid">4222</param>
                 <param name="vertical">false</param>
                 <param name="label">$LOCALIZE[40211]</param>
                 <param name="icon">special://skin/extras/icons/director.png</param>
@@ -900,7 +897,6 @@
             <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
                 <param name="id">4004</param>
                 <param name="groupid">4104</param>
-                <param name="sliceid">4204</param>
                 <param name="vertical">false</param>
                 <param name="label">Trakt</param>
                 <param name="icon">special://skin/extras/icons/watchlist.png</param>
@@ -926,7 +922,6 @@
             <include content="DialogInfo_Button">
                 <param name="id">4005</param>
                 <param name="groupid">4105</param>
-                <param name="sliceid">4205</param>
                 <param name="vertical">false</param>
                 <param name="label">Wiki</param>
                 <param name="icon">special://skin/extras/icons/globe.png</param>
@@ -947,7 +942,6 @@
             <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
                 <param name="id">4007</param>
                 <param name="groupid">4107</param>
-                <param name="sliceid">4207</param>
                 <param name="vertical">false</param>
                 <param name="label">$LOCALIZE[563]</param>
                 <param name="icon">special://skin/extras/icons/star.png</param>
@@ -967,7 +961,6 @@
             <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
                 <param name="id">4009</param>
                 <param name="groupid">4109</param>
-                <param name="sliceid">4209</param>
                 <param name="vertical">false</param>
                 <param name="label">$LOCALIZE[39123]</param>
                 <param name="icon">special://skin/extras/icons/image.png</param>
@@ -986,7 +979,6 @@
             <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
                 <param name="id">4008</param>
                 <param name="groupid">4108</param>
-                <param name="sliceid">4208</param>
                 <param name="vertical">false</param>
                 <param name="label">$LOCALIZE[184]</param>
                 <param name="icon">special://skin/extras/icons/update.png</param>
@@ -1014,7 +1006,6 @@
                 <param name="vertical">$PARAM[vertical]</param>
                 <param name="id">4001</param>
                 <param name="groupid">4101</param>
-                <param name="sliceid">4201</param>
                 <param name="label">$VAR[Label_DialogInfo_PlayButton]</param>
                 <param name="icon">$VAR[Image_DialogInfo_PlayButton]</param>
                 <param name="zoom_in_delay">0</param>
@@ -1043,7 +1034,6 @@
                 <param name="vertical">$PARAM[vertical]</param>
                 <param name="id">4003</param>
                 <param name="groupid">4103</param>
-                <param name="sliceid">4203</param>
                 <param name="label">$LOCALIZE[134]</param>
                 <param name="icon">special://skin/extras/icons/song.png</param>
                 <param name="zoom_in_delay">60</param>
@@ -1063,7 +1053,6 @@
                 <param name="vertical">$PARAM[vertical]</param>
                 <param name="id">4002</param>
                 <param name="groupid">4102</param>
-                <param name="sliceid">4202</param>
                 <param name="label">$LOCALIZE[132]</param>
                 <param name="icon">special://skin/extras/icons/songs.png</param>
                 <param name="zoom_in_delay">120</param>
@@ -1083,7 +1072,6 @@
                 <param name="vertical">$PARAM[vertical]</param>
                 <param name="id">4007</param>
                 <param name="groupid">4107</param>
-                <param name="sliceid">4207</param>
                 <param name="label">YouTube</param>
                 <param name="icon">special://skin/extras/icons/youtube.png</param>
                 <param name="zoom_in_delay">180</param>
@@ -1100,7 +1088,6 @@
                 <param name="vertical">$PARAM[vertical]</param>
                 <param name="id">4005</param>
                 <param name="groupid">4105</param>
-                <param name="sliceid">4205</param>
                 <param name="label">$LOCALIZE[39123]</param>
                 <param name="icon">special://skin/extras/icons/image.png</param>
                 <param name="zoom_in_delay">240</param>
