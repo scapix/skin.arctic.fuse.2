@@ -827,26 +827,12 @@
     </include>
 
     <include name="Items_DialogVideoInfo_MenuBar">
+        <param name="include_hintlabel">true</param>
         <param name="zoom_in_include">false</param>
         <param name="itemgap">0</param>
+        <param name="textcolor">main_fg</param>
+        <param name="nf_opacity">90</param>
         <definition>
-            <!-- <include content="DialogInfo_ExpandedButton" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
-                <param name="id">4001</param>
-                <param name="groupid">4101</param>
-                <param name="sliceid">4201</param>
-                <param name="label">$VAR[Label_DialogInfo_PlayButton]</param>
-                <param name="icon">$VAR[Image_DialogInfo_PlayButton]</param>
-                <param name="zoom_in_delay">0</param>
-                <param name="zoom_in_include">$PARAM[zoom_in_include]</param>
-                <param name="include_slide">true</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
-                <onclick condition="ListItem.HasVideoVersions">SetFocus(8908)</onclick>
-                <onclick condition="!ListItem.HasVideoVersions">SendClick(8)</onclick>
-                <onclick condition="!ListItem.HasVideoVersions">RunScript(plugin.video.themoviedb.helper,close_dialog=1190)</onclick>
-                <onfocus>ClearProperty(DetailsView)</onfocus>
-            </include> -->
-
             <!-- Trailer -->
             <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
                 <param name="id">4002</param>
@@ -859,7 +845,9 @@
                 <param name="zoom_in_include">$PARAM[zoom_in_include]</param>
                 <param name="include_slide">true</param>
                 <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
+                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                <param name="textcolor">$PARAM[textcolor]</param>
+                <param name="nf_opacity">$PARAM[nf_opacity]</param>
                 <param name="visible">!String.IsEmpty(ListItem.Trailer) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))</param>
                 <include content="Action_PlayTrailer_OnClick">
                     <param name="trailer">ListItem.Trailer</param>
@@ -880,7 +868,9 @@
                 <param name="zoom_in_include">$PARAM[zoom_in_include]</param>
                 <param name="include_slide">true</param>
                 <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
+                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                <param name="textcolor">$PARAM[textcolor]</param>
+                <param name="nf_opacity">$PARAM[nf_opacity]</param>
 
                 <onclick condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)">SendClick(14)</onclick>
 
@@ -898,7 +888,9 @@
                 <param name="zoom_in_include">$PARAM[zoom_in_include]</param>
                 <param name="include_slide">true</param>
                 <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
+                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                <param name="textcolor">$PARAM[textcolor]</param>
+                <param name="nf_opacity">$PARAM[nf_opacity]</param>
 
                 <onclick condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)">SendClick(15)</onclick>
 
@@ -916,7 +908,9 @@
                 <param name="zoom_in_include">$PARAM[zoom_in_include]</param>
                 <param name="include_slide">true</param>
                 <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
+                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                <param name="textcolor">$PARAM[textcolor]</param>
+                <param name="nf_opacity">$PARAM[nf_opacity]</param>
                 <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.TraktIsAuth)) + !String.IsEqual(ListItem.DBType,musicvideo)</param>
                 <onclick condition="!String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],cache_refresh)</onclick>
                 <onclick condition="String.IsEmpty(ListItem.Property(tmdb_id)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.tmdb_id)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Window(Home).Property(TMDbHelper.ListItem.tmdb_id)],$VAR[Path_Param_Type],cache_refresh)</onclick>
@@ -940,7 +934,9 @@
                 <param name="zoom_in_include">$PARAM[zoom_in_include]</param>
                 <param name="include_slide">true</param>
                 <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
+                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                <param name="textcolor">$PARAM[textcolor]</param>
+                <param name="nf_opacity">$PARAM[nf_opacity]</param>
 
                 <onclick>runscript(script.wikipedia,wikipedia=$VAR[Path_Wikipedia_Title],tmdb_type=$VAR[Path_Wikipedia_Type])</onclick>
                 <onfocus>SetProperty(DetailsView,Reviews)</onfocus>
@@ -959,7 +955,9 @@
                 <param name="zoom_in_include">$PARAM[zoom_in_include]</param>
                 <param name="include_slide">true</param>
                 <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
+                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                <param name="textcolor">$PARAM[textcolor]</param>
+                <param name="nf_opacity">$PARAM[nf_opacity]</param>
 
                 <onclick condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)">SendClick(7)</onclick>
 
@@ -977,7 +975,9 @@
                 <param name="zoom_in_include">$PARAM[zoom_in_include]</param>
                 <param name="include_slide">true</param>
                 <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
+                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                <param name="textcolor">$PARAM[textcolor]</param>
+                <param name="nf_opacity">$PARAM[nf_opacity]</param>
                 <onclick condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)">SendClick(10)</onclick>
                 <onfocus>SetProperty(DetailsView,Artwork)</onfocus>
             </include>
@@ -994,7 +994,9 @@
                 <param name="zoom_in_include">$PARAM[zoom_in_include]</param>
                 <param name="include_slide">true</param>
                 <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
+                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                <param name="textcolor">$PARAM[textcolor]</param>
+                <param name="nf_opacity">$PARAM[nf_opacity]</param>
 
                 <onclick condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)">SendClick(6)</onclick>
 

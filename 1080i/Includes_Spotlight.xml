@@ -143,7 +143,6 @@
                         <param name="name">$VAR[Label_Title_C301]</param>
                         <param name="role">$VAR[Label_FullscreenWidget_PlayButton]</param>
                         <param name="icon">$VAR[Image_FullscreenWidget_PlayButton]</param>
-                        <param name="image">$VAR[Image_DialogInfo_PlayThumb_C301]</param>
 
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems] + Container(301).ListItem.IsFolder">ActivateWindow($VAR[Path_Spotlight_Target],$INFO[Container(301).ListItem.FolderPath],return)</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems] + !Container(301).ListItem.IsFolder + !String.IsEmpty(Container(301).ListItem.FileNameAndPath)">PlayMedia($ESCINFO[Container(301).ListItem.FileNameAndPath])</onclick>
