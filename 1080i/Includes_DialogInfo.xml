@@ -1067,7 +1067,6 @@
         <param name="radiocheck">true</param>
         <param name="zoom_in_delay">0</param>
         <param name="zoom_in_include">false</param>
-        <param name="include_slide">false</param>
         <param name="include_hintlabel">false</param>
         <definition>
             <control type="$PARAM[control]" id="$PARAM[id]">
