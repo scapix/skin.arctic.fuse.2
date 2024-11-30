@@ -310,7 +310,7 @@
             <param name="widget_showoverlay">true</param>
             <param name="altvisible">true</param>
             <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDB_ID),plugin://plugin.video.themoviedb.helper/?info=stars_in_movies&amp;tmdb_type=person&amp;tmdb_id=,&amp;limit=100&amp;sort_key=year]$VAR[Path_Param_Widget]</content>
+            <content>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDB_ID),plugin://plugin.video.themoviedb.helper/?info=stars_in_movies&amp;tmdb_type=person&amp;tmdb_id=,&amp;limit=250&amp;sort_key=release_date]$VAR[Path_Param_Widget]</content>
             <include>DialogInfo_Widgets_Action</include>
         </include>
         <include content="Widget_Info_Row">
@@ -327,7 +327,7 @@
             <param name="widget_showoverlay">true</param>
             <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
             <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDB_ID),plugin://plugin.video.themoviedb.helper/?info=stars_in_tvshows&amp;tmdb_type=person&amp;tmdb_id=,&amp;limit=100&amp;sort_key=year]$VAR[Path_Param_Widget]</content>
+            <content>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDB_ID),plugin://plugin.video.themoviedb.helper/?info=stars_in_tvshows&amp;tmdb_type=person&amp;tmdb_id=,&amp;limit=250&amp;sort_key=first_air_date]$VAR[Path_Param_Widget]</content>
             <include>DialogInfo_Widgets_Action</include>
         </include>
         <include content="Widget_Info_Row">
@@ -344,7 +344,7 @@
             <param name="widget_showoverlay">true</param>
             <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
             <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
-            <content>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDB_ID),plugin://plugin.video.themoviedb.helper/?info=crew_in_both&amp;tmdb_type=person&amp;tmdb_id=,&amp;limit=100&amp;sort_key=year]$VAR[Path_Param_Widget]</content>
+            <content>$INFO[Window(Home).Property(TMDbHelper.ListItem.TMDB_ID),plugin://plugin.video.themoviedb.helper/?info=crew_in_both&amp;tmdb_type=person&amp;tmdb_id=,&amp;limit=250&amp;sort_key=year]$VAR[Path_Param_Widget]</content>
             <include>DialogInfo_Widgets_Action</include>
         </include>
 
@@ -1833,6 +1833,71 @@
                                 <onclick>Dialog.Close(videobookmarks,true)</onclick>
                                 <onclick>RunScript(plugin.video.themoviedb.helper,add_path=$INFO[Window.Property(path)],call_auto=1190,return)</onclick>
                             </include>
+                            <!-- Movies -->
+                            <include content="DialogInfo_Button" condition="!String.IsEmpty(Window.Property(tmdb_id)) + String.IsEqual(Window.Property(tmdb_type),person)">
+                                <param name="include_hintlabel">true</param>
+                                <param name="id">9011</param>
+                                <param name="groupid">9111</param>
+                                <param name="label">$LOCALIZE[342]</param>
+                                <param name="icon">special://skin/extras/icons/film.png</param>
+                                <onclick>SetProperty(CustomDialog1162.Expanded,artwork,Home)</onclick>
+                                <onclick>SetProperty(Target,$INFO[ListItem.Property(target)],1162)</onclick>
+                                <onclick>SetProperty(Path,$INFO[Window.Property(TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=stars_in_movies&amp;tmdb_type=person&amp;tmdb_id=,&amp;limit=250&amp;sort_key=release_date]$VAR[Path_Param_Widget],1162)</onclick>
+                                <onclick>SetProperty(Header,$INFO[Window(1114).Property(header)],1162)</onclick>
+                                <onclick>ActivateWindow(1162)</onclick>
+                            </include>
+                            <!-- TV Shows -->
+                            <include content="DialogInfo_Button" condition="!String.IsEmpty(Window.Property(tmdb_id)) + String.IsEqual(Window.Property(tmdb_type),person)">
+                                <param name="include_hintlabel">true</param>
+                                <param name="id">9012</param>
+                                <param name="groupid">9112</param>
+                                <param name="label">$LOCALIZE[20343]</param>
+                                <param name="icon">special://skin/extras/icons/tv.png</param>
+                                <onclick>SetProperty(CustomDialog1162.Expanded,artwork,Home)</onclick>
+                                <onclick>SetProperty(Target,$INFO[ListItem.Property(target)],1162)</onclick>
+                                <onclick>SetProperty(Path,$INFO[Window.Property(TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=stars_in_tvshows&amp;tmdb_type=person&amp;tmdb_id=,&amp;limit=250&amp;sort_key=first_air_date]$VAR[Path_Param_Widget],1162)</onclick>
+                                <onclick>SetProperty(Header,$INFO[Window(1114).Property(header)],1162)</onclick>
+                                <onclick>ActivateWindow(1162)</onclick>
+                            </include>
+                            <!-- Crew -->
+                            <include content="DialogInfo_Button" condition="!String.IsEmpty(Window.Property(tmdb_id)) + String.IsEqual(Window.Property(tmdb_type),person)">
+                                <param name="include_hintlabel">true</param>
+                                <param name="id">9013</param>
+                                <param name="groupid">9113</param>
+                                <param name="label">$LOCALIZE[31050]</param>
+                                <param name="icon">special://skin/extras/icons/director.png</param>
+                                <onclick>SetProperty(CustomDialog1162.Expanded,artwork,Home)</onclick>
+                                <onclick>SetProperty(Target,$INFO[ListItem.Property(target)],1162)</onclick>
+                                <onclick>SetProperty(Path,$INFO[Window.Property(TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=crew_in_both&amp;tmdb_type=person&amp;tmdb_id=,&amp;limit=250&amp;sort_key=year]$VAR[Path_Param_Widget],1162)</onclick>
+                                <onclick>SetProperty(Header,$INFO[Window(1114).Property(header)],1162)</onclick>
+                                <onclick>ActivateWindow(1162)</onclick>
+                            </include>
+                            <!-- Cast -->
+                            <include content="DialogInfo_Button" condition="!String.IsEmpty(Window.Property(tmdb_id)) + [String.IsEqual(Window.Property(tmdb_type),movie) | String.IsEqual(Window.Property(tmdb_type),tv)]">
+                                <param name="include_hintlabel">true</param>
+                                <param name="id">9014</param>
+                                <param name="groupid">9114</param>
+                                <param name="label">$LOCALIZE[206]</param>
+                                <param name="icon">special://skin/extras/icons/person.png</param>
+                                <onclick>SetProperty(CustomDialog1162.Expanded,artwork,Home)</onclick>
+                                <onclick>SetProperty(Target,$INFO[ListItem.Property(target)],1162)</onclick>
+                                <onclick>SetProperty(Path,$INFO[Window.Property(TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=cast&amp;tmdb_id=,&amp;limit=250]$INFO[Window.Property(tmdb_type),&amp;tmdb_type=,]$VAR[Path_Param_Widget],1162)</onclick>
+                                <onclick>SetProperty(Header,$INFO[Window(1114).Property(header)],1162)</onclick>
+                                <onclick>ActivateWindow(1162)</onclick>
+                            </include>
+                            <!-- Crew -->
+                            <include content="DialogInfo_Button" condition="!String.IsEmpty(Window.Property(tmdb_id)) + [String.IsEqual(Window.Property(tmdb_type),movie) | String.IsEqual(Window.Property(tmdb_type),tv)]">
+                                <param name="include_hintlabel">true</param>
+                                <param name="id">9015</param>
+                                <param name="groupid">9115</param>
+                                <param name="label">$LOCALIZE[31050]</param>
+                                <param name="icon">special://skin/extras/icons/director.png</param>
+                                <onclick>SetProperty(CustomDialog1162.Expanded,artwork,Home)</onclick>
+                                <onclick>SetProperty(Target,$INFO[ListItem.Property(target)],1162)</onclick>
+                                <onclick>SetProperty(Path,$INFO[Window.Property(TMDb_ID),plugin://plugin.video.themoviedb.helper/?info=crew&amp;tmdb_id=,&amp;limit=250]$INFO[Window.Property(tmdb_type),&amp;tmdb_type=,]$VAR[Path_Param_Widget],1162)</onclick>
+                                <onclick>SetProperty(Header,$INFO[Window(1114).Property(header)],1162)</onclick>
+                                <onclick>ActivateWindow(1162)</onclick>
+                            </include>
                             <!-- Wiki -->
                             <include content="DialogInfo_Button">
                                 <param name="include_hintlabel">true</param>
@@ -1840,9 +1905,7 @@
                                 <param name="groupid">9105</param>
                                 <param name="label">Wiki</param>
                                 <param name="icon">special://skin/extras/icons/globe.png</param>
-
                                 <onclick>runscript(script.wikipedia,wikipedia=$INFO[Window.Property(header)])</onclick>
-
                             </include>
                             <!-- Trailer -->
                             <include content="DialogInfo_Button">
@@ -1851,7 +1914,7 @@
                                 <param name="groupid">9102</param>
                                 <param name="label">$LOCALIZE[20410]</param>
                                 <param name="icon">special://skin/extras/icons/videoplay.png</param>
-                                <param name="visible">!String.IsEmpty(Window.Property(trailer)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))</param>
+                                <param name="visible">[!String.IsEmpty(Window.Property(trailer)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))]</param>
                                 <include content="Action_PlayTrailer_OnClick">
                                     <param name="trailer">Window.Property(trailer)</param>
                                     <param name="trailer_fallback">Window(Home).Property(TMDbHelper.ListItem.Trailer)</param>
