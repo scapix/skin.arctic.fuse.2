@@ -1196,7 +1196,7 @@
         <param name="name">$VAR[Label_DialogInfo_Title]</param>
         <param name="role">$VAR[Label_DialogInfo_PlayButton]</param>
         <param name="icon">$VAR[Image_DialogInfo_PlayButton]</param>
-        <param name="image">$VAR[Image_Poster]</param>
+        <param name="image">$VAR[Image_DialogInfo_PlayThumb]</param>
         <definition>
             <control type="button" id="$PARAM[id]">
                 <width>$PARAM[width]</width>
