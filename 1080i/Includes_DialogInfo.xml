@@ -1189,9 +1189,80 @@
         </definition>
     </include>
 
+    <include name="DialogInfo_Button_PlayBrowse">
+        <param name="width">345</param>
+        <param name="id">4001</param>
+        <param name="groupid">4101</param>
+        <param name="name">$VAR[Label_DialogInfo_Title]</param>
+        <param name="role">$VAR[Label_DialogInfo_PlayButton]</param>
+        <param name="icon">$VAR[Image_DialogInfo_PlayButton]</param>
+        <param name="image">$VAR[Image_Poster]</param>
+        <definition>
+            <control type="button" id="$PARAM[id]">
+                <width>$PARAM[width]</width>
+                <height>80</height>
+                <centertop>50%</centertop>
+                <texturenofocus />
+                <nested />
+            </control>
+
+            <control type="group" id="$PARAM[groupid]">
+                <left>-$PARAM[width]</left>
+                <height>80</height>
+                <width>$PARAM[width]</width>
+                <centertop>50%</centertop>
+                <control type="group">
+                    <left>-20</left>
+                    <control type="group">
+                        <visible>!Control.HasFocus($PARAM[id])</visible>
+                        <include content="Object_InfoCircle">
+                            <param name="name">$PARAM[name]</param>
+                            <param name="role">$PARAM[role]</param>
+                            <param name="icon">diffuse/circle/circle_50.png</param>
+                            <param name="bordersize">2</param>
+                            <include content="Object_InfoCircle_Image">
+                                <param name="colordiffuse">panel_fg_70</param>
+                                <param name="icon">$PARAM[image]</param>
+                            </include>
+                            <control type="image">
+                                <centertop>50%</centertop>
+                                <height>50</height>
+                                <width>50</width>
+                                <texture>$PARAM[icon]</texture>
+                                <bordersize>1</bordersize>
+                            </control>
+                        </include>
+                    </control>
+                    <control type="group">
+                        <right>40</right>
+                        <visible>Control.HasFocus($PARAM[id])</visible>
+                        <include content="Object_InfoCircle">
+                            <param name="name">$PARAM[name]</param>
+                            <param name="role">$PARAM[role]</param>
+                            <param name="icon">diffuse/circle/circle_50.png</param>
+                            <param name="textcolor_top">$VAR[ColorSelected]</param>
+                            <param name="textcolor_sub">$VAR[ColorSelected]</param>
+                            <param name="bordersize">2</param>
+                            <include content="Object_InfoCircle_Image">
+                                <param name="colordiffuse">panel_fg_70</param>
+                                <param name="icon">$PARAM[image]</param>
+                            </include>
+                            <control type="image">
+                                <centertop>50%</centertop>
+                                <height>50</height>
+                                <width>50</width>
+                                <texture>$PARAM[icon]</texture>
+                                <bordersize>1</bordersize>
+                            </control>
+                        </include>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
     <!-- Additional Video Info Details not included in info line such as Director and Genres -->
     <include name="DialogInfo_VideoDetails">
-        <param name="mainbutton_width">345</param>
         <definition>
 
             <control type="group">
@@ -1208,70 +1279,13 @@
                     <ondown>5000</ondown>
                     <onup>61</onup>
 
-                    <control type="button" id="4001">
-                        <width>$PARAM[mainbutton_width]</width>
-                        <height>80</height>
-                        <centertop>50%</centertop>
-                        <texturenofocus />
+                    <include content="DialogInfo_Button_PlayBrowse">
                         <onfocus>ClearProperty(Background.DialogInfo.HideArtwork,Home)</onfocus>
                         <onclick condition="ListItem.HasVideoVersions">SetFocus(8908)</onclick>
                         <onclick condition="!ListItem.HasVideoVersions">SendClick(8)</onclick>
                         <onclick condition="!ListItem.HasVideoVersions">RunScript(plugin.video.themoviedb.helper,close_dialog=1190)</onclick>
                         <onfocus>ClearProperty(DetailsView)</onfocus>
-                    </control>
-
-                    <control type="group" id="4101">
-                        <left>-$PARAM[mainbutton_width]</left>
-                        <height>80</height>
-                        <width>$PARAM[mainbutton_width]</width>
-                        <centertop>50%</centertop>
-                        <control type="group">
-                            <left>-20</left>
-                            <right>40</right>
-                            <control type="group">
-                                <visible>!Control.HasFocus(4001)</visible>
-                                <include content="Object_InfoCircle">
-                                    <param name="name">$VAR[Label_DialogInfo_Title]</param>
-                                    <param name="role">$VAR[Label_DialogInfo_PlayButton]</param>
-                                    <param name="icon">diffuse/circle/circle_50.png</param>
-                                    <param name="bordersize">2</param>
-                                    <include content="Object_InfoCircle_Image">
-                                        <param name="colordiffuse">panel_fg_70</param>
-                                        <param name="icon">$VAR[Image_Poster]</param>
-                                    </include>
-                                    <control type="image">
-                                        <centertop>50%</centertop>
-                                        <height>50</height>
-                                        <width>50</width>
-                                        <texture>$VAR[Image_DialogInfo_PlayButton]</texture>
-                                        <bordersize>1</bordersize>
-                                    </control>
-                                </include>
-                            </control>
-                            <control type="group">
-                                <visible>Control.HasFocus(4001)</visible>
-                                <include content="Object_InfoCircle">
-                                    <param name="name">$VAR[Label_DialogInfo_Title]</param>
-                                    <param name="role">$VAR[Label_DialogInfo_PlayButton]</param>
-                                    <param name="icon">diffuse/circle/circle_50.png</param>
-                                    <param name="textcolor_top">$VAR[ColorSelected]</param>
-                                    <param name="textcolor_sub">$VAR[ColorSelected]</param>
-                                    <param name="bordersize">2</param>
-                                    <include content="Object_InfoCircle_Image">
-                                        <param name="colordiffuse">panel_fg_70</param>
-                                        <param name="icon">$VAR[Image_Poster]</param>
-                                    </include>
-                                    <control type="image">
-                                        <centertop>50%</centertop>
-                                        <height>50</height>
-                                        <width>50</width>
-                                        <texture>$VAR[Image_DialogInfo_PlayButton]</texture>
-                                        <bordersize>1</bordersize>
-                                    </control>
-                                </include>
-                            </control>
-                        </control>
-                    </control>
+                    </include>
 
                     <include>Items_DialogVideoInfo_MenuBar</include>
                 </control>
@@ -1436,7 +1450,6 @@
     </include>
 
     <include name="DialogInfo_MusicDetails">
-        <param name="mainbutton_width">345</param>
         <definition>
             <control type="group">
                 <top>15</top>
@@ -1452,11 +1465,7 @@
                     <ondown>5000</ondown>
                     <onup>61</onup>
 
-                    <control type="button" id="4001">
-                        <width>$PARAM[mainbutton_width]</width>
-                        <height>80</height>
-                        <centertop>50%</centertop>
-                        <texturenofocus />
+                    <include content="DialogInfo_Button_PlayBrowse">
                         <onfocus>ClearProperty(Background.DialogInfo.HideArtwork,Home)</onfocus>
                         <!-- Addon Not Installed -->
                         <onclick condition="!String.IsEqual(ListItem.DBType,artist) + !System.AddonIsEnabled(script.playalbum) + System.HasAddon(script.playalbum)">EnableAddon(script.playalbum)</onclick>
@@ -1475,60 +1484,7 @@
                         <onclick condition="!String.IsEqual(ListItem.DBType,artist) + System.AddonIsEnabled(script.playalbum) + String.IsEqual(ListItem.DBType,album)">RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
                         <onclick condition="!String.IsEqual(ListItem.DBType,artist) + System.AddonIsEnabled(script.playalbum) + String.IsEqual(ListItem.DBType,song)">RunScript(script.playalbum,songid=$INFO[ListItem.DBID])</onclick>
                         <onfocus>ClearProperty(DetailsView)</onfocus>
-                    </control>
-
-                    <control type="group" id="4101">
-                        <left>-$PARAM[mainbutton_width]</left>
-                        <height>80</height>
-                        <width>$PARAM[mainbutton_width]</width>
-                        <centertop>50%</centertop>
-                        <control type="group">
-                            <left>-20</left>
-                            <right>40</right>
-                            <control type="group">
-                                <visible>!Control.HasFocus(4001)</visible>
-                                <include content="Object_InfoCircle">
-                                    <param name="name">$VAR[Label_DialogInfo_Title]</param>
-                                    <param name="role">$VAR[Label_DialogInfo_PlayButton]</param>
-                                    <param name="icon">diffuse/circle/circle_50.png</param>
-                                    <param name="bordersize">2</param>
-                                    <include content="Object_InfoCircle_Image">
-                                        <param name="colordiffuse">panel_fg_70</param>
-                                        <param name="icon">$VAR[Image_Poster]</param>
-                                    </include>
-                                    <control type="image">
-                                        <centertop>50%</centertop>
-                                        <height>50</height>
-                                        <width>50</width>
-                                        <texture>$VAR[Image_DialogInfo_PlayButton]</texture>
-                                        <bordersize>1</bordersize>
-                                    </control>
-                                </include>
-                            </control>
-                            <control type="group">
-                                <visible>Control.HasFocus(4001)</visible>
-                                <include content="Object_InfoCircle">
-                                    <param name="name">$VAR[Label_DialogInfo_Title]</param>
-                                    <param name="role">$VAR[Label_DialogInfo_PlayButton]</param>
-                                    <param name="icon">diffuse/circle/circle_50.png</param>
-                                    <param name="textcolor_top">$VAR[ColorSelected]</param>
-                                    <param name="textcolor_sub">$VAR[ColorSelected]</param>
-                                    <param name="bordersize">2</param>
-                                    <include content="Object_InfoCircle_Image">
-                                        <param name="colordiffuse">panel_fg_70</param>
-                                        <param name="icon">$VAR[Image_Poster]</param>
-                                    </include>
-                                    <control type="image">
-                                        <centertop>50%</centertop>
-                                        <height>50</height>
-                                        <width>50</width>
-                                        <texture>$VAR[Image_DialogInfo_PlayButton]</texture>
-                                        <bordersize>1</bordersize>
-                                    </control>
-                                </include>
-                            </control>
-                        </control>
-                    </control>
+                    </include>
 
                     <include>Items_DialogMusicInfo_MenuBar</include>
                 </control>

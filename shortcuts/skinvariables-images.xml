@@ -72,7 +72,7 @@
         <value condition="!String.IsEmpty({listitem}.Icon)">$INFO[{listitem}.Icon]</value>
     </variable>
 
-    <variable name="Image_Poster" containers="52,450" null_id="true">
+    <variable name="Image_Poster" containers="52,450,301" null_id="true">
         <value condition="!String.IsEmpty({listitem}.Art(poster))">$INFO[{listitem}.Art(poster)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(season.poster))">$INFO[{listitem}.Art(season.poster)]</value>
         <value condition="!String.IsEmpty({listitem}.Art(tvshow.poster))">$INFO[{listitem}.Art(tvshow.poster)]</value>

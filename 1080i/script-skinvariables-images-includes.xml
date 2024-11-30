@@ -147,6 +147,13 @@
         <value condition="!String.IsEmpty(Container(450).ListItem.Icon)">$INFO[Container(450).ListItem.Icon]</value>
         <value condition="!String.IsEmpty(Container(450).ListItem.Property(fallback.icon))">$INFO[Container(450).ListItem.Property(fallback.icon)]</value>
     </variable>
+    <variable name="Image_Poster_C301">
+        <value condition="!String.IsEmpty(Container(301).ListItem.Art(poster))">$INFO[Container(301).ListItem.Art(poster)]</value>
+        <value condition="!String.IsEmpty(Container(301).ListItem.Art(season.poster))">$INFO[Container(301).ListItem.Art(season.poster)]</value>
+        <value condition="!String.IsEmpty(Container(301).ListItem.Art(tvshow.poster))">$INFO[Container(301).ListItem.Art(tvshow.poster)]</value>
+        <value condition="!String.IsEmpty(Container(301).ListItem.Icon)">$INFO[Container(301).ListItem.Icon]</value>
+        <value condition="!String.IsEmpty(Container(301).ListItem.Property(fallback.icon))">$INFO[Container(301).ListItem.Property(fallback.icon)]</value>
+    </variable>
     <variable name="Image_Poster">
         <value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
