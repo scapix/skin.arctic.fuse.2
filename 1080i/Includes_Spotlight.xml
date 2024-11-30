@@ -109,13 +109,32 @@
                 <control type="grouplist" id="310">
                     <orientation>horizontal</orientation>
 
+                    <onleft condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,-1)</onleft>
+                    <onleft condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,-1)</onleft>
+
+                    <onright condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(301,1)</onright>
+                    <onright condition="!$EXP[Exp_Hubs_Spotlight_HasItems]">Control.Move(99971,1)</onright>
+
                     <onup>300</onup>
                     <ondown>400</ondown>
 
                     <centertop>160</centertop>
-                    <left>60</left>
+                    <left>20</left>
                     <height>256</height>
                     <onfocus>ClearProperty(Slide.WidgetContainer,$PARAM[property_window_id])</onfocus>
+
+                    <control type="image" id="314">
+                        <width>40</width>
+                        <height>40</height>
+                        <centertop>50%</centertop>
+                        <texture colordiffuse="main_fg_30">special://skin/extras/icons/angle-left.png</texture>
+                        <include content="Animation_Fade_Out">
+                            <param name="condition">!ControlGroup(310).HasFocus()</param>
+                        </include>
+                        <include content="Animation_Fade_In">
+                            <param name="condition">ControlGroup(310).HasFocus()</param>
+                        </include>
+                    </control>
 
                     <include content="DialogInfo_Button_PlayBrowse">
                         <param name="id">311</param>
@@ -195,6 +214,20 @@
                         <param name="center">true</param>
                         <param name="icon_colordiffuse">main_fg_90</param>
                     </include>
+
+                    <control type="image" id="315">
+                        <left>40</left>
+                        <width>40</width>
+                        <height>40</height>
+                        <centertop>50%</centertop>
+                        <texture colordiffuse="main_fg_30">special://skin/extras/icons/angle-right.png</texture>
+                        <include content="Animation_Fade_Out">
+                            <param name="condition">!ControlGroup(310).HasFocus()</param>
+                        </include>
+                        <include content="Animation_Fade_In">
+                            <param name="condition">ControlGroup(310).HasFocus()</param>
+                        </include>
+                    </control>
 
                     <!-- <control type="button" id="314">
                         <left>20</left>
