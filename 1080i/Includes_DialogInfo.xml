@@ -60,7 +60,7 @@
         <param name="plotlabel">$VAR[Label_Plot]</param>
         <definition>
             <left>infodialog_left_w</left>
-            <bottom>-10</bottom>
+            <bottom>-40</bottom>
             <include content="Animation_Slide_In">
                 <param name="type">WindowOpen</param>
                 <param name="posx">320</param>
