@@ -666,6 +666,7 @@
         <param name="font_sub">font_mini</param>
         <param name="include_labels">true</param>
         <param name="backing_visible">true</param>
+        <param name="shadow_colordiffuse">shadow_soft</param>
         <definition>
             <control type="group">
                 <height>80</height>
@@ -676,7 +677,7 @@
                     <control type="image">
                         <include content="Dimension_Padding"><param name="pad">-40</param></include>
                         <bordersize>40</bordersize>
-                        <bordertexture colordiffuse="shadow_soft">shadows/circle_50-shadow-40.png</bordertexture>
+                        <bordertexture colordiffuse="$PARAM[shadow_colordiffuse]">shadows/circle_50-shadow-40.png</bordertexture>
                         <texture colordiffuse="$PARAM[colorbacking]">diffuse/circle/circle_50.png</texture>
                         <visible>$PARAM[backing_visible]</visible>
                     </control>

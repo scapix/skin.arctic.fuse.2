@@ -164,9 +164,8 @@
                         <param name="id">312</param>
                         <param name="groupid">322</param>
                         <param name="vertical">false</param>
-                        <param name="label">$LOCALIZE[29915]</param>
+                        <param name="label">$LOCALIZE[14116]</param>
                         <param name="icon">special://skin/extras/icons/info2.png</param>
-                        <param name="include_hintlabel">false</param>
                         <param name="nf_opacity">90</param>
                         <param name="itemgap">0</param>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(301)</onclick>
@@ -187,7 +186,6 @@
                         <param name="vertical">false</param>
                         <param name="label">$LOCALIZE[10822]</param>
                         <param name="icon">special://skin/extras/icons/indent.png</param>
-                        <param name="include_hintlabel">false</param>
                         <param name="nf_opacity">90</param>
                         <param name="itemgap">0</param>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(301)</onclick>
