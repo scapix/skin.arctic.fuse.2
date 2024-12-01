@@ -139,7 +139,7 @@
                     <include content="DialogInfo_Button_PlayBrowse">
                         <param name="id">311</param>
                         <param name="groupid">321</param>
-                        <param name="width">370</param>
+                        <param name="width">270</param>
                         <param name="name">$VAR[Label_Title_C301]</param>
                         <param name="role">$VAR[Label_FullscreenWidget_PlayButton]</param>
                         <param name="icon">$VAR[Image_FullscreenWidget_PlayButton]</param>
