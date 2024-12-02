@@ -736,7 +736,7 @@
         </include>
 
         <include content="DialogInfo_ExpandedButton" description="Record">
-            <param name="id">4006</param>
+            <param name="id">6</param>
             <param name="groupid">4106</param>
             <param name="icon">special://skin/extras/icons/record-vinyl.png</param>
             <param name="label">$LOCALIZE[264]</param>
