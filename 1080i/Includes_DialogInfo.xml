@@ -1124,7 +1124,7 @@
 
                 <nested />
 
-                <include content="DialogInfo_Button_HintLabel" condition="$PARAM[include_hintlabel]">
+                <include content="DialogInfo_Button_HintLabel" condition="$PARAM[include_hintlabel] + !Skin.HasSetting(Buttons.EnableTooltips)">
                     <param name="label">$PARAM[label]</param>
                 </include>
             </control>
@@ -1157,7 +1157,7 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
 
-                <!-- <include content="Object_Control" condition="$PARAM[include_hintlabel] + Skin.HasSetting(Buttons.EnableTooltips) + Skin.HasSetting(Buttons.DisableHintLabels)">
+                <include content="Object_Control" condition="$PARAM[include_hintlabel] + Skin.HasSetting(Buttons.EnableTooltips)">
                     <param name="control">group</param>
                     <left>-32</left>
                     <right>-32</right>
@@ -1179,10 +1179,10 @@
                         <align>center</align>
                         <aligny>center</aligny>
                     </control>
-                </include> -->
+                </include>
 
                 <control type="group">
-                    <include content="Object_Top" condition="![$PARAM[include_hintlabel]]">
+                    <include content="Object_Top" condition="![$PARAM[include_hintlabel] + !Skin.HasSetting(Buttons.EnableTooltips)]">
                         <param name="top">10</param>
                     </include>
                     <include content="Object_Left" condition="$PARAM[include_customwidth]">
@@ -1772,6 +1772,7 @@
     <include name="DialogInfo_CustomPlot">
         <param name="size">Dimension_DialogFullMenu</param>
         <param name="include_artwork">false</param>
+        <param name="include_hintlabel">Skin.HasSetting(Buttons.EnableHintLabels)</param>
         <definition>
             <include>Dialog_Dim_Overlay</include>
             <control type="group">
@@ -1849,7 +1850,7 @@
                             <onleft>61</onleft>
                             <!-- Info -->
                             <include content="DialogInfo_Button">
-                                <param name="include_hintlabel">false</param>
+                                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                                 <param name="vertical">true</param>
                                 <param name="id">8001</param>
                                 <param name="groupid">8101</param>
@@ -1867,7 +1868,7 @@
                             </include>
                             <!-- Movies -->
                             <include content="DialogInfo_Button" condition="!String.IsEmpty(Window.Property(tmdb_id)) + String.IsEqual(Window.Property(tmdb_type),person)">
-                                <param name="include_hintlabel">false</param>
+                                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                                 <param name="id">9011</param>
                                 <param name="groupid">9111</param>
                                 <param name="label">$LOCALIZE[342]</param>
@@ -1880,7 +1881,7 @@
                             </include>
                             <!-- TV Shows -->
                             <include content="DialogInfo_Button" condition="!String.IsEmpty(Window.Property(tmdb_id)) + String.IsEqual(Window.Property(tmdb_type),person)">
-                                <param name="include_hintlabel">false</param>
+                                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                                 <param name="id">9012</param>
                                 <param name="groupid">9112</param>
                                 <param name="label">$LOCALIZE[20343]</param>
@@ -1893,7 +1894,7 @@
                             </include>
                             <!-- Crew -->
                             <include content="DialogInfo_Button" condition="!String.IsEmpty(Window.Property(tmdb_id)) + String.IsEqual(Window.Property(tmdb_type),person)">
-                                <param name="include_hintlabel">false</param>
+                                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                                 <param name="id">9013</param>
                                 <param name="groupid">9113</param>
                                 <param name="label">$LOCALIZE[31050]</param>
@@ -1906,7 +1907,7 @@
                             </include>
                             <!-- Cast -->
                             <include content="DialogInfo_Button" condition="!String.IsEmpty(Window.Property(tmdb_id)) + [String.IsEqual(Window.Property(tmdb_type),movie) | String.IsEqual(Window.Property(tmdb_type),tv)]">
-                                <param name="include_hintlabel">false</param>
+                                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                                 <param name="id">9014</param>
                                 <param name="groupid">9114</param>
                                 <param name="label">$LOCALIZE[206]</param>
@@ -1919,7 +1920,7 @@
                             </include>
                             <!-- Crew -->
                             <include content="DialogInfo_Button" condition="!String.IsEmpty(Window.Property(tmdb_id)) + [String.IsEqual(Window.Property(tmdb_type),movie) | String.IsEqual(Window.Property(tmdb_type),tv)]">
-                                <param name="include_hintlabel">false</param>
+                                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                                 <param name="id">9015</param>
                                 <param name="groupid">9115</param>
                                 <param name="label">$LOCALIZE[31050]</param>
@@ -1932,7 +1933,7 @@
                             </include>
                             <!-- Wiki -->
                             <include content="DialogInfo_Button">
-                                <param name="include_hintlabel">false</param>
+                                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                                 <param name="id">9005</param>
                                 <param name="groupid">9105</param>
                                 <param name="label">Wiki</param>
@@ -1941,7 +1942,7 @@
                             </include>
                             <!-- Trailer -->
                             <include content="DialogInfo_Button">
-                                <param name="include_hintlabel">false</param>
+                                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                                 <param name="id">9002</param>
                                 <param name="groupid">9102</param>
                                 <param name="label">$LOCALIZE[20410]</param>
