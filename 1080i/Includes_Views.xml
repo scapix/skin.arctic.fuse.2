@@ -244,7 +244,9 @@
     </include>
 
     <include name="View_Sorting_Buttons">
-        <param name="include_hintlabel">Skin.HasSetting(Buttons.EnableHintLabels)</param>
+        <param name="itemgap">-40</param>
+        <param name="include_customwidth">true</param>
+        <param name="include_hintlabel">true</param>
         <definition>
             <control type="grouplist" id="8000">
                 <orientation>horizontal</orientation>
@@ -271,6 +273,7 @@
                     <param name="itemgap">0</param>
                     <param name="visible">true</param>
                     <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>Runscript(script.skinvariables,action=buildviews,contentid=$VAR[Items_ViewMode_Switch],pluginname=$INFO[Container.PluginName])</onclick>
                 </include>
@@ -282,9 +285,10 @@
                     <param name="groupid">8103</param>
                     <param name="label">$VAR[Label_SortMethod]</param>
                     <param name="icon">special://skin/extras/icons/list-ul.png</param>
-                    <param name="itemgap">0</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
                     <param name="visible">true</param>
                     <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>SetProperty(DialogSelectType,Menu,Home)</onclick>
                     <onclick condition="![Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))]">SendClick(3)</onclick>
@@ -298,9 +302,10 @@
                     <param name="groupid">8102</param>
                     <param name="label">$LOCALIZE[31015]</param>
                     <param name="icon">$VAR[Image_SortDirection]</param>
-                    <param name="itemgap">0</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
                     <param name="visible">true</param>
                     <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>SetProperty(DialogSelectType,Menu,Home)</onclick>
                     <onclick condition="![Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))]">SendClick(4)</onclick>
@@ -318,9 +323,10 @@
                     <param name="groupid">8104</param>
                     <param name="label">$VAR[Label_Watched]</param>
                     <param name="icon">$VAR[Image_Watched]</param>
-                    <param name="itemgap">0</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
                     <param name="visible">true</param>
                     <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>SendClick(14)</onclick>
                 </include>
@@ -332,9 +338,10 @@
                     <param name="groupid">8105</param>
                     <param name="label">$LOCALIZE[587]</param>
                     <param name="icon">$VAR[Image_Filtered]</param>
-                    <param name="itemgap">0</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
                     <param name="visible">Container.CanFilterAdvanced</param>
                     <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>Filter</onclick>
                 </include>
@@ -346,9 +353,10 @@
                     <param name="groupid">8106</param>
                     <param name="label">$VAR[Label_UpdateLibrary]</param>
                     <param name="icon">special://skin/extras/icons/update.png</param>
-                    <param name="itemgap">0</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
                     <param name="visible">!Container.Content(addons) + String.IsEmpty(Container.PluginName) + [Window.IsVisible(videos) | Window.IsVisible(music)]</param>
                     <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick condition="Window.IsVisible(videos)">UpdateLibrary(video)</onclick>
                     <onclick condition="Window.IsVisible(music)">UpdateLibrary(music)</onclick>
@@ -361,9 +369,10 @@
                     <param name="groupid">8107</param>
                     <param name="label">$LOCALIZE[5]</param>
                     <param name="icon">special://skin/extras/icons/settings.png</param>
-                    <param name="itemgap">0</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
                     <param name="visible">!String.IsEmpty(Container.PluginName)</param>
                     <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
                 </include>

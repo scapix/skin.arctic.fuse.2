@@ -1067,10 +1067,11 @@
         <param name="radiocheck">true</param>
         <param name="zoom_in_delay">0</param>
         <param name="zoom_in_include">false</param>
+        <param name="include_tooltip">false</param>
         <param name="include_hintlabel">false</param>
         <param name="include_customwidth">false</param>
-        <param name="back_width">220</param>
-        <param name="icon_offset_x">-60</param>
+        <param name="back_width">200</param>
+        <param name="icon_offset_x">-20</param>
         <definition>
             <control type="$PARAM[control]" id="$PARAM[id]">
                 <include content="Object_Top" condition="$PARAM[vertical]">
@@ -1093,8 +1094,10 @@
                 <include>Texture_CircleButtonDialog_Highlight_Focus_V</include>
                 <texturenofocus />
                 <visible>$PARAM[visible]</visible>
-                <textcolor>$PARAM[textcolor]_$PARAM[nf_opacity]</textcolor>
-                <selectedcolor>$PARAM[textcolor]_$PARAM[nf_opacity]</selectedcolor>
+                <textcolor>00ffffff</textcolor>
+                <selectedcolor>00ffffff</selectedcolor>
+                <!-- <textcolor>$PARAM[textcolor]_$PARAM[nf_opacity]</textcolor>
+                <selectedcolor>$PARAM[textcolor]_$PARAM[nf_opacity]</selectedcolor> -->
                 <radiowidth>100</radiowidth>
                 <radioheight>14</radioheight>
                 <radioposy>56</radioposy>
@@ -1157,19 +1160,27 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
 
+
+
+
+
                 <control type="group">
-                    <include content="Object_Top" condition="![$PARAM[include_hintlabel]]">
-                        <param name="top">10</param>
-                    </include>
+
+                    <top>10</top>
+                    <animation effect="slide" start="0" end="0,-10" condition="$PARAM[include_hintlabel] + Control.HasFocus($PARAM[id])">Conditional</animation>
+
                     <include content="Object_Left" condition="$PARAM[include_customwidth]">
                         <param name="left">$PARAM[icon_offset_x]</param>
                     </include>
+
                     <height>$PARAM[icon_size]</height>
+
                     <control type="image">
                         <texture colordiffuse="$PARAM[textcolor]_$PARAM[nf_opacity]">$PARAM[icon]</texture>
                         <aspectratio>keep</aspectratio>
                         <bordersize>icon_menu_bordersize</bordersize>
                         <bordersize>$PARAM[bordersize]</bordersize>
+                        <width>$PARAM[icon_size]</width>
                         <visible>!Control.HasFocus($PARAM[id])</visible>
                     </control>
                     <control type="image">
@@ -1177,6 +1188,7 @@
                         <aspectratio>keep</aspectratio>
                         <bordersize>icon_menu_bordersize</bordersize>
                         <bordersize>$PARAM[bordersize]</bordersize>
+                        <width>$PARAM[icon_size]</width>
                         <visible>Control.HasFocus($PARAM[id])</visible>
                     </control>
                 </control>
@@ -1193,13 +1205,13 @@
             <font>font_hint</font>
             <align>center</align>
             <aligny>top</aligny>
-            <textoffsetx>0</textoffsetx>
+            <textoffsetx>48</textoffsetx>
             <textoffsety>84</textoffsety>
         </definition>
     </include>
 
     <include name="DialogInfo_Button_PlayBrowse">
-        <param name="width">245</param>
+        <param name="width">265</param>
         <param name="id">4001</param>
         <param name="groupid">4101</param>
         <param name="name">$VAR[Label_DialogInfo_Title]</param>
@@ -1748,7 +1760,7 @@
     <include name="DialogInfo_CustomPlot">
         <param name="size">Dimension_DialogFullMenu</param>
         <param name="include_artwork">false</param>
-        <param name="include_hintlabel">Skin.HasSetting(Buttons.EnableHintLabels)</param>
+        <param name="include_hintlabel">false</param>
         <definition>
             <include>Dialog_Dim_Overlay</include>
             <control type="group">
