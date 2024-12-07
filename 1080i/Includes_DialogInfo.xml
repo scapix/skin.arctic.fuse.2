@@ -1822,7 +1822,7 @@
     <include name="DialogInfo_CustomPlot">
         <param name="size">Dimension_DialogFullMenu</param>
         <param name="include_artwork">false</param>
-        <param name="include_hintlabel">false</param>
+        <param name="include_hintlabel">true</param>
         <definition>
             <include>Dialog_Dim_Overlay</include>
             <control type="group">
