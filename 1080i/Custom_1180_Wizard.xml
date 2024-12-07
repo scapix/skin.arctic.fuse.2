@@ -4,6 +4,7 @@
     <include>Action_BlurImage_SimpleBackground_Onload</include>
     <onunload>Skin.SetBool(Wizard.FirstRun)</onunload>
     <onload>SetProperty(WizardStep,Themes,Home)</onload>
+    <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:00,silent)</onclick>
     <controls>
 
         <include content="Object_Hidden_Button">
@@ -67,7 +68,7 @@
 
                             <content>
 
-                                <!-- Step 02: Themes -->
+                                <!-- Step 01: Themes -->
                                 <item>
                                     <label>$LOCALIZE[31560]</label>
                                     <icon>special://skin/extras/screenshots/themes/Bright.jpg</icon>
@@ -142,7 +143,7 @@
                                 </item>
 
 
-                                <!-- Step 03: Dialogs -->
+                                <!-- Step 02: Dialogs -->
                                 <item>
                                     <label>$LOCALIZE[602]</label>
                                     <icon>special://skin/extras/screenshots/dialogs/Standard.jpg</icon>
