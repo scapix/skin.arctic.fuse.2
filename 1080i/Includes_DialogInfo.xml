@@ -555,7 +555,7 @@
             <include>DialogInfo_Widgets_Action</include>
         </include>
 
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(Info.UseLocalCast) + !Skin.HasSetting(VideoInfo.Widgets.DisableCast)">
+        <include content="Widget_Info_Row" condition="!Skin.HasSetting(Info.UseLocalCast) + !Skin.HasSetting(VideoInfo.Widgets.DisableStarring)">
             <param name="id">51</param>
             <param name="baseid">50</param>
             <param name="basegroupid">51</param>
@@ -586,7 +586,7 @@
             <include>DialogInfo_Widgets_Action</include>
         </include>
 
-        <include content="Widget_Info_Row" condition="!Skin.HasSetting(Info.UseLocalCast) + !Skin.HasSetting(VideoInfo.Widgets.DisableCast)">
+        <include content="Widget_Info_Row" condition="!Skin.HasSetting(Info.UseLocalCast) + !Skin.HasSetting(VideoInfo.Widgets.DisableStarring)">
             <param name="id">52</param>
             <param name="baseid">50</param>
             <param name="basegroupid">51</param>
