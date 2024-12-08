@@ -1877,6 +1877,11 @@ msgctxt "#31394"
 msgid "Picture-in-picture video"
 msgstr ""
 
+#: /1080i/Custom_1180_Wizard.xml
+msgctxt "#31395"
+msgid "Choose prebuilt widget configuration"
+msgstr ""
+
 msgctxt "#31396"
 msgid "Recent Movies"
 msgstr ""
