@@ -501,6 +501,15 @@
         <value>$INFO[VideoPlayer.Plot]</value>
     </variable>
 
+    <variable name="Label_PVR_Episode">
+        <value condition="!String.IsEmpty(ListItem.Episode) + !String.IsEmpty(ListItem.EpisodeName)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.EpisodeName]</value>
+        <value condition="!String.IsEmpty(ListItem.Episode) + !String.IsEmpty(ListItem.Title)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
+        <value condition="!String.IsEmpty(ListItem.EpisodeName)">$INFO[ListItem.EpisodeName]</value>
+        <value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+        <value condition="!String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode]</value>
+
+    </variable>
+
     <variable name="Label_SearchStyle">
         <value condition="Window.IsVisible(1105)">$LOCALIZE[31066]</value>
         <value>$LOCALIZE[137]</value>
