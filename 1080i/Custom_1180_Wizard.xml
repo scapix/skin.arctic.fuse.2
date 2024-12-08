@@ -5,6 +5,8 @@
     <onunload>Skin.SetBool(Wizard.FirstRun)</onunload>
     <onload condition="String.IsEmpty(Window(Home).Property(WizardStep))">SetProperty(WizardStep,Themes,Home)</onload>
     <onload>AlarmClock(refocus,SetFocus(50,0,absolute),00:00,silent)</onload>
+    <onunload condition="String.IsEmpty(Window(Home).Property(WizardStepPrevious))">ClearProperty(WizardStep,Home)</onunload>
+    <onunload>ClearProperty(WizardStepPrevious,Home)</onunload>
     <controls>
 
         <include content="Object_Hidden_Button">
@@ -75,6 +77,7 @@
                                     <include content="Action_Scheme_Onclick_Bright">
                                         <param name="window_id">1180</param>
                                     </include>
+                                    <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
                                     <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
                                     <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
                                     <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
@@ -87,6 +90,7 @@
                                     <include content="Action_Scheme_Onclick_Miami">
                                         <param name="window_id">1180</param>
                                     </include>
+                                    <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
                                     <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
                                     <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
                                     <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
@@ -99,6 +103,7 @@
                                     <include content="Action_Scheme_Onclick_Midnight">
                                         <param name="window_id">1180</param>
                                     </include>
+                                    <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
                                     <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
                                     <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
                                     <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
@@ -111,6 +116,7 @@
                                     <include content="Action_Scheme_Onclick_Aqua">
                                         <param name="window_id">1180</param>
                                     </include>
+                                    <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
                                     <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
                                     <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
                                     <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
@@ -123,6 +129,7 @@
                                     <include content="Action_Scheme_Onclick_Slate">
                                         <param name="window_id">1180</param>
                                     </include>
+                                    <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
                                     <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
                                     <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
                                     <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
@@ -135,6 +142,7 @@
                                     <include content="Action_Scheme_Onclick_Sunset">
                                         <param name="window_id">1180</param>
                                     </include>
+                                    <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
                                     <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
                                     <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
                                     <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
@@ -149,6 +157,7 @@
                                     <property name="selected">$VAR[Exp_Var_DialogTheme_IsAdaptive]</property>
                                     <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=SKINDEFAULT)</onclick>
                                     <onclick>Skin.SetString(Background.DialogImage,Adaptive)</onclick>
+                                    <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
                                     <onclick>ReloadSkin()</onclick>
                                     <onclick>AlarmClock(reset,SetProperty(WizardStep,Layout,Home),00:01,silent)</onclick>
                                     <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
@@ -163,6 +172,7 @@
                                     <onclick condition="$EXP[Exp_ColourHighlight_IsAqua]">Skin.SetString(Background.DialogImage,Green)</onclick>
                                     <onclick condition="$EXP[Exp_ColourHighlight_IsTropical]">Skin.SetString(Background.DialogImage,Blush)</onclick>
                                     <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=SKINDEFAULT)</onclick>
+                                    <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
                                     <onclick>ReloadSkin()</onclick>
                                     <onclick>AlarmClock(reset,SetProperty(WizardStep,Layout,Home),00:01,silent)</onclick>
                                     <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
@@ -175,6 +185,7 @@
                                     <property name="selected">$VAR[Exp_Var_DialogTheme_IsSlate]</property>
                                     <onclick>Skin.SetString(Background.DialogImage,Slate)</onclick>
                                     <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=SKINDEFAULT)</onclick>
+                                    <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
                                     <onclick>ReloadSkin()</onclick>
                                     <onclick>AlarmClock(reset,SetProperty(WizardStep,Layout,Home),00:01,silent)</onclick>
                                     <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
@@ -187,6 +198,7 @@
                                     <property name="selected">$VAR[Exp_Var_DialogTheme_IsCoal]</property>
                                     <onclick>Skin.SetString(Background.DialogImage,Coal)</onclick>
                                     <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=SKINDEFAULT)</onclick>
+                                    <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
                                     <onclick>ReloadSkin()</onclick>
                                     <onclick>AlarmClock(reset,SetProperty(WizardStep,Layout,Home),00:01,silent)</onclick>
                                     <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
@@ -199,6 +211,7 @@
                                     <label>$LOCALIZE[10036]</label>
                                     <icon>special://skin/extras/screenshots/layouts/Basic.jpg</icon>
                                     <property name="selected">$VAR[Exp_Var_HomeLayout_IsBasic]</property>
+                                    <onclick>ClearProperty(WizardStep,Home)</onclick>
                                     <onclick>Skin.Reset(Hub.Home.ReplaceWindow)</onclick>
                                     <onclick>Skin.SetBool(Hub.Home.DisableSubmenu)</onclick>
                                     <onclick>Skin.Reset(Hub.Home.EnableDetailedInformation)</onclick>
@@ -212,6 +225,7 @@
                                     <label>$LOCALIZE[31137]</label>
                                     <icon>special://skin/extras/screenshots/layouts/Detailed.jpg</icon>
                                     <property name="selected">$VAR[Exp_Var_HomeLayout_IsDetailed]</property>
+                                    <onclick>ClearProperty(WizardStep,Home)</onclick>
                                     <onclick>Skin.Reset(Hub.Home.ReplaceWindow)</onclick>
                                     <onclick>Skin.SetBool(Hub.Home.DisableSubmenu)</onclick>
                                     <onclick>Skin.SetBool(Hub.Home.EnableDetailedInformation)</onclick>
@@ -225,6 +239,7 @@
                                     <label>$LOCALIZE[10038]</label>
                                     <icon>special://skin/extras/screenshots/layouts/Advanced.jpg</icon>
                                     <property name="selected">$VAR[Exp_Var_HomeLayout_IsAdvanced]</property>
+                                    <onclick>ClearProperty(WizardStep,Home)</onclick>
                                     <onclick>Skin.Reset(Hub.Home.ReplaceWindow)</onclick>
                                     <onclick>Skin.Reset(Hub.Home.DisableSubmenu)</onclick>
                                     <onclick>Skin.Reset(Hub.Home.EnableDetailedInformation)</onclick>
