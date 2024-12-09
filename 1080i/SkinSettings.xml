@@ -727,7 +727,8 @@
                             <param name="control">radiobutton</param>
                             <label>$LOCALIZE[31481]: $LOCALIZE[31105]</label>
                             <visible>Container(3).HasFocus(5)</visible>
-                            <onclick>Skin.ToggleSetting(Trailers.DisableAutoPlayback.Spotlight)</onclick>
+                            <onclick condition="!Skin.HasSetting(Trailers.DisableAutoPlayback.Spotlight)">Skin.SetBool(Trailers.DisableAutoPlayback.Spotlight)</onclick>
+                            <onclick condition="Skin.HasSetting(Trailers.DisableAutoPlayback.Spotlight)">RunScript(script.skinvariables,run_dialog=yesno,"heading=$LOCALIZE[31481] ($LOCALIZE[31105])","message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR] - $LOCALIZE[31351] $LOCALIZE[31352] $LOCALIZE[31367] $LOCALIZE[31360] $LOCALIZE[31361]",yeslabel=$LOCALIZE[24022],nolabel=$LOCALIZE[222],"executebuiltin=Skin.Reset(Trailers.DisableAutoPlayback.Spotlight)")</onclick>
                             <selected>!Skin.HasSetting(Trailers.DisableAutoPlayback.Spotlight)</selected>
                             <visible>Skin.HasSetting(Trailers.EnableAutoPlayback)</visible>
                         </include>
@@ -759,7 +760,8 @@
                             <param name="control">radiobutton</param>
                             <label>$LOCALIZE[31481]: $LOCALIZE[14116]</label>
                             <visible>Container(3).HasFocus(5)</visible>
-                            <onclick>Skin.ToggleSetting(Trailers.EnableAutoPlayback.Info)</onclick>
+                            <onclick condition="Skin.HasSetting(Trailers.EnableAutoPlayback.Info)">Skin.Reset(Trailers.EnableAutoPlayback.Info)</onclick>
+                            <onclick condition="!Skin.HasSetting(Trailers.EnableAutoPlayback.Info)">RunScript(script.skinvariables,run_dialog=yesno,"heading=$LOCALIZE[31481] ($LOCALIZE[14116])","message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR] - $LOCALIZE[31351] $LOCALIZE[31352] $LOCALIZE[31367] $LOCALIZE[31360] $LOCALIZE[31361]",yeslabel=$LOCALIZE[24022],nolabel=$LOCALIZE[222],"executebuiltin=Skin.SetBool(Trailers.EnableAutoPlayback.Info)")</onclick>
                             <selected>Skin.HasSetting(Trailers.EnableAutoPlayback.Info)</selected>
                         </include>
 
