@@ -959,6 +959,16 @@
         <value>$LOCALIZE[208]</value>
     </variable>
 
+    <variable name="Label_FullscreenWidget_InfoButton">
+        <value condition="Skin.HasSetting(Spotlight.UseMenuButton) + $EXP[Exp_Hubs_Spotlight_HasItems]">$LOCALIZE[31502]</value>
+        <value>$LOCALIZE[31077]</value>
+    </variable>
+
+    <variable name="Label_Setting_Spotlight_UseMenuButton">
+        <value condition="Skin.HasSetting(Spotlight.UseMenuButton)">$LOCALIZE[33061]</value>
+        <value>$LOCALIZE[29915]</value>
+    </variable>
+
     <variable name="Label_DialogInfo_PlayButton">
         <value condition="$EXP[Exp_IsFolder]">$LOCALIZE[1024]</value>
         <value>$LOCALIZE[208]</value>

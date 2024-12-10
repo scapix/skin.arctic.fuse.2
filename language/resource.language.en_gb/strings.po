@@ -1962,6 +1962,11 @@ msgctxt "#31415"
 msgid "Movies and TV Shows"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31416"
+msgid "Secondary button"
+msgstr ""
+
 msgctxt "#31417"
 msgid "Random Artists"
 msgstr ""

@@ -273,10 +273,10 @@
                             <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
                         </include>
 
-                        <include content="Settings_Label" description="Label: Hubs Categories">
+                        <include content="Settings_Label" description="Label: Hubs">
                             <param name="id">1031</param>
                             <param name="dialog">false</param>
-                            <label>$LOCALIZE[31114]</label>
+                            <label>$LOCALIZE[31150]</label>
                             <visible>Container(3).HasFocus(1)</visible>
                         </include>
 
@@ -288,6 +288,16 @@
                             <label2>$VAR[Label_Setting_HubsMenuStyle]</label2>
                             <visible>Container(3).HasFocus(1)</visible>
                             <onclick>Skin.ToggleSetting(Hubs.DisableTextCategories)</onclick>
+                        </include>
+
+                        <include content="Settings_Button" description="Spotlight button">
+                            <param name="dialog">false</param>
+                            <param name="id">1033</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31105] > $LOCALIZE[31416]</label>
+                            <label2>$VAR[Label_Setting_Spotlight_UseMenuButton]</label2>
+                            <visible>Container(3).HasFocus(1)</visible>
+                            <onclick>Skin.ToggleSetting(Spotlight.UseMenuButton)</onclick>
                         </include>
 
 

@@ -139,7 +139,7 @@
                     <include content="DialogInfo_Button_PlayBrowse">
                         <param name="id">311</param>
                         <param name="groupid">321</param>
-                        <param name="width">240</param>
+                        <param name="width">280</param>
                         <param name="name">$VAR[Label_Title_C301]</param>
                         <param name="role">$VAR[Label_FullscreenWidget_PlayButton]</param>
                         <param name="icon">$VAR[Image_FullscreenWidget_PlayButton]</param>
@@ -165,11 +165,11 @@
                         <param name="groupid">322</param>
                         <param name="width">360</param>
                         <param name="name">$VAR[Label_Title_C301]</param>
-                        <param name="role">$LOCALIZE[31077]</param>
-                        <param name="icon">special://skin/extras/icons/info2.png</param>
+                        <param name="role">$VAR[Label_FullscreenWidget_InfoButton]</param>
+                        <param name="icon">$VAR[Image_FullscreenWidget_InfoButton]</param>
 
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(301)</onclick>
-                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">Action(Info)</onclick>
+                        <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">$VAR[Action_FullscreenWidget_InfoButton]</onclick>
                         <onclick condition="$EXP[Exp_Hubs_Spotlight_HasItems]">SetFocus(312)</onclick>
                         <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems] + Weather.IsFetched">ActivateWindow(1161)</onclick>
                         <onclick condition="!$EXP[Exp_Hubs_Spotlight_HasItems] + !Weather.IsFetched">ActivateWindow(systeminfo)</onclick>
