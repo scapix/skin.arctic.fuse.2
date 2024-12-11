@@ -995,6 +995,7 @@
         <param name="listitem">ListItem</param>
         <param name="progress">Progress</param>
         <param name="affix" />
+        <param name="include_detailed_labels">!Skin.HasSetting(View.DisableDetailedListLabels)</param>
         <definition>
             <control type="group">
                 <height>$PARAM[item_h]</height>
@@ -1073,14 +1074,30 @@
                     </control>
 
                     <control type="group">
-                        <top>8</top>
-                        <bottom>12</bottom>
+                        <include content="Object_Top" condition="$PARAM[include_detailed_labels]">
+                            <param name="top">8</param>
+                        </include>
+                        <include content="Object_Bottom" condition="$PARAM[include_detailed_labels]">
+                            <param name="bottom">12</param>
+                        </include>
                         <left>$PARAM[item_h]</left>
 
                         <control type="group">
                             <left>-20</left>
                             <right>40</right>
                             <height>80</height>
+
+                            <control type="label">
+                                <label>$INFO[ListItem.Label]</label>
+                                <font>font_main_bold</font>
+                                <include condition="$PARAM[selected]">Color_SelectedText</include>
+                                <textcolor>main_fg_90</textcolor>
+                                <include content="Object_Right" condition="$PARAM[variation]">
+                                    <param name="right">40</param>
+                                </include>
+                                <right>240</right>
+                                <visible>![$PARAM[include_detailed_labels]]</visible>
+                            </control>
 
                             <control type="label">
                                 <label>$VAR[Label_MediaList_Title]</label>
@@ -1092,6 +1109,7 @@
                                     <param name="right">40</param>
                                 </include>
                                 <right>240</right>
+                                <visible>$PARAM[include_detailed_labels]</visible>
                             </control>
                             <control type="label">
                                 <label>$VAR[Label_VideoInfo_DetailsItem]</label>
@@ -1103,6 +1121,7 @@
                                     <param name="right">40</param>
                                 </include>
                                 <right>240</right>
+                                <visible>$PARAM[include_detailed_labels]</visible>
                             </control>
 
                             <control type="group">
@@ -1155,7 +1174,6 @@
                             <label fallback="19055">$VAR[Label_Landscape_Plot]</label>
                             <font>font_tiny_plot</font>
                             <textcolor>main_fg_70</textcolor>
-                            <!-- <aligny>center</aligny> -->
                             <top>75</top>
                             <bottom>5</bottom>
                             <left>-20</left>
