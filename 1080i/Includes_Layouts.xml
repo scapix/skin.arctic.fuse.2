@@ -317,7 +317,7 @@
     <include name="Layout_PVRGuide_Channels">
         <param name="detailed">false</param>
         <param name="selected">false</param>
-        <param name="include_detailed_labels">!Skin.HasSetting(View.DisableDetailedListLabels)</param>
+        <param name="include_detailed_labels">Skin.HasSetting(View.UseDetailedListLabels)</param>
         <definition>
             <control type="group">
                 <right>20</right>
@@ -457,7 +457,7 @@
         <param name="detailed">false</param>
         <param name="selected">false</param>
         <param name="affix" />
-        <param name="include_detailed_labels">!Skin.HasSetting(View.DisableDetailedListLabels)</param>
+        <param name="include_detailed_labels">Skin.HasSetting(View.UseDetailedListLabels)</param>
         <definition>
 
             <include content="Object_Control" condition="!$PARAM[selected]">
@@ -499,7 +499,7 @@
     <include name="Layout_PVRGuide_Programs">
         <param name="detailed">false</param>
         <param name="selected">false</param>
-        <param name="include_detailed_labels">!Skin.HasSetting(View.DisableDetailedListLabels)</param>
+        <param name="include_detailed_labels">Skin.HasSetting(View.UseDetailedListLabels)</param>
         <definition>
             <include content="Object_Control" condition="$PARAM[selected]">
                 <param name="control">image</param>
@@ -806,7 +806,7 @@
         <param name="selected">false</param>
         <param name="variation">false</param>
         <param name="misc">0</param>
-        <param name="include_detailed_labels">!Skin.HasSetting(View.DisableDetailedListLabels)</param>
+        <param name="include_detailed_labels">Skin.HasSetting(View.UseDetailedListLabels)</param>
         <definition>
             <control type="group">
                 <left>$PARAM[misc]</left>
@@ -995,7 +995,7 @@
         <param name="listitem">ListItem</param>
         <param name="progress">Progress</param>
         <param name="affix" />
-        <param name="include_detailed_labels">!Skin.HasSetting(View.DisableDetailedListLabels)</param>
+        <param name="include_detailed_labels">Skin.HasSetting(View.UseDetailedListLabels)</param>
         <definition>
             <control type="group">
                 <height>$PARAM[item_h]</height>
@@ -2411,7 +2411,7 @@
         <param name="textcolor">main_fg</param>
         <param name="misc">-20</param>
         <param name="affix" />
-        <param name="include_detailed_labels">!Skin.HasSetting(View.DisableDetailedListLabels)</param>
+        <param name="include_detailed_labels">Skin.HasSetting(View.UseDetailedListLabels)</param>
         <definition>
             <control type="group">
                 <height>$PARAM[item_h]</height>
@@ -2573,7 +2573,7 @@
     <include name="Layout_Labels">
         <param name="fade">false</param>
         <param name="selected">false</param>
-        <param name="include_detailed_labels">!Skin.HasSetting(View.DisableDetailedListLabels)</param>
+        <param name="include_detailed_labels">Skin.HasSetting(View.UseDetailedListLabels)</param>
         <param name="use_label">false</param>
         <definition>
             <control type="image">

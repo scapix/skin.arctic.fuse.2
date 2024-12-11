@@ -513,7 +513,7 @@
                             <label>$LOCALIZE[31292]</label>
                             <label2>$VAR[Label_Settings_TextViewMode]</label2>
                             <visible>Container(3).HasFocus(3)</visible>
-                            <onclick>Skin.ToggleSetting(View.DisableDetailedListLabels)</onclick>
+                            <onclick>Skin.ToggleSetting(View.UseDetailedListLabels)</onclick>
                         </include>
 
 
