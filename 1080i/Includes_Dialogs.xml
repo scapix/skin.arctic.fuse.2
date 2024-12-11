@@ -359,8 +359,8 @@
                     <control type="image">
                         <height>40</height>
                         <width>40</width>
+                        <centerleft>50%</centerleft>
                         <centertop>60</centertop>
-                        <right>0</right>
                         <bordersize>-8</bordersize>
                         <texture colordiffuse="dialog_fg_70">special://skin/extras/icons/sliders.png</texture>
                     </control>
@@ -702,9 +702,9 @@
             <control type="scrollbar" id="$PARAM[id]">
                 <nested />
                 <include condition="$PARAM[inset]">Dialog_Scrollbar_Inset_Def</include>
-                <!-- <include content="Animation_ConditionalFade" condition="![$PARAM[inset]]">
+                <include content="Animation_ConditionalFade" condition="![$PARAM[inset]]">
                     <param name="condition">!Control.HasFocus($PARAM[id])</param>
-                </include> -->
+                </include>
                 <top>20</top>
                 <bottom>20</bottom>
                 <centerright>0</centerright>

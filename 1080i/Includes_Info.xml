@@ -7,9 +7,11 @@
         <param name="visible">true</param>
         <param name="width">info_title_w</param>
         <param name="autoheight">false</param>
+        <param name="left">0</param>
         <definition>
             <control type="textbox">
                 <top>-20</top>
+                <left>$PARAM[left]</left>
                 <label>$PARAM[label]</label>
                 <textcolor>$PARAM[colordiffuse]_100</textcolor>
                 <font>font_title_main</font>
@@ -22,6 +24,7 @@
             </control>
             <control type="label">
                 <top>-20</top>
+                <left>$PARAM[left]</left>
                 <label>$PARAM[label]</label>
                 <wrapmultiline>true</wrapmultiline>
                 <textcolor>$PARAM[colordiffuse]_100</textcolor>
@@ -43,6 +46,7 @@
     </include>
 
     <include name="Info_Title_Logo">
+        <param name="left">0</param>
         <definition>
 
             <include content="Info_Title_Text">
@@ -51,9 +55,11 @@
                 <param name="visible">![$PARAM[mainlogo_visible]]</param>
                 <param name="width">$PARAM[width]</param>
                 <param name="autoheight">$PARAM[autoheight]</param>
+                <param name="left">$PARAM[left]</param>
             </include>
 
             <control type="group">
+                <left>$PARAM[left]</left>
                 <height>info_title_h</height>
                 <width>$PARAM[width]</width>
                 <visible>$PARAM[mainlogo_visible]</visible>
@@ -73,6 +79,7 @@
         <param name="width">info_title_w</param>
         <param name="mainlogo_visible">[!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.CropImage))]</param>
         <param name="mainlogo_texture">$VAR[Image_CropLogo]</param>
+        <param name="left">0</param>
         <definition>
             <!-- Title Only -->
             <include content="Info_Title_Text" condition="!Skin.HasSetting(TMDbHelper.EnableCrop)">
@@ -81,6 +88,7 @@
                 <param name="visible">True</param>
                 <param name="width">$PARAM[width]</param>
                 <param name="autoheight">true</param>
+                <param name="left">$PARAM[left]</param>
             </include>
             <!-- Other -->
             <include content="Info_Title_Logo" condition="Skin.HasSetting(TMDbHelper.EnableCrop)">
@@ -90,6 +98,7 @@
                 <param name="mainlogo_texture">$PARAM[mainlogo_texture]</param>
                 <param name="width">$PARAM[width]</param>
                 <param name="autoheight">$PARAM[autoheight]</param>
+                <param name="left">$PARAM[left]</param>
             </include>
         </definition>
     </include>
@@ -1314,7 +1323,7 @@
         <param name="is_web">false</param>
         <param name="visible">true</param>
         <definition>
-            <include content="Info_Line_VideoQuality_Resolution">
+            <include content="Info_Line_VideoQuality_Resolution" condition="!Skin.HasSetting(InfoLine.DisableAdditionalTags) | !Skin.HasSetting(Info.EnablePillboxStyle)">
                 <param name="visible">$PARAM[visible]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="is_web">[$PARAM[is_web]]</param>
@@ -1324,24 +1333,24 @@
                 <param name="is_hd">[Integer.IsEqual($PARAM[listitem_videoresolution],720)]</param>
                 <param name="is_sd">[!String.IsEmpty($PARAM[listitem_videoresolution])]</param>
             </include>
-            <include content="Info_Line_VideoQuality_HDRType">
+            <include content="Info_Line_VideoQuality_HDRType" condition="!Skin.HasSetting(InfoLine.DisableAdditionalTags)">
                 <param name="visible">$PARAM[visible]</param>
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="is_dolbyvision">[String.IsEqual($PARAM[listitem_hdrtype],dolbyvision)]</param>
                 <param name="is_hdr">[String.IsEqual($PARAM[listitem_hdrtype],hdr10)]</param>
                 <param name="is_hlg">[String.IsEqual($PARAM[listitem_hdrtype],hlg)]</param>
             </include>
-            <include content="Info_Line_AudioChannels">
+            <include content="Info_Line_AudioChannels" condition="!Skin.HasSetting(InfoLine.DisableAdditionalTags)">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="listitem_audiochannels">$PARAM[listitem_audiochannels]</param>
                 <param name="visible">$PARAM[visible] + !String.IsEmpty($PARAM[listitem_audiochannels])</param>
             </include>
-            <include content="Info_Line_VideoQuality_Icon">
+            <include content="Info_Line_VideoQuality_Icon" condition="!Skin.HasSetting(InfoLine.DisableAdditionalTags)">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="icon">flags/version-inverted.png</param>
                 <param name="visible">$PARAM[visible] + $PARAM[is_version]</param>
             </include>
-            <include content="Info_Line_VideoQuality_Icon">
+            <include content="Info_Line_VideoQuality_Icon" condition="!Skin.HasSetting(InfoLine.DisableAdditionalTags)">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="width">40</param>
                 <param name="icon">flags/collection-inverted.png</param>
@@ -1454,6 +1463,33 @@
                     <param name="visible_02">!String.IsEmpty($PARAM[container]ListItem.Year)</param>
                     <param name="visible_03">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_year))</param>
                     <param name="visible_04">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Year))</param>
+                    <param name="textcolor">$PARAM[colordiffuse]_70</param>
+                </include>
+
+                <!-- Episode Number -->
+                <include content="Info_Line_Items">
+                    <include content="Info_Line_Visible_01">
+                        <param name="altvisible">[!String.IsEmpty($PARAM[container]ListItem.ChannelNumberLabel) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_channelnumberlabel))]</param>
+                        <param name="container">$PARAM[container]</param>
+                        <param name="dbtype_01">episode</param>
+                    </include>
+                    <param name="items_06">true</param>
+                    <param name="label_01">$INFO[$PARAM[container]ListItem.Season]$INFO[$PARAM[container]ListItem.Episode,x,]</param>
+                    <param name="label_02">$INFO[Window(Home).Property(TMDbHelper.ListItem.base_season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.base_episode),x,]</param>
+                    <param name="label_03">$INFO[Window(Home).Property(TMDbHelper.ListItem.Season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Episode),x,]</param>
+
+                    <param name="label_04">$INFO[$PARAM[container]ListItem.Season]$INFO[$PARAM[container]ListItem.Episode,x0,]</param>
+                    <param name="label_05">$INFO[Window(Home).Property(TMDbHelper.ListItem.base_season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.base_episode),x0,]</param>
+                    <param name="label_06">$INFO[Window(Home).Property(TMDbHelper.ListItem.Season)]$INFO[Window(Home).Property(TMDbHelper.ListItem.Episode),x0,]</param>
+
+                    <param name="visible_01">!String.IsEmpty($PARAM[container]ListItem.Season) + !String.IsEmpty($PARAM[container]ListItem.Episode) + !Integer.IsLess($PARAM[container]ListItem.Episode,10)</param>
+                    <param name="visible_02">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_season)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_episode)) + !Integer.IsLess(Window(Home).Property(TMDbHelper.ListItem.base_episode),10)</param>
+                    <param name="visible_03">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Season)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Episode)) + !Integer.IsLess(Window(Home).Property(TMDbHelper.ListItem.Episode),10)</param>
+
+                    <param name="visible_04">!String.IsEmpty($PARAM[container]ListItem.Season) + !String.IsEmpty($PARAM[container]ListItem.Episode)</param>
+                    <param name="visible_05">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_season)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_episode))</param>
+                    <param name="visible_06">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Season)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Episode))</param>
+
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
                 </include>
 
@@ -1687,16 +1723,19 @@
         <param name="colordiffuse">main_fg</param>
         <param name="details">true</param>
         <param name="details_include">Items_Null</param>
+        <param name="visible">true</param>
+        <param name="left">0</param>
         <definition>
             <control type="textbox">
                 <top>17</top>
+                <left>$PARAM[left]</left>
                 <height max="$PARAM[plotheight]">auto</height>
                 <width>$PARAM[plotwidth]</width>
                 <label>$PARAM[plotlabel]</label>
                 <aligny>top</aligny>
                 <textcolor>$PARAM[colordiffuse]_70</textcolor>
                 <font>font_main_plot</font>
-                <nested />
+                <visible>$PARAM[visible]</visible>
                 <visible>$PARAM[details]</visible>
                 <include>$PARAM[details_include]</include>
             </control>
@@ -1742,6 +1781,7 @@
                 </include>
                 <control type="grouplist">
                     <top>-20</top>
+                    <left>-40</left>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <orientation>vertical</orientation>
                     <itemgap>0</itemgap>
@@ -1759,10 +1799,12 @@
                         <param name="autoheight">$PARAM[titleautoheight]</param>
                         <param name="mainlogo_visible">$PARAM[mainlogo_visible]</param>
                         <param name="mainlogo_texture">$PARAM[mainlogo_texture]</param>
+                        <param name="left">40</param>
                     </include>
 
                     <!-- InfoLine -->
                     <control type="group">
+                        <left>40</left>
                         <height>50</height>
                         <visible>$PARAM[details]</visible>
                         <include>$PARAM[details_include]</include>
@@ -1783,9 +1825,11 @@
                         <param name="details">$PARAM[details]</param>
                         <param name="details_include">$PARAM[details_include]</param>
                         <param name="container">$PARAM[container]</param>
+                        <param name="left">40</param>
                     </include>
 
                     <control type="group">
+                        <left>40</left>
                         <top>12</top>
                         <left>0</left>
                         <height>40</height>
