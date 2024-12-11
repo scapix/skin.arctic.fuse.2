@@ -1080,6 +1080,7 @@
                         <include content="Object_Bottom" condition="$PARAM[include_detailed_labels]">
                             <param name="bottom">12</param>
                         </include>
+                        <bottom>20</bottom>
                         <left>$PARAM[item_h]</left>
 
                         <control type="group">
