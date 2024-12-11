@@ -789,6 +789,15 @@
                             <onclick>Skin.ToggleSetting(Info.UseLocalCast)</onclick>
                             <selected>Skin.HasSetting(Info.UseLocalCast)</selected>
                         </include>
+                        <include content="Settings_Button" description="Use additional info line tags">
+                            <param name="dialog">false</param>
+                            <param name="id">7031</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[31433]</label>
+                            <label2>$VAR[Label_Setting_AdditionalTags]</label2>
+                            <visible>Container(3).HasFocus(6)</visible>
+                            <onclick>Skin.ToggleSetting(InfoLine.DisableAdditionalTags)</onclick>
+                        </include>
                         <include content="Settings_Button" description="Infoline Extra">
                             <param name="dialog">false</param>
                             <param name="id">7004</param>

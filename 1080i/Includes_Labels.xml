@@ -463,7 +463,13 @@
 
     <variable name="Label_Setting_OptionalInfoLine">
         <value condition="Skin.HasSetting(InfoLine.EndTime)">$LOCALIZE[31192]</value>
-        <value>$LOCALIZE[515] / $LOCALIZE[31285]</value>
+        <value>$LOCALIZE[515]</value>
+    </variable>
+
+    <variable name="Label_Setting_AdditionalTags">
+        <value condition="Skin.HasSetting(InfoLine.DisableAdditionalTags) + Skin.HasSetting(Info.EnablePillboxStyle)">$LOCALIZE[16018]</value>
+        <value condition="Skin.HasSetting(InfoLine.DisableAdditionalTags)">$LOCALIZE[21870]</value>
+        <value>$LOCALIZE[21870] + HDR + $LOCALIZE[21444] + $LOCALIZE[31108]</value>
     </variable>
 
     <variable name="Label_Trailer_PlayPause">
