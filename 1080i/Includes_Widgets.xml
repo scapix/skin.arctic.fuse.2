@@ -591,6 +591,7 @@
 
     <include name="Widget_Row">
         <param name="grouplistid">5000</param>
+        <param name="widgetconstants_affix" />
         <definition>
             <include content="_Widget_Row">
                 <param name="id">$PARAM[id]</param>
@@ -608,6 +609,9 @@
                 <param name="widget_hideartwork">$PARAM[widget_hideartwork]</param>
                 <param name="widget_showoverlay">$PARAM[widget_showoverlay]</param>
 
+                <param name="widgettop">widget_items_t$PARAM[widgetconstants_affix]</param>
+                <param name="labelheight">widget_label_h$PARAM[widgetconstants_affix]</param>
+
                 <include content="Action_Widget_OnBack">
                     <param name="id">$PARAM[id]</param>
                     <param name="grouplistid">$PARAM[grouplistid]</param>
@@ -616,6 +620,7 @@
 
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id])</onfocus>
                 <nested />
+
             </include>
         </definition>
     </include>

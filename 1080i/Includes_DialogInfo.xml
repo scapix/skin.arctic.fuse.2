@@ -104,8 +104,8 @@
         <control type="group" id="5999">
             <height>widget_tbump_h</height>
         </control>
-        <top>hub_recommendations_widgets_grouplist_t</top>
-        <bottom>hub_recommendations_widgets_grouplist_b</bottom>
+        <top>widget_grouplist_t_recommendations</top>
+        <bottom>widget_grouplist_b_recommendations</bottom>
     </include>
 
     <include name="DialogInfo_Furniture">
@@ -761,7 +761,7 @@
             <param name="include_movement">false</param>
             <param name="set_widgetcontainer">false</param>
             <param name="widget_hideartwork">true</param>
-            <param name="widgetheight">widget_gallery_items_h</param>
+            <param name="widgetheight">widget_items_h_gallery</param>
             <param name="altvisible">!String.IsEqual(Window.Property(CurrentID),Window.Property(BaseID))</param>
             <onfocus>SetProperty(CurrentID,$INFO[Window.Property(BaseID)])</onfocus>
 

@@ -320,4 +320,11 @@
             <value>False</value>
         </rule>
     </rules>
+
+    <rules name="widgetconstants_affix">
+        <rule>
+            <condition>Skin.HasSetting(Hub.{window_id}.EnableDetailedInformation)</condition>
+            <value>_detailed</value>
+        </rule>
+    </rules>
 </contents>
