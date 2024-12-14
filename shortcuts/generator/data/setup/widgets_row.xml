@@ -323,7 +323,7 @@
 
     <rules name="widgetconstants_affix">
         <rule>
-            <condition>Skin.HasSetting(Hub.{window_id}.EnableDetailedInformation)</condition>
+            <condition>Skin.HasSetting(Hub.{window_id}.EnableDetailedInformation) | !Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
             <value>_detailed</value>
         </rule>
     </rules>
