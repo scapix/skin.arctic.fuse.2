@@ -15,6 +15,9 @@
     <param name="widgetconstants_affix">{widgetconstants_affix}</param>
     <param name="widget_showoverlay">[[{grouplist_widgets_only}] + !Skin.HasSetting(Hub.{window_id}.EnableDetailedInformation)]</param>
     <param name="widget_hideartwork">[[{grouplist_widgets_only}] + !Skin.HasSetting(Widgets.DontHideArtworkOnClassic) + !Skin.HasSetting(Hub.{window_id}.EnableDetailedInformation)]</param>
+    <param name="widget_positioning">{widget_positioning}</param>
+    <param name="positioningid">{widget_positioning_id}</param>
+    <param name="positioningtop">{widget_positioning_top}</param>
 
     <description>{description}</description>
 

@@ -116,6 +116,9 @@
     <constant name="-view_card_itemlayout_w">-771.42</constant>
     <constant name="view_card_movement">4</constant>
 
+    <constant name="view_text_item_h">150</constant>
+    <constant name="-view_text_item_h">-150</constant>
+
     <constant name="view_landscape_itemlayout_w">450</constant>
     <constant name="-view_landscape_itemlayout_w">-450</constant>
     <constant name="view_landscape_item_w">410</constant>

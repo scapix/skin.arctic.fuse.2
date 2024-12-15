@@ -12,7 +12,7 @@
                 <height>widget_tbump_h</height>
             </control>
             <nested />
-            <include>DialogInfo_Widget_EndLine</include>
+            <include>Widget_End_Bumper</include>
         </control>
     </include>
 

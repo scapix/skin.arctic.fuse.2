@@ -767,7 +767,7 @@
 
                 <nested />
 
-                <include content="DialogInfo_Widget_EndLine">
+                <include content="Widget_End_Bumper">
                     <param name="id">$PARAM[furnitureid]</param>
                     <param name="widgets_only">[$PARAM[widgets_only] + !Skin.HasSetting(Hub.$PARAM[window_id].EnableDetailedInformation)]</param>
                     <param name="visible">String.IsEmpty(Container(300).ListItem.Property(use_as_widget))</param>
