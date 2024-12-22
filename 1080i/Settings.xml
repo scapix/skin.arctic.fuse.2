@@ -373,28 +373,13 @@
 
                         </control>
 
-
-                        <control type="group">
-                            <height>40</height>
-                            <centerbottom>-60</centerbottom>
-                            <left>40</left>
-                            <right>20</right>
-
-                            <control type="label">
-                                <font>font_hint_black</font>
-                                <height>10</height>
-                                <textcolor>main_fg_30</textcolor>
-                                <label>$LOCALIZE[19033]</label>
-                            </control>
-
-                            <control type="label">
-                                <include>Defs_Label_FooterItem</include>
-                                <wrapmultiline>false</wrapmultiline>
-                                <label>Kodi$INFO[System.BuildVersion, ,]</label>
-                            </control>
-
-                        </control>
                     </control>
+                </include>
+                <include content="Settings_InfoText">
+                    <param name="id">6</param>
+                    <param name="dialog">false</param>
+                    <param name="left">500</param>
+                    <param name="bottom">80</param>
                 </include>
             </include>
         </include>
