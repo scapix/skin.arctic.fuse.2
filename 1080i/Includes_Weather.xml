@@ -50,7 +50,7 @@
 
                                     <control type="label">
                                         <label>$LOCALIZE[33006]</label>
-                                        <font>font_midi_bold</font>
+                                        <font>font_head_bold</font>
                                         <textcolor>dialog_fg_90</textcolor>
                                         <height>40</height>
                                         <align>center</align>
@@ -1046,7 +1046,7 @@
                 <label>$PARAM[sub_label]</label>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>font_main</font>
+                <font>font_mini</font>
                 <textcolor>dialog_fg_90</textcolor>
             </control>
         </control>
