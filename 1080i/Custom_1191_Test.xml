@@ -3,7 +3,7 @@
     <controls>
 
         <include content="Overlay_Test_Window_Fonts">
-            <param name="font">font_main_plot</param>
+            <param name="font">font_title_main</param>
         </include>
 
     </controls>
