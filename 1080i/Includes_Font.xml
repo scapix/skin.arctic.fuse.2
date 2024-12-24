@@ -352,7 +352,7 @@
         <param name="font_bold">Inter-Bold.ttf</param>
         <param name="font_regular">Inter-Regular.ttf</param>
         <param name="font_light">Inter-Light.ttf</param>
-        <param name="plot_linespacing_head">1.165</param>
+        <param name="plot_linespacing_head">1.178</param>
         <param name="plot_linespacing_midi">1.495</param>
         <param name="plot_linespacing_main">1.16</param>
         <param name="plot_linespacing_mini">1.31</param>
