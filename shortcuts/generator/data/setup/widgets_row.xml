@@ -12,6 +12,7 @@
     <value name="widget_busy_isupdating">True</value>
     <value name="widget_id">$MATH[{grouplist_item_x} * 1000 + 600 + {enum_x}]</value>
     <value name="widget_group_id">$MATH[{grouplist_item_x} * 1000 + 700 + {enum_x}]</value>
+    <value name="widget_positioning_id">$MATH[{grouplist_item_x} * 1000 + 800 + {enum_x}]</value>
     <value name="widget_next_id">$MATH[{grouplist_item_x} * 1000 + 600 + {enum_x} + 1]</value>
     <value name="widget_nextnext_id">$MATH[{grouplist_item_x} * 1000 + 600 + {enum_x} + 2]</value>
     <value name="widget_nextnextnext_id">$MATH[{grouplist_item_x} * 1000 + 600 + {enum_x} + 3]</value>
@@ -52,6 +53,10 @@
         </rule>
     </rules>
     <rules name="widget_path">
+        <rule>
+            <condition>{item_path}==Weather</condition>
+            <value>-</value>
+        </rule>
         <rule>
             <condition>{item_path}==Custom_Submenu</condition>
             <value>plugin://script.skinvariables/?info=get_shortcuts_node&amp;amp;guid={item_guid}&amp;amp;menu={item_menu}&amp;amp;mode=submenu&amp;amp;skin=$VAR[Path_SkinVariables_SkinFolder]$INFO[Window(Home).Property(SkinVariables.ShortcutsNode.Reload),&amp;amp;reload=,]</value>
@@ -151,6 +156,10 @@
     </rules>
     <rules name="widget_include">
         <rule>
+            <condition>{item_path}==Weather</condition>
+            <value>List_Weather_Row</value>
+        </rule>
+        <rule>
             <condition>{item_widget_style}==Landscape</condition>
             <value>List_Landscape_Row</value>
         </rule>
@@ -201,6 +210,30 @@
         <rule>
             <condition>{item_widget_style}==Banner</condition>
             <value>List_Banner_Row</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Apps</condition>
+            <value>List_Apps_Row</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Icon</condition>
+            <value>List_Icon_Row</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Halo</condition>
+            <value>List_Halo_Row</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Post</condition>
+            <value>List_Post_Row</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==View</condition>
+            <value>List_View_Row</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Text</condition>
+            <value>List_Text_Row</value>
         </rule>
         <rule>
             <condition>{parent_item_widget_style}==Landscape</condition>
@@ -255,11 +288,41 @@
             <value>List_Banner_Row</value>
         </rule>
         <rule>
+            <condition>{parent_item_widget_style}==Apps</condition>
+            <value>List_Apps_Row</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Icon</condition>
+            <value>List_Icon_Row</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Halo</condition>
+            <value>List_Halo_Row</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Post</condition>
+            <value>List_Post_Row</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==View</condition>
+            <value>List_View_Row</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Text</condition>
+            <value>List_Text_Row</value>
+        </rule>
+        <rule>
             <condition>True</condition>
             <value>List_Landscape_Row</value>
         </rule>
     </rules>
     <value name="widget_detailed">False</value>
+    <rules name="widget_custom_content">
+        <rule>
+            <condition>{item_path}==Weather</condition>
+            <value><![CDATA[<include>Weather_Forecast_HighLow_Items</include>]]></value>
+        </rule>
+    </rules>
     <rules name="widget_custom_onclick">
         <rule>
             <condition>{item_path}==Custom_Submenu</condition>
@@ -318,6 +381,134 @@
         <rule>
             <condition>True</condition>
             <value>False</value>
+        </rule>
+    </rules>
+
+    <rules name="widgetconstants_affix">
+        <rule>
+            <condition>Skin.HasSetting(Hub.{window_id}.EnableDetailedInformation) | !Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
+            <value>_detailed</value>
+        </rule>
+    </rules>
+
+    <rules name="widget_positioning">
+        <rule>
+            <condition>{item_widget_style}==Apps</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Icon</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Halo</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Post</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==View</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Text</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Apps</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Icon</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Halo</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Post</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==View</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Text</condition>
+            <value>True</value>
+        </rule>
+        <rule>
+            <condition>True</condition>
+            <value>False</value>
+        </rule>
+    </rules>
+
+    <rules name="widget_positioning_top">
+        <rule>
+            <condition>{item_widget_style}==Apps</condition>
+            <value>-80</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Icon</condition>
+            <value>-80</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Halo</condition>
+            <value>-80</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Post</condition>
+            <value>-80</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==View</condition>
+            <value>-80</value>
+        </rule>
+        <rule>
+            <condition>{item_widget_style}==Text</condition>
+            <value>-160</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Apps</condition>
+            <value>-80</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Icon</condition>
+            <value>-80</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Halo</condition>
+            <value>-80</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Post</condition>
+            <value>-80</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==View</condition>
+            <value>-80</value>
+        </rule>
+        <rule>
+            <condition>{parent_item_widget_style}==Text</condition>
+            <value>-160</value>
+        </rule>
+        <rule>
+            <condition>True</condition>
+            <value>0</value>
+        </rule>
+    </rules>
+
+    <rules name="widget_positioning_check">
+        <rule>
+            <condition>Skin.HasSetting(Hub.{window_id}.EnableDetailedInformation) | !Skin.HasSetting(Hub.{window_id}.DisableSubmenu)</condition>
+            <value>[!String.IsEmpty(Container(480).ListItemAbsolute({enum_total_x}).Property(include)) + [!String.IsEmpty(Container(480).ListItemAbsolute({enum_total_x}).Property(visible)) | !String.IsEmpty(Container(480).ListItemAbsolute($MATH[{enum_total_x} + 1]).Property(visible)) | !String.IsEmpty(Container(480).ListItemAbsolute($MATH[{enum_total_x} + 2]).Property(visible))]]</value>
+        </rule>
+        <rule>
+            <condition>True</condition>
+            <value>True</value>
         </rule>
     </rules>
 </contents>

@@ -14,6 +14,12 @@
     <include name="Hub_Slide_Spotlight_OnFanart">
         <animation effect="slide" start="0" end="0,hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="$EXP[Exp_Hubs_Spotlight_SlideDown]">Conditional</animation>
         <animation effect="slide" end="0" start="0,hub_group_fanartspotlight_s" time="400" tween="quadratic" reversible="false" condition="!$EXP[Exp_Hubs_Spotlight_SlideDown]">Conditional</animation>
+
+        <animation effect="slide" start="0" end="0,120" time="400" tween="quadratic" reversible="false" condition="Integer.IsEqual(Container(400).NumItems,0)">Conditional</animation>
+        <animation effect="slide" end="0" start="0,120" time="400" tween="quadratic" reversible="false" condition="!Integer.IsEqual(Container(400).NumItems,0)">Conditional</animation>
+
+        <!-- <animation effect="slide" start="0" end="0,120" time="400" tween="quadratic" reversible="false" condition="[Integer.IsEqual(Container(400).NumItems,0) + $EXP[Exp_Hubs_Spotlight_ShowButtons]]">Conditional</animation>
+        <animation effect="slide" end="0" start="0,120" time="400" tween="quadratic" reversible="false" condition="![Integer.IsEqual(Container(400).NumItems,0) + $EXP[Exp_Hubs_Spotlight_ShowButtons]]">Conditional</animation> -->
     </include>
 
     <include name="Hub_Submenu_List_Definition_Content">
@@ -256,6 +262,13 @@
                 <description>Delay window change if dialog open</description>
                 <animation effect="fade" time="400" start="100" end="0" reversible="false" condition="Window.IsVisible(1163)">WindowClose</animation>
             </control>
+
+            <include content="Object_Hidden_List">
+                <param name="id">480</param>
+                <content>
+                    <include>$PARAM[widgets_include]-listcheck</include>
+                </content>
+            </include>
 
             <include content="Object_Hidden_Button">
                 <param name="id">306</param>
@@ -536,11 +549,12 @@
             <top>hub_spotlight_t</top>
             <height>hub_spotlight_h</height>
             <include content="Animation_Fade_In">
-                <param name="condition">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                <param name="condition">$EXP[Exp_Hubs_Spotlight_ShowButtons]</param>
                 <param name="delay">200</param>
+                <param name="time">300</param>
             </include>
             <include content="Animation_ConditionalFade">
-                <param name="condition">!Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
+                <param name="condition">!$EXP[Exp_Hubs_Spotlight_ShowButtons]</param>
             </include>
             <include content="Info_Viewline">
                 <param name="label">$VAR[Label_Spotlight_Name]</param>
@@ -692,6 +706,10 @@
         <include content="Hub_Menu_Group">
             <param name="window_id">$PARAM[window_id]</param>
             <param name="property_window_id">$PARAM[property_window_id]</param>
+
+            <animation effect="slide" start="0" end="0,140" time="400" tween="quadratic" reversible="false" condition="!$EXP[Exp_Hubs_Spotlight_ShowButtons] + $EXP[Exp_Hubs_Spotlight_SlideDown]">Conditional</animation>
+            <animation effect="slide" end="0" start="0,140" time="400" tween="quadratic" reversible="false" condition="![!$EXP[Exp_Hubs_Spotlight_ShowButtons] + $EXP[Exp_Hubs_Spotlight_SlideDown]]">Conditional</animation>
+
             <include>Hub_Categories_Spotlight_Viewline</include>
             <include content="Spotlight_Main">
                 <param name="window_id">$PARAM[window_id]</param>
@@ -724,13 +742,18 @@
     <include name="Hub_Widgets_Grouplist">
         <definition>
             <control type="grouplist" id="$PARAM[id]">
-                <top>hub_widgets_grouplist_t</top>
+                <include content="Object_Top" condition="![$PARAM[widgets_only] + !Skin.HasSetting(Hub.$PARAM[window_id].EnableDetailedInformation)]">
+                    <param name="top">widget_grouplist_t_detailed</param>
+                </include>
+                <include content="Object_Top" condition="$PARAM[widgets_only] + !Skin.HasSetting(Hub.$PARAM[window_id].EnableDetailedInformation)">
+                    <param name="top">widget_grouplist_t</param>
+                </include>
 
                 <include content="Object_Bottom" condition="![$PARAM[widgets_only] + !Skin.HasSetting(Hub.$PARAM[window_id].EnableDetailedInformation)]">
-                    <param name="bottom">hub_infowidgets_grouplist_b</param>
+                    <param name="bottom">widget_grouplist_b_detailed</param>
                 </include>
                 <include content="Object_Bottom" condition="$PARAM[widgets_only] + !Skin.HasSetting(Hub.$PARAM[window_id].EnableDetailedInformation)">
-                    <param name="bottom">hub_widgets_grouplist_b</param>
+                    <param name="bottom">widget_grouplist_b</param>
                 </include>
 
                 <include condition="![$PARAM[widgets_only]]" content="Hub_Widgets_Grouplist__Def_Layout_Expanded">
@@ -752,12 +775,17 @@
                 </include>
 
                 <control type="group" id="$PARAM[bumperid]">
-                    <height>widget_tbump_h</height>
+                    <include content="Object_Height" condition="![$PARAM[widgets_only] + !Skin.HasSetting(Hub.$PARAM[window_id].EnableDetailedInformation)]">
+                        <param name="height">widget_tbump_h_detailed</param>
+                    </include>
+                    <include content="Object_Height" condition="$PARAM[widgets_only] + !Skin.HasSetting(Hub.$PARAM[window_id].EnableDetailedInformation)">
+                        <param name="height">widget_tbump_h</param>
+                    </include>
                 </control>
 
                 <nested />
 
-                <include content="DialogInfo_Widget_EndLine">
+                <include content="Widget_End_Bumper">
                     <param name="id">$PARAM[furnitureid]</param>
                     <param name="widgets_only">[$PARAM[widgets_only] + !Skin.HasSetting(Hub.$PARAM[window_id].EnableDetailedInformation)]</param>
                     <param name="visible">String.IsEmpty(Container(300).ListItem.Property(use_as_widget))</param>

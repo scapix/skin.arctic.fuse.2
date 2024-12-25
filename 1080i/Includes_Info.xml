@@ -22,20 +22,24 @@
                 <autoscroll>false</autoscroll>
                 <visible>$PARAM[autoheight]</visible>
             </control>
-            <control type="label">
+            <control type="group">
                 <top>-20</top>
                 <left>$PARAM[left]</left>
-                <label>$PARAM[label]</label>
-                <wrapmultiline>true</wrapmultiline>
-                <textcolor>$PARAM[colordiffuse]_100</textcolor>
-                <font>font_title_main</font>
-                <aligny>center</aligny>
                 <height>160</height>
-                <visible>$PARAM[visible]</visible>
                 <width>$PARAM[width]</width>
-                <autoscroll>false</autoscroll>
-                <scroll>false</scroll>
                 <visible>![$PARAM[autoheight]]</visible>
+                <visible>$PARAM[visible]</visible>
+                <control type="label">
+                    <label>$PARAM[label]</label>
+                    <wrapmultiline>true</wrapmultiline>
+                    <textcolor>$PARAM[colordiffuse]_100</textcolor>
+                    <font>font_title_main</font>
+                    <aligny>center</aligny>
+                    <height>120</height>
+                    <centertop>50%</centertop>
+                    <autoscroll>false</autoscroll>
+                    <scroll>false</scroll>
+                </control>
             </control>
             <control type="group">
                 <top>info_title_text_buffer_h</top>
@@ -1660,6 +1664,24 @@
                 <include content="Info_Line_Item">
                     <param name="label">$INFO[$PARAM[container]ListItem.Size]</param>
                     <param name="visible">!String.IsEmpty($PARAM[container]ListItem.PicturePath) + !String.IsEmpty($PARAM[container]ListItem.Size)</param>
+                    <param name="textcolor">$PARAM[colordiffuse]_70</param>
+                </include>
+
+                <!-- Weather Info -->
+                <include content="Info_Line_Items">
+                    <param name="items_02">true</param>
+                    <param name="label_01">$INFO[$PARAM[container]ListItem.Property(CustomInfo01)]</param>
+                    <param name="label_02">$INFO[Window(Home).Property(TMDbHelper.ListItem.base_CustomInfo01)]</param>
+                    <param name="visible_01">!String.IsEmpty($PARAM[container]ListItem.Property(CustomInfo01))</param>
+                    <param name="visible_02">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_CustomInfo01))</param>
+                    <param name="textcolor">$PARAM[colordiffuse]_70</param>
+                </include>
+                <include content="Info_Line_Items">
+                    <param name="items_02">true</param>
+                    <param name="label_01">$INFO[$PARAM[container]ListItem.Property(CustomInfo02)]</param>
+                    <param name="label_02">$INFO[Window(Home).Property(TMDbHelper.ListItem.base_CustomInfo02)]</param>
+                    <param name="visible_01">!String.IsEmpty($PARAM[container]ListItem.Property(CustomInfo02))</param>
+                    <param name="visible_02">!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_CustomInfo02))</param>
                     <param name="textcolor">$PARAM[colordiffuse]_70</param>
                 </include>
             </control>

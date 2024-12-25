@@ -34,7 +34,7 @@
                             <param name="onup">333</param>
                             <param name="widget_windowchange_animation">false</param>
                             <include>skinvariables-searchmenu-widgets</include>
-                            <include>DialogInfo_Widget_EndLine</include>
+                            <include>Widget_End_Bumper</include>
                         </include>
                     </control>
 
@@ -218,7 +218,7 @@
 
                         </include>
 
-                        <include>DialogInfo_Widget_EndLine</include>
+                        <include>Widget_End_Bumper</include>
                     </include>
                     <include content="Animation_ConditionalFade">
                         <param name="condition">[Integer.IsEqual(Container(5000).NumItems,0)]</param>
@@ -281,7 +281,7 @@
             <right>40</right>
             <centertop>100</centertop>
             <textcolor>dialog_fg_70</textcolor>
-            <font>font_midi_black</font>
+            <font>font_midi_bold</font>
             <textoffsetx>40</textoffsetx>
             <align>left</align>
             <ondown>9992</ondown>
@@ -320,7 +320,7 @@
 
                 <control type="group">
                     <control type="label">
-                        <font>font_main_black</font>
+                        <font>font_main_bold</font>
                         <label>$INFO[ListItem.Label]</label>
                         <textcolor>dialog_fg_100</textcolor>
                         <align>center</align>

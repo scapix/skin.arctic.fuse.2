@@ -2031,6 +2031,11 @@ msgid "Adaptive"
 msgstr "متأقلم تلقائياً"
 
 #: /1080i/SkinSettings.xml
+msgctxt "#31433"
+msgid "Additional tags"
+msgstr "علامات إضافية"
+
+#: /1080i/SkinSettings.xml
 msgctxt "#31434"
 msgid "Video OSD"
 msgstr "خيارات واجهة عرض الفيديو"
@@ -2039,6 +2044,11 @@ msgstr "خيارات واجهة عرض الفيديو"
 msgctxt "#31435"
 msgid "TMDbHelper lookups"
 msgstr "بحث من خلال TMDbHelper"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31436"
+msgid "Cycle background extrafanart"
+msgstr "تدوير الاعمال الفنية الاضافية في الخلفية"
 
 msgctxt "#31437"
 msgid "Choose spotlight"
@@ -2073,6 +2083,11 @@ msgstr "الاقسام الرئيسية"
 msgctxt "#31443"
 msgid "Open path in dialog"
 msgstr ""
+
+#: /1080i/Settings.xml
+msgctxt "#31444"
+msgid "Customisation"
+msgstr "التخصيص"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31445"

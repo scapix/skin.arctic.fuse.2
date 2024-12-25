@@ -2060,6 +2060,11 @@ msgctxt "#31435"
 msgid "TMDbHelper lookups"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31436"
+msgid "Cycle background extrafanart"
+msgstr ""
+
 msgctxt "#31437"
 msgid "Choose spotlight"
 msgstr ""
@@ -2092,6 +2097,11 @@ msgstr ""
 #: /1080i/Custom_1116_Dialog_Shortcuts.xml
 msgctxt "#31443"
 msgid "Open path in dialog"
+msgstr ""
+
+#: /1080i/Settings.xml
+msgctxt "#31444"
+msgid "Customisation"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
