@@ -168,7 +168,7 @@
                                         <font>font_hint_bold</font>
                                         <height>10</height>
                                         <textcolor>main_fg_30</textcolor>
-                                        <label>Playlist</label>
+                                        <label>$LOCALIZE[559]</label>
                                     </control>
 
                                     <control type="label">
