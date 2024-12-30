@@ -1844,7 +1844,6 @@
                                     <param name="itemlayout_include">Layout_MediaList</param>
                                     <param name="control">fixedlist</param>
                                     <param name="include_detailed_labels">true</param>
-                                    <param name="detailed">true</param>
                                     <focusposition>1</focusposition>
                                     <movement>7</movement>
 
