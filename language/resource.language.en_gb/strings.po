@@ -2189,6 +2189,11 @@ msgctxt "#31461"
 msgid "Choose preset"
 msgstr ""
 
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31462"
+msgid "Wall Banner"
+msgstr ""
+
 #: /1080i/Custom_1161_Dialog_Weather.xml
 msgctxt "#31465"
 msgid "Rain chance"
