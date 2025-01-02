@@ -5,7 +5,7 @@
     <include name="SkinSettings_Items_Menus">
         <include content="Settings_Label" description="Configure">
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">001</param>
             <label>$LOCALIZE[24020]</label>
         </include>
@@ -13,7 +13,7 @@
         <include content="Settings_Button" description="Setup Wizard">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">002</param>
             <param name="dialog">false</param>
             <param name="control">button</param>
@@ -24,7 +24,7 @@
         <include content="Settings_Button" description="Customise Widgets">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">003</param>
             <param name="dialog">false</param>
             <label>$LOCALIZE[31496]</label>
@@ -34,7 +34,7 @@
         <include content="Settings_Button" description="Customise Search">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">004</param>
             <param name="dialog">false</param>
             <label>$LOCALIZE[31275]</label>
@@ -47,7 +47,7 @@
         <include content="Settings_Button" description="Customise Options">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">005</param>
             <param name="dialog">false</param>
             <label>$LOCALIZE[31086]</label>
@@ -58,7 +58,7 @@
 
         <include content="Settings_Label" description="Label: Side Menu">
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">006</param>
             <param name="dialog">false</param>
             <label>$LOCALIZE[10000]</label>
@@ -67,7 +67,7 @@
         <include content="Settings_Button" description="Expanded">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">007</param>
             <param name="control">button</param>
             <label>$LOCALIZE[10000] > $LOCALIZE[736]</label>
@@ -80,7 +80,7 @@
         <include content="Settings_Button" description="Left menu">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">008</param>
             <param name="control">button</param>
             <label>$LOCALIZE[10000] > $LOCALIZE[15217] ($LOCALIZE[39162] / $LOCALIZE[31349])</label>
@@ -91,7 +91,7 @@
         <include content="Settings_Button" description="Back menu">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">009</param>
             <param name="dialog">false</param>
             <param name="control">button</param>
@@ -104,7 +104,7 @@
         <include content="Settings_Button" description="Sidemenu default focus">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">010</param>
             <param name="dialog">false</param>
             <param name="control">button</param>
@@ -119,7 +119,7 @@
         <include content="Settings_Button" description="Search And Options">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">011</param>
             <param name="dialog">false</param>
             <param name="control">button</param>
@@ -144,7 +144,7 @@
         <include content="Settings_Button" description="Replace search with discover">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">012</param>
             <param name="dialog">false</param>
             <param name="control">radiobutton</param>
@@ -156,7 +156,7 @@
         <include content="Settings_Button" description="Profile">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">013</param>
             <param name="dialog">false</param>
             <param name="control">radiobutton</param>
@@ -171,7 +171,7 @@
         <include content="Settings_Button" description="Home Scroll Between">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">014</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[10000] > $LOCALIZE[31253]</label>
@@ -183,7 +183,7 @@
 
         <include content="Settings_Label" description="Label: Categories">
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">015</param>
             <param name="dialog">false</param>
             <label>$LOCALIZE[31150]</label>
@@ -192,7 +192,7 @@
         <include content="Settings_Button" description="Categories Icon">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">016</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31150] > $LOCALIZE[736]</label>
@@ -202,7 +202,7 @@
 
         <include content="Settings_Label" description="Label: Spotlight">
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">017</param>
             <param name="dialog">false</param>
             <label>$LOCALIZE[31105]</label>
@@ -211,7 +211,7 @@
         <include content="Settings_Button" description="Spotlight button">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">1</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">018</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31105] > $LOCALIZE[31416]</label>
@@ -224,14 +224,14 @@
     <include name="SkinSettings_Items_Appearance">
         <include content="Settings_Label" description="LooknFeel Label">
             <param name="skinsettings">true</param>
-            <param name="baseid">2</param>
-            <param name="id">000</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">001</param>
             <label>$LOCALIZE[24997]</label>
         </include>
         <include content="Settings_Button" description="Presets">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">2</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">002</param>
             <label>$LOCALIZE[31241]</label>
             <label2>$VAR[Label_Setting_ColourPreset]</label2>
@@ -242,7 +242,7 @@
         <include content="Settings_Button" description="Color Selector">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">2</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">003</param>
             <label> - $LOCALIZE[31231]</label>
             <label2>$VAR[Label_Setting_ColourScheme]</label2>
@@ -253,7 +253,7 @@
         <include content="Settings_Button" description="Customise Window Background">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">2</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">004</param>
             <label> - $LOCALIZE[31300]</label>
             <label2>$VAR[Label_Setting_ColourBackground]</label2>
@@ -264,7 +264,7 @@
         <include content="Settings_Button" description="Customise Dialog Background">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">2</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">005</param>
             <label> - $LOCALIZE[31204]</label>
             <label2>$VAR[Label_Setting_ColourDialog]</label2>
@@ -275,8 +275,8 @@
         <include content="Settings_Button" description="Customise Fanart Fallback Folder">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">2</param>
-            <param name="id">007</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">006</param>
             <label> - $LOCALIZE[31303]</label>
             <label2>$VAR[Label_Setting_FallbackImage]</label2>
             <onclick condition="!String.IsEmpty(Skin.String(Background.MultiImage))">Skin.Reset(Background.MultiImage)</onclick>
@@ -285,8 +285,8 @@
         <include content="Settings_Button" description="Customise Startup">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">2</param>
-            <param name="id">006</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">007</param>
             <label> - $LOCALIZE[31255]</label>
             <label2>$VAR[Label_Setting_StartUpImage]</label2>
             <onclick>SetProperty(CustomDialogSettingsTitle,[CAPITALIZE]$LOCALIZE[31255][/CAPITALIZE],Home)</onclick>
@@ -296,8 +296,8 @@
         <include content="Settings_Button" description="Background blur">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">2</param>
-            <param name="id">012</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">008</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31331]</label>
             <label2>$VAR[Label_Setting_BackgroundBlur]</label2>
@@ -310,8 +310,8 @@
         <include content="Settings_Button" description="Border Style">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">2</param>
-            <param name="id">019</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">009</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31093]</label>
             <label2>$VAR[Label_Setting_BorderStyle]</label2>
@@ -335,15 +335,15 @@
     <include name="SkinSettings_Items_Interface">
         <include content="Settings_Label" description="Style">
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">020</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">001</param>
             <label>$LOCALIZE[736]</label>
         </include>
         <include content="Settings_Button" description="Title">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">023</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">002</param>
             <param name="control">button</param>
             <label>$LOCALIZE[369]</label>
             <label2>$VAR[Label_Setting_ForegroundLogo]</label2>
@@ -352,8 +352,8 @@
         <include content="Settings_Button" description="Infoline">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">024</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">003</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31178]</label>
             <label2>$VAR[Label_Setting_InfoLineStyle]</label2>
@@ -362,8 +362,8 @@
         <include content="Settings_Button" description="Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">025</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">004</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31202]</label>
             <label2>$VAR[Label_Setting_RatingsStyle]</label2>
@@ -372,8 +372,8 @@
         <include content="Settings_Button" description="Use Simple Text">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">015</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">005</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31292]</label>
             <label2>$VAR[Label_Settings_TextViewMode]</label2>
@@ -382,15 +382,15 @@
 
         <include content="Settings_Label" description="Viewtypes">
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">010</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">006</param>
             <label>$LOCALIZE[31044]</label>
         </include>
         <include content="Settings_Button" description="Configure Views">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">011</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">007</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31321]</label>
             <onclick>runscript(script.skinvariables,action=buildviews,configure)</onclick>
@@ -398,8 +398,8 @@
         <include content="Settings_Button" description="Switch Wall Orientation">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">012</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">008</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31106] ([CAPITALIZE]$LOCALIZE[31082][/CAPITALIZE])</label>
             <label2>$VAR[Label_Settings_WallOrientation]</label2>
@@ -410,8 +410,8 @@
         <include content="Settings_Button" description="Use Text based Card for Library">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">013</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">009</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31106] ($LOCALIZE[31423])</label>
             <label2>$VAR[Label_Settings_CardViewMode]</label2>
@@ -421,8 +421,8 @@
         <include content="Settings_Button" description="Use Text based Board for Library">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">014</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">010</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31106] ($LOCALIZE[31424])</label>
             <label2>$VAR[Label_Settings_BoardViewMode]</label2>
@@ -432,8 +432,8 @@
         <include content="Settings_Button" description="Use Landscape only for FlixArt List Library">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">016</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">011</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31106] ($LOCALIZE[31480])</label>
             <label2>$VAR[Label_Settings_ListFlixArtViewMode]</label2>
@@ -442,15 +442,15 @@
 
         <include content="Settings_Label" description="Widgets">
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">040</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">012</param>
             <label>$LOCALIZE[31103]</label>
         </include>
         <include content="Settings_Button" description="Blur background on classic widgets">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">042</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">013</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31091]</label>
             <onclick>Skin.ToggleSetting(Widgets.DontHideArtworkOnClassic)</onclick>
@@ -459,8 +459,8 @@
         <include content="Settings_Button" description="Show More Items">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">3</param>
-            <param name="id">041</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">014</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31448]</label>
             <onclick>Skin.ToggleSetting(Widgets.DisableShowMore)</onclick>
@@ -472,15 +472,15 @@
     <include name="SkinSettings_Items_Furniture">
         <include content="Settings_Label" description="Header">
             <param name="skinsettings">true</param>
-            <param name="baseid">5</param>
-            <param name="id">010</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">001</param>
             <label>$LOCALIZE[31208]</label>
         </include>
         <include content="Settings_Button" description="Clock">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">5</param>
-            <param name="id">011</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">002</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31042]</label>
             <selected>Skin.HasSetting(Furniture.EnableClock)</selected>
@@ -492,8 +492,8 @@
         <include content="Settings_Button" description="Expand Clock">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">5</param>
-            <param name="id">012</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">003</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[552]</label>
             <selected>Skin.HasSetting(Furniture.EnableExpandedClock)</selected>
@@ -506,8 +506,8 @@
         <include content="Settings_Button" description="Now Playing">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">5</param>
-            <param name="id">005</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">004</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31244]</label>
             <onclick>Skin.ToggleSetting(Furniture.EnableNowPlaying)</onclick>
@@ -517,15 +517,15 @@
 
         <include content="Settings_Label" description="Footer">
             <param name="skinsettings">true</param>
-            <param name="baseid">5</param>
-            <param name="id">000</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">005</param>
             <label>$LOCALIZE[31239]</label>
         </include>
         <include content="Settings_Button" description="Footer: Right">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">5</param>
-            <param name="id">002</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">006</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[572]</label>
             <selected>!Skin.HasSetting(Furniture.BottomRight.Disable)</selected>
@@ -537,15 +537,15 @@
     <include name="SkinSettings_Items_Behaviour">
         <include content="Settings_Label" description="Widgets">
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">000</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">001</param>
             <label>$LOCALIZE[31103]</label>
         </include>
         <include content="Settings_Button" description="Autoscroll">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">001</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">002</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31187]</label>
             <label2>$INFO[Skin.String(AutoScrollTime)]</label2>
@@ -556,16 +556,16 @@
 
         <include content="Settings_Label" description="Navigation">
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">077</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">003</param>
             <label>$LOCALIZE[31174]</label>
         </include>
 
         <include content="Settings_Button" description="OnBack">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">078</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">004</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31324] > $LOCALIZE[31166]</label>
             <label2>$VAR[Label_Settings_NavigationOnBack]</label2>
@@ -576,8 +576,8 @@
         <include content="Settings_Button" description="OnScroll">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">079</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">005</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31324] > $LOCALIZE[31457]</label>
             <label2>$VAR[Label_Settings_NavigationOnScroll]</label2>
@@ -586,15 +586,15 @@
 
         <include content="Settings_Label" description="Labels">
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">002</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">006</param>
             <label>$LOCALIZE[31425]</label>
         </include>
         <include content="Settings_Button" description="Label scrolling">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">003</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">007</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31245]</label>
             <onclick>Skin.ToggleSetting(Labels.Autoscroll)</onclick>
@@ -603,8 +603,8 @@
         <include content="Settings_Button" description="Textbox scrolling">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">004</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">008</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31246]</label>
             <onclick>Skin.ToggleSetting(Textboxes.DisableAutoscroll)</onclick>
@@ -613,15 +613,15 @@
         <!-- Playback -->
         <include content="Settings_Label" description="Playback">
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">005</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">009</param>
             <label>$LOCALIZE[14086]</label>
         </include>
         <include content="Settings_Button" description="Autoclose OSD timeout">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">006</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">010</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31189]</label>
             <label2>$INFO[Skin.String(OSD_Timeout),,s]</label2>
@@ -630,8 +630,8 @@
         <include content="Settings_Button" description="Autohide seekbar after pausing">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">007</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">011</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31165]</label>
             <label2>$VAR[Label_Setting_SeekbarPauseBehaviour]</label2>
@@ -646,8 +646,8 @@
         <include content="Settings_Button" description="Seekbar times">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">008</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">012</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31355]</label>
             <label2>$VAR[Label_Setting_SeekbarTimeDisplay]</label2>
@@ -658,8 +658,8 @@
         <include content="Settings_Button" description="Background video">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">031</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">013</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31069]</label>
             <selected>!Skin.HasSetting(Background.DisableVideo)</selected>
@@ -668,8 +668,8 @@
         <include content="Settings_Button" description="Picture in picture">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">032</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">014</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31394]</label>
             <visible>Skin.HasSetting(Background.DisableVideo)</visible>
@@ -679,15 +679,15 @@
 
         <include content="Settings_Label" description="Background">
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">050</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">015</param>
             <label>$LOCALIZE[33068]</label>
         </include>
         <include content="Settings_Button" description="Extra fanart">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">052</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">016</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31436]</label>
             <visible>Skin.HasSetting(TMDbHelper.EnableBlur) + String.IsEmpty(Skin.String(Background.ArtworkStyle))</visible>
@@ -697,15 +697,15 @@
 
         <include content="Settings_Label" description="Trailers">
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">009</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">017</param>
             <label>$LOCALIZE[31482]</label>
         </include>
         <include content="Settings_Button" description="Play trailer auto">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">010</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">018</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31481]</label>
             <onclick condition="Skin.HasSetting(Trailers.EnableAutoPlayback)">Skin.Reset(Trailers.EnableAutoPlayback)</onclick>
@@ -715,8 +715,8 @@
         <include content="Settings_Button" description="Play trailer auto spotlight">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">011</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">019</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31481]: $LOCALIZE[31105]</label>
             <onclick condition="!Skin.HasSetting(Trailers.DisableAutoPlayback.Spotlight)">Skin.SetBool(Trailers.DisableAutoPlayback.Spotlight)</onclick>
@@ -727,8 +727,8 @@
         <include content="Settings_Button" description="Play trailer auto widgets">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">012</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">020</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31481]: $LOCALIZE[31103]</label>
             <onclick condition="Skin.HasSetting(Trailers.EnableAutoPlayback.Widgets)">Skin.Reset(Trailers.EnableAutoPlayback.Widgets)</onclick>
@@ -739,8 +739,8 @@
         <include content="Settings_Button" description="Play trailer auto library">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">013</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">021</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31481]: $LOCALIZE[14022]</label>
             <onclick condition="Skin.HasSetting(Trailers.EnableAutoPlayback.Library)">Skin.Reset(Trailers.EnableAutoPlayback.Library)</onclick>
@@ -751,8 +751,8 @@
         <include content="Settings_Button" description="Play trailer auto information">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">6</param>
-            <param name="id">014</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">022</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31481]: $LOCALIZE[14116]</label>
             <onclick condition="Skin.HasSetting(Trailers.EnableAutoPlayback.Info)">Skin.Reset(Trailers.EnableAutoPlayback.Info)</onclick>
@@ -765,15 +765,15 @@
     <include name="SkinSettings_Items_Details">
         <include content="Settings_Label" description="Info">
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">000</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">001</param>
             <label>$LOCALIZE[14116]</label>
         </include>
         <include content="Settings_Button" description="Use Native Cast">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">001</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">002</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31356]</label>
             <onclick>Skin.ToggleSetting(Info.UseLocalCast)</onclick>
@@ -782,8 +782,8 @@
         <include content="Settings_Button" description="Use additional info line tags">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">031</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">003</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31433]</label>
             <label2>$VAR[Label_Setting_AdditionalTags]</label2>
@@ -792,7 +792,7 @@
         <include content="Settings_Button" description="Infoline Extra">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">004</param>
             <label>$LOCALIZE[31191]</label>
             <label2>$VAR[Label_Setting_OptionalInfoLine]</label2>
@@ -802,8 +802,8 @@
         <include content="Settings_Button" description="">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">025</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">005</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[126]</label>
             <label2>$VAR[Label_Setting_PremiereStatus,       ,       ]</label2>
@@ -815,16 +815,16 @@
 
         <include content="Settings_Label" description="Details">
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">005</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">006</param>
             <label>$LOCALIZE[342] $LOCALIZE[31202]</label>
         </include>
 
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">006</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">007</param>
             <label>$LOCALIZE[563] 01</label>
             <label2>$INFO[Skin.String(CustomRating.Movies.Item01)]</label2>
             <onclick>SetProperty(ConfigureRatingItem,Item01,Home)</onclick>
@@ -835,8 +835,8 @@
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">007</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">008</param>
             <label>$LOCALIZE[563] 02</label>
             <label2>$INFO[Skin.String(CustomRating.Movies.Item02)]</label2>
             <onclick>SetProperty(ConfigureRatingItem,Item02,Home)</onclick>
@@ -847,8 +847,8 @@
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">008</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">009</param>
             <label>$LOCALIZE[563] 03</label>
             <label2>$INFO[Skin.String(CustomRating.Movies.Item03)]</label2>
             <onclick>SetProperty(ConfigureRatingItem,Item03,Home)</onclick>
@@ -859,8 +859,8 @@
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">009</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">010</param>
             <label>$LOCALIZE[563] 04</label>
             <label2>$INFO[Skin.String(CustomRating.Movies.Item04)]</label2>
             <visible>!Skin.HasSetting(CustomRating.EnablePremiereStatusDates) | !Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</visible>
@@ -872,8 +872,8 @@
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">021</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">011</param>
             <label>$LOCALIZE[563] 05</label>
             <label2>$INFO[Skin.String(CustomRating.Movies.Item05)]</label2>
             <visible>!Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</visible>
@@ -885,8 +885,8 @@
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">022</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">012</param>
             <label>$LOCALIZE[563] 06</label>
             <label2>$INFO[Skin.String(CustomRating.Movies.Item06)]</label2>
             <visible>!Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</visible>
@@ -897,16 +897,16 @@
 
         <include content="Settings_Label" description="Details">
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">010</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">013</param>
             <label>$LOCALIZE[20343] $LOCALIZE[31202]</label>
         </include>
 
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">011</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">014</param>
             <label>$LOCALIZE[563] 01</label>
             <label2>$INFO[Skin.String(CustomRating.TVShows.Item01)]</label2>
             <onclick>SetProperty(ConfigureRatingItem,Item01,Home)</onclick>
@@ -917,8 +917,8 @@
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">012</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">015</param>
             <label>$LOCALIZE[563] 02</label>
             <label2>$INFO[Skin.String(CustomRating.TVShows.Item02)]</label2>
             <onclick>SetProperty(ConfigureRatingItem,Item02,Home)</onclick>
@@ -929,8 +929,8 @@
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">013</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">016</param>
             <label>$LOCALIZE[563] 03</label>
             <label2>$INFO[Skin.String(CustomRating.TVShows.Item03)]</label2>
             <onclick>SetProperty(ConfigureRatingItem,Item03,Home)</onclick>
@@ -941,8 +941,8 @@
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">014</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">017</param>
             <label>$LOCALIZE[563] 04</label>
             <label2>$INFO[Skin.String(CustomRating.TVShows.Item04)]</label2>
             <visible>!Skin.HasSetting(CustomRating.EnablePremiereStatusDates) | Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</visible>
@@ -954,8 +954,8 @@
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">023</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">018</param>
             <label>$LOCALIZE[563] 05</label>
             <label2>$INFO[Skin.String(CustomRating.TVShows.Item05)]</label2>
             <visible>Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</visible>
@@ -967,8 +967,8 @@
         <include content="Settings_Button" description="CustomDialog Ratings">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">024</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">019</param>
             <label>$LOCALIZE[563] 06</label>
             <label2>$INFO[Skin.String(CustomRating.TVShows.Item06)]</label2>
             <visible>Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</visible>
@@ -979,16 +979,16 @@
 
         <include content="Settings_Label" description="Details">
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">015</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">020</param>
             <label>$LOCALIZE[31235]</label>
         </include>
 
         <include content="Settings_Button" description="CustomDialog Indicators">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">016</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">021</param>
             <label>$LOCALIZE[31234]</label>
             <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_Indicators,Home)</onclick>
             <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31235],Home)</onclick>
@@ -997,16 +997,16 @@
 
         <include content="Settings_Label" description="Widgets">
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">019</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">022</param>
             <label>Widgets</label>
         </include>
 
         <include content="Settings_Button" description="Customise VideoOSD Widgets">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">003</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">023</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31103] > $LOCALIZE[31434]</label>
             <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_VideoOSDWidgets,Home)</onclick>
@@ -1017,8 +1017,8 @@
         <include content="Settings_Button" description="Customise VideoInfo Widgets">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">020</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">024</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31103] > $LOCALIZE[12003]</label>
             <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_VideoInfoWidgets,Home)</onclick>
@@ -1028,16 +1028,16 @@
 
         <include content="Settings_Label" description="Details">
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">018</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">025</param>
             <label>$LOCALIZE[31491]</label>
         </include>
 
         <include content="Settings_Button" description="TMDbHelper for PVR">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">7</param>
-            <param name="id">002</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">026</param>
             <param name="control">radiobutton</param>
             <label>PVR > $LOCALIZE[31435]</label>
             <onclick>Skin.ToggleSetting(TMDbHelper.DisablePVR)</onclick>
@@ -1049,14 +1049,14 @@
     <include name="SkinSettings_Items_Other">
         <include content="Settings_Label" description="Mouse and Keyboard">
             <param name="skinsettings">true</param>
-            <param name="baseid">4</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">098</param>
             <label>$LOCALIZE[14125]</label>
         </include>
         <include content="Settings_Button" description="">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">4</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">004</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31171]</label>
@@ -1066,7 +1066,7 @@
         <include content="Settings_Button" description="">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">4</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">005</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31094]</label>
@@ -1081,14 +1081,14 @@
 
         <include content="Settings_Label" description="Startup">
             <param name="skinsettings">true</param>
-            <param name="baseid">4</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">099</param>
             <label>$LOCALIZE[12999]</label>
         </include>
         <include content="Settings_Button" description="Startup Init Screen">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">4</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">001</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31428]</label>
@@ -1098,7 +1098,7 @@
         <include content="Settings_Button" description="Startup Init Screen Hubs">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">4</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">011</param>
             <param name="control">radiobutton</param>
             <label> - $LOCALIZE[31114]</label>
@@ -1109,7 +1109,7 @@
         <include content="Settings_Button" description="Startup Init Screen Library">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">4</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">012</param>
             <param name="control">radiobutton</param>
             <label> - $LOCALIZE[14022]</label>
@@ -1120,7 +1120,7 @@
         <include content="Settings_Button" description="Widget profiles">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">4</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">002</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31506] ($LOCALIZE[31507])</label>
@@ -1133,7 +1133,7 @@
         <include content="Settings_Button" description="Widget profiles">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">4</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">003</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31505]</label>
@@ -1147,14 +1147,14 @@
     <include name="SkinSettings_Items_Expert">
         <include content="Settings_Label" description="Expert">
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">080</param>
             <label>$LOCALIZE[10039]</label>
         </include>
         <include content="Settings_Button" description="Nuke Everything">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">081</param>
             <label>$LOCALIZE[31374]</label>
             <onclick>SetProperty(StartupReplaceWindow,skinsettings,Home)</onclick>
@@ -1164,7 +1164,7 @@
         <include content="Settings_Button" description="Nuke Search History">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">089</param>
             <label>$LOCALIZE[31376]</label>
             <visible>!String.IsEmpty(Skin.String(SearchHistory))</visible>
@@ -1173,7 +1173,7 @@
         <include content="Settings_Button" description="Mouse widget control">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">088</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31036]</label>
@@ -1186,7 +1186,7 @@
         <include content="Settings_Button" description="Holiday Theme">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">094</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31510]</label>
@@ -1196,7 +1196,7 @@
         <include content="Settings_Button" description="Holiday Theme: Winter Frost">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">098</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31116]</label>
@@ -1211,7 +1211,7 @@
         <include content="Settings_Button" description="Holiday Theme: Australian Summer">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">097</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31115]</label>
@@ -1223,14 +1223,14 @@
 
         <include content="Settings_Label" description="Dependencies">
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">000</param>
             <label>$LOCALIZE[39024]</label>
         </include>
         <include content="Settings_Button">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">001</param>
             <param name="control">radiobutton</param>
             <label>plugin.video.themoviedb.helper</label>
@@ -1244,7 +1244,7 @@
         <include content="Settings_Button">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">003</param>
             <param name="control">radiobutton</param>
             <label>script.skinvariables</label>
@@ -1258,7 +1258,7 @@
         <include content="Settings_Button">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">004</param>
             <param name="control">radiobutton</param>
             <label>script.texturemaker</label>
@@ -1272,7 +1272,7 @@
         <include content="Settings_Button">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">005</param>
             <param name="control">radiobutton</param>
             <label>script.artistslideshow</label>
@@ -1286,7 +1286,7 @@
         <include content="Settings_Button">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">006</param>
             <param name="control">radiobutton</param>
             <label>resource.images.arctic.waves</label>
@@ -1300,7 +1300,7 @@
         <include content="Settings_Button">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">009</param>
             <param name="control">radiobutton</param>
             <label>resource.images.weatherfanart.multi</label>
@@ -1314,7 +1314,7 @@
         <include content="Settings_Button">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">010</param>
             <param name="control">radiobutton</param>
             <label>resource.images.moviecountryicons.maps</label>
@@ -1328,7 +1328,7 @@
         <include content="Settings_Button">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">011</param>
             <param name="control">radiobutton</param>
             <label>resource.images.studios.white</label>
@@ -1342,7 +1342,7 @@
         <include content="Settings_Button">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">030</param>
             <param name="control">radiobutton</param>
             <label>service.upnext</label>
@@ -1355,14 +1355,14 @@
 
         <include content="Settings_Label" description="Debug">
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">090</param>
             <label>$LOCALIZE[14260]</label>
         </include>
         <include content="Settings_Button" description="Debug Info">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">091</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[19033]</label>
@@ -1372,7 +1372,7 @@
         <include content="Settings_Button" description="Debug Grid">
             <param name="dialog">false</param>
             <param name="skinsettings">true</param>
-            <param name="baseid">8</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">092</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31223]</label>
@@ -1385,11 +1385,11 @@
     <include name="SkinSettings_Items_Thanks">
         <include content="Settings_Label" description="Thanks">
             <param name="skinsettings">true</param>
-            <param name="baseid">9</param>
+            <param name="baseid">$PARAM[baseid]</param>
             <param name="id">001</param>
             <label>$LOCALIZE[31350]</label>
         </include>
-        <control type="textbox" id="9002">
+        <control type="textbox" id="$PARAM[baseid]002">
             <font>font_mini_plot</font>
             <textcolor>main_fg_70</textcolor>
             <top>20</top>
@@ -1398,7 +1398,7 @@
             <label>$LOCALIZE[31095][CR](AR) taiseer999, (DE) peat80, (PT) Havokdan, (IT) seppiola, (UA) dmt1z, (FR) Bindou, (ES) gtkingbuild, (RU) StellaLupus, (FI) Lam4hound, (ZH) kalifun[CR][CR]To all my amazing supporters on Ko-fi, thank-you![CR][CR]A special thanks to this month's supporters[CR]not_ booyakafoo EZ44 Pikszeles Rinicko Dml2023 Bindou Adamosborne83 AsparagusTrevor juanmazake Aemstel rf1967</label>
             <left>40</left>
             <right>40</right>
-            <visible>Container(3).HasFocus(9)</visible>
+            <visible>Container(3).HasFocus($PARAM[baseid])</visible>
         </control>
     </include>
 

@@ -100,15 +100,33 @@
                     <include content="Settings_Right_Grouplist">
                         <param name="id">5</param>
                         <onleft>3</onleft>
-                        <include>SkinSettings_Items_Menus</include>
-                        <include>SkinSettings_Items_Appearance</include>
-                        <include>SkinSettings_Items_Interface</include>
-                        <include>SkinSettings_Items_Furniture</include>
-                        <include>SkinSettings_Items_Behaviour</include>
-                        <include>SkinSettings_Items_Details</include>
-                        <include>SkinSettings_Items_Other</include>
-                        <include>SkinSettings_Items_Expert</include>
-                        <include>SkinSettings_Items_Thanks</include>
+                        <include content="SkinSettings_Items_Menus">
+                            <param name="baseid">1</param>
+                        </include>
+                        <include content="SkinSettings_Items_Appearance">
+                            <param name="baseid">2</param>
+                        </include>
+                        <include content="SkinSettings_Items_Interface">
+                            <param name="baseid">3</param>
+                        </include>
+                        <include content="SkinSettings_Items_Furniture">
+                            <param name="baseid">4</param>
+                        </include>
+                        <include content="SkinSettings_Items_Behaviour">
+                            <param name="baseid">5</param>
+                        </include>
+                        <include content="SkinSettings_Items_Details">
+                            <param name="baseid">6</param>
+                        </include>
+                        <include content="SkinSettings_Items_Other">
+                            <param name="baseid">7</param>
+                        </include>
+                        <include content="SkinSettings_Items_Expert">
+                            <param name="baseid">8</param>
+                        </include>
+                        <include content="SkinSettings_Items_Thanks">
+                            <param name="baseid">9</param>
+                        </include>
                     </include>
                 </include>
                 <include content="Settings_InfoText">
