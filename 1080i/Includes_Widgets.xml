@@ -830,7 +830,7 @@
         </definition>
     </include>
 
-    <include name="Widget_NoResults">
+    <include name="_Widget_NoResults">
         <content>
             <item>
                 <label>$LOCALIZE[31046]</label>
@@ -840,5 +840,11 @@
                 <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,0) | [Integer.IsEqual(Container($PARAM[id]).NumItems,1) + String.IsEqual(Container($PARAM[id]).ListItemAbsolute(0).Label,$LOCALIZE[31046])]</visible>
             </item>
         </content>
+    </include>
+
+    <include name="Widget_NoResults">
+        <include content="_Widget_NoResults" condition="!Skin.HasSetting(Widgets.DisableNoResultsItem)">
+            <param name="id">$PARAM[id]</param>
+        </include>
     </include>
 </includes>
