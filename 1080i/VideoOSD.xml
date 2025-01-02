@@ -356,31 +356,6 @@
                     </control>
                 </control>
             </control>
-
-            <control type="list" id="513">
-                <left>-1920</left>
-                <width>1</width>
-                <height>1</height>
-                <itemlayout width="1" height="1" />
-                <focusedlayout width="1" height="1" />
-                <content target="videos">$VAR[Path_OSD_NextRecommendation]</content>
-            </control>
-
-            <control type="group">
-                <visible>Integer.IsEqual(Window(Home).Property(OSD_Focus),6003) + !Window.IsVisible(pvrchannelguide) + !Window.IsVisible(pvrosdchannels) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1141) + !Window.IsVisible(1140)</visible>
-                <visible>!VideoPlayer.Content(livetv)</visible>
-
-                <include>Animation_OSD_Dialog_VisibleChange</include>
-
-                <include content="OSD_UpNext">
-                    <param name="is_addon">false</param>
-                    <param name="icon">$VAR[Image_OSD_UpNext_Playlist_Landscape]</param>
-                    <param name="label">$LOCALIZE[31196]</param>
-                    <param name="secondary_label"> </param>
-                    <param name="top_title">$VAR[Label_OSD_UpNext_Playlist_TopTitle]</param>
-                    <param name="sub_title">$VAR[Label_OSD_UpNext_Playlist_SubTitle]</param>
-                </include>
-            </control>
         </control>
     </controls>
 </window>
