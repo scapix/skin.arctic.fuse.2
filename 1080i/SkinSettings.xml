@@ -19,7 +19,7 @@
                 <include content="Settings_Left_Group">
                     <include content="Settings_Left_Content">
                         <control type="list" id="3">
-                            <onleft>SetFocus($VAR[Action_SettingsSwitcher_FocusID])</onleft>
+
                             <onright>5</onright>
                             <pagecontrol>61</pagecontrol>
                             <right>40</right>
