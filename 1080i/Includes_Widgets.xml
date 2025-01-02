@@ -829,4 +829,16 @@
             </include>
         </definition>
     </include>
+
+    <include name="Widget_NoResults">
+        <content>
+            <item>
+                <label>$LOCALIZE[31046]</label>
+                <property name="override_square">fallback/no-results-square.png</property>
+                <property name="override_poster">fallback/no-results-poster.png</property>
+                <property name="override_landscape">fallback/no-results-landscape.png</property>
+                <visible>Integer.IsEqual(Container($PARAM[id]).NumItems,0) | [Integer.IsEqual(Container($PARAM[id]).NumItems,1) + String.IsEqual(Container($PARAM[id]).ListItemAbsolute(0).Label,$LOCALIZE[31046])]</visible>
+            </item>
+        </content>
+    </include>
 </includes>
