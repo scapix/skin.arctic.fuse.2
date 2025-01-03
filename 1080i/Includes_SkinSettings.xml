@@ -410,15 +410,15 @@
             <param name="id">012</param>
             <label>$LOCALIZE[31103]</label>
         </include>
-        <include content="Settings_Button" description="Blur background on classic widgets">
+        <include content="Settings_Button" description="Blur background">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">013</param>
-            <param name="control">radiobutton</param>
-            <label>$LOCALIZE[31091]</label>
+            <param name="control">button</param>
+            <label>$LOCALIZE[31466]</label>
+            <label2>$VAR[Label_Settings_WidgetBlurBackground]</label2>
             <onclick>Skin.ToggleSetting(Widgets.DontHideArtworkOnClassic)</onclick>
-            <selected>!Skin.HasSetting(Widgets.DontHideArtworkOnClassic)</selected>
         </include>
         <include content="Settings_Button" description="Show More Items">
             <param name="dialog">false</param>

@@ -2209,6 +2209,11 @@ msgctxt "#31465"
 msgid "Rain chance"
 msgstr ""
 
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31466"
+msgid "Blur background"
+msgstr ""
+
 #: /1080i/Includes_Items.xml
 msgctxt "#31467"
 msgid "Tiles configuration"
