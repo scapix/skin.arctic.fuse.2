@@ -1371,6 +1371,67 @@
             <onclick>Skin.ToggleSetting(DebugGrid)</onclick>
             <selected>Skin.HasSetting(DebugGrid)</selected>
         </include>
+
+        <include content="Settings_Button" description="Test DialogNumeric.xml">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">091</param>
+            <param name="control">button</param>
+            <label>DialogNumeric.xml</label>
+            <onclick>Runscript(script.skinvariables,run_dialog=numeric,heading=Heading,type=3)</onclick>
+        </include>
+        <include content="Settings_Button" description="Test DialogKeyboard.xml">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">092</param>
+            <param name="control">button</param>
+            <label>DialogKeyboard.xml</label>
+            <onclick>Runscript(script.skinvariables,run_dialog=input,heading=Heading)</onclick>
+        </include>
+        <include content="Settings_Button" description="Test DialogConfirm.xml">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">093</param>
+            <param name="control">button</param>
+            <label>DialogConfirm.xml</label>
+            <label2>YesNoCustom</label2>
+            <onclick>Runscript(script.skinvariables,run_dialog=yesnocustom,heading=Heading,message=Message)</onclick>
+        </include>
+        <include content="Settings_Button" description="Test DialogConfirm.xml">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">094</param>
+            <param name="control">button</param>
+            <label>DialogConfirm.xml</label>
+            <label2>Progress</label2>
+            <onclick>Runscript(script.skinvariables,run_progressdialog,heading=Heading,message=Message,polling=0.025)</onclick>
+        </include>
+        <include content="Settings_Button" description="Test DialogExtendedProgress.xml">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">095</param>
+            <param name="control">button</param>
+            <label>DialogExtendedProgress.xml</label>
+            <label2>Standard</label2>
+            <onclick>Runscript(script.skinvariables,run_progressdialog,background,heading=Heading,message=Message,polling=0.025)</onclick>
+        </include>
+        <include content="Settings_Button" description="Test DialogExtendedProgress.xml">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">096</param>
+            <param name="control">button</param>
+            <label>DialogExtendedProgress.xml</label>
+            <label2>Busy</label2>
+            <onclick>ActivateWindow(busydialognocancel)</onclick>
+            <onclick>Runscript(script.skinvariables,run_progressdialog,background,heading=Heading,message=Message,polling=0.025)</onclick>
+            <onclick>AlarmClock(closebusy,Dialog.Close(busydialognocancel),00:02,silent)</onclick>
+        </include>
     </include>
 
     <!-- Thanks -->
