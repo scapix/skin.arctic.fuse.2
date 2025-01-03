@@ -44,7 +44,7 @@
 
     <variable name="Label_Settings_WidgetNoResults">
         <value condition="Skin.HasSetting(Widgets.DisableNoResultsItem)">$LOCALIZE[19022]</value>
-        <value>$LOCALIZE[19218] ($LOCALIZE[31046] $LOCALIZE[31520])</value>
+        <value>$LOCALIZE[19218]</value>
     </variable>
 
     <variable name="Label_Settings_WidgetBlurBackground">
