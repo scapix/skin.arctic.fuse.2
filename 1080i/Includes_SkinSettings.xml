@@ -1429,8 +1429,8 @@
             <label>DialogExtendedProgress.xml</label>
             <label2>Busy</label2>
             <onclick>ActivateWindow(busydialognocancel)</onclick>
-            <onclick>Runscript(script.skinvariables,run_progressdialog,background,heading=Heading,message=Message,polling=0.025)</onclick>
-            <onclick>AlarmClock(closebusy,Dialog.Close(busydialognocancel),00:02,silent)</onclick>
+            <onclick>Runscript(script.skinvariables,run_progressdialog,background,heading=Heading,message=Message,polling=0.05)</onclick>
+            <onclick>AlarmClock(closebusy,Dialog.Close(busydialognocancel),00:03,silent)</onclick>
         </include>
     </include>
 
