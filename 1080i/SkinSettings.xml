@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <include content="Action_SettingsCategories_Onload">
-        <param name="defaultcontrol">3</param>
+        <param name="defaultcontrol">10000</param>
     </include>
 
     <!-- Set Some Profile Settings -->
     <onunload>runscript($VAR[Action_Var_BuildTextures])</onunload>
-    <!-- <include>Action_BuildShortcuts_OnLoad</include> -->
 
 
     <controls>
@@ -18,9 +17,9 @@
             <include content="Settings_Main_Group">
                 <include content="Settings_Left_Group">
                     <include content="Settings_Left_Content">
-                        <control type="list" id="3">
+                        <control type="list" id="10000">
 
-                            <onright>5</onright>
+                            <onright>10001</onright>
                             <pagecontrol>61</pagecontrol>
                             <right>40</right>
                             <itemlayout height="80">
@@ -31,14 +30,7 @@
                                 </control>
                             </itemlayout>
                             <focusedlayout height="80">
-                                <control type="label">
-                                    <visible>[ControlGroup(30040).HasFocus()]</visible>
-                                    <textoffsetx>40</textoffsetx>
-                                    <textcolor>main_fg_70</textcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                </control>
                                 <control type="group">
-                                    <visible>![ControlGroup(30040).HasFocus()]</visible>
                                     <control type="image">
                                         <include>Texture_Menu_Highlight_H</include>
                                     </control>
@@ -51,31 +43,31 @@
                                 </control>
                             </focusedlayout>
                             <content>
-                                <item id="1">
+                                <item id="0">
                                     <label>$LOCALIZE[31177]</label>
                                 </item>
-                                <item id="2">
+                                <item id="1">
                                     <label>$LOCALIZE[480]</label>
                                 </item>
-                                <item id="3">
+                                <item id="2">
                                     <label>$LOCALIZE[14206]</label>
                                 </item>
-                                <item id="4">
+                                <item id="3">
                                     <label>$LOCALIZE[31180]</label>
                                 </item>
-                                <item id="5">
+                                <item id="4">
                                     <label>$LOCALIZE[31186]</label>
                                 </item>
-                                <item id="6">
+                                <item id="5">
                                     <label>$LOCALIZE[33029]</label>
                                 </item>
-                                <item id="7">
+                                <item id="6">
                                     <label>$LOCALIZE[29921]</label>
                                 </item>
-                                <item id="8">
+                                <item id="7">
                                     <label>$LOCALIZE[10039]</label>
                                 </item>
-                                <item id="9">
+                                <item id="8">
                                     <label>$LOCALIZE[31350]</label>
                                 </item>
                             </content>
@@ -98,39 +90,39 @@
                     </control>
 
                     <include content="Settings_Right_Grouplist">
-                        <param name="id">5</param>
-                        <onleft>3</onleft>
+                        <param name="id">10001</param>
+                        <onleft>10000</onleft>
                         <include content="SkinSettings_Items_Menus">
-                            <param name="baseid">1</param>
+                            <param name="baseid">0</param>
                         </include>
                         <include content="SkinSettings_Items_Appearance">
-                            <param name="baseid">2</param>
+                            <param name="baseid">1</param>
                         </include>
                         <include content="SkinSettings_Items_Interface">
-                            <param name="baseid">3</param>
+                            <param name="baseid">2</param>
                         </include>
                         <include content="SkinSettings_Items_Furniture">
-                            <param name="baseid">4</param>
+                            <param name="baseid">3</param>
                         </include>
                         <include content="SkinSettings_Items_Behaviour">
-                            <param name="baseid">5</param>
+                            <param name="baseid">4</param>
                         </include>
                         <include content="SkinSettings_Items_Details">
-                            <param name="baseid">6</param>
+                            <param name="baseid">5</param>
                         </include>
                         <include content="SkinSettings_Items_Other">
-                            <param name="baseid">7</param>
+                            <param name="baseid">6</param>
                         </include>
                         <include content="SkinSettings_Items_Expert">
-                            <param name="baseid">8</param>
+                            <param name="baseid">7</param>
                         </include>
                         <include content="SkinSettings_Items_Thanks">
-                            <param name="baseid">9</param>
+                            <param name="baseid">8</param>
                         </include>
                     </include>
                 </include>
                 <include content="Settings_InfoText">
-                    <param name="id">6</param>
+                    <param name="id">10002</param>
                     <param name="dialog">false</param>
                     <param name="left">500</param>
                     <param name="bottom">80</param>

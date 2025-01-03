@@ -7,7 +7,6 @@
         <definition>
             <control type="group">
                 <include content="Furniture_Top_Left">
-                    <param name="id">9901</param>
                     <param name="label">$PARAM[label]</param>
                 </include>
                 <nested />
@@ -85,10 +84,25 @@
         </definition>
     </include>
 
+    <include name="Settings_Button_skinsettings">
+        <param name="reload">false</param>
+        <definition>
+            <visible>Container(10000).HasFocus($PARAM[baseid])</visible>
+            <onclick condition="$PARAM[reload]">ReloadSkin()</onclick>
+            <onclick condition="$PARAM[reload]">AlarmClock(refocus1,SetFocus(10000,$PARAM[baseid]),00:00,silent)</onclick>
+            <onclick condition="$PARAM[reload]">AlarmClock(refocus2,SetFocus($PARAM[baseid]$PARAM[id]),00:00,silent)</onclick>
+        </definition>
+    </include>
+
+    <include name="Settings_Button_">
+        <description>None</description>
+    </include>
+
     <include name="Settings_Button">
         <param name="control">button</param>
         <param name="dialog">false</param>
-        <param name="skinsettings">false</param>
+        <param name="window" />
+        <param name="reload">false</param>
         <definition>
             <control type="$PARAM[control]" id="$PARAM[baseid]$PARAM[id]">
                 <nested />
@@ -99,8 +113,10 @@
                 <texturenofocus />
                 <alttexturenofocus />
                 <include condition="$PARAM[dialog]">defs_dialog_$PARAM[control]</include>
-                <include content="Object_Visible" condition="$PARAM[skinsettings]">
-                    <param name="visible">Container(3).HasFocus($PARAM[baseid])</param>
+                <include content="Settings_Button_$PARAM[window]">
+                    <param name="id">$PARAM[id]</param>
+                    <param name="baseid">$PARAM[baseid]</param>
+                    <param name="reload">$PARAM[reload]</param>
                 </include>
             </control>
         </definition>
@@ -109,6 +125,7 @@
     <include name="Settings_Label">
         <param name="control">label</param>
         <param name="dialog">false</param>
+        <param name="window" />
         <definition>
             <control type="$PARAM[control]" id="$PARAM[baseid]$PARAM[id]">
                 <include content="Object_TextColor" condition="$PARAM[dialog]">
@@ -121,8 +138,9 @@
                 <height>40</height>
                 <textoffsetx>40</textoffsetx>
                 <textcolor>main_fg_30</textcolor>
-                <include content="Object_Visible" condition="$PARAM[skinsettings]">
-                    <param name="visible">Container(3).HasFocus($PARAM[baseid])</param>
+                <include content="Settings_Button_$PARAM[window]">
+                    <param name="id">$PARAM[id]</param>
+                    <param name="baseid">$PARAM[baseid]</param>
                 </include>
             </control>
         </definition>
