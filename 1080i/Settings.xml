@@ -341,6 +341,36 @@
                                         <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_PowerMenuConfigure,Home)</onclick>
                                         <onclick>ActivateWindow(1118)</onclick>
                                     </item>
+                                    <item>
+                                        <label>$LOCALIZE[31203] $LOCALIZE[31434]</label>
+                                        <label2>skin.arctic.fuse.2</label2>
+                                        <icon>special://skin/extras/icons/gauge.png</icon>
+                                        <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_VideoOSDWidgets,Home)</onclick>
+                                        <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31430],Home)</onclick>
+                                        <onclick>ActivateWindow(1118)</onclick>
+                                    </item>
+                                    <item>
+                                        <label>[CAPITALIZE]$LOCALIZE[31203] $LOCALIZE[12003][/CAPITALIZE]</label>
+                                        <label2>skin.arctic.fuse.2</label2>
+                                        <icon>special://skin/extras/icons/circle-info.png</icon>
+                                        <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_VideoInfoWidgets,Home)</onclick>
+                                        <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31097],Home)</onclick>
+                                        <onclick>ActivateWindow(1118)</onclick>
+                                    </item>
+                                    <item>
+                                        <label>[CAPITALIZE]$LOCALIZE[31321][/CAPITALIZE]</label>
+                                        <label2>skin.arctic.fuse.2</label2>
+                                        <icon>special://skin/extras/icons/table.png</icon>
+                                        <onclick>runscript(script.skinvariables,action=buildviews,configure)</onclick>
+                                    </item>
+                                    <item>
+                                        <label>[CAPITALIZE]$LOCALIZE[31234][/CAPITALIZE]</label>
+                                        <label2>skin.arctic.fuse.2</label2>
+                                        <icon>special://skin/extras/icons/cube.png</icon>
+                                        <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_Indicators,Home)</onclick>
+                                        <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31235],Home)</onclick>
+                                        <onclick>ActivateWindow(1118)</onclick>
+                                    </item>
                                 </content>
                             </include>
 
