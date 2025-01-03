@@ -2924,10 +2924,6 @@
                         <align>left</align>
                         <aligny>center</aligny>
                         <font>font_mini_plot</font>
-                        <!-- <include condition="$PARAM[selected]">Color_SelectedText</include> -->
-                        <!-- <include content="Object_TextColor" condition="$PARAM[selected]">
-                            <param name="textcolor">$PARAM[textcolor]_100</param>
-                        </include> -->
                         <label fallback="19055">$VAR[Label_Landscape_Plot$PARAM[affix]]</label>
                         <textcolor>$PARAM[textcolor]_70</textcolor>
                         <autoscroll>false</autoscroll>
