@@ -43,31 +43,31 @@
                                 </control>
                             </focusedlayout>
                             <content>
-                                <item id="0">
+                                <item id="0" description="Menus">
                                     <label>$LOCALIZE[31177]</label>
                                 </item>
-                                <item id="1">
+                                <item id="1" description="Appearance">
                                     <label>$LOCALIZE[480]</label>
                                 </item>
-                                <item id="2">
+                                <item id="2" description="Interface">
                                     <label>$LOCALIZE[14206]</label>
                                 </item>
-                                <item id="3">
-                                    <label>$LOCALIZE[31180]</label>
-                                </item>
-                                <item id="4">
-                                    <label>$LOCALIZE[31186]</label>
-                                </item>
-                                <item id="5">
+                                <item id="3" description="Details">
                                     <label>$LOCALIZE[33029]</label>
                                 </item>
-                                <item id="6">
+                                <item id="4" description="Viewtypes">
+                                    <label>$LOCALIZE[31044]</label>
+                                </item>
+                                <item id="5" description="Behaviour">
+                                    <label>$LOCALIZE[31186]</label>
+                                </item>
+                                <item id="6" description="Other">
                                     <label>$LOCALIZE[29921]</label>
                                 </item>
-                                <item id="7">
+                                <item id="7" description="Expert">
                                     <label>$LOCALIZE[10039]</label>
                                 </item>
-                                <item id="8">
+                                <item id="8" description="Thanks">
                                     <label>$LOCALIZE[31350]</label>
                                 </item>
                             </content>
@@ -101,13 +101,13 @@
                         <include content="SkinSettings_Items_Interface">
                             <param name="baseid">2</param>
                         </include>
-                        <include content="SkinSettings_Items_Furniture">
+                        <include content="SkinSettings_Items_Details">
                             <param name="baseid">3</param>
                         </include>
-                        <include content="SkinSettings_Items_Behaviour">
+                        <include content="SkinSettings_Items_Viewtypes">
                             <param name="baseid">4</param>
                         </include>
-                        <include content="SkinSettings_Items_Details">
+                        <include content="SkinSettings_Items_Behaviour">
                             <param name="baseid">5</param>
                         </include>
                         <include content="SkinSettings_Items_Other">

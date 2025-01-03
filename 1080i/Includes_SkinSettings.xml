@@ -328,54 +328,10 @@
         </include>
     </include>
 
-    <!-- Interface -->
-    <include name="SkinSettings_Items_Interface">
-        <include content="Settings_Label" description="Style">
-            <param name="window">skinsettings</param>
-            <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">001</param>
-            <label>$LOCALIZE[736]</label>
-        </include>
-        <include content="Settings_Button" description="Title">
-            <param name="dialog">false</param>
-            <param name="window">skinsettings</param>
-            <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">002</param>
-            <param name="control">button</param>
-            <label>$LOCALIZE[369]</label>
-            <label2>$VAR[Label_Setting_ForegroundLogo]</label2>
-            <onclick>Skin.ToggleSetting(TMDbHelper.EnableCrop)</onclick>
-        </include>
-        <include content="Settings_Button" description="Infoline">
-            <param name="dialog">false</param>
-            <param name="window">skinsettings</param>
-            <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">003</param>
-            <param name="control">button</param>
-            <label>$LOCALIZE[31178]</label>
-            <label2>$VAR[Label_Setting_InfoLineStyle]</label2>
-            <onclick>Skin.ToggleSetting(Info.EnablePillboxStyle)</onclick>
-        </include>
-        <include content="Settings_Button" description="Ratings">
-            <param name="dialog">false</param>
-            <param name="window">skinsettings</param>
-            <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">004</param>
-            <param name="control">button</param>
-            <label>$LOCALIZE[31202]</label>
-            <label2>$VAR[Label_Setting_RatingsStyle]</label2>
-            <onclick>Skin.ToggleSetting(Furniture.EnableColourRatings)</onclick>
-        </include>
-        <include content="Settings_Button" description="Use Simple Text">
-            <param name="dialog">false</param>
-            <param name="window">skinsettings</param>
-            <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">005</param>
-            <param name="control">button</param>
-            <label>$LOCALIZE[31292]</label>
-            <label2>$VAR[Label_Settings_TextViewMode]</label2>
-            <onclick>Skin.ToggleSetting(View.UseDetailedListLabels)</onclick>
-        </include>
+    <!-- Viewtypes -->
+    <include name="SkinSettings_Items_Viewtypes">
+
+
 
         <include content="Settings_Label" description="Viewtypes">
             <param name="window">skinsettings</param>
@@ -437,6 +393,17 @@
             <onclick>Skin.ToggleSetting(View.DisableFlixArtListPoster)</onclick>
         </include>
 
+        <include content="Settings_Button" description="Use Simple Text">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">005</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[31292]</label>
+            <label2>$VAR[Label_Settings_TextViewMode]</label2>
+            <onclick>Skin.ToggleSetting(View.UseDetailedListLabels)</onclick>
+        </include>
+
         <include content="Settings_Label" description="Widgets">
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
@@ -465,19 +432,57 @@
         </include>
     </include>
 
-    <!-- Furniture -->
-    <include name="SkinSettings_Items_Furniture">
-        <include content="Settings_Label" description="Header">
+    <!-- Interface -->
+    <include name="SkinSettings_Items_Interface">
+
+        <include content="Settings_Label" description="Information">
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">001</param>
+            <label>$LOCALIZE[14116]</label>
+        </include>
+        <include content="Settings_Button" description="Title">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">002</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[369]</label>
+            <label2>$VAR[Label_Setting_ForegroundLogo]</label2>
+            <onclick>Skin.ToggleSetting(TMDbHelper.EnableCrop)</onclick>
+        </include>
+        <include content="Settings_Button" description="Infoline">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">003</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[31178]</label>
+            <label2>$VAR[Label_Setting_InfoLineStyle]</label2>
+            <onclick>Skin.ToggleSetting(Info.EnablePillboxStyle)</onclick>
+        </include>
+        <include content="Settings_Button" description="Ratings">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">004</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[31202]</label>
+            <label2>$VAR[Label_Setting_RatingsStyle]</label2>
+            <onclick>Skin.ToggleSetting(Furniture.EnableColourRatings)</onclick>
+        </include>
+
+        <include content="Settings_Label" description="Header">
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">005</param>
             <label>$LOCALIZE[31208]</label>
         </include>
         <include content="Settings_Button" description="Clock">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">002</param>
+            <param name="id">006</param>
             <param name="control">radiobutton</param>
             <param name="reload">true</param>
             <label>$LOCALIZE[31042]</label>
@@ -488,7 +493,7 @@
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">003</param>
+            <param name="id">007</param>
             <param name="control">radiobutton</param>
             <param name="reload">true</param>
             <label>$LOCALIZE[552]</label>
@@ -500,7 +505,7 @@
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">004</param>
+            <param name="id">008</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31244]</label>
             <onclick>Skin.ToggleSetting(Furniture.EnableNowPlaying)</onclick>
@@ -511,14 +516,14 @@
         <include content="Settings_Label" description="Footer">
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">005</param>
+            <param name="id">009</param>
             <label>$LOCALIZE[31239]</label>
         </include>
         <include content="Settings_Button" description="Footer: Right">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">006</param>
+            <param name="id">010</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[572]</label>
             <selected>!Skin.HasSetting(Furniture.BottomRight.Disable)</selected>
