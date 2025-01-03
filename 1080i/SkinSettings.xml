@@ -17,31 +17,11 @@
             <include content="Settings_Main_Group">
                 <include content="Settings_Left_Group">
                     <include content="Settings_Left_Content">
-                        <control type="list" id="10000">
-
+                        <include content="Settings_Category_List">
+                            <param name="id">10000</param>
                             <onright>10001</onright>
                             <pagecontrol>61</pagecontrol>
                             <right>40</right>
-                            <itemlayout height="80">
-                                <control type="label">
-                                    <textoffsetx>40</textoffsetx>
-                                    <textcolor>main_fg_70</textcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="80">
-                                <control type="group">
-                                    <control type="image">
-                                        <include>Texture_Menu_Highlight_H</include>
-                                    </control>
-                                    <control type="label">
-                                        <include>Color_SelectedText</include>
-                                        <textcolor>main_fg_70</textcolor>
-                                        <textoffsetx>40</textoffsetx>
-                                        <label>$INFO[ListItem.Label]</label>
-                                    </control>
-                                </control>
-                            </focusedlayout>
                             <content>
                                 <item id="0" description="Menus">
                                     <label>$LOCALIZE[31177]</label>
@@ -71,7 +51,7 @@
                                     <label>$LOCALIZE[31350]</label>
                                 </item>
                             </content>
-                        </control>
+                        </include>
                     </include>
                 </include>
                 <include content="Settings_Right_Group">
