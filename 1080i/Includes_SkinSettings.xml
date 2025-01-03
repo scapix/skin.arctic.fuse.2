@@ -437,7 +437,7 @@
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">015</param>
             <param name="control">button</param>
-            <label>$LOCALIZE[31103] > $LOCALIZE[31434]</label>
+            <label>$LOCALIZE[31203] [LOWERCASE]$LOCALIZE[31434] $LOCALIZE[31103][/LOWERCASE]</label>
             <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_VideoOSDWidgets,Home)</onclick>
             <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31430],Home)</onclick>
             <onclick>ActivateWindow(1118)</onclick>
@@ -449,7 +449,7 @@
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">016</param>
             <param name="control">button</param>
-            <label>$LOCALIZE[31103] > $LOCALIZE[12003]</label>
+            <label>$LOCALIZE[31203] [LOWERCASE]$LOCALIZE[12003] $LOCALIZE[31103][/LOWERCASE]</label>
             <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_VideoInfoWidgets,Home)</onclick>
             <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31097],Home)</onclick>
             <onclick>ActivateWindow(1118)</onclick>
