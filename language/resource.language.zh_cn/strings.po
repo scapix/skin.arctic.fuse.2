@@ -2122,9 +2122,6 @@ msgid "Kodi logo"
 msgstr "KODI 徽标"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31448"
-msgid "Show \"More\" item on limited widgets"
-msgstr "在有限的小部件上显示 \"更多 \"项目"
 
 #: /1080i/Custom_1180_Wizard.xml
 msgctxt "#31449"

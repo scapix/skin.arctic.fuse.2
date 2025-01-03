@@ -426,7 +426,7 @@
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">014</param>
             <param name="control">radiobutton</param>
-            <label>$LOCALIZE[31448]</label>
+            <label>$LOCALIZE[31091]</label>
             <onclick>Skin.ToggleSetting(Widgets.DisableShowMore)</onclick>
             <selected>!Skin.HasSetting(Widgets.DisableShowMore)</selected>
         </include>

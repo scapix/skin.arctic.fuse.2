@@ -1983,9 +1983,6 @@ msgid "Kodi logo"
 msgstr "Logo di Kodi"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31448"
-msgid "Show \"More\" item on limited widgets"
-msgstr "Mostra \"Altro\" su un alcuni widget"
 
 #: /1080i/Custom_1180_Wizard.xml
 msgctxt "#31449"

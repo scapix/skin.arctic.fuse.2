@@ -2119,9 +2119,6 @@ msgid "Kodi logo"
 msgstr "Kodi-logo"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31448"
-msgid "Show \"More\" item on limited widgets"
-msgstr "Näytä \"Lisää\"-painike rajoitetuissa widgeteissä"
 
 #: /1080i/Custom_1180_Wizard.xml
 msgctxt "#31449"
