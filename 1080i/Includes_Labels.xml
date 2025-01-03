@@ -42,6 +42,11 @@
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.biography))">$INFO[Window(Home).Property(TMDbHelper.ListItem.biography)]</value>
     </variable>
 
+    <variable name="Label_Settings_WidgetNoResults">
+        <value condition="Skin.HasSetting(Widgets.DisableNoResultsItem)">$LOCALIZE[19022]</value>
+        <value>$LOCALIZE[19218] ($LOCALIZE[31046] $LOCALIZE[31520])</value>
+    </variable>
+
     <variable name="Label_Settings_WidgetBlurBackground">
         <value condition="Skin.HasSetting(Widgets.DontHideArtworkOnClassic)">$LOCALIZE[13170]</value>
         <value>$LOCALIZE[10036] ($LOCALIZE[31103])</value>

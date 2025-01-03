@@ -421,21 +421,33 @@
             <label2>$VAR[Label_Settings_WidgetBlurBackground]</label2>
             <onclick>Skin.ToggleSetting(Widgets.DontHideArtworkOnClassic)</onclick>
         </include>
-        <include content="Settings_Button" description="Show More Items">
+        <include content="Settings_Button" description="No Items Placeholder">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">014</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[31519]</label>
+            <label2>$VAR[Label_Settings_WidgetNoResults]</label2>
+            <onclick condition="Skin.HasSetting(Widgets.DisableNoResultsItem)">Skin.Reset(Widgets.DisableNoResultsItem)</onclick>
+            <onclick condition="!Skin.HasSetting(Widgets.DisableNoResultsItem)">RunScript(script.skinvariables,run_dialog=yesno,"heading=$LOCALIZE[31519]","message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR] - $LOCALIZE[31522] $LOCALIZE[31524] $LOCALIZE[31523]",yeslabel=$LOCALIZE[31162],nolabel=$LOCALIZE[222],defaultbutton=10,"executebuiltin=Skin.SetBool(Widgets.DisableNoResultsItem)")</onclick>
+        </include>
+        <include content="Settings_Button" description="Show More Items">
+            <param name="dialog">false</param>
+            <param name="window">skinsettings</param>
+            <param name="baseid">$PARAM[baseid]</param>
+            <param name="id">015</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31091]</label>
             <onclick>Skin.ToggleSetting(Widgets.DisableShowMore)</onclick>
             <selected>!Skin.HasSetting(Widgets.DisableShowMore)</selected>
         </include>
+
         <include content="Settings_Button" description="Customise VideoOSD Widgets">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">015</param>
+            <param name="id">016</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31203] [LOWERCASE]$LOCALIZE[31434] $LOCALIZE[31103][/LOWERCASE]</label>
             <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_VideoOSDWidgets,Home)</onclick>
@@ -447,7 +459,7 @@
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">016</param>
+            <param name="id">017</param>
             <param name="control">button</param>
             <label>$LOCALIZE[31203] [LOWERCASE]$LOCALIZE[12003] $LOCALIZE[31103][/LOWERCASE]</label>
             <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_VideoInfoWidgets,Home)</onclick>
