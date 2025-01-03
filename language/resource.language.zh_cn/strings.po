@@ -444,9 +444,7 @@ msgid "In-Progress"
 msgstr "进行中"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31091"
-msgid "Blur background for classic widgets"
-msgstr "经典小部件背景模糊效果"
+
 
 #: /1080i/Includes_Shortcuts_Window.xml
 msgctxt "#31092"

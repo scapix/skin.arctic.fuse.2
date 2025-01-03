@@ -443,9 +443,7 @@ msgid "In-Progress"
 msgstr "Em Andamento"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31091"
-msgid "Blur background for classic widgets"
-msgstr "Desfocar o fundo para widgets clássicos"
+
 
 #: /1080i/Includes_Shortcuts_Window.xml
 msgctxt "#31092"

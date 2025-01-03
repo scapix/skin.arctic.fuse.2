@@ -443,9 +443,7 @@ msgid "In-Progress"
 msgstr "Angefangen"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31091"
-msgid "Blur background for classic widgets"
-msgstr "Hintergrund klassischer Widgets verwischen"
+
 
 #: /1080i/Includes_Shortcuts_Window.xml
 msgctxt "#31092"
