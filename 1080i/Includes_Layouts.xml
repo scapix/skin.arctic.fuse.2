@@ -2782,21 +2782,6 @@
                 <control type="group">
                     <bottom>80</bottom>
 
-                    <!-- <include content="Object_ItemBack">
-                        <param name="selected">$PARAM[selected]</param>
-                        <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
-                    </include>
-
-                    <include content="Object_Control" condition="$PARAM[selected]">
-                        <param name="control">image</param>
-                        <include>Texture_Box_Highlight_V</include>
-                    </include>
-
-                    <include content="Object_Control" condition="$PARAM[selected]">
-                        <param name="control">image</param>
-                        <texture colordiffuse="main_bg_70" border="20">common/box.png</texture>
-                    </include> -->
-
                     <control type="group">
                         <width>$PARAM[misc]</width>
                         <include content="Object_ItemBack">
@@ -2810,9 +2795,6 @@
                         </include>
 
                         <control type="group">
-                            <!-- <include content="Dimension_Padding">
-                                <param name="pad">10</param>
-                            </include> -->
                             <include content="Object_Layout_Image_Rectangle">
                                 <param name="diffuse">$PARAM[diffuse]</param>
                                 <param name="icon">$PARAM[icon]</param>
@@ -2850,31 +2832,11 @@
                             <align>left</align>
                             <aligny>center</aligny>
                             <font>font_mini_plot</font>
-                            <!-- <include condition="$PARAM[selected]">Color_SelectedText</include> -->
-                            <!-- <include content="Object_TextColor" condition="$PARAM[selected]">
-                                <param name="textcolor">$PARAM[textcolor]_100</param>
-                            </include> -->
                             <label fallback="19055">$VAR[Label_Landscape_Plot$PARAM[affix]]</label>
                             <textcolor>$PARAM[textcolor]_70</textcolor>
                             <autoscroll>false</autoscroll>
                         </control>
                     </control>
-
-                    <!-- <include content="Object_ProgressLine">
-                        <param name="progress">$PARAM[listitem].$PARAM[progress]</param>
-                    </include> -->
-
-                    <!-- <include content="Object_Indicator" condition="!$PARAM[selected]">
-                        <param name="affix">$PARAM[affix]</param>
-                        <param name="listitem">$PARAM[listitem]</param>
-                    </include>
-
-                    <include content="Object_SelectBox" condition="$PARAM[selected]">
-                        <param name="affix">$PARAM[affix]</param>
-                        <param name="indicator">true</param>
-                        <param name="focusbounce">true</param>
-                        <param name="listitem">$PARAM[listitem]</param>
-                    </include> -->
 
                     <include content="Layout_Labels" condition="![$PARAM[variation]]">
                         <param name="top">-65</param>
