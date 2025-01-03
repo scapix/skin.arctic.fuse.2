@@ -116,7 +116,7 @@
                             <param name="include_hintlabel">true</param>
                             <param name="id">9005</param>
                             <param name="groupid">9105</param>
-                            <param name="label">Fullscreen</param>
+                            <param name="label">$LOCALIZE[35232]</param>
                             <param name="icon">special://skin/extras/icons/fullscreen.png</param>
                             <param name="visible">Player.HasVideo</param>
                             <onback condition="!String.IsEmpty(Window.Property(TrailerFullscreen)) + Player.HasVideo">ClearProperty(TrailerFullscreen,1123)</onback>
@@ -124,6 +124,15 @@
                             <onclick condition="String.IsEmpty(Window.Property(TrailerFullscreen))">SetProperty(TrailerFullscreen,True,1123)</onclick>
                             <onclick condition="!String.IsEmpty(Window.Property(TrailerFullscreen))">ClearProperty(TrailerFullscreen,1123)</onclick>
                             <onunfocus>ClearProperty(TrailerFullscreen,1123)</onunfocus>
+                        </include>
+                        <include content="DialogInfo_Button">
+                            <param name="include_hintlabel">true</param>
+                            <param name="id">9006</param>
+                            <param name="groupid">9106</param>
+                            <param name="label">$LOCALIZE[31147]</param>
+                            <param name="icon">special://skin/extras/icons/videoplay.png</param>
+                            <param name="visible">!String.IsEmpty(Window(Home).Property(PlayTrailerItems)) + !String.IsEqual(Window(Home).Property(PlayTrailerItems),-)</param>
+                            <onclick>ActivateWindow(1122)</onclick>
                         </include>
                     </control>
                 </control>
