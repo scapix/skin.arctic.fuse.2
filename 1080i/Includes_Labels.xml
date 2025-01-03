@@ -128,8 +128,8 @@
     </variable>
 
     <variable name="Label_Settings_KeyboardSize">
-        <value condition="Skin.HasSetting(Keyboard.FullSized)">$LOCALIZE[31439]</value>
-        <value>$LOCALIZE[1438]</value>
+        <value condition="Skin.HasSetting(Keyboard.MiniSized)">$LOCALIZE[1438]</value>
+        <value>$LOCALIZE[31439]</value>
     </variable>
 
     <variable name="Label_Settings_WallOrientation">
