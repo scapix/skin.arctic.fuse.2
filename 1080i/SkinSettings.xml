@@ -86,7 +86,7 @@
                         <texturesliderbar colordiffuse="main_logo" border="4">scrollbar/scrollv.png</texturesliderbar>
                         <showonepage>false</showonepage>
                         <include>Texture_Scrollbar_V</include>
-                        <onleft>5</onleft>
+                        <onleft>10001</onleft>
                     </control>
 
                     <include content="Settings_Right_Grouplist">
