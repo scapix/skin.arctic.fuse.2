@@ -516,7 +516,7 @@
                 <param name="id">1</param>
                 <bordersize>3</bordersize>
                 <left>20</left>
-                <texture colordiffuse="cd808080" border="40,0,40,0" fallback="pvr/genre/0.png">$INFO[ListItem.Property(GenreType),pvr/genre/,.png]</texture>
+                <texture colordiffuse="cd808080" border="40,0,40,0" fallback="pvr/genre/0.png">$VAR[PVR_GenreType,pvr/genre/,.png]</texture>
             </include>
 
             <include content="Object_Control" condition="!$PARAM[selected]">
@@ -524,7 +524,7 @@
                 <param name="id">1</param>
                 <bordersize>3</bordersize>
                 <left>20</left>
-                <texture colordiffuse="40808080" border="40,0,40,0" fallback="pvr/genre/0.png">$INFO[ListItem.Property(GenreType),pvr/genre/,.png]</texture>
+                <texture colordiffuse="55808080" border="40,0,40,0" fallback="pvr/genre/0.png">$VAR[PVR_GenreType,pvr/genre/,.png]</texture>
             </include>
 
             <include content="Object_Control" condition="!$PARAM[selected]">
