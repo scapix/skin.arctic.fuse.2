@@ -165,6 +165,25 @@
             </control>
             <include>View_PVR_InformationPanel</include>
         </control>
+        <control type="group">
+            <visible>Control.IsVisible(502)</visible>
+            <include content="Info_Viewline">
+                <param name="label">[CAPITALIZE]$VAR[Label_Header_Main][/CAPITALIZE]</param>
+            </include>
+            <control type="group">
+                <include>Dimension_PVR_HalfGuide</include>
+                <include>View_PVR_ProgrammePanel</include>
+                <include content="View_PVRGuide_Standard">
+                    <param name="id">502</param>
+                    <param name="progresstexture">pvr/progressline-half.png</param>
+                    <param name="viewtype_label">$LOCALIZE[571]</param>
+                </include>
+            </control>
+            <control type="group">
+                <include>Info_Panel_Dimensions</include>
+                <include>Info_Panel</include>
+            </control>
+        </control>
     </include>
 
     <include name="View_PVR_Full">
@@ -189,6 +208,7 @@
             <include>View_PVR_GroupSwitcher</include>
             <control type="group">
                 <visible>!Control.IsVisible(52)</visible>
+                <visible>!Control.IsVisible(502)</visible>
                 <include>View_Row_Header</include>
             </control>
         </control>
@@ -269,6 +289,14 @@
                             <param name="include_customwidth">$PARAM[include_customwidth]</param>
                             <param name="visible">true</param>
                             <onclick>SendClick(2)</onclick>
+
+                            <!-- Reset Overlay onclick for View BEFORE the one needed (so that it switches onclick) -->
+                            <onclick condition="Window.IsVisible(MyPVRGuide.xml) + !Control.IsVisible(501)">SetProperty(Background.ShowOverlay,True,Home)</onclick>
+                            <onclick condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(501)">ClearProperty(Background.ShowOverlay,Home)</onclick>
+
+                            <!-- Reset Overlay onclick for View BEFORE the one needed (so that it switches onclick) -->
+                            <onclick condition="Window.IsVisible(MyPVRChannels.xml) + !Control.IsVisible(51)">SetProperty(Background.ShowOverlay,True,Home)</onclick>
+                            <onclick condition="Window.IsVisible(MyPVRChannels.xml) + Control.IsVisible(51)">ClearProperty(Background.ShowOverlay,Home)</onclick>
                         </include>
 
                         <!-- Sort -->
