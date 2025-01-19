@@ -86,7 +86,7 @@
     </include>
 
     <include name="List_EPGGrid">
-        <param name="programheight">80</param>
+        <param name="programheight">60</param>
         <param name="programwidth">480</param>
         <param name="channelheight">60</param>
         <param name="channelwidth">520</param>

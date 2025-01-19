@@ -47,7 +47,7 @@
                 <param name="detailed">$PARAM[detailed]</param>
                 <param name="timeblocks">$PARAM[timeblocks]</param>
                 <param name="rulerunit">$PARAM[rulerunit]</param>
-                <param name="border_genre">37</param>
+                <param name="border_genre">40,0,40,0</param>
                 <param name="channelright">40</param>
                 <param name="channelwidth">440</param>
                 <onup>$PARAM[id]</onup>
@@ -107,6 +107,7 @@
 
     <include name="View_PVR_ProgrammePanel">
         <control type="group">
+            <visible>false</visible> <!-- hide bright pannel behind pvr -->
             <include>Settings_Box</include>
             <bottom>80</bottom>
             <top>40</top>
