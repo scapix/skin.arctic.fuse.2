@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="View_MediaWindows_ID">
-        <views>50,51,52,53,54,57,58,59,500,510,520,530,540,560,570,580,590,502,512,522,532,542,572,582,592,550,551,552,553,554,555</views>
+        <views>50,51,52,53,54,57,58,59,500,510,520,530,540,560,570,580,590,502,512,522,532,542,572,582,592,550,551,552,553,554,555,561</views>
     </include>
 
     <include name="View_Row_Header">
@@ -51,7 +51,8 @@
             <onright>Action(NextLetter)</onright>
             <onright>SetFocus(610)</onright>
             <onfocus condition="!$EXP[Exp_IsAlphabetStrip] + !Integer.IsEqual(Container.NumPages,1)">SetFocus(60)</onfocus>
-            <onfocus condition="Integer.IsEqual(Container.NumPages,1)">SetFocus(8000)</onfocus>
+            <onfocus condition="Integer.IsEqual(Container.NumPages,1) + String.IsEmpty(Control.GetLabel(19).index(1))">SetFocus(8000)</onfocus>
+            <onfocus condition="Integer.IsEqual(Container.NumPages,1) + !String.IsEmpty(Control.GetLabel(19).index(1))">SetFocus(600,$VAR[Action_View_Filter_Focus],absolute)</onfocus>
         </include>
 
         <include content="Object_Hidden_Button">
@@ -68,7 +69,8 @@
             <onfocus condition="!$EXP[Exp_IsAlphabetStrip] + !Integer.IsEqual(Container.NumPages,1) + $EXP[Exp_View_Scrollbar_Mini_V]">SetFocus(64)</onfocus>
             <onfocus condition="!$EXP[Exp_IsAlphabetStrip] + !Integer.IsEqual(Container.NumPages,1) + $EXP[Exp_View_Scrollbar_Midi_V]">SetFocus(65)</onfocus>
             <onfocus condition="!$EXP[Exp_IsAlphabetStrip] + !Integer.IsEqual(Container.NumPages,1) + $EXP[Exp_View_Scrollbar_Maxi_V]">SetFocus(66)</onfocus>
-            <onfocus condition="Integer.IsEqual(Container.NumPages,1)">SetFocus(8000)</onfocus>
+            <onfocus condition="Integer.IsEqual(Container.NumPages,1) + String.IsEmpty(Control.GetLabel(19).index(1))">SetFocus(8000)</onfocus>
+            <onfocus condition="Integer.IsEqual(Container.NumPages,1) + !String.IsEmpty(Control.GetLabel(19).index(1))">SetFocus(600,$VAR[Action_View_Filter_Focus],absolute)</onfocus>
         </include>
     </include>
 
@@ -177,6 +179,7 @@
         <include condition="$EXP[Exp_View_570_Include]">View_570_Board_Wall</include>
         <include condition="$EXP[Exp_View_580_Include]">View_580_Quad_Wall</include>
         <include condition="$EXP[Exp_View_590_Include]">View_590_Disc_Wall</include>
+        <include condition="$EXP[Exp_View_561_Include]">View_561_Banner_Wall</include>
     </include>
 
     <include name="View_Row_Items_FavouritesViews">
@@ -382,10 +385,27 @@
 
     <include name="View_Scrollbar_Count">
         <include content="View_Furniture_Bottom_ViewLine">
-            <param name="visible">$EXP[Exp_View_ScrollFilter_HasFocus]</param>
             <param name="label">$LOCALIZE[31135]$INFO[Container.CurrentPage, , $LOCALIZE[20163] ]$INFO[Container.NumPages]</param>
-            <!-- <param name="label">$INFO[Container.NumItems,, $LOCALIZE[31022]]</param> -->
+            <param name="visible">$EXP[Exp_View_ScrollFilter_HasFocus]</param>
             <param name="align">right</param>
+        </include>
+        <include content="OSD_CastInfo_HintText">
+            <param name="label">$LOCALIZE[31463]</param>
+            <param name="visible">$EXP[Exp_View_ScrollFilterHorz_HasFocus]</param>
+            <param name="centerbottom">-50</param>
+            <param name="left">0</param>
+            <param name="fade_in">false</param>
+            <param name="fade_out">false</param>
+            <param name="arrow_direction">down</param>
+        </include>
+        <include content="OSD_CastInfo_HintText">
+            <param name="label">$LOCALIZE[31464]</param>
+            <param name="visible">$EXP[Exp_View_ScrollFilterVert_HasFocus]</param>
+            <param name="centerbottom">-50</param>
+            <param name="left">0</param>
+            <param name="fade_in">false</param>
+            <param name="fade_out">false</param>
+            <param name="arrow_direction">right</param>
         </include>
     </include>
 

@@ -242,7 +242,7 @@
             <include>Dimension_Bottombar</include>
             <control type="group">
                 <include>Dimension_Furniture_Gutters</include>
-                <include content="View_Furniture_Bottom_ViewLine" condition="Window.IsMedia + !Window.IsVisible(addonbrowser) + !Window.IsVisible(eventlog)">
+                <include content="View_Furniture_Bottom_ViewLine" condition="Window.IsMedia + !Window.IsVisible(addonbrowser) + !Window.IsVisible(eventlog) + !Window.IsVisible(MyMusicPlaylistEditor.xml)">
                     <param name="visible">true</param>
                     <param name="label">$INFO[Container.NumItems,, $LOCALIZE[31022]]</param>
                 </include>
@@ -330,7 +330,7 @@
                         <include content="Object_Control" condition="$PARAM[hasprogress]">
                             <param name="control">group</param>
                             <description>Busy animation</description>
-                            <animation effect="rotate" condition="$PARAM[spinspinner]" start="0" end="360" loop="true" time="2000" center="auto">Conditional</animation>
+                            <animation effect="rotate" condition="$PARAM[spinspinner]" start="0" end="-360" loop="true" time="2000" center="auto">Conditional</animation>
                             <description>Busy animation</description>
                             <visible>$PARAM[spinnervisible]</visible>
                             <include content="Animation_Fade_Out">

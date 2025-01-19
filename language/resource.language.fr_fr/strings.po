@@ -442,10 +442,10 @@ msgctxt "#31090"
 msgid "In-Progress"
 msgstr "En cours"
 
-#: /1080i/SkinSettings.xml
+#: /1080i/Includes_SkinSettings.xml
 msgctxt "#31091"
-msgid "Blur background for classic widgets"
-msgstr "Flouter l'arrière-plan pour les widgets classiques"
+msgid "Add a \"more items\" folder to widgets with item limits"
+msgstr "Ajouter un dossier « plus d'éléments » aux widgets comportant des limites d'éléments"
 
 #: /1080i/Includes_Shortcuts_Window.xml
 msgctxt "#31092"
@@ -1380,7 +1380,7 @@ msgstr "Attribution"
 #: /1080i/Includes_Labels.xml
 msgctxt "#31291"
 msgid "Search for movies$COMMA tvshows$COMMA and more."
-msgstr "Recherchez des films$COMMA tvshows$COMMA et plus."
+msgstr "Recherchez des films, séries TV, et plus."
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31292"
@@ -1867,8 +1867,7 @@ msgctxt "#31392"
 msgid "Explore Widgets"
 msgstr "Explorer les widgets"
 
-#: /1080i/Includes_Items.xml
-#: Shorter label for use in info dialog buttons
+#: /1080i/Includes_Items.xml Shorter label for use in info dialog buttons
 msgctxt "#31393"
 msgid "Trailer"
 msgstr "Trailer"
@@ -2061,6 +2060,11 @@ msgctxt "#31435"
 msgid "TMDbHelper lookups"
 msgstr "Recherches TMDbHelper"
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31436"
+msgid "Cycle background extrafanart"
+msgstr "Arrière-plan extrafanart cyclique"
+
 msgctxt "#31437"
 msgid "Choose spotlight"
 msgstr "Choisir Spotlight"
@@ -2095,6 +2099,11 @@ msgctxt "#31443"
 msgid "Open path in dialog"
 msgstr "Ouvrir le chemin dans la boîte de dialogue"
 
+#: /1080i/Settings.xml
+msgctxt "#31444"
+msgid "Customisation"
+msgstr "Personnalisation"
+
 #: /1080i/SkinSettings.xml
 msgctxt "#31445"
 msgid "Replace search with discover"
@@ -2112,8 +2121,8 @@ msgstr "Logo Kodi"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31448"
-msgid "Show \"More\" item on limited widgets"
-msgstr "Afficher l'élément \"Plus\" sur les widgets limités"
+msgid "This category contains customisation options for"
+msgstr "Cette catégorie contient des options de personnalisation pour"
 
 #: /1080i/Custom_1180_Wizard.xml
 msgctxt "#31449"
@@ -2155,10 +2164,20 @@ msgctxt "#31456"
 msgid "Prebuilt"
 msgstr "Prédéfini"
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31457"
+msgid "Scrollbar"
+msgstr "Barre de défilement"
+
 #: /1080i/Includes_Labels.xml
 msgctxt "#31458"
 msgid "Monochrome"
 msgstr "Monochrome"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31459"
+msgid "Letter"
+msgstr "Lettre"
 
 #: /1080i/SkinSettings.xml /1080i/MusicOSD.xml
 msgctxt "#31460"
@@ -2170,10 +2189,30 @@ msgctxt "#31461"
 msgid "Choose preset"
 msgstr "Choisir un préréglage"
 
+#: /1080i/Includes_Views_Wall.xml
+msgctxt "#31462"
+msgid "Wall Banner"
+msgstr "Mur Bannière"
+
+#: /1080i/Includes_Views.xml
+msgctxt "#31463"
+msgid "Press down for filter and view options"
+msgstr "Appuyez vers le bas pour accéder aux options de filtrage et d'affichage"
+
+#: /1080i/Includes_Views.xml
+msgctxt "#31464"
+msgid "Press right for filter and view options"
+msgstr "Appuyez à droite pour accéder aux options de filtrage et d'affichage"
+
 #: /1080i/Custom_1161_Dialog_Weather.xml
 msgctxt "#31465"
 msgid "Rain chance"
 msgstr "Probabilité de pluie"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31466"
+msgid "Blur background"
+msgstr "Arrière-plan flou"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31467"
@@ -2219,6 +2258,11 @@ msgstr "Chaque élément du menu a son propre groupe de widgets."
 msgctxt "#31475"
 msgid "The spotlight is a special fullscreen widget designed to showcase one item at a time."
 msgstr "Le Spotlight est un widget plein écran conçu pour afficher un élément à la fois."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31476"
+msgid "This category contains acknowledgements, contributions, and thanks."
+msgstr "Cette catégorie contient des contributions et des remerciements."
 
 #: /1080i/SkinSettings.xml /1080i/Includes_Items.xml
 msgctxt "#31477"
@@ -2269,6 +2313,11 @@ msgstr "Arrêter"
 msgctxt "#31486"
 msgid "Dialog"
 msgstr "Dialogue"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31487"
+msgid "and"
+msgstr "et"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31488"
@@ -2425,10 +2474,30 @@ msgctxt "#31518"
 msgid "Highlight type"
 msgstr "Type de surbrillance"
 
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31519"
+msgid "Empty widget placeholder"
+msgstr "Placeholder pour widget vide"
+
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31521"
 msgid "Edit global widgets"
 msgstr "Modifier les widgets globaux"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31522"
+msgid "Hiding empty widgets may cause positioning issues after video playback."
+msgstr "Masquer les widgets vides peut entraîner des problèmes de positionnement après la lecture de la vidéo."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31523"
+msgid "It is recommended to delete any unused widgets from your configuration instead of hiding them."
+msgstr "Il est recommandé de supprimer tous les widgets inutilisés de votre configuration au lieu de les masquer."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31524"
+msgid "There is also an overhead refresh cost to performance associated with hiding empty widgets."
+msgstr "Il y a également un coût d'actualisation supplémentaire sur les performances associé au masquage des widgets vides."
 
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31533"

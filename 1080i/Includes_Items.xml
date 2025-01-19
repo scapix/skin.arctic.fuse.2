@@ -38,6 +38,62 @@
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_MPAACountries)">Items_Settings_MPAACountries</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_VideoOSDWidgets)">Items_Settings_VideoOSDWidgets</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_VideoInfoWidgets)">Items_Settings_VideoInfoWidgets</include>
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_InfolineAdditionalTags)">Items_Settings_InfolineAdditionalTags</include>    
+    </include>
+
+    <include name="Items_Settings_InfolineAdditionalTags">
+        <include content="Settings_Button" description="Source" condition="Skin.HasSetting(Info.EnablePillboxStyle)">
+            <param name="id">8001</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <onclick>Skin.ToggleSetting(Infoline.DisableSource)</onclick>
+            <selected>!Skin.HasSetting(Infoline.DisableSource) | !Skin.HasSetting(Info.EnablePillboxStyle)</selected>
+            <enable>Skin.HasSetting(Info.EnablePillboxStyle)</enable>
+            <label>$LOCALIZE[21870]</label>
+        </include>
+        <include content="Settings_Button" description="HDR">
+            <param name="id">8002</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <onclick>Skin.ToggleSetting(Infoline.DisableHDR)</onclick>
+            <selected>!Skin.HasSetting(Infoline.DisableHDR)</selected>
+            <label>HDR</label>
+        </include>
+        <include content="Settings_Button" description="Audio Channels">
+            <param name="id">8003</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <onclick>Skin.ToggleSetting(Infoline.DisableAudioChannels)</onclick>
+            <selected>!Skin.HasSetting(Infoline.DisableAudioChannels)</selected>
+            <label>$LOCALIZE[21444]</label>
+        </include>
+        <include content="Settings_Button" description="Version">
+            <param name="id">8004</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <onclick>Skin.ToggleSetting(Infoline.DisableVersion)</onclick>
+            <selected>!Skin.HasSetting(Infoline.DisableVersion)</selected>
+            <label>$LOCALIZE[40013]</label>
+        </include>
+        <include content="Settings_Button" description="Collection">
+            <param name="id">8005</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <onclick>Skin.ToggleSetting(Infoline.DisableCollection)</onclick>
+            <selected>!Skin.HasSetting(Infoline.DisableCollection)</selected>
+            <label>$LOCALIZE[31108]</label>
+        </include>
+        <include content="Settings_Button" description="None">
+            <param name="id">8006</param>
+            <param name="control">button</param>
+            <param name="dialog">true</param>
+            <onclick>Skin.SetBool(Infoline.DisableSource)</onclick>
+            <onclick>Skin.SetBool(Infoline.DisableHDR)</onclick>
+            <onclick>Skin.SetBool(Infoline.DisableAudioChannels)</onclick>
+            <onclick>Skin.SetBool(Infoline.DisableVersion)</onclick>
+            <onclick>Skin.SetBool(Infoline.DisableCollection)</onclick>
+            <label>$LOCALIZE[192]</label>
+        </include>
     </include>
 
     <include name="Items_Settings_VideoOSDWidgets">
@@ -791,49 +847,6 @@
         </include>
     </include>
 
-    <include name="Items_MusicPlaylistEditor_MenuBar">
-        <param name="vertical">true</param>
-        <param name="itemgap">0</param>
-        <definition>
-            <include content="DialogInfo_Button">
-                <param name="id">9001</param>
-                <param name="groupid">9101</param>
-                <param name="label">$LOCALIZE[15067]</param>
-                <param name="icon">special://skin/extras/icons/circle-xmark.png</param>
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <onclick>PreviousMenu</onclick>
-            </include>
-            <include content="DialogInfo_Button">
-                <param name="id">6</param>
-                <param name="groupid">9106</param>
-                <param name="label">$LOCALIZE[502]</param>
-                <param name="icon">special://skin/extras/icons/folder.png</param>
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
-            </include>
-            <include content="DialogInfo_Button">
-                <param name="id">7</param>
-                <param name="groupid">9107</param>
-                <param name="label">$LOCALIZE[190]</param>
-                <param name="icon">special://skin/extras/icons/floppy-disk.png</param>
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
-            </include>
-            <include content="DialogInfo_Button">
-                <param name="id">8</param>
-                <param name="groupid">9108</param>
-                <param name="label">$LOCALIZE[192]</param>
-                <param name="icon">special://skin/extras/icons/triangle-exclamation.png</param>
-                <param name="vertical">$PARAM[vertical]</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">true</param>
-            </include>
-        </definition>
-    </include>
-
     <include name="Items_DialogVideoInfo_MenuBar">
         <param name="include_customwidth">true</param>
         <param name="include_hintlabel">true</param>
@@ -858,13 +871,15 @@
                 <include content="Action_PlayTrailer_OnClick">
                     <param name="trailer">ListItem.Trailer</param>
                     <param name="trailer_fallback">Window(Home).Property(TMDbHelper.ListItem.Trailer)</param>
+                    <param name="title">$VAR[Label_Title]</param>
+                    <param name="items">$VAR[Path_VideoInfo_Trailers]</param>
                 </include>
                 <onfocus>SetProperty(DetailsView,Trailer)</onfocus>
             </include>
 
             <!-- Versions -->
             <include content="DialogInfo_Button" condition="String.IsEqual(ListItem.DBType,movie) + ListItem.HasVideoVersions">
-                <param name="id">14</param>
+                <param name="id">4014</param>
                 <param name="groupid">4121</param>
                 <param name="vertical">false</param>
                 <param name="label">$LOCALIZE[40000]</param>
@@ -874,6 +889,7 @@
                 <param name="textcolor">$PARAM[textcolor]</param>
                 <param name="nf_opacity">$PARAM[nf_opacity]</param>
                 <param name="include_customwidth">$PARAM[include_customwidth]</param>
+                <onclick>SetFocus(8908)</onclick>
             </include>
 
             <!-- Extras -->

@@ -51,6 +51,7 @@
                 <param name="misc">$PARAM[misc]</param>
                 <param name="variation">$PARAM[variation]</param>
                 <param name="indicator">$PARAM[indicator]</param>
+                <param name="include_detailed_labels">$PARAM[include_detailed_labels]</param>
                 <nested />
             </include>
         </definition>
@@ -85,74 +86,83 @@
     </include>
 
     <include name="List_EPGGrid">
+        <param name="programheight">80</param>
+        <param name="programwidth">480</param>
         <param name="channelheight">60</param>
         <param name="channelwidth">520</param>
+        <param name="rulerheight">55</param>
+        <param name="rulerdateheight">105</param>
         <param name="include_channels">Layout_PVRGuide_Channels</param>
         <param name="include_programs">Layout_PVRGuide_Programs</param>
+        <param name="include_ruler">Layout_PVRGuide_Ruler</param>
+        <param name="channelbottom">0</param>
+        <param name="channelright">20</param>
+        <param name="rulerunit">6</param>
+        <param name="timeblocks">32</param>
+        <param name="programs_left">0</param>
+        <param name="programs_left_text">40</param>
         <definition>
             <control type="epggrid" id="$PARAM[id]">
                 <nested />
                 <scrolltime tween="quadratic">300</scrolltime>
-                <timeblocks>32</timeblocks>
-                <rulerunit>6</rulerunit>
-                <rulerdatelayout height="105" />
-                <rulerlayout height="55">
-                    <control type="group">
-                        <bottom>5</bottom>
-                        <top>-10</top>
-                        <control type="image">
-                            <width>1</width>
-                            <texture colordiffuse="main_fg_30">common/white.png</texture>
-                            <bottom>15</bottom>
-                            <top>15</top>
-                        </control>
-                        <control type="label">
-                            <bottom>5</bottom>
-                            <left>10</left>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>font_tiny</font>
-                            <label>$INFO[ListItem.Label]</label>
-                            <textcolor>main_fg_70</textcolor>
-                            <shadowcolor>main_bg_12</shadowcolor>
-                        </control>
-                    </control>
+                <timeblocks>$PARAM[timeblocks]</timeblocks>
+                <rulerunit>$PARAM[rulerunit]</rulerunit>
+                <rulerdatelayout height="$PARAM[rulerdateheight]"  width="$PARAM[rulerdatewidth]" />
+                <rulerlayout height="$PARAM[rulerheight]" width="$PARAM[rulerwidth]">
+                    <include>$PARAM[include_ruler]</include>
                 </rulerlayout>
                 <channellayout height="$PARAM[channelheight]" width="$PARAM[channelwidth]">
                     <include content="$PARAM[include_channels]">
                         <param name="detailed">$PARAM[detailed]</param>
-                        <param name="item_h">$PARAM[channelheight]</param>
+                        <param name="bottom">$PARAM[channelbottom]</param>
+                        <param name="right">$PARAM[channelright]</param>
                     </include>
                 </channellayout>
                 <focusedchannellayout height="$PARAM[channelheight]" width="$PARAM[channelwidth]">
                     <include content="$PARAM[include_channels]">
                         <param name="selected">false</param>
                         <param name="detailed">$PARAM[detailed]</param>
-                        <param name="item_h">$PARAM[channelheight]</param>
+                        <param name="bottom">$PARAM[channelbottom]</param>
+                        <param name="right">$PARAM[channelright]</param>
+
                         <visible>[$EXP[Exp_PVRGuide_NoFocus]]</visible>
                     </include>
                     <include content="$PARAM[include_channels]">
                         <param name="selected">true</param>
                         <param name="detailed">$PARAM[detailed]</param>
-                        <param name="item_h">$PARAM[channelheight]</param>
+                        <param name="bottom">$PARAM[channelbottom]</param>
+                        <param name="right">$PARAM[channelright]</param>
+
                         <visible>![$EXP[Exp_PVRGuide_NoFocus]]</visible>
                     </include>
                 </focusedchannellayout>
-                <itemlayout height="$PARAM[channelheight]" width="480">
+                <itemlayout height="$PARAM[programheight]" width="$PARAM[programwidth]">
                     <include content="$PARAM[include_programs]">
                         <param name="detailed">$PARAM[detailed]</param>
+                        <param name="border">$PARAM[border]</param>
+                        <param name="border_genre">$PARAM[border_genre]</param>
+                        <param name="left">$PARAM[programs_left]</param>
+                        <param name="left_text">$PARAM[programs_left_text]</param>
                     </include>
                 </itemlayout>
-                <focusedlayout height="$PARAM[channelheight]" width="480">
+                <focusedlayout height="$PARAM[programheight]" width="$PARAM[programwidth]">
                     <include content="$PARAM[include_programs]">
                         <param name="selected">false</param>
                         <param name="visible">[$EXP[Exp_PVRGuide_NoFocus]]</param>
                         <param name="detailed">$PARAM[detailed]</param>
+                        <param name="border">$PARAM[border]</param>
+                        <param name="border_genre">$PARAM[border_genre]</param>
+                        <param name="left">$PARAM[programs_left]</param>
+                        <param name="left_text">$PARAM[programs_left_text]</param>
                     </include>
                     <include content="$PARAM[include_programs]">
                         <param name="selected">true</param>
                         <param name="visible">![$EXP[Exp_PVRGuide_NoFocus]]</param>
                         <param name="detailed">$PARAM[detailed]</param>
+                        <param name="border">$PARAM[border]</param>
+                        <param name="border_genre">$PARAM[border_genre]</param>
+                        <param name="left">$PARAM[programs_left]</param>
+                        <param name="left_text">$PARAM[programs_left_text]</param>
                     </include>
                 </focusedlayout>
             </control>
@@ -450,10 +460,12 @@
     </include>
 
     <include name="List_Banner_Row">
+        <param name="orientation">horizontal</param>
+        <param name="control">fixedlist</param>
         <definition>
             <include content="List_Core">
-                <param name="orientation">horizontal</param>
-                <param name="control">fixedlist</param>
+                <param name="orientation">$PARAM[orientation]</param>
+                <param name="control">$PARAM[control]</param>
                 <param name="id">$PARAM[id]</param>
                 <param name="item_w">view_banner_item_w</param>
                 <param name="item_h">view_poster_item_h</param>
@@ -466,6 +478,29 @@
                 <param name="hidden_button">$PARAM[hidden_button]</param>
                 <nested />
                 <include>List_Banner_Row_Movement</include>
+            </include>
+        </definition>
+    </include>
+
+    <include name="List_MiniBanner_Row">
+        <param name="orientation">horizontal</param>
+        <param name="control">fixedlist</param>
+        <definition>
+            <include content="List_Core">
+                <param name="orientation">$PARAM[orientation]</param>
+                <param name="control">$PARAM[control]</param>
+                <param name="id">$PARAM[id]</param>
+                <param name="item_w">view_board_item_w</param>
+                <param name="item_h">100</param>
+                <param name="itemlayout_w">view_board_itemlayout_w</param>
+                <param name="itemlayout_h">140</param>
+                <param name="itemlayout_include">Layout_Banner</param>
+                <param name="offset_y">$PARAM[offset_y]</param>
+                <param name="detailed">$PARAM[detailed]</param>
+                <param name="hidden_button_enabled">$PARAM[hidden_button_enabled]</param>
+                <param name="hidden_button">$PARAM[hidden_button]</param>
+                <param name="diffuse">diffuse/banner_w560_h100.png</param>
+                <nested />
             </include>
         </definition>
     </include>
