@@ -1134,7 +1134,6 @@
                 <onclick condition="$PARAM[onclick_condition_alt]">$PARAM[onclick_alt]</onclick>
                 <onup>$PARAM[onup]</onup>
                 <onup>$PARAM[onup_02]</onup>
-                <ondown>Close</ondown>
                 <ondown>ActivateWindow($VAR[Action_OSD_Main_OnDown])</ondown>
                 <label>$PARAM[label]</label>
             </control>
@@ -1171,9 +1170,6 @@
 
                 <onleft>6005</onleft>
                 <onright>6008</onright>
-
-                <ondown>Close</ondown>
-                <ondown>ActivateWindow($VAR[Action_OSD_Main_OnDown])</ondown>
 
                 <include content="OSD_CustomDialog_FakeButton" condition="![$PARAM[button_1]]">
                     <param name="id">1</param>
