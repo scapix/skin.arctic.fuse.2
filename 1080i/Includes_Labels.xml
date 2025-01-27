@@ -334,24 +334,6 @@
         <value>$LOCALIZE[31353] / $LOCALIZE[20161]</value>
     </variable>
 
-    <variable name="Label_VideoInfo_CastAge">
-        <value condition="!String.IsEmpty(Container(5003).ListItem.Property(Age)) + !Skin.HasSetting(Info.UseLocalCast)">$INFO[Container(5003).ListItem.Property(Age),, $LOCALIZE[31057]]$INFO[Container(5003).ListItem.Property(Deathday),   † ,]</value>
-        <value condition="!String.IsEmpty(Container(5203).ListItem.Property(Age)) + !Container(5203).IsUpdating">$INFO[Container(5203).ListItem.Property(Age),, $LOCALIZE[31057]]$INFO[Container(5203).ListItem.Property(Deathday),   † ,]</value>
-    </variable>
-
-    <variable name="Label_VideoInfo_CastBio">
-        <value condition="!String.IsEmpty(Container(5003).ListItem.Plot) + !Skin.HasSetting(Info.UseLocalCast)">$INFO[Container(5003).ListItem.Plot]</value>
-        <value condition="Container(5203).IsUpdating">$LOCALIZE[31023] [LOWERCASE]$LOCALIZE[14116][/LOWERCASE]...</value>
-        <value condition="!String.IsEmpty(Container(5203).ListItem.Plot)">$INFO[Container(5203).ListItem.Plot]</value>
-        <value>$LOCALIZE[19055]</value>
-    </variable>
-
-    <variable name="Label_VideoInfo_CastBio_Prop">
-        <value condition="!String.IsEmpty(Container(5003).ListItem.Plot)">$ESCINFO[Container(5003).ListItem.Plot]</value>
-        <value condition="!Container(5203).IsUpdating + !String.IsEmpty(Container(5203).ListItem.Plot)">$ESCINFO[Container(5203).ListItem.Plot]</value>
-        <value>$LOCALIZE[19055]</value>
-    </variable>
-
     <variable name="Label_Setting_BackgroundBlur">
         <value condition="Skin.String(Background.ArtworkStyle,Simple)">$LOCALIZE[31438] ($LOCALIZE[31254])</value>
         <value condition="Skin.String(Background.ArtworkStyle,Fanart)">$LOCALIZE[20445] ($LOCALIZE[31254])</value>
@@ -966,9 +948,9 @@
         <value condition="[Player.Seeking | Player.HasPerformedSeek(3)] + !String.IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekOffset, ,]</value>
         <value condition="Player.Seeking + String.IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekStepSize, ,]</value>
         <value condition="Player.Caching">$LOCALIZE[439] $INFO[Player.CacheLevel,,%]</value>
-        <value condition="Player.Paused">$LOCALIZE[112]</value>
         <value condition="!String.IsEmpty(Player.PlaySpeed) + !String.IsEqual(Player.PlaySpeed,1.00) + !String.IsEqual(Player.PlaySpeed,0.00)">$INFO[Player.PlaySpeed,$LOCALIZE[31071] ,x]</value>
-        <value condition="VideoPlayer.Content(movies) + !String.IsEmpty(Player.Chapter) + !String.IsEqual(Player.Chapter,00) + !String.IsEmpty(Player.ChapterCount) + !String.IsEqual(Player.ChapterCount,00) + [Player.Seeking | Player.HasPerformedSeek(3) | Integer.IsEqual(System.CurrentControlID,8200)]">$INFO[Player.Chapter,$LOCALIZE[21396] ,]$INFO[Player.ChapterCount, / ,]$INFO[Player.ChapterName, - ,]</value>
+        <value condition="!String.IsEmpty(Player.Chapter) + !String.IsEqual(Player.Chapter,00) + !String.IsEmpty(Player.ChapterCount) + !String.IsEqual(Player.ChapterCount,00) + [Player.Seeking | Player.HasPerformedSeek(3) | Integer.IsEqual(System.CurrentControlID,8200)]">$INFO[Player.Chapter,$LOCALIZE[21396] ,]$INFO[Player.ChapterCount, / ,]$INFO[Player.ChapterName, - ,]</value>
+        <value condition="Player.Paused">$LOCALIZE[112]</value>
         <value condition="VideoPlayer.Content(livetv) + !String.IsEmpty(VideoPlayer.ChannelNumberLabel)">$INFO[VideoPlayer.ChannelNumberLabel,$LOCALIZE[19029] ,]</value>
         <value>$LOCALIZE[31134]</value>
     </variable>
