@@ -37,14 +37,15 @@
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_Autoscroll)">Items_Settings_Autoscroll</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_MPAACountries)">Items_Settings_MPAACountries</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_VideoOSDWidgets)">Items_Settings_VideoOSDWidgets</include>
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_InfoStyle)">Items_Settings_InfoStyle</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_VideoInfoWidgets)">Items_Settings_VideoInfoWidgets</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_InfolineAdditionalTags)">Items_Settings_InfolineAdditionalTags</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_Viewmodes)">Items_Settings_Viewmodes</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_RatingsMovies)">Items_Settings_RatingsMovies</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_RatingsTVShows)">Items_Settings_RatingsTVShows</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_HomeMenuStyle)">Items_Settings_HomeMenuStyle</include>
-        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_HubCategoriesStyle)">Items_Settings_HubCategoriesStyle</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_WidgetStyle)">Items_Settings_WidgetStyle</include>
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_OSDStyle)">Items_Settings_OSDStyle</include>
     </include>
 
     <include name="Items_Settings_WidgetStyle">
@@ -85,30 +86,11 @@
         </include>
     </include>
 
-    <include name="Items_Settings_HubCategoriesStyle">
-        <include content="Settings_Button" description="Categories Icon">
-            <param name="dialog">true</param>
-            <param name="id">8001</param>
-            <param name="control">button</param>
-            <label>$LOCALIZE[736]</label>
-            <label2>$VAR[Label_Setting_HubsMenuStyle]</label2>
-            <onclick>Skin.ToggleSetting(Hubs.DisableTextCategories)</onclick>
-        </include>
-        <include content="Settings_Button" description="Spotlight button">
-            <param name="dialog">true</param>
-            <param name="id">8002</param>
-            <param name="control">button</param>
-            <label>$LOCALIZE[31105] [LOWERCASE]$LOCALIZE[31416][/LOWERCASE]</label>
-            <label2>$VAR[Label_Setting_Spotlight_UseMenuButton]</label2>
-            <onclick>Skin.ToggleSetting(Spotlight.UseMenuButton)</onclick>
-        </include>
-    </include>
-
     <include name="Items_Settings_HomeMenuStyle">
         <include content="Settings_Button" description="Expanded">
             <param name="dialog">true</param>
             <param name="id">8001</param>
-            <label>$LOCALIZE[736]</label>
+            <label>$LOCALIZE[10000] [LOWERCASE]$LOCALIZE[736][/LOWERCASE]</label>
             <label2>$VAR[Label_Setting_SideMenuStyle]</label2>
             <onclick>Skin.ToggleSetting(Home.ExpandedMenu)</onclick>
             <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
@@ -183,6 +165,27 @@
             <visible>![Skin.HasSetting(SideMenu.DisableSearchAndOptions) + $EXP[Exp_HomeMenu_IsExpanded]]</visible>
             <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
             <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
+        </include>
+        <include content="Settings_Label" description="Categories Icon">
+            <param name="dialog">true</param>
+            <param name="id">8008</param>
+            <label>$LOCALIZE[31114] $LOCALIZE[33063]</label>
+        </include>
+        <include content="Settings_Button" description="Categories Icon">
+            <param name="dialog">true</param>
+            <param name="id">8009</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[31150] [LOWERCASE]$LOCALIZE[736][/LOWERCASE]</label>
+            <label2>$VAR[Label_Setting_HubsMenuStyle]</label2>
+            <onclick>RunScript(script.skinvariables,run_dialog=select,preselect=$VAR[Label_Setting_HubsMenuStyle],heading=$LOCALIZE[31150] $LOCALIZE[736],separator=||,list=$LOCALIZE[31274]||$LOCALIZE[31329]||$LOCALIZE[21475],"executebuiltin_0=Skin.Reset(Hubs.MenuStyle)","executebuiltin_1=Skin.SetString(Hubs.MenuStyle,Text)","executebuiltin_2=Skin.SetString(Hubs.MenuStyle,Both)")</onclick>
+        </include>
+        <include content="Settings_Button" description="Spotlight button">
+            <param name="dialog">true</param>
+            <param name="id">8010</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[31105] [LOWERCASE]$LOCALIZE[31416][/LOWERCASE]</label>
+            <label2>$VAR[Label_Setting_Spotlight_UseMenuButton]</label2>
+            <onclick>Skin.ToggleSetting(Spotlight.UseMenuButton)</onclick>
         </include>
     </include>
 
@@ -284,6 +287,94 @@
         </include>
     </include>
 
+    <include name="Items_Settings_InfoStyle">
+        <include content="Settings_Button">
+            <param name="id">8001</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[20410]</label>
+            <onclick>Skin.ToggleSetting(Info.Button.DisableTrailer)</onclick>
+            <selected>!Skin.HasSetting(Info.Button.DisableTrailer)</selected>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8002</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[40000]</label>
+            <onclick>Skin.ToggleSetting(Info.Button.DisableVersions)</onclick>
+            <selected>!Skin.HasSetting(Info.Button.DisableVersions)</selected>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8003</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[40211]</label>
+            <onclick>Skin.ToggleSetting(Info.Button.DisableExtras)</onclick>
+            <selected>!Skin.HasSetting(Info.Button.DisableExtras)</selected>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8004</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>Trakt</label>
+            <onclick>Skin.ToggleSetting(Info.Button.DisableTrakt)</onclick>
+            <selected>!Skin.HasSetting(Info.Button.DisableTrakt)</selected>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8005</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>Wiki</label>
+            <onclick>Skin.ToggleSetting(Info.Button.DisableWiki)</onclick>
+            <selected>!Skin.HasSetting(Info.Button.DisableWiki)</selected>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8006</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[563]</label>
+            <onclick>Skin.ToggleSetting(Info.Button.DisableRating)</onclick>
+            <selected>!Skin.HasSetting(Info.Button.DisableRating)</selected>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8007</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>Youtube</label>
+            <onclick>Skin.ToggleSetting(Info.Button.DisableYoutube)</onclick>
+            <selected>!Skin.HasSetting(Info.Button.DisableYoutube)</selected>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8008</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[39123]</label>
+            <onclick>Skin.ToggleSetting(Info.Button.DisableArtwork)</onclick>
+            <selected>!Skin.HasSetting(Info.Button.DisableArtwork)</selected>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8009</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[184]</label>
+            <onclick>Skin.ToggleSetting(Info.Button.DisableRefresh)</onclick>
+            <selected>!Skin.HasSetting(Info.Button.DisableRefresh)</selected>
+        </include>
+        <include content="Settings_Label">
+            <param name="id">8020</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[33063]</label>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8021</param>
+            <param name="control">button</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[31158]</label>
+            <label2>$VAR[Label_Settings_InfoLayout]</label2>
+            <onclick>RunScript(script.skinvariables,run_dialog=select,heading=$LOCALIZE[19033] $LOCALIZE[31158],preselect=$VAR[Label_Settings_InfoLayout],separator=||,list=$LOCALIZE[571]||FlixArt||$LOCALIZE[31583]||$LOCALIZE[39173],"executebuiltin_0=Skin.Reset(Info.Layout)","executebuiltin_1=Skin.SetString(Info.Layout,Flix)","executebuiltin_2=Skin.SetString(Info.Layout,Flip)","executebuiltin_3=Skin.SetString(Info.Layout,Blur)")</onclick>
+        </include>
+    </include>
+
     <include name="Items_Settings_VideoInfoWidgets">
         <include content="Settings_Button">
             <param name="id">8001</param>
@@ -329,12 +420,28 @@
             <param name="id">8006</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
+            <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableSeasons)</onclick>
+            <selected>!Skin.HasSetting(VideoInfo.Widgets.DisableSeasons)</selected>
+            <label>$LOCALIZE[33054]</label>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8007</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableEpisodes)</onclick>
+            <selected>!Skin.HasSetting(VideoInfo.Widgets.DisableEpisodes)</selected>
+            <label>$LOCALIZE[20360]</label>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8008</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableStudio)</onclick>
             <selected>!Skin.HasSetting(VideoInfo.Widgets.DisableStudio)</selected>
             <label>$LOCALIZE[572]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8007</param>
+            <param name="id">8009</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableYear)</onclick>
@@ -342,7 +449,7 @@
             <label>$LOCALIZE[345]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8008</param>
+            <param name="id">8010</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableCrew)</onclick>
@@ -350,7 +457,7 @@
             <label>$LOCALIZE[31050]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8009</param>
+            <param name="id">8011</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableVideos)</onclick>
@@ -358,7 +465,7 @@
             <label>$LOCALIZE[10025]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8010</param>
+            <param name="id">8012</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableComments)</onclick>
@@ -366,7 +473,7 @@
             <label>$LOCALIZE[31334]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8011</param>
+            <param name="id">8013</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableRecommendations)</onclick>
@@ -374,7 +481,7 @@
             <label>$LOCALIZE[31018]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8012</param>
+            <param name="id">8014</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableGallery)</onclick>
@@ -382,12 +489,12 @@
             <label>$LOCALIZE[31098]</label>
         </include>
         <include content="Settings_Label">
-            <param name="id">8013</param>
+            <param name="id">8015</param>
             <param name="dialog">true</param>
             <label>$LOCALIZE[33063]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8014</param>
+            <param name="id">8016</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <label>$LOCALIZE[31356]</label>
@@ -395,7 +502,7 @@
             <selected>!Skin.HasSetting(Info.UseLocalCast)</selected>
         </include>
         <include content="Settings_Button">
-            <param name="id">8015</param>
+            <param name="id">8017</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <label>$LOCALIZE[31540]</label>
@@ -404,7 +511,7 @@
             <visible>!Skin.HasSetting(VideoInfo.Widgets.DisableCollection)</visible>
         </include>
         <include content="Settings_Button">
-            <param name="id">8016</param>
+            <param name="id">8018</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <label>$LOCALIZE[31539]</label>
@@ -582,6 +689,39 @@
         </include>
     </include>
 
+    <include name="Items_Settings_OSDStyle">
+        <include content="Settings_Button" description="Expanded info on OSD">
+            <param name="dialog">true</param>
+            <param name="id">8001</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[19033]</label>
+            <selected>Skin.HasSetting(OSD.DisplayInfoOnControls)</selected>
+            <onclick>Skin.ToggleSetting(OSD.DisplayInfoOnControls)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="Expanded info landscape art">
+            <param name="dialog">true</param>
+            <param name="id">8002</param>
+            <param name="control">radiobutton</param>
+            <param name="slevel">2</param>
+            <label>$LOCALIZE[31045] [LOWERCASE]$LOCALIZE[39123][/LOWERCASE]</label>
+            <selected>!Skin.HasSetting(OSD.DisableLandscapeOnInfo)</selected>
+            <onclick>Skin.ToggleSetting(OSD.DisableLandscapeOnInfo)</onclick>
+            <visible>Skin.HasSetting(OSD.DisplayInfoOnControls)</visible>
+        </include>
+
+        <include content="Settings_Button" description="Expanded info plot and ratings">
+            <param name="dialog">true</param>
+            <param name="id">8003</param>
+            <param name="control">radiobutton</param>
+            <param name="slevel">2</param>
+            <label>$LOCALIZE[207] + $LOCALIZE[31202]</label>
+            <selected>!Skin.HasSetting(OSD.DisablePlotRatingsOnInfo)</selected>
+            <onclick>Skin.ToggleSetting(OSD.DisablePlotRatingsOnInfo)</onclick>
+            <visible>Skin.HasSetting(OSD.DisplayInfoOnControls)</visible>
+        </include>
+    </include>
+
     <include name="Items_Settings_MusicVisualisation">
         <include content="Settings_Button">
             <param name="id">8001</param>
@@ -736,16 +876,15 @@
             <onclick>SetProperty(Shortcuts.EditMenu,menu=powermainmenu,Home)</onclick>
             <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
             <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
-            <!-- <onclick>Close</onclick> -->
             <onclick>ActivateWindow(1116)</onclick>
-            <label>$LOCALIZE[31363]</label>
+            <label>$LOCALIZE[31516]</label>
         </include>
 
-        <!-- <include content="Settings_Label">
+        <include content="Settings_Label">
             <param name="id">8007</param>
             <param name="color">dialog_fg</param>
             <label>$LOCALIZE[31372]</label>
-        </include> -->
+        </include>
         <include content="Settings_Button">
             <param name="id">8002</param>
             <param name="control">button</param>
@@ -753,9 +892,8 @@
             <onclick>SetProperty(Shortcuts.EditMenu,menu=options-tray,Home)</onclick>
             <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
             <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
-            <!-- <onclick>Close</onclick> -->
             <onclick>ActivateWindow(1116)</onclick>
-            <label>$LOCALIZE[31372]</label>
+            <label>$LOCALIZE[31516]</label>
         </include>
 
     </include>
@@ -1122,7 +1260,6 @@
             <param name="icon">special://skin/extras/icons/play2.png</param>
             <param name="label">$LOCALIZE[19165]</param>
             <param name="visible">Window.IsActive(PVRGuideInfo) + Control.IsEnabled(5) + Control.IsVisible(5)</param>
-            <onfocus>ClearProperty(DetailsView)</onfocus>
         </include>
 
         <include content="DialogInfo_ExpandedButton" description="Play Programme">
@@ -1131,7 +1268,6 @@
             <param name="icon">special://skin/extras/icons/play3.png</param>
             <param name="label">$LOCALIZE[208]</param>
             <param name="visible">Window.IsActive(PVRGuideInfo) + Control.IsEnabled(10) + Control.IsVisible(10)</param>
-            <onfocus>ClearProperty(DetailsView)</onfocus>
         </include>
 
         <include content="DialogInfo_ExpandedButton" description="Play Recording">
@@ -1140,7 +1276,6 @@
             <param name="icon">special://skin/extras/icons/play3.png</param>
             <param name="label">$LOCALIZE[208]</param>
             <param name="visible">[Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)] + Control.IsEnabled(8) + Control.IsVisible(8)</param>
-            <onfocus>ClearProperty(DetailsView)</onfocus>
         </include>
 
         <include content="DialogInfo_ExpandedButton" description="Record">
@@ -1149,7 +1284,6 @@
             <param name="icon">special://skin/extras/icons/record-vinyl.png</param>
             <param name="label">$LOCALIZE[264]</param>
             <param name="visible">Window.IsActive(PVRGuideInfo) + Control.IsEnabled(6) + Control.IsVisible(6)</param>
-            <onfocus>ClearProperty(DetailsView)</onfocus>
             <onclick>SendClick(6)</onclick>
         </include>
 
@@ -1159,7 +1293,6 @@
             <param name="icon">special://skin/extras/icons/clock.png</param>
             <param name="label">$LOCALIZE[19061]</param>
             <param name="visible">Window.IsActive(PVRGuideInfo) + Control.IsEnabled(9) + Control.IsVisible(9)</param>
-            <onfocus>ClearProperty(DetailsView)</onfocus>
         </include>
 
         <include content="DialogInfo_ExpandedButton" description="Set Reminder">
@@ -1168,7 +1301,6 @@
             <param name="icon">special://skin/extras/icons/clock.png</param>
             <param name="label">$LOCALIZE[826]</param>
             <param name="visible">Window.IsActive(PVRGuideInfo) + Control.IsEnabled(11) + Control.IsVisible(11)</param>
-            <onfocus>ClearProperty(DetailsView)</onfocus>
         </include>
 
         <include content="DialogInfo_ExpandedButton" description="Similar">
@@ -1177,7 +1309,6 @@
             <param name="icon">special://skin/extras/icons/binoculars.png</param>
             <param name="label">$LOCALIZE[31041]</param>
             <param name="visible">[Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo)] + Control.IsEnabled(4) + Control.IsVisible(4)</param>
-            <onfocus>SetProperty(DetailsView,Cast)</onfocus>
         </include>
 
         <include content="DialogInfo_ExpandedButton">
@@ -1187,30 +1318,19 @@
             <param name="icon">special://skin/extras/icons/globe.png</param>
             <onclick>Close</onclick>
             <onclick>runscript(script.wikipedia,wikipedia=$VAR[Path_Wikipedia_Title],tmdb_type=$VAR[Path_Wikipedia_Type])</onclick>
-            <onfocus>SetProperty(DetailsView,Critics)</onfocus>
         </include>
     </include>
 
     <include name="Items_DialogVideoInfo_MenuBar">
-        <param name="include_customwidth">true</param>
-        <param name="include_hintlabel">true</param>
-        <param name="itemgap">-40</param>
-        <param name="textcolor">main_fg</param>
-        <param name="nf_opacity">90</param>
         <definition>
 
             <!-- Trailer -->
-            <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
+            <include content="DialogInfo_Button_Expansion" condition="!String.IsEqual(ListItem.Property(tmdb_type),person) + !Skin.HasSetting(Info.Button.DisableTrailer)">
                 <param name="id">4002</param>
                 <param name="groupid">4102</param>
-                <param name="vertical">false</param>
+                <param name="sliceid">4202</param>
                 <param name="label">$LOCALIZE[31393]</param>
                 <param name="icon">special://skin/extras/icons/videoplay.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
                 <param name="visible">!String.IsEmpty(ListItem.Trailer) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Trailer))</param>
                 <include content="Action_PlayTrailer_OnClick">
                     <param name="trailer">ListItem.Trailer</param>
@@ -1218,202 +1338,162 @@
                     <param name="title">$VAR[Label_Title]</param>
                     <param name="items">$VAR[Path_VideoInfo_Trailers]</param>
                 </include>
-                <onfocus>SetProperty(DetailsView,Trailer)</onfocus>
             </include>
 
             <!-- Versions -->
-            <include content="DialogInfo_Button" condition="String.IsEqual(ListItem.DBType,movie) + ListItem.HasVideoVersions">
+            <include content="DialogInfo_Button_Expansion" condition="!String.IsEqual(ListItem.Property(tmdb_type),person) + !Skin.HasSetting(Info.Button.DisableVersions)">
                 <param name="id">4014</param>
                 <param name="groupid">4121</param>
-                <param name="vertical">false</param>
+                <param name="sliceid">4221</param>
                 <param name="label">$LOCALIZE[40000]</param>
                 <param name="icon">special://skin/extras/icons/bookmarks.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
+                <param name="visible">[ListItem.HasVideoVersions]</param>
                 <onclick>SetFocus(8908)</onclick>
             </include>
 
             <!-- Extras -->
-            <include content="DialogInfo_Button" condition="String.IsEqual(ListItem.DBType,movie) + ListItem.HasVideoExtras">
-                <param name="id">15</param>
-                <param name="groupid">4122</param>
-                <param name="vertical">false</param>
+            <include content="DialogInfo_Button_Expansion" condition="!String.IsEqual(ListItem.Property(tmdb_type),person) + !Skin.HasSetting(Info.Button.DisableExtras)">
+                <param name="id">4015</param>
+                <param name="groupid">4115</param>
+                <param name="sliceid">4215</param>
                 <param name="label">$LOCALIZE[40211]</param>
                 <param name="icon">special://skin/extras/icons/director.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
+                <param name="visible">[ListItem.HasVideoExtras + Control.IsEnabled(15)]</param>
             </include>
 
             <!-- Trakt -->
-            <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
+            <include content="DialogInfo_Button_Expansion" condition="!String.IsEqual(ListItem.Property(tmdb_type),person) + !Skin.HasSetting(Info.Button.DisableTrakt)">
                 <param name="id">4004</param>
                 <param name="groupid">4104</param>
-                <param name="vertical">false</param>
+                <param name="sliceid">4204</param>
                 <param name="label">Trakt</param>
                 <param name="icon">special://skin/extras/icons/watchlist.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
                 <param name="visible">!String.IsEmpty(Window(Home).Property(TMDbHelper.TraktIsAuth)) + !String.IsEqual(ListItem.DBType,musicvideo)</param>
-                <onclick condition="!String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],cache_refresh)</onclick>
-                <onclick condition="String.IsEmpty(ListItem.Property(tmdb_id)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.tmdb_id)) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)]">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Window(Home).Property(TMDbHelper.ListItem.tmdb_id)],$VAR[Path_Param_Type],cache_refresh)</onclick>
-                <onclick condition="!String.IsEmpty(ListItem.Property(tmdb_id)) + String.IsEqual(ListItem.DBType,episode)">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[ListItem.Property(tmdb_id)],$VAR[Path_Param_Type],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],cache_refresh)</onclick>
-                <onclick condition="String.IsEmpty(ListItem.Property(tmdb_id)) + !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.tmdb_id)) + String.IsEqual(ListItem.DBType,episode)">RunScript(plugin.video.themoviedb.helper,sync_trakt,tmdb_id=$INFO[Window(Home).Property(TMDbHelper.ListItem.tmdb_id)],$VAR[Path_Param_Type],season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode],cache_refresh)</onclick>
-
-                <onfocus>SetProperty(DetailsView,Reviews)</onfocus>
-
-
+                <onclick>$VAR[Action_Sync]</onclick>
             </include>
 
             <!-- Wiki -->
-            <include content="DialogInfo_Button">
+            <include content="DialogInfo_Button_Expansion" condition="!Skin.HasSetting(Info.Button.DisableWiki)">
                 <param name="id">4005</param>
                 <param name="groupid">4105</param>
-                <param name="vertical">false</param>
+                <param name="sliceid">4205</param>
                 <param name="label">Wiki</param>
                 <param name="icon">special://skin/extras/icons/globe.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
-
                 <onclick>runscript(script.wikipedia,wikipedia=$VAR[Path_Wikipedia_Title],tmdb_type=$VAR[Path_Wikipedia_Type])</onclick>
-                <onfocus>SetProperty(DetailsView,Reviews)</onfocus>
-
             </include>
 
             <!-- Rating -->
-            <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
-                <param name="id">7</param>
+            <include content="DialogInfo_Button_Expansion" condition="!String.IsEqual(ListItem.Property(tmdb_type),person) + !Skin.HasSetting(Info.Button.DisableRating)">
+                <param name="id">4007</param>
                 <param name="groupid">4107</param>
-                <param name="vertical">false</param>
+                <param name="sliceid">4207</param>
                 <param name="label">$LOCALIZE[563]</param>
                 <param name="icon">special://skin/extras/icons/star.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
                 <param name="visible">Control.IsEnabled(7)</param>
+                <onclick>SendClick(7)</onclick>
             </include>
 
             <!-- Artwork -->
-            <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
-                <param name="id">10</param>
-                <param name="groupid">4109</param>
-                <param name="vertical">false</param>
+            <include content="DialogInfo_Button_Expansion" condition="!String.IsEqual(ListItem.Property(tmdb_type),person) + !Skin.HasSetting(Info.Button.DisableArtwork)">
+                <param name="id">4010</param>
+                <param name="groupid">4110</param>
+                <param name="sliceid">4210</param>
                 <param name="label">$LOCALIZE[39123]</param>
                 <param name="icon">special://skin/extras/icons/image.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
                 <param name="visible">Control.IsEnabled(10)</param>
-                <onfocus>SetProperty(DetailsView,Artwork)</onfocus>
+                <onclick>SendClick(10)</onclick>
             </include>
 
             <!-- Refresh -->
-            <include content="DialogInfo_Button" condition="!String.IsEqual(ListItem.Property(tmdb_type),person)">
-                <param name="id">6</param>
-                <param name="groupid">4108</param>
-                <param name="vertical">false</param>
+            <include content="DialogInfo_Button_Expansion" condition="!String.IsEqual(ListItem.Property(tmdb_type),person) + !Skin.HasSetting(Info.Button.DisableRefresh)">
+                <param name="id">4006</param>
+                <param name="groupid">4106</param>
+                <param name="sliceid">4206</param>
                 <param name="label">$LOCALIZE[184]</param>
                 <param name="icon">special://skin/extras/icons/update.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
                 <param name="visible">Control.IsEnabled(6)</param>
+                <onclick>SendClick(6)</onclick>
             </include>
 
         </definition>
     </include>
 
     <include name="Items_DialogMusicInfo_MenuBar">
-        <param name="include_customwidth">true</param>
-        <param name="include_hintlabel">true</param>
-        <param name="itemgap">-40</param>
-        <param name="textcolor">main_fg</param>
-        <param name="nf_opacity">90</param>
         <definition>
-            <include content="DialogInfo_Button">
-                <param name="vertical">false</param>
+
+            <!-- Songs -->
+            <include content="DialogInfo_Button_Expansion">
                 <param name="id">4003</param>
                 <param name="groupid">4103</param>
+                <param name="sliceid">4203</param>
                 <param name="label">$LOCALIZE[134]</param>
                 <param name="icon">special://skin/extras/icons/songs.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
                 <onclick>Dialog.Close(musicinformation)</onclick>
                 <onclick>Dialog.Close(songinformation)</onclick>
 
                 <onclick condition="Window.IsVisible(music)">Container.Update(musicdb://songs/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22artist%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22$INFO[Window.Property(Encoded.ListItem.Artist)]%22%5D%7D%5D%7D%2C%22type%22%3A%22songs%22%7D)</onclick>
                 <onclick condition="!Window.IsVisible(music)">ActivateWindow(music,musicdb://songs/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22artist%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22$INFO[Window.Property(Encoded.ListItem.Artist)]%22%5D%7D%5D%7D%2C%22type%22%3A%22songs%22%7D,return)</onclick>
 
-                <onfocus>SetProperty(DetailsView,Songs)</onfocus>
             </include>
-            <include content="DialogInfo_Button">
-                <param name="vertical">false</param>
+
+            <!-- Albums -->
+            <include content="DialogInfo_Button_Expansion">
                 <param name="id">4002</param>
                 <param name="groupid">4102</param>
+                <param name="sliceid">4202</param>
                 <param name="label">$LOCALIZE[132]</param>
                 <param name="icon">special://skin/extras/icons/lines-leaning.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
                 <onclick>Dialog.Close(musicinformation)</onclick>
                 <onclick>Dialog.Close(songinformation)</onclick>
 
                 <onclick condition="Window.IsVisible(music)">Container.Update(musicdb://albums/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22artist%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22$INFO[Window.Property(Encoded.ListItem.Artist)]%22%5D%7D%5D%7D%2C%22type%22%3A%22albums%22%7D)</onclick>
                 <onclick condition="!Window.IsVisible(music)">ActivateWindow(music,musicdb://albums/?xsp=%7B%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22artist%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22$INFO[Window.Property(Encoded.ListItem.Artist)]%22%5D%7D%5D%7D%2C%22type%22%3A%22albums%22%7D,return)</onclick>
 
-                <onfocus>SetProperty(DetailsView,Albums)</onfocus>
             </include>
-            <include content="DialogInfo_Button">
-                <param name="vertical">false</param>
-                <param name="id">4007</param>
-                <param name="groupid">4107</param>
+
+            <!-- Youtube -->
+            <include content="DialogInfo_Button_Expansion" condition="!Skin.HasSetting(Info.Button.DisableYoutube)">
+                <param name="id">4004</param>
+                <param name="groupid">4104</param>
+                <param name="sliceid">4204</param>
                 <param name="label">YouTube</param>
                 <param name="icon">special://skin/extras/icons/youtube.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
                 <onclick>Dialog.Close(musicinformation)</onclick>
                 <onclick>Dialog.Close(songinformation)</onclick>
                 <onclick>ActivateWindow(videos,$VAR[Path_Youtube_Query,plugin://plugin.video.youtube/kodion/search/query/?q=,],return)</onclick>
-                <onfocus>SetProperty(DetailsView,Trailer)</onfocus>
             </include>
-            <include content="DialogInfo_Button">
-                <param name="vertical">false</param>
-                <param name="id">4005</param>
-                <param name="groupid">4105</param>
+
+            <!-- Rating -->
+            <include content="DialogInfo_Button_Expansion" condition="!Skin.HasSetting(Info.Button.DisableRating)">
+                <param name="id">4007</param>
+                <param name="groupid">4107</param>
+                <param name="sliceid">4207</param>
+                <param name="label">$LOCALIZE[563]</param>
+                <param name="icon">special://skin/extras/icons/star.png</param>
+                <param name="visible">Control.IsEnabled(7)</param>
+                <onclick>SendClick(7)</onclick>
+            </include>
+
+            <!-- Artwork -->
+            <include content="DialogInfo_Button_Expansion" condition="!Skin.HasSetting(Info.Button.DisableArtwork)">
+                <param name="id">4010</param>
+                <param name="groupid">4110</param>
+                <param name="sliceid">4210</param>
                 <param name="label">$LOCALIZE[39123]</param>
                 <param name="icon">special://skin/extras/icons/image.png</param>
-                <param name="itemgap">$PARAM[itemgap]</param>
-                <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
-                <param name="include_customwidth">$PARAM[include_customwidth]</param>
-                <param name="textcolor">$PARAM[textcolor]</param>
-                <param name="nf_opacity">$PARAM[nf_opacity]</param>
-                <onclick condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)">SendClick(10)</onclick>
-                <onfocus>SetProperty(DetailsView,Artwork)</onfocus>
+                <param name="visible">Control.IsEnabled(10)</param>
+                <onclick>SendClick(10)</onclick>
+            </include>
+
+            <!-- Refresh -->
+            <include content="DialogInfo_Button_Expansion" condition="!Skin.HasSetting(Info.Button.DisableRefresh)">
+                <param name="id">4006</param>
+                <param name="groupid">4106</param>
+                <param name="sliceid">4206</param>
+                <param name="label">$LOCALIZE[184]</param>
+                <param name="icon">special://skin/extras/icons/update.png</param>
+                <param name="visible">Control.IsEnabled(6)</param>
+                <onclick>SendClick(6)</onclick>
             </include>
         </definition>
     </include>
@@ -2408,6 +2488,235 @@
             <onclick>Close</onclick>
             <onclick>Skin.SetString(AutoScrollTime,10m)</onclick>
         </include>
+    </include>
+
+    <include name="_Items_Preview_WidgetsMode">
+        <item>
+            <label>$LOCALIZE[10036]</label>
+            <icon>special://skin/extras/screenshots/layouts/Basic.jpg</icon>
+            <onclick>Skin.SetBool(Hub.$PARAM[window_id].DisableSubmenu)</onclick>
+            <onclick>Skin.Reset(Hub.$PARAM[window_id].EnableDetailedInformation)</onclick>
+            <onclick>Skin.SetString(Shortcuts.RebuildDateTime,$INFO[System.Date(yyyy-mm-dd)]_$INFO[System.Time(hh:mm:ss)])</onclick>
+            <onclick>PreviousMenu</onclick>
+            <property name="textbox">$LOCALIZE[31280]</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[31137]</label>
+            <icon>special://skin/extras/screenshots/layouts/Detailed.jpg</icon>
+            <onclick>Skin.SetBool(Hub.$PARAM[window_id].DisableSubmenu)</onclick>
+            <onclick>Skin.SetBool(Hub.$PARAM[window_id].EnableDetailedInformation)</onclick>
+            <onclick>Skin.SetString(Shortcuts.RebuildDateTime,$INFO[System.Date(yyyy-mm-dd)]_$INFO[System.Time(hh:mm:ss)])</onclick>
+            <onclick>PreviousMenu</onclick>
+            <property name="textbox">$LOCALIZE[31305]</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[10038]</label>
+            <icon>special://skin/extras/screenshots/layouts/Advanced.jpg</icon>
+            <onclick>Skin.Reset(Hub.$PARAM[window_id].DisableSubmenu)</onclick>
+            <onclick>Skin.Reset(Hub.$PARAM[window_id].EnableDetailedInformation)</onclick>
+            <onclick>Skin.SetString(Shortcuts.RebuildDateTime,$INFO[System.Date(yyyy-mm-dd)]_$INFO[System.Time(hh:mm:ss)])</onclick>
+            <onclick>PreviousMenu</onclick>
+            <property name="textbox">$LOCALIZE[31306]</property>
+        </item>
+    </include>
+
+    <include name="Items_Preview_WidgetsMode">
+        <include content="_Items_Preview_WidgetsMode" condition="String.IsEqual(Window(Home).Property(CustomDialogPreviewWindowID),Hub.Home)"><param name="window_id">Home</param></include>
+        <include content="_Items_Preview_WidgetsMode" condition="String.IsEqual(Window(Home).Property(CustomDialogPreviewWindowID),Hub.1101)"><param name="window_id">1101</param></include>
+        <include content="_Items_Preview_WidgetsMode" condition="String.IsEqual(Window(Home).Property(CustomDialogPreviewWindowID),Hub.1102)"><param name="window_id">1102</param></include>
+        <include content="_Items_Preview_WidgetsMode" condition="String.IsEqual(Window(Home).Property(CustomDialogPreviewWindowID),Hub.1103)"><param name="window_id">1103</param></include>
+        <include content="_Items_Preview_WidgetsMode" condition="String.IsEqual(Window(Home).Property(CustomDialogPreviewWindowID),Hub.1104)"><param name="window_id">1104</param></include>
+        <include content="_Items_Preview_WidgetsMode" condition="String.IsEqual(Window(Home).Property(CustomDialogPreviewWindowID),Hub.1106)"><param name="window_id">1106</param></include>
+        <include content="_Items_Preview_WidgetsMode" condition="String.IsEqual(Window(Home).Property(CustomDialogPreviewWindowID),Hub.1107)"><param name="window_id">1107</param></include>
+        <include content="_Items_Preview_WidgetsMode" condition="String.IsEqual(Window(Home).Property(CustomDialogPreviewWindowID),Hub.1108)"><param name="window_id">1108</param></include>
+        <include content="_Items_Preview_WidgetsMode" condition="String.IsEqual(Window(Home).Property(CustomDialogPreviewWindowID),Hub.1109)"><param name="window_id">1109</param></include>
+    </include>
+
+    <include name="Items_Preview_CustomDialog">
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogPreviewItems),Items_Preview_WidgetsMode)">Items_Preview_WidgetsMode</include>
+    </include>
+
+    <include name="Items_Wizard">
+        <!-- Step 01: Themes -->
+        <item>
+            <label>$LOCALIZE[31560]</label>
+            <icon>special://skin/extras/screenshots/themes/Bright.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_ColourPreset_BrightWhite]</property>
+            <include content="Action_Scheme_Onclick_Bright">
+                <param name="window_id">1180</param>
+            </include>
+            <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
+            <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
+            <property name="textbox">Bright white uses flat high contrast white highlights against a dark purple background.</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[31140]</label>
+            <icon>special://skin/extras/screenshots/themes/Miami.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_ColourPreset_MiamiVaporwave]</property>
+            <include content="Action_Scheme_Onclick_Miami">
+                <param name="window_id">1180</param>
+            </include>
+            <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
+            <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
+            <property name="textbox">Miami vaporwave uses vivid electric pink and deep magenta gradient highlights against a dark purple background.</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[31243]</label>
+            <icon>special://skin/extras/screenshots/themes/Midnight.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_ColourPreset_MidnightPurple]</property>
+            <include content="Action_Scheme_Onclick_Midnight">
+                <param name="window_id">1180</param>
+            </include>
+            <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
+            <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
+            <property name="textbox">Midnight uses flat deep purple highlights against a simple dark coal background.</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[31138]</label>
+            <icon>special://skin/extras/screenshots/themes/Aqua.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_ColourPreset_AquaClassic]</property>
+            <include content="Action_Scheme_Onclick_Aqua">
+                <param name="window_id">1180</param>
+            </include>
+            <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
+            <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
+            <property name="textbox">Aqua classic uses vibrant turqoise and aquamarine gradient highlights against a deep cerulean ocean background.</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[31242]</label>
+            <icon>special://skin/extras/screenshots/themes/Slate.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_ColourPreset_BlueSlate]</property>
+            <include content="Action_Scheme_Onclick_Slate">
+                <param name="window_id">1180</param>
+            </include>
+            <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
+            <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
+            <property name="textbox">Blue slate uses flat azure blue highlights against a simple slate grey background.</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[31139]</label>
+            <icon>special://skin/extras/screenshots/themes/Sunset.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_ColourPreset_TropicalSunset]</property>
+            <include content="Action_Scheme_Onclick_Sunset">
+                <param name="window_id">1180</param>
+            </include>
+            <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
+            <onclick>AlarmClock(reset,SetProperty(WizardStep,Dialog,Home),00:01,silent)</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Themes) | String.IsEmpty(Window(Home).Property(WizardStep))</visible>
+            <property name="textbox">Sunset uses bright tropical orange and vermillion gradient highlights against a soft sunset dusk background.</property>
+        </item>
+
+
+        <!-- Step 02: Dialogs -->
+        <item>
+            <label>$LOCALIZE[31432]</label>
+            <icon>special://skin/extras/screenshots/dialogs/Adaptive.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_DialogTheme_IsAdaptive]</property>
+            <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=SKINDEFAULT)</onclick>
+            <onclick>Skin.SetString(Background.DialogImage,Adaptive)</onclick>
+            <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
+            <onclick>ReloadSkin()</onclick>
+            <onclick>AlarmClock(reset,SetProperty(WizardStep,Layout,Home),00:01,silent)</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Dialog)</visible>
+            <property name="textbox">Adapative uses a blurred image for the dialog background.[CR]Based upon the fanart for the current item.</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[602]</label>
+            <icon>special://skin/extras/screenshots/dialogs/Standard.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_DialogTheme_IsStandard]</property>
+            <onclick>Skin.Reset(Background.DialogImage)</onclick>
+            <onclick condition="$EXP[Exp_ColourHighlight_IsAqua]">Skin.SetString(Background.DialogImage,Green)</onclick>
+            <onclick condition="$EXP[Exp_ColourHighlight_IsTropical]">Skin.SetString(Background.DialogImage,Blush)</onclick>
+            <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=SKINDEFAULT)</onclick>
+            <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
+            <onclick>ReloadSkin()</onclick>
+            <onclick>AlarmClock(reset,SetProperty(WizardStep,Layout,Home),00:01,silent)</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Dialog)</visible>
+            <property name="textbox">Standard uses a subtle gradient for the dialog background.[CR]Based upon the current colour theme.</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[31221]</label>
+            <icon>special://skin/extras/screenshots/dialogs/Slate.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_DialogTheme_IsSlate]</property>
+            <onclick>Skin.SetString(Background.DialogImage,Slate)</onclick>
+            <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=SKINDEFAULT)</onclick>
+            <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
+            <onclick>ReloadSkin()</onclick>
+            <onclick>AlarmClock(reset,SetProperty(WizardStep,Layout,Home),00:01,silent)</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Dialog)</visible>
+            <property name="textbox">Slate uses a flat light grey palette for the dialog background.[CR]Suited for general usage.</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[31222]</label>
+            <icon>special://skin/extras/screenshots/dialogs/Coal.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_DialogTheme_IsCoal]</property>
+            <onclick>Skin.SetString(Background.DialogImage,Coal)</onclick>
+            <onclick>RunScript(script.skinvariables,get_jsonrpc=Settings.SetSettingValue,setting=lookandfeel.skincolors,value=SKINDEFAULT)</onclick>
+            <onclick>SetProperty(WizardStepPrevious,True,Home)</onclick>
+            <onclick>ReloadSkin()</onclick>
+            <onclick>AlarmClock(reset,SetProperty(WizardStep,Layout,Home),00:01,silent)</onclick>
+            <onclick>AlarmClock(refocus,SetFocus(50,0,absolute),00:01,silent)</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Dialog)</visible>
+            <property name="textbox">Coal uses a flat dark grey palette for the dialog background.[CR]Suited for night-time usage.</property>
+        </item>
+
+        <!-- Step 03: Layouts -->
+        <item>
+            <label>$LOCALIZE[10036]</label>
+            <icon>special://skin/extras/screenshots/layouts/Basic.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_HomeLayout_IsBasic]</property>
+            <onclick>ClearProperty(WizardStep,Home)</onclick>
+            <onclick>Skin.Reset(Hub.Home.ReplaceWindow)</onclick>
+            <onclick>Skin.SetBool(Hub.Home.DisableSubmenu)</onclick>
+            <onclick>Skin.Reset(Hub.Home.EnableDetailedInformation)</onclick>
+            <onclick>Skin.SetString(Shortcuts.RebuildDateTime,$INFO[System.Date(yyyy-mm-dd)]_$INFO[System.Time(hh:mm:ss)])</onclick>
+            <onclick>PreviousMenu</onclick>
+            <onclick>RunScript(script.skinvariables,run_dialog=select,heading=$LOCALIZE[31395],separator=||,list=library-basic||tmdb-basic,"executebuiltin=route=copy_menufolder=special://skin/shortcuts/prebuilt/{v}/&amp;skin=$VAR[Path_SkinVariables_SkinFolder]")</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Layout)</visible>
+            <property name="textbox">$LOCALIZE[31280]</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[31137]</label>
+            <icon>special://skin/extras/screenshots/layouts/Detailed.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_HomeLayout_IsDetailed]</property>
+            <onclick>ClearProperty(WizardStep,Home)</onclick>
+            <onclick>Skin.Reset(Hub.Home.ReplaceWindow)</onclick>
+            <onclick>Skin.SetBool(Hub.Home.DisableSubmenu)</onclick>
+            <onclick>Skin.SetBool(Hub.Home.EnableDetailedInformation)</onclick>
+            <onclick>Skin.SetString(Shortcuts.RebuildDateTime,$INFO[System.Date(yyyy-mm-dd)]_$INFO[System.Time(hh:mm:ss)])</onclick>
+            <onclick>PreviousMenu</onclick>
+            <onclick>RunScript(script.skinvariables,run_dialog=select,heading=$LOCALIZE[31395],separator=||,list=library-basic||tmdb-basic,"executebuiltin=route=copy_menufolder=special://skin/shortcuts/prebuilt/{v}/&amp;skin=$VAR[Path_SkinVariables_SkinFolder]")</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Layout)</visible>
+            <property name="textbox">$LOCALIZE[31305]</property>
+        </item>
+        <item>
+            <label>$LOCALIZE[10038]</label>
+            <icon>special://skin/extras/screenshots/layouts/Advanced.jpg</icon>
+            <property name="selected">$VAR[Exp_Var_HomeLayout_IsAdvanced]</property>
+            <onclick>ClearProperty(WizardStep,Home)</onclick>
+            <onclick>Skin.Reset(Hub.Home.ReplaceWindow)</onclick>
+            <onclick>Skin.Reset(Hub.Home.DisableSubmenu)</onclick>
+            <onclick>Skin.Reset(Hub.Home.EnableDetailedInformation)</onclick>
+            <onclick>Skin.SetString(Shortcuts.RebuildDateTime,$INFO[System.Date(yyyy-mm-dd)]_$INFO[System.Time(hh:mm:ss)])</onclick>
+            <onclick>PreviousMenu</onclick>
+            <onclick>RunScript(script.skinvariables,run_dialog=select,heading=$LOCALIZE[31395],separator=||,list=library-basic||tmdb-basic,"executebuiltin=route=copy_menufolder=special://skin/shortcuts/prebuilt/{v}/&amp;skin=$VAR[Path_SkinVariables_SkinFolder]")</onclick>
+            <visible>String.IsEqual(Window(Home).Property(WizardStep),Layout)</visible>
+            <property name="textbox">$LOCALIZE[31306]</property>
+        </item>
     </include>
 
 </includes>

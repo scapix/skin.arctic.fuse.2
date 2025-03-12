@@ -447,7 +447,7 @@ msgctxt "#31091"
 msgid "Add a \"more items\" folder to widgets with item limits"
 msgstr "Ajouter un dossier « plus d'éléments » aux widgets comportant des limites d'éléments"
 
-#: /1080i/Includes_Shortcuts_Window.xml
+#: /1080i/SkinSettings.xml /1080i/Includes_Shortcuts_Window.xml
 msgctxt "#31092"
 msgid "Detailed information"
 msgstr "Informations détaillées"
@@ -472,10 +472,12 @@ msgctxt "#31096"
 msgid "Use spotlight"
 msgstr "Utiliser Spotlight"
 
-#: /1080i/SkinSettings.xml
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31097"
+msgid "Customise ratings"
+msgstr "Personnaliser les notes"
 
-
-#: /1080i/Includes_Items.xml
+#: /1080i/SkinSettings.xml /1080i/Includes_Items.xml
 msgctxt "#31098"
 msgid "Gallery"
 msgstr "Galerie"
@@ -1518,8 +1520,10 @@ msgctxt "#31320"
 msgid "Square"
 msgstr "Square"
 
-#: /1080i/SkinSettings.xml
-
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31321"
+msgid "Select viewtypes"
+msgstr "Sélectionner les types de vue"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31322"
@@ -1687,10 +1691,12 @@ msgctxt "#31355"
 msgid "Seekbar time display"
 msgstr "Affichage du temps de la barre de recherche"
 
-#: /1080i/SkinSettings.xml
-
-
 #: /1080i/Includes_Items.xml
+msgctxt "#31356"
+msgid "Use online cast"
+msgstr "Utiliser le Casting en ligne"
+
+#: /1080i/SkinSettings.xml /1080i/Includes_Items.xml
 msgctxt "#31357"
 msgid "Artwork Overlay"
 msgstr "Superposition des illustrations"
@@ -2024,10 +2030,12 @@ msgctxt "#31429"
 msgid "Chapters"
 msgstr "Chapitres"
 
-#: /1080i/SkinSettings.xml
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31430"
+msgid "Customise style"
+msgstr "Personnaliser le style"
 
-
-#: /1080i/Includes_Views_Row.xml
+#: /1080i/SkinSettings.xml /1080i/Includes_Views_Row.xml
 msgctxt "#31431"
 msgid "Circle"
 msgstr "Cercle"
@@ -2471,6 +2479,11 @@ msgctxt "#31519"
 msgid "Empty widget placeholder"
 msgstr "Placeholder pour widget vide"
 
+#: /1080i/Includes_Weather_Radar.xml
+msgctxt "#31520"
+msgid "Cloudiness"
+msgstr "Nuageux"
+
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31521"
 msgid "Edit global widgets"
@@ -2490,6 +2503,46 @@ msgstr "Il est recommandé de supprimer tous les widgets inutilisés de votre co
 msgctxt "#31524"
 msgid "There is also an overhead refresh cost to performance associated with hiding empty widgets."
 msgstr "Il y a également un coût d'actualisation supplémentaire sur les performances associé au masquage des widgets vides."
+
+#: /1080i/Includes_Weather_Radar.xml
+msgctxt "#31525"
+msgid "Visibility"
+msgstr "Visibilité"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31526"
+msgid "Hour"
+msgstr "Heure"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31527"
+msgid "Later"
+msgstr "Plus tard"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31528"
+msgid "Particulate"
+msgstr "Particules fines"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31529"
+msgid "Ozone"
+msgstr "Ozone"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31530"
+msgid "Solar radiation"
+msgstr "Rayonnement solaire"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31531"
+msgid "Carbon monoxide"
+msgstr "Monoxyde de carbone"
+
+#: /1080i/Includes_Weather.xml
+msgctxt "#31532"
+msgid "Charts"
+msgstr "Cartes"
 
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31533"
@@ -2515,6 +2568,21 @@ msgstr "Choisir le dossier d'image de secours"
 msgctxt "#31537"
 msgid "Edit submenu items"
 msgstr "Modifier les éléments du sous-menu"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31538"
+msgid "Customise viewtypes"
+msgstr "Personnaliser les types de vue"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31539"
+msgid "Use online gallery"
+msgstr "Utiliser la galerie en ligne"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31540"
+msgid "Use online collection"
+msgstr "Utiliser la collecte en ligne"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31541"
@@ -2551,10 +2619,30 @@ msgctxt "#31547"
 msgid "Yesterday"
 msgstr "Hier"
 
+#: /1080i/Includes_Items.xml
+msgctxt "#31548"
+msgid "Use detailed status"
+msgstr "Utiliser le statut détaillé"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31549"
+msgid "Choose which hub window to use as the home screen."
+msgstr "Choisissez la fenêtre de hub à utiliser comme écran d'accueil."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31550"
+msgid "Change the visibility level of skin settings."
+msgstr "Modifier le niveau de visibilité des paramètres de skin."
+
 #: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
 msgctxt "#31551"
 msgid "Use as home"
 msgstr "Utiliser comme accueil"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31552"
+msgid "Settings level"
+msgstr "Niveau de paramètres"
 
 #: /1080i/Custom_1175_Dialog_Discover.xml
 msgctxt "#31553"
@@ -2610,3 +2698,98 @@ msgstr "Rangée Overview"
 msgctxt "#31563"
 msgid "Card Row"
 msgstr "Rangée Carte"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31564"
+msgid "General appearance and widget layout customisations."
+msgstr "Personnalisations de l'apparence générale et de la disposition des widgets."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31565"
+msgid "Detailed adjustments and additional hub customisations."
+msgstr "Ajustements détaillés et personnalisations supplémentaires du hub."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31566"
+msgid "Development tools and experimental options."
+msgstr "Outils de développement et options expérimentales."
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31567"
+msgid "Add a single item or a list of several items?"
+msgstr "Ajouter un seul élément ou une liste de plusieurs éléments ?"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31568"
+msgid "Add new item(s)"
+msgstr "Ajouter un ou plusieurs nouveaux éléments"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31569"
+msgid "Add item"
+msgstr "Ajouter un élément"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31570"
+msgid "Delete item(s)"
+msgstr "Supprimer élément(s)"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31571"
+msgid "Delete a single item or a list of several items?"
+msgstr "Supprimer un seul élément ou une liste de plusieurs éléments ?"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31572"
+msgid "Delete item"
+msgstr "Supprimer l'élément"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31573"
+msgid "Delete list"
+msgstr "Supprimer la liste"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31574"
+msgid "Unhide hubs"
+msgstr "Afficher les hubs"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31575"
+msgid "Click to toggle hub window customisation options."
+msgstr "Cliquez pour activer les options de personnalisation de la fenêtre du hub."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31576"
+msgid "Seekbar delayed pause time"
+msgstr "Délai de pause de la barre de défilement"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31577"
+msgid "Expanded info on OSD controls"
+msgstr "Informations étendues au-dessus des commandes OSD"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31578"
+msgid "Expanded info landscape art"
+msgstr "Informations étendues avec affiche paysage"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31580"
+msgid "Combined List"
+msgstr "Combinée Liste"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31581"
+msgid "List Expanded"
+msgstr "Liste Étendue"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31582"
+msgid "List Information"
+msgstr "Liste Information"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31583"
+msgid "Mirrored"
+msgstr "Mirroir"

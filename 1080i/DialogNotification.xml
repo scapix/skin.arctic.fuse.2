@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+    <zorder>1</zorder>
     <controls>
 
         <control type="group">
@@ -35,9 +36,7 @@
         </control>
 
         <control type="image" id="400">
-            <visible>false</visible>
-            <height>1</height>
-            <width>1</width>
+            <include>Object_Hidden_Item_Definition</include>
         </control>
     </controls>
 </window>

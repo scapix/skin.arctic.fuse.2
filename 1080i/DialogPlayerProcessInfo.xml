@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+    <zorder>2</zorder>
     <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
     <animation effect="fade" end="0" start="100" time="300">WindowClose</animation>
     <onload>CancelAlarm(osd_timeout,true)</onload>
@@ -18,6 +19,7 @@
                     <param name="diffuse">diffuse/dialog_w1280_h740.png</param>
                 </include>
                 <include content="Animation_SlideIn_Dialog">
+                    <param name="posy">48</param>
                     <param name="windowopen_delay">200</param>
                 </include>
                 <include content="Object_Height" condition="VideoPlayer.Content(livetv)">

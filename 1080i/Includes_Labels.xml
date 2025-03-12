@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <variable name="Label_SkinSettings_Level">
+        <value condition="Integer.IsEqual(Skin.String(Skin.SettingsLevel),3)">$LOCALIZE[10039]</value>
+        <value condition="Integer.IsEqual(Skin.String(Skin.SettingsLevel),2)">$LOCALIZE[10038]</value>
+        <value condition="Integer.IsEqual(Skin.String(Skin.SettingsLevel),1)">$LOCALIZE[10037]</value>
+        <value>$LOCALIZE[10036]</value>
+    </variable>
+
     <variable name="Label_UpdateLibrary">
         <value condition="library.isscanningmusic | library.isscanningvideo">$LOCALIZE[31485]</value>
         <value>$LOCALIZE[24138]</value>
@@ -40,6 +47,13 @@
     <variable name="Label_DialogInfo_Biography">
         <value condition="!String.IsEmpty(ListItem.Property(biography))">$INFO[ListItem.Property(biography)]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.biography))">$INFO[Window(Home).Property(TMDbHelper.ListItem.biography)]</value>
+    </variable>
+
+    <variable name="Label_Settings_InfoLayout">
+        <value condition="Skin.String(Info.Layout,Blur)">$LOCALIZE[39173]</value>
+        <value condition="Skin.String(Info.Layout,Flix)">FlixArt</value>
+        <value condition="Skin.String(Info.Layout,Flip)">$LOCALIZE[31583]</value>
+        <value>$LOCALIZE[571]</value>
     </variable>
 
     <variable name="Label_Settings_WidgetNoResults">
@@ -458,13 +472,15 @@
     </variable>
 
     <variable name="Label_Setting_HubsMenuStyle">
-        <value condition="Skin.HasSetting(Hubs.DisableTextCategories)">$LOCALIZE[31274]</value>
-        <value>$LOCALIZE[31329]</value>
+        <value condition="Skin.String(Hubs.MenuStyle,Both)">$LOCALIZE[21475]</value>
+        <value condition="Skin.String(Hubs.MenuStyle,Text)">$LOCALIZE[31329]</value>
+        <value>$LOCALIZE[31274]</value>
     </variable>
 
     <variable name="Label_Setting_OptionalInfoLine">
-        <value condition="Skin.HasSetting(InfoLine.EndTime)">$LOCALIZE[31192]</value>
-        <value>$LOCALIZE[515]</value>
+        <value condition="Skin.String(InfoLine.Optional,Ends)">$LOCALIZE[31192]</value>
+        <value condition="Skin.String(InfoLine.Optional,Genre)">$LOCALIZE[515]</value>
+        <value>$LOCALIZE[231]</value>
     </variable>
 
     <variable name="Label_Setting_AdditionalTags">       
@@ -516,9 +532,14 @@
     </variable>
 
     <variable name="Label_Setting_SeekbarPauseBehaviour">
-        <value condition="Skin.HasSetting(OSD.AutoHideOnPause)">$LOCALIZE[31162]</value>
-        <value condition="Skin.HasSetting(OSD.AutoInfoOnPause)">$LOCALIZE[29915]</value>
+        <value condition="Skin.String(OSD.AutoOnPause,Hide)">$LOCALIZE[31162]</value>
+        <value condition="Skin.String(OSD.AutoOnPause,Info)">$LOCALIZE[29915]</value>
         <value>$LOCALIZE[16018]</value>
+    </variable>
+
+    <variable name="Label_Setting_SeekbarPauseDelay">
+        <value condition="!String.IsEmpty(Skin.String(OSD.AutoOnPause.Delay))">$INFO[Skin.String(OSD.AutoOnPause.Delay)]</value>
+        <value>3s</value>
     </variable>
 
     <variable name="Label_Player_Plot">
@@ -565,11 +586,6 @@
     <variable name="Label_DiscoverWidgets_Sort">
         <value condition="!String.IsEmpty(Window.Property(SearchDiscover.SortLabel))">$INFO[Window.Property(SearchDiscover.SortLabel)]</value>
         <value>$LOCALIZE[31047]</value>
-    </variable>
-
-    <variable name="Label_Setting_RightFooter">
-        <value condition="Skin.HasSetting(Furniture.BottomRight.Disable)">$LOCALIZE[231]</value>
-        <value>$LOCALIZE[31279]</value>
     </variable>
 
     <variable name="Label_Setting_Item01_Action">
@@ -663,19 +679,6 @@
     <variable name="Label_Birthdate">
         <value condition="String.IsEmpty(ListItem.Property(Deathday))">$INFO[ListItem.Property(Birthday)]$INFO[ListItem.Property(Age), (, [LOWERCASE]$LOCALIZE[31057][/LOWERCASE])]</value>
         <value>$INFO[ListItem.Property(Birthday)]</value>
-    </variable>
-
-    <variable name="Label_Info_ViewLine_Sub">
-        <value condition="String.IsEqual(Window.Property(DetailsView),Cast)">$LOCALIZE[206]</value>
-        <value condition="String.IsEqual(Window.Property(DetailsView),Reviews)">$LOCALIZE[31334]</value>
-        <value condition="String.IsEqual(Window.Property(DetailsView),Trailer)">$LOCALIZE[10025]</value>
-        <value condition="String.IsEqual(Window.Property(DetailsView),Critics)">$LOCALIZE[31030]</value>
-        <value condition="String.IsEqual(Window.Property(DetailsView),Timeline)">$LOCALIZE[19032]</value>
-        <value condition="String.IsEqual(Window.Property(DetailsView),Artwork)">$LOCALIZE[39123]</value>
-        <value condition="String.IsEqual(Window.Property(DetailsView),Images)">$LOCALIZE[31029]</value>
-        <value condition="String.IsEqual(Window.Property(DetailsView),Albums)">$LOCALIZE[132]</value>
-        <value condition="String.IsEqual(Window.Property(DetailsView),Songs)">$LOCALIZE[134]</value>
-        <value>$LOCALIZE[31383]</value>
     </variable>
 
     <variable name="Label_Watched">
@@ -805,8 +808,9 @@
     </variable>
 
     <variable name="Label_Studio">
-        <value condition="!String.IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Studio)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.base_studio))">$INFO[Window(Home).Property(TMDbHelper.ListItem.base_studio)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Network.1.Name))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Network.1.Name)]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Studio.1.Name))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Studio.1.Name)]</value>
     </variable>
     <variable name="Label_FromStudio">
         <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Network.1.Name))">$INFO[Window(Home).Property(TMDbHelper.ListItem.Network.1.Name)]</value>
@@ -1326,11 +1330,21 @@
         <value condition="!String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
     </variable>
 
-
     <variable name="Label_MediaList_Rating">
         <value condition="!String.IsEmpty(ListItem.TrackNumber)">$INFO[ListItem.TrackNumber,#,]</value>
         <value condition="!String.IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating]</value>
         <value>——</value>
+    </variable>
+
+    <variable name="Label_MediaList_Details_LeftLabel">
+        <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Episode,, $LOCALIZE[20453]]</value>
+        <value>$INFO[ListItem.Premiered]</value>
+    </variable>
+
+    <variable name="Label_MediaList_Details_RightLabel">
+        <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Year]</value>
+        <value condition="!Integer.IsEqual(ListItem.Duration(h),0)">$INFO[ListItem.Duration(h),,h ]$INFO[ListItem.Duration(m),,m]</value>
+        <value>$INFO[ListItem.Duration(m),,m]</value>
     </variable>
 
     <variable name="Label_MediaList_Year_DetailedLabels">
@@ -1658,7 +1672,7 @@
     </variable>
 
     <variable name="Label_Overlay_1114_PlotBox">
-        <value condition="Container(7000).IsUpdating | String.IsEmpty(Window.Property(tmdb_type)) | String.IsEmpty(Window.Property(tmdb_id))">$INFO[Window.Property(textbox)]</value>
+        <value condition="Container(7000).IsUpdating | String.IsEmpty(Window.Property(tmdb_type)) | String.IsEmpty(Window.Property(tmdb_id)) | Integer.IsEqual(Container(7000).NumItems,0)">$INFO[Window.Property(textbox)]</value>
         <value>$VAR[Label_PlotBox_C7000]</value>
     </variable>
 

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1148">
-
+    <zorder>2</zorder>
     <defaultcontrol always="true">6008</defaultcontrol>
 
     <controls>
 
         <control type="group">
+            <include>OSD_HideControls</include>
             <left>view_pad</left>
             <right>view_pad</right>
-
-            <include>OSD_HideControls</include>
 
             <visible>!Window.IsActive(DialogPlayerProcessInfo.xml)</visible>
             <visible>!Window.IsVisible(DialogSlider.xml)</visible>
@@ -19,7 +18,9 @@
                 <include content="OSD_Dialog_Background_Blur">
                     <param name="diffuse">diffuse/dialog_w520_h480.png</param>
                 </include>
-                <include>Animation_SlideIn_Dialog</include>
+                <include content="Animation_SlideIn_Dialog">
+                    <param name="posy">48</param>
+                </include>
                 <include>OSD_Stream_Selector_Divider</include>
                 <right>-40</right>
                 <bottom>220</bottom>

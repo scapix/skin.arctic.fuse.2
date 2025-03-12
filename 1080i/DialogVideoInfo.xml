@@ -46,8 +46,13 @@
             <control type="group">
                 <include>DialogInfo_Body_Group</include>
                 <control type="group">
-                    <include content="DialogInfo_Info_Group">
+                    <include content="DialogInfo_Info_Group" condition="!Skin.String(Info.Layout,Flix)">
                         <param name="extended_include">DialogInfo_VideoDetails</param>
+                        <param name="plotwidth">90%</param>
+                    </include>
+                    <include content="DialogInfo_Info_Group" condition="Skin.String(Info.Layout,Flix)">
+                        <param name="extended_include">DialogInfo_VideoDetails_Flix</param>
+                        <param name="plotwidth">info_plot_w</param>
                     </include>
                 </control>
             </control>
@@ -89,6 +94,19 @@
             <param name="include_content">DialogInfo_VideoVersions_Content</param>
             <param name="visible">[Control.HasFocus(8908) | Control.HasFocus(8961)]</param>
             <param name="label">$LOCALIZE[40000]</param>
+        </include>
+
+        <include content="Object_Hidden_Button">
+            <param name="id">6</param>
+        </include>
+        <include content="Object_Hidden_Button">
+            <param name="id">7</param>
+        </include>
+        <include content="Object_Hidden_Button">
+            <param name="id">10</param>
+        </include>
+        <include content="Object_Hidden_Button">
+            <param name="id">15</param>
         </include>
 
 

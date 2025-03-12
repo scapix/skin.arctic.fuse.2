@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="View_MediaWindows_ID">
-        <views>50,51,52,53,54,57,58,59,500,510,520,530,540,560,570,580,590,502,512,522,532,542,572,582,592,550,551,552,553,554,555,561</views>
+        <views>50,51,52,53,54,57,58,59,500,510,520,530,540,560,570,580,590,502,512,522,532,542,572,582,592,550,551,552,553,554,555,561,557,558</views>
     </include>
 
     <include name="View_Row_Header">
@@ -89,18 +89,46 @@
             </control>
 
             <control type="group">
+                <visible>Control.IsVisible(558)</visible>
+                <control type="group">
+                    <top>660</top>
+                    <right>view_pad</right>
+                    <width>1040</width>
+                    <include content="Info_Panel">
+                        <param name="visible">String.IsEmpty(Window.Property(TMDBHelper.WidgetContainer))</param>
+                        <param name="grouplistid">99954</param>
+                        <param name="plotheight">120</param>
+                        <param name="plotwidth">1040</param>
+                        <param name="title">false</param>
+                    </include>
+                </control>
+                <control type="group">
+                    <right>view_pad</right>
+                    <top>view_pad</top>
+                    <!-- <bottom>180</bottom> -->
+                    <width>1040</width>
+                    <height>585</height>
+                    <control type="group">
+                        <include content="Object_BigPoster">
+                            <param name="icon">$VAR[Image_Landscape]</param>
+                            <param name="diffuse">diffuse/landscape_w1040_h585.png</param>
+                        </include>
+                    </control>
+                </control>
+            </control>
+
+            <control type="group">
                 <visible>$EXP[Exp_View_HasIndent]</visible>
                 <control type="group">
                     <include>Dimension_Info</include>
                     <include>View_MediaListOverview_Artwork</include>
                 </control>
                 <control type="group">
-                    <left>infodialog_left_w</left>
-
+                    <right>infodialog_left_w</right>
                     <control type="group">
                         <visible>Control.IsVisible(552)</visible>
                         <include content="Info_Viewline">
-                            <param name="top">80</param>
+                            <param name="top">280</param>
                         </include>
                     </control>
 
@@ -109,6 +137,10 @@
                         <include content="Info_Viewline">
                             <param name="top">440</param>
                         </include>
+                    </control>
+
+                    <control type="group">
+                        <visible>Control.IsVisible(550) | Control.IsVisible(552)</visible>
                         <control type="group">
                             <include>Info_Panel_Dimensions</include>
                             <include content="Info_Panel">
@@ -116,20 +148,22 @@
                                 <param name="grouplistid">99953</param>
                                 <param name="plotwidth">90%</param>
                                 <param name="plotheight">80</param>
+                                <param name="details">![Control.IsVisible(552)]</param>
                             </include>
                         </control>
                     </control>
                 </control>
             </control>
+
             <control type="group">
                 <visible>!$EXP[Exp_View_HasHeader]</visible>
                 <visible>!$EXP[Exp_View_HasIndent]</visible>
                 <control type="group">
-                    <visible>![Control.IsVisible(553) | Control.IsVisible(554)]</visible>
+                    <visible>![Control.IsVisible(553) | Control.IsVisible(554) | Control.IsVisible(557) | Control.IsVisible(558)]</visible>
                     <include>Info_Viewline</include>
                 </control>
                 <control type="group">
-                    <visible>[Control.IsVisible(553) | Control.IsVisible(554)]</visible>
+                    <visible>[Control.IsVisible(553) | Control.IsVisible(554) | Control.IsVisible(557) | Control.IsVisible(558)]</visible>
                     <include content="Info_Viewline">
                         <param name="top">280</param>
                     </include>
@@ -138,7 +172,7 @@
                     <include>Info_Panel_Dimensions</include>
                     <include content="Info_Panel">
                         <param name="visible">String.IsEmpty(Window.Property(TMDBHelper.WidgetContainer))</param>
-                        <param name="details">![Control.IsVisible(553) | Control.IsVisible(554)]</param>
+                        <param name="details">![Control.IsVisible(553) | Control.IsVisible(554) | Control.IsVisible(557) | Control.IsVisible(558)]</param>
                     </include>
                     <include>View_Combined_Info_Panel</include>
                 </control>
@@ -170,6 +204,9 @@
         <include condition="$EXP[Exp_View_551_Include]">View_551_Landscape_MediaList</include>
         <include condition="$EXP[Exp_View_552_Include]">View_552_Information_MediaList</include>
         <include condition="$EXP[Exp_View_553_Include]">View_553_Basic_MediaList</include>
+        <include condition="$EXP[Exp_View_554_Include]">View_554_Combo_MediaList</include>
+        <include condition="$EXP[Exp_View_557_Include]">View_557_Broad_MediaList</include>
+        <include condition="$EXP[Exp_View_558_Include]">View_558_Info_MediaList</include>
         <include condition="$EXP[Exp_View_500_Include]">View_500_Square_Wall</include>
         <include condition="$EXP[Exp_View_510_Include]">View_510_Landscape_Wall</include>
         <include condition="$EXP[Exp_View_520_Include]">View_520_Poster_Wall</include>
@@ -267,7 +304,7 @@
                 <visible allowhiddenfocus="true">$EXP[Exp_View_SortModeButtons_HasFocus]</visible>
 
                 <!-- View -->
-                <include content="DialogInfo_Button">
+                <include content="DialogInfo_Button" condition="!Window.IsVisible(MyPlaylist.xml)">
                     <param name="vertical">false</param>
                     <param name="id">8001</param>
                     <param name="groupid">8101</param>
@@ -282,7 +319,7 @@
                 </include>
 
                 <!-- Sort -->
-                <include content="DialogInfo_Button">
+                <include content="DialogInfo_Button" condition="!Window.IsVisible(MyPlaylist.xml)">
                     <param name="vertical">false</param>
                     <param name="id">8003</param>
                     <param name="groupid">8103</param>
@@ -294,12 +331,12 @@
                     <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>SetProperty(DialogSelectType,Menu,Home)</onclick>
-                    <onclick condition="![Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))]">SendClick(3)</onclick>
-                    <onclick condition="Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">RunScript(script.skinvariables,run_dialog=select,heading=$LOCALIZE[581],separator=||,list=title||genre||year||rating||playcount||director||originaltitle||lastplayed||writer||studio||mpaa||country||premiered||top250||votes,"executebuiltin=SetProperty(MediaFilter.SortBy,{v})||route=run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-mediafilter.json&amp;use_rules=True")</onclick>
+                    <onclick condition="![String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))]">SendClick(3)</onclick>
+                    <onclick condition="String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">RunScript(script.skinvariables,run_dialog=select,heading=$LOCALIZE[581],separator=||,list=title||genre||year||rating||playcount||director||originaltitle||lastplayed||writer||studio||mpaa||country||premiered||top250||votes,"executebuiltin=SetProperty(MediaFilter.SortBy,{v})||route=run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-mediafilter.json&amp;use_rules=True")</onclick>
                 </include>
 
                 <!-- Order -->
-                <include content="DialogInfo_Button">
+                <include content="DialogInfo_Button" condition="!Window.IsVisible(MyPlaylist.xml)">
                     <param name="vertical">false</param>
                     <param name="id">8002</param>
                     <param name="groupid">8102</param>
@@ -311,16 +348,16 @@
                     <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>SetProperty(DialogSelectType,Menu,Home)</onclick>
-                    <onclick condition="![Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))]">SendClick(4)</onclick>
+                    <onclick condition="![String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))]">SendClick(4)</onclick>
 
-                    <onclick condition="!String.IsEqual(Window.Property(MediaFilter.SortHow),desc) + Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">SetProperty(MediaFilter.SortHow,desc)</onclick>
-                    <onclick condition="String.IsEqual(Window.Property(MediaFilter.SortHow),desc) + Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">ClearProperty(MediaFilter.SortHow)</onclick>
+                    <onclick condition="!String.IsEqual(Window.Property(MediaFilter.SortHow),desc) + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">SetProperty(MediaFilter.SortHow,desc)</onclick>
+                    <onclick condition="String.IsEqual(Window.Property(MediaFilter.SortHow),desc) + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">ClearProperty(MediaFilter.SortHow)</onclick>
 
-                    <onclick condition="Window.IsMedia + String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">RunScript(script.skinvariables,"run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-mediafilter.json",use_rules)</onclick>
+                    <onclick condition="String.IsEqual(Container.FolderName,Skin Variables) + !String.IsEmpty(Window.Property(MediaFilter.BaseDir.Name))">RunScript(script.skinvariables,"run_executebuiltin=special://skin/shortcuts/builtins/skinvariables-mediafilter.json",use_rules)</onclick>
                 </include>
 
                 <!-- Watched -->
-                <include content="DialogInfo_Button">
+                <include content="DialogInfo_Button" condition="!Window.IsVisible(MyPlaylist.xml)">
                     <param name="vertical">false</param>
                     <param name="id">8004</param>
                     <param name="groupid">8104</param>
@@ -335,7 +372,7 @@
                 </include>
 
                 <!-- Filter -->
-                <include content="DialogInfo_Button">
+                <include content="DialogInfo_Button" condition="!Window.IsVisible(MyPlaylist.xml)">
                     <param name="vertical">false</param>
                     <param name="id">8005</param>
                     <param name="groupid">8105</param>
@@ -350,7 +387,7 @@
                 </include>
 
                 <!-- Update Library -->
-                <include content="DialogInfo_Button">
+                <include content="DialogInfo_Button" condition="!Window.IsVisible(MyPlaylist.xml)">
                     <param name="vertical">false</param>
                     <param name="id">8006</param>
                     <param name="groupid">8106</param>
@@ -361,12 +398,13 @@
                     <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                     <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
+                    <onclick>SetFocus(50)</onclick>
                     <onclick condition="Window.IsVisible(videos)">UpdateLibrary(video)</onclick>
                     <onclick condition="Window.IsVisible(music)">UpdateLibrary(music)</onclick>
                 </include>
 
                 <!-- Addon Settings -->
-                <include content="DialogInfo_Button">
+                <include content="DialogInfo_Button" condition="!Window.IsVisible(MyPlaylist.xml)">
                     <param name="vertical">false</param>
                     <param name="id">8007</param>
                     <param name="groupid">8107</param>
@@ -378,6 +416,74 @@
                     <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+                </include>
+
+                <!-- Shuffle -->
+                <include content="DialogInfo_Button"  condition="Window.IsVisible(MyPlaylist.xml)">
+                    <param name="vertical">false</param>
+                    <param name="id">20</param>
+                    <param name="groupid">8120</param>
+                    <param name="label">$LOCALIZE[191]</param>
+                    <param name="icon">$VAR[Image_OSD_Shuffle]</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
+                    <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
+                    <hitrect x="0" y="0" w="0" h="0" />
+                </include>
+
+                <!-- Repeat -->
+                <include content="DialogInfo_Button"  condition="Window.IsVisible(MyPlaylist.xml)">
+                    <param name="vertical">false</param>
+                    <param name="id">26</param>
+                    <param name="groupid">8126</param>
+                    <param name="label">$LOCALIZE[486]</param>
+                    <param name="icon">$VAR[Image_OSD_Repeat]</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
+                    <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
+                    <hitrect x="0" y="0" w="0" h="0" />
+                </include>
+
+                <!-- Save -->
+                <include content="DialogInfo_Button"  condition="Window.IsVisible(MyPlaylist.xml)">
+                    <param name="vertical">false</param>
+                    <param name="id">21</param>
+                    <param name="groupid">8121</param>
+                    <param name="label">$LOCALIZE[190]</param>
+                    <param name="icon">special://skin/extras/icons/floppy-disk.png</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
+                    <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
+                    <hitrect x="0" y="0" w="0" h="0" />
+                </include>
+
+                <!-- Clear -->
+                <include content="DialogInfo_Button"  condition="Window.IsVisible(MyPlaylist.xml)">
+                    <param name="vertical">false</param>
+                    <param name="id">22</param>
+                    <param name="groupid">8122</param>
+                    <param name="label">$LOCALIZE[192]</param>
+                    <param name="icon">special://skin/extras/icons/triangle-exclamation.png</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
+                    <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
+                    <hitrect x="0" y="0" w="0" h="0" />
+                </include>
+
+                <!-- Fullscreen -->
+                <include content="DialogInfo_Button">
+                    <param name="vertical">false</param>
+                    <param name="id">8008</param>
+                    <param name="groupid">8108</param>
+                    <param name="label">$LOCALIZE[35232]</param>
+                    <param name="icon">special://skin/extras/icons/fullscreen.png</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
+                    <param name="visible">Player.HasMedia</param>
+                    <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
+                    <hitrect x="0" y="0" w="0" h="0" />
+                    <onclick>Dialog.Close(all,true)</onclick>
+                    <onclick>Fullscreen</onclick>
                 </include>
             </control>
         </definition>
@@ -412,6 +518,7 @@
     <include name="View_Scrollbar_Strip">
 
         <control type="group">
+            <!-- <centertop>0</centertop> -->
             <centertop>50%</centertop>
             <height>scrollbar_w</height>
             <left>view_poster_itemlayout_w</left>
@@ -856,12 +963,12 @@
                     </include>
                     <include content="View_Furniture_Scrollbar_V">
                         <param name="id">65</param>
-                        <param name="height">585</param>
+                        <param name="height">400</param>
                         <param name="visible">$EXP[Exp_View_Scrollbar_Midi_V]</param>
                     </include>
                     <include content="View_Furniture_Scrollbar_V">
                         <param name="id">66</param>
-                        <param name="height">660</param>
+                        <param name="height">560</param>
                         <param name="visible">$EXP[Exp_View_Scrollbar_Maxi_V]</param>
                     </include>
                 </control>
@@ -872,9 +979,6 @@
                 <control type="group">
                     <visible>!$EXP[Exp_View_ScrollFilter_HasFocus]</visible>
                     <include>Furniture_Bottom_Right</include>
-                </control>
-                <control type="group">
-                    <include>Furniture_Top_Right</include>
                 </control>
             </control>
         </control>

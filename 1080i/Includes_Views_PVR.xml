@@ -12,7 +12,6 @@
             <height>80</height>
             <left>view_pad</left>
             <centerbottom>100</centerbottom>
-            <width>settings_category_w</width>
             <control type="button" id="28">
                 <left>-20</left>
                 <right>40</right>
@@ -24,6 +23,7 @@
                 <onright>SetFocus(28)</onright>
                 <ondown>50</ondown>
                 <onup>50</onup>
+                <texturefocus />
                 <texturenofocus />
                 <font />
             </control>
@@ -89,6 +89,7 @@
                 <param name="rulerunit">$PARAM[rulerunit]</param>
                 <param name="programs_left">20</param>
                 <param name="programs_left_text">60</param>
+                <param name="programs_left_text_slide">90</param>
                 <onup>$PARAM[id]</onup>
                 <ondown>$PARAM[id]</ondown>
                 <onback>9001</onback>
@@ -318,18 +319,6 @@
                 <include>Animation_View_WindowChange</include>
                 <include>$PARAM[include]</include>
             </control>
-            <control type="group">
-                <visible>!Control.IsVisible(52)</visible>
-                <visible allowhiddenfocus="true">!$EXP[Exp_View_SortModeButtons_HasFocus]</visible>
-                <include content="Settings_InfoText">
-                    <param name="id">8899</param>
-                    <param name="dialog">false</param>
-                    <param name="left">500</param>
-                    <param name="bottom">80</param>
-                    <param name="override">true</param>
-                    <param name="label">$INFO[ListITem.StartTime]$INFO[ListITem.EndTime, - ,]$INFO[ListITem.Title,  •  ,]</param>
-                </include>
-            </control>
             <include>View_PVR_GroupSwitcher</include>
             <control type="group">
                 <visible>!Control.IsVisible(52)</visible>
@@ -348,7 +337,6 @@
                 </control>
             </control>
         </control>
-        <include>Furniture_Top_Right</include>
         <include>Furniture_Bottom_Right</include>
     </include>
 

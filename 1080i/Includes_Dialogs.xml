@@ -352,7 +352,7 @@
             <width>160</width>
             <right>-20</right>
             <control type="group" id="9098">
-                <height>100</height>
+                <height>90</height>
                 <left>60</left>
                 <right>60</right>
                 <control type="group">
@@ -366,7 +366,7 @@
                     </control>
                     <control type="image">
                         <height>1</height>
-                        <centerbottom>-20</centerbottom>
+                        <centerbottom>-30</centerbottom>
                         <texture colordiffuse="$VAR[Color_DialogBorder]">common/white.png</texture>
                     </control>
                 </control>
@@ -634,6 +634,82 @@
         </definition>
     </include>
 
+    <include name="Dialog_Wizard_WrapList">
+        <param name="items_include">Items_Wizard</param>
+        <param name="id">50</param>
+        <param name="onback">8001</param>
+        <definition>
+            <control type="group">
+                <top>-40</top>
+                <width>1500</width>
+                <centerleft>50%</centerleft>
+                <control type="wraplist" id="$PARAM[id]">
+                    <ondown>9000</ondown>
+                    <focusposition>1</focusposition>
+                    <preloaditems>2</preloaditems>
+                    <orientation>horizontal</orientation>
+                    <onback>$PARAM[onback]</onback>
+                    <itemlayout width="900" height="600">
+                        <include content="Layout_Wizard">
+                            <param name="id">$PARAM[id]</param>
+                            <param name="checkmark_condition">$PARAM[checkmark_condition]</param>
+                        </include>
+                    </itemlayout>
+                    <focusedlayout width="900" height="600">
+                        <include content="Layout_Wizard">
+                            <param name="id">$PARAM[id]</param>
+                            <param name="selected">true</param>
+                            <param name="checkmark_condition">$PARAM[checkmark_condition]</param>
+                        </include>
+                    </focusedlayout>
+                    <content>
+                        <include>$PARAM[items_include]</include>
+                    </content>
+                </control>
+
+                <control type="group">
+                    <bottom>200</bottom>
+                    <height>80</height>
+                    <left>40</left>
+                    <right>40</right>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <textcolor>dialog_fg_30</textcolor>
+                        <label>$INFO[Container($PARAM[id]).ListItem(-1).Label,&lt;&lt;  ,]</label>
+                        <align>left</align>
+                    </control>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <textcolor>dialog_fg_90</textcolor>
+                        <label>$INFO[Container($PARAM[id]).ListItem.Label]</label>
+                        <align>center</align>
+                        <font>font_main_bold</font>
+                    </control>
+                    <control type="label">
+                        <aligny>center</aligny>
+                        <textcolor>dialog_fg_30</textcolor>
+                        <label>$INFO[Container($PARAM[id]).ListItem(1).Label,,  &gt;&gt;]</label>
+                        <align>right</align>
+                    </control>
+                </control>
+                <control type="group">
+                    <bottom>80</bottom>
+                    <height>120</height>
+                    <left>310</left>
+                    <right>310</right>
+                    <control type="textbox">
+                        <left>120</left>
+                        <right>120</right>
+                        <font>font_mini_plot</font>
+                        <align>center</align>
+                        <aligny>top</aligny>
+                        <label>$INFO[Container($PARAM[id]).ListItem.Property(textbox)]</label>
+                    </control>
+                </control>
+            </control>
+        </definition>
+    </include>
+
     <include name="Dialog_Outline">
         <include content="Object_Control" condition="Skin.HasSetting(Glass.EnableBorders)">
             <param name="control">image</param>
@@ -702,18 +778,26 @@
             <control type="scrollbar" id="$PARAM[id]">
                 <nested />
                 <include condition="$PARAM[inset]">Dialog_Scrollbar_Inset_Def</include>
-                <include content="Animation_ConditionalFade" condition="![$PARAM[inset]]">
-                    <param name="condition">!Control.HasFocus($PARAM[id])</param>
-                </include>
                 <top>20</top>
                 <bottom>20</bottom>
                 <centerright>0</centerright>
                 <width>scrollbar_w</width>
                 <showonepage>$PARAM[showonepage]</showonepage>
                 <texturesliderbackground />
-                <texturesliderbar colordiffuse="main_logo" border="4">scrollbar/scrollv.png</texturesliderbar>
+                <texturesliderbar colordiffuse="dialog_fg_70" border="4">scrollbar/scrollv_line.png</texturesliderbar>
                 <include>Texture_Scrollbar_V</include>
             </control>
         </definition>
+    </include>
+
+    <include name="Dialog_ItemPage">
+        <control type="label">
+            <aligny>center</aligny>
+            <align>right</align>
+            <font>font_hint_bold</font>
+            <textcolor>dialog_fg_30</textcolor>
+            <label>$INFO[Container($PARAM[id]).NumItems,, $LOCALIZE[31022]]$INFO[Container($PARAM[id]).CurrentPage,  •  $LOCALIZE[31135] ,]$INFO[Container($PARAM[id]).NumPages, $LOCALIZE[20163] ,]</label>
+            <visible>Control.IsVisible($PARAM[id])</visible>
+        </control>
     </include>
 </includes>

@@ -34,8 +34,13 @@
             <control type="group">
                 <include>DialogInfo_Body_Group</include>
                 <control type="group">
-                    <include content="DialogInfo_Info_Group">
+                    <include content="DialogInfo_Info_Group" condition="!Skin.String(Info.Layout,Flix)">
                         <param name="extended_include">DialogInfo_MusicDetails</param>
+                        <param name="plotwidth">90%</param>
+                    </include>
+                    <include content="DialogInfo_Info_Group" condition="Skin.String(Info.Layout,Flix)">
+                        <param name="extended_include">DialogInfo_MusicDetails_Flix</param>
+                        <param name="plotwidth">info_plot_w</param>
                     </include>
                 </control>
             </control>
@@ -66,6 +71,16 @@
 
         <include>DialogInfo_Furniture</include>
         <include>DialogInfo_PlotBox</include>
+
+        <include content="Object_Hidden_Button">
+            <param name="id">6</param>
+        </include>
+        <include content="Object_Hidden_Button">
+            <param name="id">7</param>
+        </include>
+        <include content="Object_Hidden_Button">
+            <param name="id">10</param>
+        </include>
 
     </controls>
 </window>

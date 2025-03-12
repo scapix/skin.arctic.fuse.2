@@ -442,8 +442,10 @@ msgctxt "#31090"
 msgid "In-Progress"
 msgstr "Angefangen"
 
-#: /1080i/SkinSettings.xml
-
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31091"
+msgid "Add a \"more items\" folder to widgets with item limits"
+msgstr "Hinzufügen eines Ordners \„Weitere Artikel\“ zu Widgets mit Artikelgrenzen"
 
 #: /1080i/Includes_Shortcuts_Window.xml
 msgctxt "#31092"
@@ -470,8 +472,10 @@ msgctxt "#31096"
 msgid "Use spotlight"
 msgstr "Rampenlicht-Widget verwenden"
 
-#: /1080i/SkinSettings.xml
-
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31097"
+msgid "Customise ratings"
+msgstr "Bewertungen anpassen"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31098"
@@ -1516,8 +1520,10 @@ msgctxt "#31320"
 msgid "Square"
 msgstr "Quadratisch"
 
-#: /1080i/SkinSettings.xml
-
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31321"
+msgid "Select viewtypes"
+msgstr "Ansichtstypen auswählen"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31322"
@@ -1685,8 +1691,10 @@ msgctxt "#31355"
 msgid "Seekbar time display"
 msgstr "Zeitanzeige der Suchleiste"
 
-#: /1080i/SkinSettings.xml
-
+#: /1080i/Includes_Items.xml
+msgctxt "#31356"
+msgid "Use online cast"
+msgstr "Online-Cast verwenden"
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31357"
@@ -2023,8 +2031,10 @@ msgctxt "#31429"
 msgid "Chapters"
 msgstr "Kapitel"
 
-#: /1080i/SkinSettings.xml
-
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31430"
+msgid "Customise style"
+msgstr "Stil anpassen"
 
 #: /1080i/Includes_Views_Row.xml
 msgctxt "#31431"
@@ -2470,6 +2480,11 @@ msgctxt "#31519"
 msgid "Empty widget placeholder"
 msgstr "Platzhalter für leeres Widget"
 
+#: /1080i/Includes_Weather_Radar.xml
+msgctxt "#31520"
+msgid "Cloudiness"
+msgstr "Bewölkung"
+
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31521"
 msgid "Edit global widgets"
@@ -2489,6 +2504,46 @@ msgstr "Es wird empfohlen, nicht verwendete Widgets aus Ihrer Konfiguration zu l
 msgctxt "#31524"
 msgid "There is also an overhead refresh cost to performance associated with hiding empty widgets."
 msgstr "Das Ausblenden von leeren Widgets ist mit einem Mehraufwand für die Leistung verbunden."
+
+#: /1080i/Includes_Weather_Radar.xml
+msgctxt "#31525"
+msgid "Visibility"
+msgstr "Sichtbarkeit"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31526"
+msgid "Hour"
+msgstr "Stunde"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31527"
+msgid "Later"
+msgstr "Später"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31528"
+msgid "Particulate"
+msgstr "Feinstaub"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31529"
+msgid "Ozone"
+msgstr "Ozon"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31530"
+msgid "Solar radiation"
+msgstr "Sonneneinstrahlung"
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31531"
+msgid "Carbon monoxide"
+msgstr "Kohlenmonoxid"
+
+#: /1080i/Includes_Weather.xml
+msgctxt "#31532"
+msgid "Charts"
+msgstr "Diagramme"
 
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31533"
@@ -2514,6 +2569,21 @@ msgstr "Ordner mit Fallback-Bildern wählen"
 msgctxt "#31537"
 msgid "Edit submenu items"
 msgstr "Untermenü-Einträge anpassen"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31538"
+msgid "Customise viewtypes"
+msgstr "Ansichtstypen anpassen"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31539"
+msgid "Use online gallery"
+msgstr "Online-Galerie verwenden"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31540"
+msgid "Use online collection"
+msgstr "Online-Sammlung verwenden"
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31541"
@@ -2550,10 +2620,30 @@ msgctxt "#31547"
 msgid "Yesterday"
 msgstr "Gestern"
 
+#: /1080i/Includes_Items.xml
+msgctxt "#31548"
+msgid "Use detailed status"
+msgstr "Detaillierten Status verwenden"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31549"
+msgid "Choose which hub window to use as the home screen."
+msgstr "Wähle das Hub-Fenster, das als Startbildschirm verwendet werden soll."
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31550"
+msgid "Change the visibility level of skin settings."
+msgstr "Sichtbarkeitsstufe der Skin-Einstellungen ändern."
+
 #: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
 msgctxt "#31551"
 msgid "Use as home"
 msgstr "Als Startseite nutzen"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31552"
+msgid "Settings level"
+msgstr "Einstellungsebene"
 
 #: /1080i/Custom_1175_Dialog_Discover.xml
 msgctxt "#31553"
@@ -2609,3 +2699,83 @@ msgstr "Übersicht - Reihe"
 msgctxt "#31563"
 msgid "Card Row"
 msgstr "Reihe - Karten"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31564"
+msgid "General appearance and widget layout customisations."
+msgstr "Allgemeine Anpassungen des Aussehens und des Widget-Layouts."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31565"
+msgid "Detailed adjustments and additional hub customisations."
+msgstr "Detaillierte Anpassungen und zusätzliche Hub-Anpassungen."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31566"
+msgid "Development tools and experimental options."
+msgstr "Entwicklungswerkzeuge und experimentelle Optionen."
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31567"
+msgid "Add a single item or a list of several items?"
+msgstr "Ein einzelnes Element oder eine Liste mit mehreren Elementen hinzufügen?"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31568"
+msgid "Add new item(s)"
+msgstr "Neue(s) Element(e) hinzufügen"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31569"
+msgid "Add item"
+msgstr "Element hinzufügen"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31570"
+msgid "Delete item(s)"
+msgstr "Element(e) löschen"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31571"
+msgid "Delete a single item or a list of several items?"
+msgstr "Ein einzelnes Element oder eine Liste mit mehreren Elementen löschen?"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31572"
+msgid "Delete item"
+msgstr "Element löschen"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31573"
+msgid "Delete list"
+msgstr "Liste löschen"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31574"
+msgid "Unhide hubs"
+msgstr "Hubs einblenden"
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31575"
+msgid "Click to toggle hub window customisation options."
+msgstr "Klicke hier, um die Optionen zur Anpassung des Hub-Fensters zu aktivieren."
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31576"
+msgid "Seekbar delayed pause time"
+msgstr "Seekbar verzögerte Pausenzeit"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31577"
+msgid "Expanded info on OSD controls"
+msgstr "Erweiterte Informationen über OSD-Steuerungen"
+
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31578"
+msgid "Expanded info landscape art"
+msgstr "Erweiterte Informationen zur Landschaftsdarstellung"
+
+#: /1080i/Includes_Views_List.xml
+msgctxt "#31580"
+msgid "Combined List"
+msgstr "Kombinierte Liste"
