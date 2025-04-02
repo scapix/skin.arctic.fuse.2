@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <zorder>2</zorder>
+
     <defaultcontrol always="true">21</defaultcontrol>
 
     <controls>
-        <include condition="!Skin.HasSetting(Keyboard.MiniSized)">Keyboard_Numeric</include>
-        <include condition="Skin.HasSetting(Keyboard.MiniSized)">Keyboard_Mini_Numeric</include>
+        <include>Keyboard_Numeric</include>
     </controls>
 </window>

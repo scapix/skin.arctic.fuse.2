@@ -89,9 +89,6 @@
                 </include>
                 <include content="Settings_InfoText">
                     <param name="id">6</param>
-                    <param name="dialog">false</param>
-                    <param name="left">500</param>
-                    <param name="bottom">80</param>
                 </include>
             </include>
         </include>
@@ -119,7 +116,7 @@
             <param name="control">radiobutton</param>
             <param name="dialog">false</param>
             <description>Default Setting Button</description>
-            <textwidth>settings_radiobutton_text_w</textwidth>
+            <!-- <textwidth>settings_radiobutton_text_w</textwidth> -->
         </include>
 
         <include content="Settings_Button">
