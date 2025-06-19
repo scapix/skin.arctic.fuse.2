@@ -1959,7 +1959,7 @@
                     <include content="Object_ContentBanner" condition="$PARAM[indicator]">
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
-                    <include content="Object_RatingCircle" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.RatingsCircle)">
+                    <include content="Object_RatingCircle" condition="$PARAM[indicator] + [Skin.HasSetting(Indicator.RatingsCircle) | Skin.HasSetting(Indicator.TraktWatchlist) | Skin.HasSetting(Indicator.TraktFavourites)]">
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
                     <include content="Object_ProgressPercent" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.ProgressPercent)">
@@ -2005,7 +2005,7 @@
                         <bordersize>20</bordersize>
                         <visible>String.IsEmpty($PARAM[listitem].Art(banner)) + String.IsEmpty($PARAM[listitem].Art(tvshow.banner)) + String.IsEmpty($PARAM[listitem].Art(season.banner))</visible>
                     </control>
-                    <include content="Object_RatingCircle" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.RatingsCircle)">
+                    <include content="Object_RatingCircle" condition="$PARAM[indicator] + [Skin.HasSetting(Indicator.RatingsCircle) | Skin.HasSetting(Indicator.TraktWatchlist) | Skin.HasSetting(Indicator.TraktFavourites)]">
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
                     <include content="Object_ProgressPercent" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.ProgressPercent)">
@@ -2190,7 +2190,7 @@
                     <include content="Object_ContentBanner" condition="$PARAM[indicator]">
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
-                    <include content="Object_RatingCircle" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.RatingsCircle)">
+                    <include content="Object_RatingCircle" condition="$PARAM[indicator] + [Skin.HasSetting(Indicator.RatingsCircle) | Skin.HasSetting(Indicator.TraktWatchlist) | Skin.HasSetting(Indicator.TraktFavourites)]">
                         <param name="listitem">$PARAM[listitem]</param>
                     </include>
                     <include content="Object_ProgressPercent" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.ProgressPercent)">
@@ -2732,6 +2732,7 @@
                             <param name="include_detailed_labels">$PARAM[include_detailed_labels]</param>
                             <param name="aligny">center</param>
                             <param name="use_label2">$PARAM[use_label2]</param>
+                            <param name="textbox_offset_y">-10</param>
                         </include>
 
                     </control>
@@ -2816,6 +2817,7 @@
         <param name="use_label">false</param>
         <param name="use_label2">false</param>
         <param name="aligny">top</param>
+        <param name="textbox_offset_y">7</param>
         <definition>
             <control type="image">
                 <texture border="20" colordiffuse="e7ffffff">common/poster_fade.png</texture>
@@ -2833,8 +2835,8 @@
 
                     <include content="Object_Control" condition="![$PARAM[include_detailed_labels]] + ![$PARAM[use_label]]">
                         <param name="control">textbox</param>
-                        <top>6</top>
-                        <height>67</height>
+                        <top>$PARAM[textbox_offset_y]</top>
+                        <bottom>$PARAM[textbox_offset_y]</bottom>
                         <aligny>$PARAM[aligny]</aligny>
                         <font>font_mini</font>
                         <include content="Object_Label" condition="$PARAM[use_label2]">
@@ -2847,8 +2849,8 @@
                     </include>
                     <include content="Object_Control" condition="![$PARAM[include_detailed_labels]] + $PARAM[use_label]">
                         <param name="control">label</param>
-                        <top>6</top>
-                        <height>67</height>
+                        <top>$PARAM[textbox_offset_y]</top>
+                        <bottom>$PARAM[textbox_offset_y]</bottom>
                         <aligny>$PARAM[aligny]</aligny>
                         <font>font_mini</font>
                         <include content="Object_Label" condition="$PARAM[use_label2]">
@@ -3157,7 +3159,7 @@
                     <param name="listitem">$PARAM[listitem]</param>
                 </include>
 
-                <include content="Object_RatingCircle" condition="$PARAM[indicator] + Skin.HasSetting(Indicator.RatingsCircle)">
+                <include content="Object_RatingCircle" condition="$PARAM[indicator] + [Skin.HasSetting(Indicator.RatingsCircle) | Skin.HasSetting(Indicator.TraktWatchlist) | Skin.HasSetting(Indicator.TraktFavourites)]">
                     <param name="listitem">$PARAM[listitem]</param>
                 </include>
 
