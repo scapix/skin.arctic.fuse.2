@@ -1330,17 +1330,14 @@
                 <param name="control">image</param>
                 <include>Texture_Menu_Highlight_H</include>
             </include>
-            <control type="group">
-                <left>40</left>
-                <right>$PARAM[misc]</right>
-                <control type="label">
-                    <include condition="$PARAM[selected]">Color_SelectedText</include>
-                    <right>40</right>
-                    <textcolor>main_fg_70</textcolor>
-                    <selectedcolor>main_fg_70</selectedcolor>
-                    <label>$INFO[ListItem.Label]</label>
-                    <align>center</align>
-                </control>
+            <control type="label">
+                <include condition="$PARAM[selected]">Color_SelectedText</include>
+                <left>20</left>
+                <right>20</right>
+                <textcolor>main_fg_70</textcolor>
+                <selectedcolor>main_fg_70</selectedcolor>
+                <label>$INFO[ListItem.Label]</label>
+                <align>center</align>
             </control>
         </definition>
     </include>
@@ -1447,9 +1444,9 @@
                     <include condition="$PARAM[selected]">Color_SelectedText</include>
                     <left>160</left>
                     <aligny>center</aligny>
-                    <height>80</height>
+                    <height>100</height>
                     <centertop>50%</centertop>
-                    <font>font_mini_plot</font>
+                    <font>font_mini</font>
                     <right>240</right>
                     <textcolor>dialog_fg_70</textcolor>
                     <selectedcolor>dialog_fg_70</selectedcolor>
@@ -1488,17 +1485,17 @@
                 </control>
 
                 <control type="group">
-                    <right>105</right>
+                    <right>95</right>
                     <centertop>40</centertop>
-                    <width>80</width>
-                    <height>40</height>
+                    <width>85</width>
+                    <height>28</height>
                     <animation effect="fade" start="100" end="20" condition="!ListItem.property(sync)">Conditional</animation>
                     <control type="image">
                         <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
                             <param name="colordiffuse">$VAR[ColorSelected]</param>
                         </include>
                         <colordiffuse>dialog_fg_70</colordiffuse>
-                        <texture border="20">common/dialog.png</texture>
+                        <texture border="10">flags/blank.png</texture>
                     </control>
                     <control type="label">
                         <include content="Object_TextColor" condition="$PARAM[selected]">
@@ -1506,7 +1503,7 @@
                         </include>
                         <textcolor>dialog_bg_100</textcolor>
                         <label>[B]SYNC[/B]</label>
-                        <font>font_tiny</font>
+                        <font>font_tiny_bold</font>
                         <align>center</align>
                     </control>
                 </control>
@@ -1515,7 +1512,7 @@
                     <right>40</right>
                     <centertop>40</centertop>
                     <width>50</width>
-                    <height>50</height>
+                    <height>30</height>
                     <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
                         <param name="colordiffuse">$VAR[ColorSelected]</param>
                     </include>
@@ -1782,8 +1779,8 @@
                         <param name="bottom">40</param>
                     </include>
                     <control type="image">
-                        <texture background="true" diffuse="diffuse/square_w190_h190.png">$INFO[ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio scalediffuse="false" aligny="bottom">keep</aspectratio>
                         <visible>![String.StartsWith(ListItem.Icon,Default) | String.StartsWith(ListItem.Icon,special://skin/extras/icons/) | String.StartsWith(ListItem.Icon,image://special%3a%2f%2fskin%2fextras%2ficons%2f)]</visible>
                     </control>
                     <control type="image">
@@ -1791,8 +1788,8 @@
                             <param name="colordiffuse">$VAR[ColorSelected]</param>
                         </include>
                         <colordiffuse>dialog_fg_70</colordiffuse>
-                        <texture background="true" diffuse="diffuse/square_w190_h190.png">$INFO[ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio scalediffuse="false" aligny="bottom">keep</aspectratio>
                         <visible>[String.StartsWith(ListItem.Icon,Default) | String.StartsWith(ListItem.Icon,special://skin/extras/icons/) | String.StartsWith(ListItem.Icon,image://special%3a%2f%2fskin%2fextras%2ficons%2f)]</visible>
                     </control>
                 </control>

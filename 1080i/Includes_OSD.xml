@@ -54,37 +54,63 @@
         </control>
     </include>
 
+    <include name="OSD_CastInfo_HintText_DirectionLabel">
+        <control type="label">
+            <textcolor>main_fg_30</textcolor>
+            <width>auto</width>
+            <font>font_tiny_bold</font>
+            <label>$PARAM[label]:  </label>
+        </control>
+    </include>
+
+    <include name="OSD_CastInfo_HintText_DirectionLabel_down">
+        <include content="OSD_CastInfo_HintText_DirectionLabel">
+            <param name="label">$LOCALIZE[31594]</param>
+        </include>
+    </include>
+
+    <include name="OSD_CastInfo_HintText_DirectionLabel_right">
+        <include content="OSD_CastInfo_HintText_DirectionLabel">
+            <param name="label">$LOCALIZE[31595]</param>
+        </include>
+    </include>
+
     <include name="OSD_CastInfo_HintText">
         <param name="centerbottom">20</param>
-        <param name="left">view_pad</param>
         <param name="fade_in">true</param>
         <param name="fade_out">true</param>
         <param name="arrow_direction">down</param>
         <definition>
             <control type="group">
+                <centerbottom>$PARAM[centerbottom]</centerbottom>
+                <height>40</height>
                 <visible>$PARAM[visible]</visible>
                 <include content="Animation_Fade_In" condition="$PARAM[fade_in]">
                     <param name="type">Visible</param>
+                    <param name="reversible">true</param>
                 </include>
                 <include content="Animation_Fade_Out" condition="$PARAM[fade_out]">
                     <param name="type">Hidden</param>
+                    <param name="reversible">true</param>
                 </include>
-                <left>$PARAM[left]</left>
-                <centerbottom>$PARAM[centerbottom]</centerbottom>
-                <height>40</height>
-                <control type="image">
-                    <centerleft>10</centerleft>
-                    <width>40</width>
-                    <height>40</height>
-                    <centertop>50%</centertop>
-                    <texture colordiffuse="main_fg_30">special://skin/extras/icons/arrow-$PARAM[arrow_direction].png</texture>
-                </control>
-                <control type="label">
-                    <textcolor>main_fg_30</textcolor>
-                    <left>40</left>
-                    <font>font_tiny</font>
+                <control type="grouplist">
+                    <left>68</left>
+                    <orientation>horizontal</orientation>
                     <align>left</align>
-                    <label>$PARAM[label]</label>
+                    <control type="image">
+                        <height>40</height>
+                        <width>40</width>
+                        <aspectratio>keep</aspectratio>
+                        <texture colordiffuse="main_fg_30">special://skin/extras/icons/arrow-$PARAM[arrow_direction].png</texture>
+                    </control>
+                    <include>OSD_CastInfo_HintText_DirectionLabel_$PARAM[arrow_direction]</include>
+                    <control type="label">
+                        <top>-2</top>
+                        <textcolor>main_fg_30</textcolor>
+                        <width>auto</width>
+                        <font>font_tiny</font>
+                        <label>$PARAM[label]</label>
+                    </control>
                 </control>
             </control>
         </definition>
@@ -1177,7 +1203,7 @@
 
             <control type="grouplist">
                 <height>120</height>
-                <left>-10</left>
+                <left>-20</left>
                 <centerbottom>80</centerbottom>
                 <orientation>horizontal</orientation>
                 <itemgap>osd_itemgap</itemgap>
@@ -1246,7 +1272,7 @@
 
             <control type="grouplist">
                 <height>120</height>
-                <right>-10</right>
+                <right>-20</right>
                 <centerbottom>80</centerbottom>
                 <orientation>horizontal</orientation>
                 <itemgap>osd_itemgap</itemgap>
