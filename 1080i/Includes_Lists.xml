@@ -100,8 +100,10 @@
         <param name="rulerunit">6</param>
         <param name="timeblocks">32</param>
         <param name="programs_left">0</param>
-        <param name="programs_left_text">40</param>
-        <param name="programs_left_text_slide">70</param>
+        <!-- HERE text position w/o icon-->
+        <param name="programs_left_text">20</param>
+        <!-- HERE text position w icon-->
+        <param name="programs_left_text_slide">50</param>
         <definition>
             <control type="epggrid" id="$PARAM[id]">
                 <nested />
@@ -137,6 +139,7 @@
                         <visible>![$EXP[Exp_PVRGuide_NoFocus]]</visible>
                     </include>
                 </focusedchannellayout>
+                <!-- HERE: pvr tv guide item background -->
                 <itemlayout height="$PARAM[programheight]" width="$PARAM[programwidth]">
                     <include content="$PARAM[include_programs]">
                         <param name="detailed">$PARAM[detailed]</param>
@@ -806,7 +809,7 @@
             </include>
         </definition>
     </include>
-    
+
     <include name="List_Square_Row">
         <param name="item_w">view_poster_item_w</param>
         <param name="item_h">view_poster_item_w</param>

@@ -528,6 +528,7 @@
         </definition>
     </include>
 
+    <!-- PVR Channel Layout -->
     <include name="Layout_PVRChannel">
         <param name="detailed">false</param>
         <param name="selected">false</param>
@@ -637,47 +638,57 @@
         </definition>
     </include>
 
+    <!-- PVR GGuide Grid -->
     <include name="Layout_PVRGuide_Programs">
         <param name="detailed">false</param>
         <param name="selected">false</param>
         <!-- <param name="include_detailed_labels">Skin.HasSetting(View.UseDetailedListLabels)</param> -->
         <param name="include_detailed_labels">false</param>
         <param name="border">40,0,40,0</param>
-        <param name="border_genre">40,0,40,0</param>
+        <param name="border_genre">20,20,20,20</param>
         <param name="left">0</param>
         <param name="left_text">40</param>
         <param name="left_text_slide">70</param>
         <definition>
+            <!--selectedcolor background-->
             <include content="Object_Control" condition="$PARAM[selected]">
                 <param name="control">image</param>
                 <param name="id">1</param>
-                <include content="Texture_Menu_Highlight_H">
+                <!--HERE -->
+                <include content="Texture_Box_Highlight_H">
                     <param name="border">$PARAM[border]</param>
                 </include>
                 <visible>$PARAM[visible]</visible>
                 <left>$PARAM[left]</left>
             </include>
 
+            <!-- selected -->
             <include content="Object_Control" condition="$PARAM[selected]">
                 <param name="control">image</param>
                 <param name="id">1</param>
                 <bordersize>3</bordersize>
                 <left>$PARAM[left]</left>
-                <texture colordiffuse="cd808080" border="$PARAM[border_genre]" fallback="pvr/genre/0.png">$VAR[PVR_GenreType,pvr/genre/,.png]</texture>
+                <!-- <texture colordiffuse="cd808080" border="$PARAM[border_genre]" fallback="pvr/genre/0.png">$VAR[PVR_GenreType,pvr/genre/,.png]</texture> -->
+                <texture colordiffuse="aa0f0f0f" border="$PARAM[border_genre]" fallback="common/box.png">$VAR[PVR_GenreType,pvr/genre/,.png]</texture>
             </include>
 
+            <!-- unselected-->
             <include content="Object_Control" condition="!$PARAM[selected]">
                 <param name="control">image</param>
                 <param name="id">1</param>
                 <bordersize>3</bordersize>
                 <left>$PARAM[left]</left>
-                <texture colordiffuse="55808080" border="$PARAM[border_genre]" fallback="pvr/genre/0.png">$VAR[PVR_GenreType,pvr/genre/,.png]</texture>
+                <!-- <texture colordiffuse="55808080" border="$PARAM[border_genre]" fallback="pvr/genre/0.png">$VAR[PVR_GenreType,pvr/genre/,.png]</texture> -->
+                <texture colordiffuse="22808080" border="$PARAM[border_genre]" fallback="common/box.png">$VAR[PVR_GenreType,pvr/genre/,.png]</texture>
             </include>
 
-            <include content="Object_Control" condition="!$PARAM[selected]">
+            <!-- Thin outline-->
+            <!-- <include content="Object_Control" condition="!$PARAM[selected]"> -->
+            <include content="Object_Control" condition="false">
                 <param name="control">image</param>
                 <param name="id">1</param>
-                <texture colordiffuse="main_fg_30" border="40">pvr/progressline-programs.png</texture>
+                <!-- <texture colordiffuse="main_fg_30" border="40">pvr/progressline-programs.png</texture> -->
+                <texture colordiffuse="main_fg_30" border="20">common/box-outline.png</texture>
                 <left>$PARAM[left]</left>
             </include>
 
@@ -689,7 +700,8 @@
                 <textcolor>main_fg_90</textcolor>
                 <selectedcolor>main_fg_90</selectedcolor>
                 <left>$PARAM[left_text]</left>
-                <right>40</right>
+                <right>20</right>
+                <top>-4</top>
                 <visible>![ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
             </include>
             <include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
@@ -699,7 +711,8 @@
                 <textcolor>main_fg_70</textcolor>
                 <selectedcolor>main_fg_70</selectedcolor>
                 <left>$PARAM[left_text]</left>
-                <right>40</right>
+                <right>20</right>
+                <top>-4</top>
                 <visible>![ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
             </include>
             <control type="label" id="1">
@@ -707,7 +720,8 @@
                 <label>$INFO[ListItem.Label]</label>
                 <align>left</align>
                 <left>$PARAM[left_text]</left>
-                <right>40</right>
+                <right>20</right>
+                <top>-4</top>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <textcolor>main_fg_70</textcolor>
                 <visible>![$PARAM[include_detailed_labels]]</visible>
@@ -722,7 +736,8 @@
                 <textcolor>main_fg_90</textcolor>
                 <selectedcolor>main_fg_90</selectedcolor>
                 <left>$PARAM[left_text_slide]</left>
-                <right>40</right>
+                <right>20</right>
+                <top>-4</top>
                 <visible>[ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
             </include>
             <include content="Object_InfoCircle_Text_Sub" condition="$PARAM[include_detailed_labels]">
@@ -732,7 +747,8 @@
                 <textcolor>main_fg_70</textcolor>
                 <selectedcolor>main_fg_70</selectedcolor>
                 <left>$PARAM[left_text_slide]</left>
-                <right>40</right>
+                <right>20</right>
+                <top>-4</top>
                 <visible>[ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
             </include>
             <control type="label" id="1">
@@ -740,18 +756,20 @@
                 <label>$INFO[ListItem.Label]</label>
                 <align>left</align>
                 <left>$PARAM[left_text_slide]</left>
-                <right>40</right>
+                <right>20</right>
+                <top>-4</top>
                 <include condition="$PARAM[selected] + false">Color_SelectedText</include>
                 <textcolor>main_fg_70</textcolor>
                 <visible>![$PARAM[include_detailed_labels]]</visible>
                 <visible>[ListItem.IsRecording | ListItem.HasTimer | [ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)]]</visible>
             </control>
 
+            <!-- HERE: Left side icon -->
             <control type="group">
                 <left>$PARAM[left_text]</left>
                 <control type="image">
-                    <centerleft>0</centerleft>
-                    <centertop>40</centertop>
+                    <centerleft>5</centerleft>
+                    <centertop>30</centertop>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <width>24</width>
                     <height>24</height>
